@@ -20,9 +20,9 @@ class ProjectsPageState extends State<ProjectsPage> {
             projectCard(context, "Quiz30問！", "慶應Quiz研究会",
                 "https://picsum.photos/300/300",
                 place: "14棟-101教室", time: "10:00-15:00"),
-            projectCard(context, "Quiz30問！", "慶應Quiz研究会",
-                "https://picsum.photos/400/400",
-                place: "14棟-101教室", time: "10:00-15:00"),
+            projectCard(
+                context, "福引", "矢上祭実行委員会", "https://picsum.photos/400/400",
+                place: "14棟-西1階", time: "10:00-17:00"),
             projectCard(context, "Quiz30問！", "慶應Quiz研究会",
                 "https://picsum.photos/500/500",
                 place: "14棟-101教室", time: "10:00-15:00"),
