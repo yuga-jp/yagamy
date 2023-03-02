@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nfc_manager/nfc_manager.dart';
 
+import './common/camera.dart';
+import './common/ticket.dart';
 import '../widget/custom_widgets.dart';
 
 class ContentsPage extends StatefulWidget {
@@ -21,20 +22,20 @@ class ContentsPageState extends State<ContentsPage> {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            contentCard(context, "NFCタグを読み取る", Icons.nfc, tagRead),
-            contentCard(context, "QRコードを読み取る", Icons.qr_code, () {}),
+            contentCard(context, "NFCタグを読み取る", Icons.nfc, () {}),
+            contentCard(context, "QRコードを読み取る", Icons.qr_code, () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CameraPage()));
+            }),
             const Divider(),
-            contentCard(
-                context, "整理券を確認する", Icons.confirmation_num_outlined, () {})
+            contentCard(context, "整理券を確認する", Icons.confirmation_num_outlined,
+                () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TicketPage()));
+            })
           ],
         ),
       ),
     );
   }
-}
-
-void tagRead() {
-  NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async {
-    NfcManager.instance.stopSession();
-  });
 }

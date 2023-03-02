@@ -9,6 +9,7 @@ Widget projectCard(BuildContext context, String title, String group, String url,
     shape: RoundedRectangleBorder(
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
         borderRadius: const BorderRadius.all(Radius.circular(8))),
+    clipBehavior: Clip.antiAlias,
     child: InkWell(
       child: SizedBox(
         width: 350,
@@ -96,13 +97,14 @@ Widget projectTime(String time) {
   );
 }
 
-Widget contentCard(
-    BuildContext context, String title, IconData iconData, void Function() function) {
+Widget contentCard(BuildContext context, String title, IconData iconData,
+    void Function() function) {
   return Card(
     elevation: 1,
     shape: RoundedRectangleBorder(
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
         borderRadius: const BorderRadius.all(Radius.circular(8))),
+    clipBehavior: Clip.antiAlias,
     child: InkWell(
       onTap: function,
       child: SizedBox(
@@ -118,6 +120,28 @@ Widget contentCard(
             const SizedBox(width: 50)
           ],
         ),
+      ),
+    ),
+  );
+}
+
+Widget ticketCard(BuildContext context, String title, {int ticketNumber = 0}) {
+  return Card(
+    elevation: 1,
+    shape: RoundedRectangleBorder(
+        side: BorderSide(color: Theme.of(context).colorScheme.outline),
+        borderRadius: const BorderRadius.all(Radius.circular(8))),
+    clipBehavior: Clip.antiAlias,
+    child: SizedBox(
+      width: 350,
+      height: 400,
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          Text(title, style: const TextStyle(fontSize: 24)),
+          const SizedBox(height: 30),
+          Text(ticketNumber.toString(), style: const TextStyle(fontSize: 30))
+        ],
       ),
     ),
   );
