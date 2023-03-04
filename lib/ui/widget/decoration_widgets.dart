@@ -25,8 +25,8 @@ class BorderAroundVertex extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.transparent,
               border: Border(
-                top: BorderSide(color: color!, width: width),
-                left: BorderSide(color: color!, width: width),
+                top: BorderSide(color: color, width: width),
+                left: BorderSide(color: color, width: width),
               ),
             ),
             width: length,
@@ -39,8 +39,8 @@ class BorderAroundVertex extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.transparent,
               border: Border(
-                top: BorderSide(color: color!, width: width),
-                right: BorderSide(color: color!, width: width),
+                top: BorderSide(color: color, width: width),
+                right: BorderSide(color: color, width: width),
               ),
             ),
             width: length,
@@ -53,8 +53,8 @@ class BorderAroundVertex extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.transparent,
               border: Border(
-                right: BorderSide(color: color!, width: width),
-                bottom: BorderSide(color: color!, width: width),
+                right: BorderSide(color: color, width: width),
+                bottom: BorderSide(color: color, width: width),
               ),
             ),
             width: length,
@@ -67,8 +67,8 @@ class BorderAroundVertex extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.transparent,
               border: Border(
-                bottom: BorderSide(color: color!, width: width),
-                left: BorderSide(color: color!, width: width),
+                bottom: BorderSide(color: color, width: width),
+                left: BorderSide(color: color, width: width),
               ),
             ),
             width: length,
