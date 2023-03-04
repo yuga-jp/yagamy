@@ -4,10 +4,10 @@ class TimetablePage extends StatefulWidget {
   const TimetablePage({Key? key}) : super(key: key);
 
   @override
-  TimetablePageState createState() => TimetablePageState();
+  State<TimetablePage> createState() => _TimetablePageState();
 }
 
-class TimetablePageState extends State<TimetablePage> {
+class _TimetablePageState extends State<TimetablePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -6,7 +6,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSwatch(
         cardColor: Colors.white,
       ).copyWith(
-          primary: const Color(0xFF47D5E6), outline: Colors.grey.shade300),
+          primary: const Color(0xff47d5e6), outline: Colors.grey.shade300),
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
         elevation: 0.5,

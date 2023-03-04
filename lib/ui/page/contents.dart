@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import './common/camera.dart';
-import './common/ticket.dart';
-import '../widget/custom_widgets.dart';
+import 'package:yagamy/ui/page/common/camera.dart';
+import 'package:yagamy/ui/page/common/ticket.dart';
+import 'package:yagamy/ui/widget/card/content_card.dart';
 
 class ContentsPage extends StatefulWidget {
   const ContentsPage({Key? key}) : super(key: key);
 
   @override
-  ContentsPageState createState() => ContentsPageState();
+  State<ContentsPage> createState() => _ContentsPageState();
 }
 
-class ContentsPageState extends State<ContentsPage> {
+class _ContentsPageState extends State<ContentsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,17 +22,26 @@ class ContentsPageState extends State<ContentsPage> {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            contentCard(context, "NFCタグを読み取る", Icons.nfc, () {}),
-            contentCard(context, "QRコードを読み取る", Icons.qr_code, () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CameraPage()));
-            }),
+            ContentCard(
+              title: "NFCタグを読み取る",
+              iconData: Icons.nfc,
+              onTap: () {},
+            ),
+            ContentCard(
+                title: "QRコードを読み取る",
+                iconData: Icons.qr_code,
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CameraPage()));
+                }),
             const Divider(),
-            contentCard(context, "整理券を確認する", Icons.confirmation_num_outlined,
-                () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TicketPage()));
-            })
+            ContentCard(
+                title: "整理券を確認する",
+                iconData: Icons.confirmation_num_outlined,
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TicketPage()));
+                }),
           ],
         ),
       ),

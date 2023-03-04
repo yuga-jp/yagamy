@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../provider/provider.dart';
+import 'package:yagamy/provider/provider.dart';
 
 class CustomNavigationBar extends ConsumerStatefulWidget {
   const CustomNavigationBar({Key? key}) : super(key: key);
 
   @override
-  CustomNavigationBarState createState() => CustomNavigationBarState();
+  ConsumerState<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
 
-class CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
+class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
   @override
   void initState() {
     super.initState();

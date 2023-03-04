@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import './router/routes.dart';
-import './ui/theme/theme.dart';
+import 'package:yagamy/router/routes.dart';
+import 'package:yagamy/ui/theme/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
