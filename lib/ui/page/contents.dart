@@ -13,37 +13,42 @@ class ContentsPage extends StatefulWidget {
 
 class _ContentsPageState extends State<ContentsPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: const <Widget>[Icon(Icons.info_outline), SizedBox(width: 15)],
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            ContentCard(
-              title: "NFCタグを読み取る",
-              iconData: Icons.nfc,
-              onTap: () {},
-            ),
-            ContentCard(
-                title: "QRコードを読み取る",
-                iconData: Icons.qr_code,
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CameraPage()));
-                }),
-            const Divider(),
-            ContentCard(
-                title: "整理券を確認する",
-                iconData: Icons.confirmation_num_outlined,
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TicketPage()));
-                }),
-          ],
-        ),
+    return Center(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          ContentCard(
+            title: "NFCタグを読み取る",
+            iconData: Icons.nfc,
+            onTap: () {},
+          ),
+          ContentCard(
+              title: "QRコードを読み取る",
+              iconData: Icons.qr_code,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CameraPage()));
+              }),
+          const Divider(),
+          ContentCard(
+              title: "整理券を確認する",
+              iconData: Icons.confirmation_num_outlined,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TicketPage()));
+              }),
+        ],
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-import 'package:yagamy/ui/widget/decoration_widgets.dart';
-import 'package:yagamy/ui/widget/execute_button.dart';
+import 'package:yagamy/ui/widget/decoration/border_around_vertex.dart';
+import 'package:yagamy/ui/widget/button/execute_button.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -13,6 +13,16 @@ class CameraPage extends StatefulWidget {
 
 class _CameraPageState extends State<CameraPage> {
   bool isRead = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

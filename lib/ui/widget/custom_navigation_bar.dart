@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/provider/provider.dart';
+import 'package:yagamy/router/routes.dart';
 
 class CustomNavigationBar extends ConsumerStatefulWidget {
   const CustomNavigationBar({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<CustomNavigationBar> createState() => _CustomNavigationBarState();
+  ConsumerState<CustomNavigationBar> createState() =>
+      _CustomNavigationBarState();
 }
 
 class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
@@ -17,9 +19,13 @@ class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     int selectedIndex = ref.watch(selectedIndexProvider);
-
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -49,10 +55,10 @@ class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
       ],
       onTap: (index) {
         ref.read(selectedIndexProvider.notifier).state = index;
+        routerDelegates[selectedIndex].update(rebuild: false);
       },
       currentIndex: selectedIndex,
       showUnselectedLabels: true,
-      type: BottomNavigationBarType.fixed,
     );
   }
 }

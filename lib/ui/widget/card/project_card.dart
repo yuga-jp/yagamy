@@ -50,7 +50,7 @@ class _ProjectImage extends StatelessWidget {
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
           color: Colors.white,
           image:
@@ -98,7 +98,7 @@ Widget _projectTime(String time) {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
       width: 240,
       height: 110,

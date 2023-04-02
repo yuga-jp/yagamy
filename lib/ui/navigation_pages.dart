@@ -1,13 +1,11 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/provider/provider.dart';
-import 'package:yagamy/ui/page/contents.dart';
-import 'package:yagamy/ui/page/home.dart';
-import 'package:yagamy/ui/page/map.dart';
-import 'package:yagamy/ui/page/projects.dart';
-import 'package:yagamy/ui/page/timetable.dart';
+import 'package:yagamy/router/routes.dart';
+import 'package:yagamy/ui/widget/custom_appbars.dart';
 import 'package:yagamy/ui/widget/custom_navigation_bar.dart';
 
 class NavigationPages extends ConsumerStatefulWidget {
@@ -19,38 +17,56 @@ class NavigationPages extends ConsumerStatefulWidget {
 
 class _NavigationPagesState extends ConsumerState<NavigationPages> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   void dispose() {
     super.dispose();
   }
 
+  AppBar? _appBar() {
+    return _getAppBar(ref.watch(selectedIndexProvider));
+  }
+
   Widget _body() {
-    return Container(
-      child: _getPage(ref.watch(selectedIndexProvider)),
+    return IndexedStack(
+      index: ref.watch(selectedIndexProvider),
+      children: [
+        Beamer(routerDelegate: routerDelegates[0]),
+        Beamer(routerDelegate: routerDelegates[1]),
+        Beamer(routerDelegate: routerDelegates[2]),
+        Beamer(routerDelegate: routerDelegates[3]),
+        Beamer(routerDelegate: routerDelegates[4]),
+      ],
     );
   }
 
-  Widget _getPage(int index) {
+  AppBar? _getAppBar(int index) {
     switch (index) {
       case 0:
-        return HomePage();
+        return homeAppBar();
       case 1:
-        return ProjectsPage();
-        case 2:
-        return TimetablePage();
-        case 3:
-        return MapPage();
-        case 4:
-        return ContentsPage();
+        return null;
+      case 2:
+        return homeAppBar();
+      case 3:
+        return homeAppBar();
+      case 4:
+        return contentsAppBar();
       default:
-        return HomePage();
+        return homeAppBar();
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _body(),
+      appBar: _appBar(),
+      body: SafeArea(child: _body()),
       bottomNavigationBar: const CustomNavigationBar(),
+      resizeToAvoidBottomInset: false,
     );
   }
 }

@@ -11,9 +11,19 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: NavigationPages(),
+      resizeToAvoidBottomInset: false,
     );
   }
 }

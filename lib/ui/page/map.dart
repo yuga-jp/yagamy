@@ -9,15 +9,17 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Yagamy'),
-        actions: const <Widget>[
-          Icon(Icons.account_circle),
-          SizedBox(width: 15)
-        ],
-      ),
-    );
+    return Scaffold();
   }
 }

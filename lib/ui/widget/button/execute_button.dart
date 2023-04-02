@@ -17,10 +17,20 @@ class ExecuteButton extends StatefulWidget {
   final Color textColor;
 
   @override
-  State<ExecuteButton> createState() => ExecuteButtonState();
+  State<ExecuteButton> createState() => _ExecuteButtonState();
 }
 
-class ExecuteButtonState extends State<ExecuteButton> {
+class _ExecuteButtonState extends State<ExecuteButton> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return widget.isActivated
@@ -55,7 +65,7 @@ class _Activated extends StatelessWidget {
           onTap: onTap,
           child: Center(
             child: Text(title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: CustomColor.textColorOnExecuteButton, fontSize: 24)),
           ),
         ),
@@ -77,7 +87,7 @@ class _Deactivated extends StatelessWidget {
         decoration: BoxDecoration(color: Theme.of(context).disabledColor),
         width: 300,
         height: 50,
-        child: Center(
+        child: const Center(
           child: Text('Not Ready.',
               style: TextStyle(
                   color: CustomColor.textColorOnExecuteButton, fontSize: 24)),
