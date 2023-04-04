@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yagamy/provider/provider.dart';
 
 import 'package:yagamy/ui/theme/custom_color.dart';
 
-class SearchButton extends StatefulWidget {
+class SearchButton extends ConsumerStatefulWidget {
   const SearchButton({
     Key? key,
     required this.title,
-    required this.isSelected,
+    required this.id,
     required this.onTap,
     this.textColor = Colors.white,
   }) : super(key: key);
 
   final String title;
-  final bool isSelected;
   final void Function() onTap;
   final Color textColor;
+  final UniqueKey id;
 
   @override
-  State<SearchButton> createState() => _SearchButtonState();
+  ConsumerState<SearchButton> createState() => _SearchButtonState();
 }
 
-class _SearchButtonState extends State<SearchButton> {
+class _SearchButtonState extends ConsumerState<SearchButton> {
   @override
   void initState() {
     super.initState();
@@ -33,7 +35,7 @@ class _SearchButtonState extends State<SearchButton> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.isSelected
+    return ref.watch(selectedSearchButtonProvider).id == widget.id
         ? _Button(
             widget.title,
             widget.onTap,

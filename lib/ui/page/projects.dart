@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:yagamy/model/search_button_prop.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:yagamy/model/search_button_bar_type.dart';
+import 'package:yagamy/model/search_button_prop.dart';
+import 'package:yagamy/provider/provider.dart';
 import 'package:yagamy/ui/widget/card/project_card.dart';
 import 'package:yagamy/ui/widget/button/search_button.dart';
 
@@ -60,14 +63,14 @@ class _ProjectsPageState extends State<ProjectsPage> {
   }
 }
 
-class SearchButtonBar extends StatefulWidget {
+class SearchButtonBar extends ConsumerStatefulWidget {
   const SearchButtonBar({Key? key}) : super(key: key);
 
   @override
-  State<SearchButtonBar> createState() => _SearchButtonBarState();
+  ConsumerState<SearchButtonBar> createState() => _SearchButtonBarState();
 }
 
-class _SearchButtonBarState extends State<SearchButtonBar> {
+class _SearchButtonBarState extends ConsumerState<SearchButtonBar> {
   @override
   void initState() {
     super.initState();
@@ -78,51 +81,38 @@ class _SearchButtonBarState extends State<SearchButtonBar> {
     super.dispose();
   }
 
-  List<SearchButtonProp> categories = const [
-    SearchButtonProp('アクティビティ'),
-    SearchButtonProp('物品販売'),
-    SearchButtonProp('パフォーマンス'),
-    SearchButtonProp('コンサート'),
-    SearchButtonProp('食品販売'),
-  ];
-
-  List<SearchButtonProp> places = const [
-    SearchButtonProp('11棟'),
-    SearchButtonProp('12棟'),
-    SearchButtonProp('13棟'),
-    SearchButtonProp('14棟'),
-    SearchButtonProp('21棟'),
-    SearchButtonProp('グラウンド'),
-    SearchButtonProp('縁日'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        SingleSearchButtonBar(categories),
-        SingleSearchButtonBar(places),
+        SingleSearchButtonBar(ref
+            .watch(buttonsProvider)
+            .where((searchButtonProp) =>
+                searchButtonProp.type == SearchButtonBarType.categories)
+            .toList()),
+        SingleSearchButtonBar(ref
+            .watch(buttonsProvider)
+            .where((searchButtonProp) =>
+                searchButtonProp.type == SearchButtonBarType.places)
+            .toList()),
       ],
     );
   }
 }
 
-class SingleSearchButtonBar extends StatefulWidget {
+class SingleSearchButtonBar extends ConsumerStatefulWidget {
   const SingleSearchButtonBar(this.list, {Key? key}) : super(key: key);
 
   final List<SearchButtonProp> list;
 
   @override
-  State<SingleSearchButtonBar> createState() => _SingleSearchBarState();
+  ConsumerState<SingleSearchButtonBar> createState() => _SingleSearchBarState();
 }
 
-class _SingleSearchBarState extends State<SingleSearchButtonBar> {
-  List<bool> isSelectedList = [];
-
+class _SingleSearchBarState extends ConsumerState<SingleSearchButtonBar> {
   @override
   void initState() {
     super.initState();
-    isSelectedList = List.generate(widget.list.length, (_) => false);
   }
 
   @override
@@ -143,14 +133,19 @@ class _SingleSearchBarState extends State<SingleSearchButtonBar> {
               index == 0 ? const SizedBox(width: 10) : const SizedBox(width: 4),
               SearchButton(
                 title: widget.list[index].name,
-                isSelected: isSelectedList[index],
+                id: widget.list[index].id,
                 onTap: () {
                   setState(() {
-                    isSelectedList[index] = !isSelectedList[index];
-                    for (var i = 0; i < isSelectedList.length; i++) {
-                      if (i != index) {
-                        isSelectedList[i] = false;
-                      }
+                    if (ref.watch(selectedSearchButtonProvider).id ==
+                        widget.list[index].id) {
+                      ref.read(selectedSearchButtonProvider.notifier).update(
+                          SearchButtonProp('', SearchButtonBarType.initial));
+                    } else {
+                      ref.read(selectedSearchButtonProvider.notifier).update(ref
+                          .watch(buttonsProvider)
+                          .where((searchButtonProp) =>
+                              searchButtonProp.id == widget.list[index].id)
+                          .toList()[0]);
                     }
                   });
                 },
