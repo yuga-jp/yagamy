@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:yagamy/model/search_button_bar_type.dart';
-import 'package:yagamy/model/search_button_prop.dart';
+import 'package:yagamy/model/searcher_type.dart';
+import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/provider/provider.dart';
 import 'package:yagamy/ui/widget/card/project_card.dart';
 import 'package:yagamy/ui/widget/button/search_button.dart';
@@ -38,7 +38,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
             ],
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(80),
-              child: SearchButtonBar(),
+              child: _SearchButtonBar(),
             ),
             floating: true,
             pinned: true,
@@ -63,14 +63,14 @@ class _ProjectsPageState extends State<ProjectsPage> {
   }
 }
 
-class SearchButtonBar extends ConsumerStatefulWidget {
-  const SearchButtonBar({Key? key}) : super(key: key);
+class _SearchButtonBar extends ConsumerStatefulWidget {
+  const _SearchButtonBar({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<SearchButtonBar> createState() => _SearchButtonBarState();
+  ConsumerState<_SearchButtonBar> createState() => _SearchButtonBarState();
 }
 
-class _SearchButtonBarState extends ConsumerState<SearchButtonBar> {
+class _SearchButtonBarState extends ConsumerState<_SearchButtonBar> {
   @override
   void initState() {
     super.initState();
@@ -85,31 +85,29 @@ class _SearchButtonBarState extends ConsumerState<SearchButtonBar> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        SingleSearchButtonBar(ref
-            .watch(buttonsProvider)
-            .where((searchButtonProp) =>
-                searchButtonProp.type == SearchButtonBarType.categories)
+        _SingleSearchButtonBar(SearcherProp.values
+            .where(
+                (searcherProp) => searcherProp.type == SearcherType.categories)
             .toList()),
-        SingleSearchButtonBar(ref
-            .watch(buttonsProvider)
-            .where((searchButtonProp) =>
-                searchButtonProp.type == SearchButtonBarType.places)
+        _SingleSearchButtonBar(SearcherProp.values
+            .where((searcherProp) => searcherProp.type == SearcherType.places)
             .toList()),
       ],
     );
   }
 }
 
-class SingleSearchButtonBar extends ConsumerStatefulWidget {
-  const SingleSearchButtonBar(this.list, {Key? key}) : super(key: key);
+class _SingleSearchButtonBar extends ConsumerStatefulWidget {
+  const _SingleSearchButtonBar(this.list, {Key? key}) : super(key: key);
 
-  final List<SearchButtonProp> list;
+  final List<SearcherProp> list;
 
   @override
-  ConsumerState<SingleSearchButtonBar> createState() => _SingleSearchBarState();
+  ConsumerState<_SingleSearchButtonBar> createState() =>
+      _SingleSearchBarState();
 }
 
-class _SingleSearchBarState extends ConsumerState<SingleSearchButtonBar> {
+class _SingleSearchBarState extends ConsumerState<_SingleSearchButtonBar> {
   @override
   void initState() {
     super.initState();
@@ -133,19 +131,15 @@ class _SingleSearchBarState extends ConsumerState<SingleSearchButtonBar> {
               index == 0 ? const SizedBox(width: 10) : const SizedBox(width: 4),
               SearchButton(
                 title: widget.list[index].name,
-                id: widget.list[index].id,
                 onTap: () {
                   setState(() {
-                    if (ref.watch(selectedSearchButtonProvider).id ==
-                        widget.list[index].id) {
-                      ref.read(selectedSearchButtonProvider.notifier).update(
-                          SearchButtonProp('', SearchButtonBarType.initial));
+                    if (ref.watch(selectedSearcherProvider) ==
+                        widget.list[index]) {
+                      ref.read(selectedSearcherProvider.notifier).state =
+                          SearcherProp.initial;
                     } else {
-                      ref.read(selectedSearchButtonProvider.notifier).update(ref
-                          .watch(buttonsProvider)
-                          .where((searchButtonProp) =>
-                              searchButtonProp.id == widget.list[index].id)
-                          .toList()[0]);
+                      ref.read(selectedSearcherProvider.notifier).state =
+                          widget.list[index];
                     }
                   });
                 },

@@ -8,7 +8,6 @@ class SearchButton extends ConsumerStatefulWidget {
   const SearchButton({
     Key? key,
     required this.title,
-    required this.id,
     required this.onTap,
     this.textColor = Colors.white,
   }) : super(key: key);
@@ -16,7 +15,6 @@ class SearchButton extends ConsumerStatefulWidget {
   final String title;
   final void Function() onTap;
   final Color textColor;
-  final UniqueKey id;
 
   @override
   ConsumerState<SearchButton> createState() => _SearchButtonState();
@@ -35,7 +33,7 @@ class _SearchButtonState extends ConsumerState<SearchButton> {
 
   @override
   Widget build(BuildContext context) {
-    return ref.watch(selectedSearchButtonProvider).id == widget.id
+    return ref.watch(selectedSearcherProvider).name == widget.title
         ? _Button(
             widget.title,
             widget.onTap,
