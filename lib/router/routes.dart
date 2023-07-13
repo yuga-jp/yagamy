@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:beamer/beamer.dart';
 
-import 'package:yagamy/ui/navigation_pages.dart';
-import 'package:yagamy/ui/page/contents.dart';
-import 'package:yagamy/ui/page/home.dart';
-import 'package:yagamy/ui/page/map.dart';
-import 'package:yagamy/ui/page/projects.dart';
-import 'package:yagamy/ui/page/splash.dart';
-import 'package:yagamy/ui/page/timetable.dart';
+import 'package:yagamy/view/navigation_pages.dart';
+import 'package:yagamy/view/page/contents.dart';
+import 'package:yagamy/view/page/home.dart';
+import 'package:yagamy/view/page/map.dart';
+import 'package:yagamy/view/page/projects.dart';
+import 'package:yagamy/view/page/splash.dart';
+import 'package:yagamy/view/page/timetable.dart';
 
 final routerDelegate = BeamerDelegate(
-  initialPath: '/projects',
+  initialPath: '/navigation',
   locationBuilder: RoutesLocationBuilder(
     routes: {
-      '*': (context, state, data) => const NavigationPages(),
+      '/navigation': (context, state, data) => const NavigationPages(),
     },
   ),
 );
 
-final routerDelegates = [
+final navigationRouterDelegates = [
   BeamerDelegate(
     initialPath: '/home',
     locationBuilder: (routeInformation, _) {
@@ -70,13 +70,13 @@ class HomeLocation extends BeamLocation<BeamState> {
   HomeLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/home/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         const BeamPage(
           key: ValueKey('home'),
-          title: 'Tab Home',
+          title: 'Home',
           type: BeamPageType.noTransition,
           child: HomePage(),
         ),
@@ -87,13 +87,13 @@ class ProjectsLocation extends BeamLocation<BeamState> {
   ProjectsLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/projects/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         const BeamPage(
           key: ValueKey('projects'),
-          title: 'Tab Projects',
+          title: 'Projects',
           type: BeamPageType.noTransition,
           child: ProjectsPage(),
         )
@@ -104,13 +104,13 @@ class TimetableLocation extends BeamLocation<BeamState> {
   TimetableLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/timetable/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         const BeamPage(
           key: ValueKey('timetable'),
-          title: 'Tab Timetable',
+          title: 'Timetable',
           type: BeamPageType.noTransition,
           child: TimetablePage(),
         )
@@ -121,13 +121,13 @@ class MapLocation extends BeamLocation<BeamState> {
   MapLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/map/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         const BeamPage(
           key: ValueKey('map'),
-          title: 'Tab Map',
+          title: 'Map',
           type: BeamPageType.noTransition,
           child: MapPage(),
         )
@@ -138,13 +138,13 @@ class ContentsLocation extends BeamLocation<BeamState> {
   ContentsLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/contents/'];
 
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) => [
         const BeamPage(
           key: ValueKey('contents'),
-          title: 'Tab Contents',
+          title: 'Contents',
           type: BeamPageType.noTransition,
           child: ContentsPage(),
         )

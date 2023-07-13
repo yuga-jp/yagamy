@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/ui/widget/card/ticket_card.dart';
+import 'package:yagamy/view/widget/card/ticket_card.dart';
 
 class TicketPage extends StatefulWidget {
   const TicketPage({Key? key}) : super(key: key);

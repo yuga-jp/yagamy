@@ -1,24 +1,21 @@
-import 'package:flutter/foundation.dart';
+import 'package:yagamy/model/searcher_prop.dart';
 
-@immutable
 class Project {
-  const Project({
-    required this.id,
+  Project({
     required this.name,
     required this.groupName,
+    required this.category,
     required this.place,
     this.placeDetail = '',
-    required this.category,
-    required this.timeFirstDay,
-    required this.timeSecondDay,
   });
 
-  final String id;
   final String name;
+
   final String groupName;
-  final String place;
+
+  final SearcherProp category;
+
+  final SearcherProp place;
+
   final String placeDetail;
-  final String category;
-  final List<int> timeFirstDay;
-  final List<int> timeSecondDay;
 }

@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/provider/provider.dart';
 import 'package:yagamy/router/routes.dart';
-import 'package:yagamy/ui/widget/custom_appbars.dart';
-import 'package:yagamy/ui/widget/custom_navigation_bar.dart';
+import 'package:yagamy/view/widget/custom_appbars.dart';
+import 'package:yagamy/view/widget/custom_navigation_bar.dart';
 
 class NavigationPages extends ConsumerStatefulWidget {
   const NavigationPages({Key? key}) : super(key: key);
@@ -34,11 +34,11 @@ class _NavigationPagesState extends ConsumerState<NavigationPages> {
     return IndexedStack(
       index: ref.watch(selectedIndexProvider),
       children: [
-        Beamer(routerDelegate: routerDelegates[0]),
-        Beamer(routerDelegate: routerDelegates[1]),
-        Beamer(routerDelegate: routerDelegates[2]),
-        Beamer(routerDelegate: routerDelegates[3]),
-        Beamer(routerDelegate: routerDelegates[4]),
+        Beamer(routerDelegate: navigationRouterDelegates[0]),
+        Beamer(routerDelegate: navigationRouterDelegates[1]),
+        Beamer(routerDelegate: navigationRouterDelegates[2]),
+        Beamer(routerDelegate: navigationRouterDelegates[3]),
+        Beamer(routerDelegate: navigationRouterDelegates[4]),
       ],
     );
   }

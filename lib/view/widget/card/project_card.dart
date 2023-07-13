@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/ui/theme/custom_color.dart';
+import 'package:yagamy/view/theme/custom_color.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-import 'package:yagamy/ui/widget/decoration/border_around_vertex.dart';
-import 'package:yagamy/ui/widget/button/execute_button.dart';
+import 'package:yagamy/view/widget/decoration/border_around_vertex.dart';
+import 'package:yagamy/view/widget/button/execute_button.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/ui/page/common/camera.dart';
-import 'package:yagamy/ui/page/common/ticket.dart';
-import 'package:yagamy/ui/widget/card/content_card.dart';
+import 'package:yagamy/view/page/common/camera.dart';
+import 'package:yagamy/view/page/common/ticket.dart';
+import 'package:yagamy/view/widget/card/content_card.dart';
 
 class ContentsPage extends StatefulWidget {
   const ContentsPage({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yagamy/provider/provider.dart';
 
-import 'package:yagamy/ui/theme/custom_color.dart';
+import 'package:yagamy/view/theme/custom_color.dart';
 
 class SearchButton extends ConsumerStatefulWidget {
   const SearchButton({

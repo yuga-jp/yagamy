@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/ui/navigation_pages.dart';
+import 'package:yagamy/view/navigation_pages.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

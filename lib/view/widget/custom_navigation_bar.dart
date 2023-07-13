@@ -55,7 +55,7 @@ class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
       ],
       onTap: (index) {
         ref.read(selectedIndexProvider.notifier).state = index;
-        routerDelegates[selectedIndex].update(rebuild: false);
+        navigationRouterDelegates[selectedIndex].update(rebuild: false);
       },
       currentIndex: selectedIndex,
       showUnselectedLabels: true,
