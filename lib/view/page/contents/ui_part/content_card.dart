@@ -7,7 +7,7 @@ class ContentCard extends StatelessWidget {
     required this.iconData,
     this.onTap,
   }) : super(key: key);
-  
+
   final String title;
   final IconData iconData;
   final void Function()? onTap;
@@ -34,7 +34,7 @@ class ContentCard extends StatelessWidget {
                   child: Center(
                       child:
                           Text(title, style: const TextStyle(fontSize: 24)))),
-              const SizedBox(width: 50)
+              const SizedBox(width: 50),
             ],
           ),
         ),

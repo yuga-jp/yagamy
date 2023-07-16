@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:beamer/beamer.dart';
 
 import 'package:yagamy/view/navigation_pages.dart';
-import 'package:yagamy/view/page/contents.dart';
-import 'package:yagamy/view/page/home.dart';
-import 'package:yagamy/view/page/map.dart';
-import 'package:yagamy/view/page/projects.dart';
-import 'package:yagamy/view/page/splash.dart';
-import 'package:yagamy/view/page/timetable.dart';
+import 'package:yagamy/view/page/contents/contents.dart';
+import 'package:yagamy/view/page/home/home.dart';
+import 'package:yagamy/view/page/map/map.dart';
+import 'package:yagamy/view/page/projects/projects.dart';
+import 'package:yagamy/view/page/splash/splash.dart';
+import 'package:yagamy/view/page/timetable/timetable.dart';
 
 final routerDelegate = BeamerDelegate(
   initialPath: '/navigation',

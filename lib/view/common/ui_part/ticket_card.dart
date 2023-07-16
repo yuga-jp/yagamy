@@ -26,7 +26,7 @@ class TicketCard extends StatelessWidget {
             const SizedBox(height: 20),
             Text(title, style: const TextStyle(fontSize: 24)),
             const SizedBox(height: 30),
-            Text(ticketNumber.toString(), style: const TextStyle(fontSize: 30))
+            Text(ticketNumber.toString(), style: const TextStyle(fontSize: 30)),
           ],
         ),
       ),

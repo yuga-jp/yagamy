@@ -5,8 +5,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/provider/provider.dart';
 import 'package:yagamy/router/routes.dart';
-import 'package:yagamy/view/widget/custom_appbars.dart';
-import 'package:yagamy/view/widget/custom_navigation_bar.dart';
+import 'package:yagamy/view/page/home/appbar.dart';
+import 'package:yagamy/view/page/contents/appbar.dart';
+import 'package:yagamy/view/common/ui_part/custom_navigation_bar.dart';
 
 class NavigationPages extends ConsumerStatefulWidget {
   const NavigationPages({Key? key}) : super(key: key);

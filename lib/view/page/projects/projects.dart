@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yagamy/model/searcher_type.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/provider/provider.dart';
-import 'package:yagamy/view/widget/card/project_card.dart';
-import 'package:yagamy/view/widget/button/search_button.dart';
+import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
+import 'package:yagamy/view/page/projects/ui_part/search_button.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/view/theme/custom_color.dart';
+import 'package:yagamy/constant/custom_color.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -72,29 +72,29 @@ class _ProjectInfo extends StatelessWidget {
   final String time;
 
   Widget _projectPlace(String place) {
-  return SizedBox(
-    width: 125,
-    child: Row(
-      children: [
-        const Icon(Icons.place, size: 18),
-        Text(place,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
-      ],
-    ),
-  );
-}
+    return SizedBox(
+      width: 125,
+      child: Row(
+        children: [
+          const Icon(Icons.place, size: 18),
+          Text(place,
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
+        ],
+      ),
+    );
+  }
 
-Widget _projectTime(String time) {
-  return SizedBox(
-    child: Row(
-      children: [
-        const Icon(Icons.schedule, size: 18),
-        Text(time,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
-      ],
-    ),
-  );
-}
+  Widget _projectTime(String time) {
+    return SizedBox(
+      child: Row(
+        children: [
+          const Icon(Icons.schedule, size: 18),
+          Text(time,
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
