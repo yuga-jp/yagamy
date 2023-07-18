@@ -24,5 +24,12 @@ class AppTheme {
       space: 30,
       thickness: 0.5,
     ),
+    tabBarTheme: const TabBarTheme(
+      dividerColor: Colors.transparent,
+      labelColor: Colors.black,
+      labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+      unselectedLabelStyle:
+          TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+    ),
   );
 }

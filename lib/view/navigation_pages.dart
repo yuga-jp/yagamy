@@ -51,7 +51,7 @@ class _NavigationPagesState extends ConsumerState<NavigationPages> {
       case 1:
         return null;
       case 2:
-        return homeAppBar();
+        return null;
       case 3:
         return homeAppBar();
       case 4:

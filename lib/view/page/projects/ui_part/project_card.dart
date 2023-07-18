@@ -111,10 +111,11 @@ class _ProjectInfo extends StatelessWidget {
           const SizedBox(height: 3),
           Row(
             children: [
-              Icon(Icons.group, size: 18, color: CustomColor.groupDisplayColor),
+              const Icon(Icons.group,
+                  size: 18, color: CustomColor.groupDisplayColor),
               const SizedBox(width: 5),
               Text(groupName,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: CustomColor.groupDisplayColor,
                       fontSize: 15,
                       fontWeight: FontWeight.w300))
