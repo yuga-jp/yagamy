@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yagamy/view/common/ui_part/slide_button/slide_button.dart';
 
 import 'package:yagamy/view/page/camera/camera.dart';
 import 'package:yagamy/view/page/ticket/ticket.dart';
@@ -37,16 +38,20 @@ class _ContentsPageState extends State<ContentsPage> {
               title: "QRコードを読み取る",
               iconData: Icons.qr_code,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CameraPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CameraPage()));
               }),
           const Divider(),
           ContentCard(
               title: "整理券を確認する",
               iconData: Icons.confirmation_num_outlined,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TicketPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TicketPage()));
               }),
         ],
       ),

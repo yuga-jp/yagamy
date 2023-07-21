@@ -26,6 +26,7 @@ class ProjectCard extends StatelessWidget {
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
+      //margin: EdgeInsets.only(left: 20, right: 20),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () {},
@@ -48,11 +49,11 @@ class _ProjectImage extends StatelessWidget {
   const _ProjectImage(this.imageUrl);
 
   final String imageUrl;
+
   @override
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-          color: Colors.white,
           image:
               DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.fill),
           border: Border.all(color: Colors.white, width: 5),
@@ -98,7 +99,7 @@ class _ProjectInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
+    return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
       width: 240,
       height: 110,

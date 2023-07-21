@@ -6,7 +6,6 @@ import 'package:yagamy/view/page/contents/contents.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
-import 'package:yagamy/view/page/splash/splash.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
 
 final routerDelegate = BeamerDelegate(

@@ -24,9 +24,9 @@ class _TicketPageState extends State<TicketPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Column(
-          children: const <Widget>[TicketCard(title: 'お化け屋敷 整理券')],
+          children: <Widget>[TicketCard(title: 'お化け屋敷 整理券')],
         ),
       ),
     );

@@ -22,22 +22,20 @@ class ShowSelectedBar extends StatefulWidget {
 
 class _ShowSelectedState extends State<ShowSelectedBar>
     with SingleTickerProviderStateMixin {
-  late final double widthScale;
+  static const double _widthScale = 0.97;
 
   late final AnimationController _controller;
-  static late final Animation<Offset> _offsetAnimation;
+  late final Animation<Offset> _offsetAnimation;
 
   @override
   void initState() {
     super.initState();
 
-    widthScale = 0.97;
-
     _controller = AnimationController(
         duration: const Duration(milliseconds: 150), vsync: this);
 
     _offsetAnimation =
-        Tween<Offset>(begin: Offset.zero, end: const Offset(1.0, 0)).animate(
+        Tween<Offset>(begin: Offset.zero, end: const Offset(1.0 , 0)).animate(
             CurvedAnimation(
                 parent: _controller,
                 curve: Curves.easeOutExpo,
@@ -73,12 +71,12 @@ class _ShowSelectedState extends State<ShowSelectedBar>
             color: widget.sliderColor,
             borderRadius: widget.borderRadius,
           ),
-          width: widget.width * widthScale,
+          width: widget.width * _widthScale,
           height: widget.height,
           margin: EdgeInsets.only(
-            left: widget.width * (1 - widthScale) / 2,
+            left: widget.width * (1 - _widthScale) / 2,
             top: 0,
-            right: widget.width * (1 - widthScale) / 2,
+            right: widget.width * (1 - _widthScale) / 2,
             bottom: 0,
           ),
         ),

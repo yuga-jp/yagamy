@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yagamy/constant/custom_color.dart';
 
-import 'package:yagamy/view/common/ui_part/switch_button/show_selected_bar.dart';
+import 'package:yagamy/view/common/ui_part/slide_button/show_selected_bar.dart';
 
 class SlideButton extends StatefulWidget {
   const SlideButton({
@@ -72,6 +72,7 @@ class _SlideButtonState extends State<SlideButton> {
                 child: GestureDetector(
                   onTap: () => setState(() {
                     isSlide = false;
+                    print(context.size);
                   }),
                   behavior: HitTestBehavior.translucent,
                   child: Container(

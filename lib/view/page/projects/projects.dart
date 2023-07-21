@@ -43,11 +43,11 @@ class _ProjectsPageState extends State<ProjectsPage> {
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return const ProjectCard(
-                  title: "Quiz30問！",
-                  groupName: "慶應Quiz研究会",
-                  imageUrl: "https://picsum.photos/300/300",
-                  placeName: "14棟-101教室",
-                  time: "10:00-15:00",
+                  title: 'Quiz30問！',
+                  groupName: '慶應Quiz研究会',
+                  imageUrl: 'https://picsum.photos/300/300',
+                  placeName: '14棟-101教室',
+                  time: '10:00-15:00',
                 );
               },
               childCount: 10,
