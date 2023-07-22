@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/constant/custom_color.dart';
+import 'package:yagamy/constant/theme/project_card_theme.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -21,6 +21,7 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
       elevation: 1,
       shape: RoundedRectangleBorder(
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
@@ -55,7 +56,9 @@ class _ProjectImage extends StatelessWidget {
       decoration: BoxDecoration(
           image:
               DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.fill),
-          border: Border.all(color: Colors.white, width: 5),
+          border: Border.all(
+              color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
+              width: 5),
           borderRadius: BorderRadius.circular(15)),
       width: 110,
       height: 110,
@@ -71,26 +74,28 @@ class _ProjectInfo extends StatelessWidget {
   final String placeName;
   final String time;
 
-  Widget _projectPlace(String place) {
+  Widget _projectPlace(String place, Color textColor) {
     return SizedBox(
       width: 125,
       child: Row(
         children: [
           const Icon(Icons.place, size: 18),
           Text(place,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
+              style: TextStyle(
+                  color: textColor, fontSize: 15, fontWeight: FontWeight.w500))
         ],
       ),
     );
   }
 
-  Widget _projectTime(String time) {
+  Widget _projectTime(String time, Color textColor) {
     return SizedBox(
       child: Row(
         children: [
           const Icon(Icons.schedule, size: 18),
           Text(time,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
+              style: TextStyle(
+                  color: textColor, fontSize: 15, fontWeight: FontWeight.w500))
         ],
       ),
     );
@@ -98,6 +103,7 @@ class _ProjectInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ProjectCardTheme currentTheme = Theme.of(context).extension<ProjectCardTheme>()!;
     return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
       width: 240,
@@ -111,12 +117,12 @@ class _ProjectInfo extends StatelessWidget {
           const SizedBox(height: 3),
           Row(
             children: [
-              const Icon(Icons.group,
-                  size: 18, color: CustomColor.groupDisplayColor),
+              Icon(Icons.group,
+                  size: 18, color: currentTheme.groupDisplayColor!),
               const SizedBox(width: 5),
               Text(groupName,
-                  style: const TextStyle(
-                      color: CustomColor.groupDisplayColor,
+                  style: TextStyle(
+                      color: currentTheme.groupDisplayColor!,
                       fontSize: 15,
                       fontWeight: FontWeight.w300))
             ],
@@ -124,8 +130,8 @@ class _ProjectInfo extends StatelessWidget {
           const Expanded(child: SizedBox()),
           Row(
             children: <Widget>[
-              _projectPlace(placeName),
-              _projectTime(time),
+              _projectPlace(placeName, currentTheme.textColor!),
+              _projectTime(time, currentTheme.textColor!),
             ],
           ),
         ],

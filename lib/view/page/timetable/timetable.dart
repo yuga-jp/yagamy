@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/model/timetable_searcher_type.dart';
 import 'package:yagamy/view/common/ui_part/slide_button/slide_button.dart';
 import 'package:yagamy/view/page/timetable/ui_part/performance_card.dart';
-import 'package:yagamy/view/page/timetable/ui_part/performance_list.dart';
 
 class TimetablePage extends StatefulWidget {
   const TimetablePage({Key? key}) : super(key: key);

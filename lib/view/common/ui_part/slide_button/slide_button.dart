@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:yagamy/constant/custom_color.dart';
 
+import 'package:yagamy/constant/theme/slide_button_theme.dart';
 import 'package:yagamy/view/common/ui_part/slide_button/show_selected_bar.dart';
 
 class SlideButton extends StatefulWidget {
   const SlideButton({
     required this.leftText,
     required this.rightText,
-    this.backgroundColor = CustomColor.slideButtonBackgroundColor,
-    this.sliderColor = CustomColor.slideButtonSliderColor,
+    this.backgroundColor,
+    this.sliderColor,
     this.backgroundBorderRadius = const BorderRadius.all(Radius.circular(9)),
     this.sliderBorderRadius = const BorderRadius.all(Radius.circular(7)),
     required this.height,
@@ -18,8 +18,8 @@ class SlideButton extends StatefulWidget {
 
   final String leftText;
   final String rightText;
-  final Color backgroundColor;
-  final Color sliderColor;
+  final Color? backgroundColor;
+  final Color? sliderColor;
   final BorderRadiusGeometry? backgroundBorderRadius;
   final BorderRadiusGeometry? sliderBorderRadius;
   final double height;
@@ -43,8 +43,27 @@ class _SlideButtonState extends State<SlideButton> {
     super.dispose();
   }
 
+  Widget _detectorPart(bool isSlideTo, String text, Color textColor) {
+    return GestureDetector(
+      onTap: () => setState(() {
+        isSlide = isSlideTo;
+      }),
+      behavior: HitTestBehavior.translucent,
+      child: Container(
+        constraints: const BoxConstraints.expand(),
+        child: Center(
+          child: Text(text,
+              style: TextStyle(
+                  color: textColor, fontSize: 15, fontWeight: FontWeight.w500)),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final SlideButtonTheme currentTheme =
+        Theme.of(context).extension<SlideButtonTheme>()!;
     return Container(
       decoration: BoxDecoration(
         color: widget.backgroundColor,
@@ -59,7 +78,8 @@ class _SlideButtonState extends State<SlideButton> {
             widthFactor: 0.5,
             child: ShowSelectedBar(
               isSlide: isSlide,
-              sliderColor: widget.sliderColor,
+              sliderColor: widget.sliderColor ??
+                  Theme.of(context).extension<SlideButtonTheme>()!.sliderColor!,
               borderRadius: widget.sliderBorderRadius,
               height: widget.height * 0.85,
             ),
@@ -68,41 +88,13 @@ class _SlideButtonState extends State<SlideButton> {
             children: [
               Expanded(
                 flex: 1,
-                child: GestureDetector(
-                  onTap: () => setState(() {
-                    isSlide = false;
-                  }),
-                  behavior: HitTestBehavior.translucent,
-                  child: Container(
-                    constraints: const BoxConstraints.expand(),
-                    child: Center(
-                      child: Text(widget.leftText,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500)),
-                    ),
-                  ),
-                ),
+                child: _detectorPart(
+                    false, widget.leftText, currentTheme.textColor!),
               ),
               Expanded(
                 flex: 1,
-                child: GestureDetector(
-                  onTap: () => setState(() {
-                    isSlide = true;
-                  }),
-                  behavior: HitTestBehavior.translucent,
-                  child: Container(
-                    constraints: const BoxConstraints.expand(),
-                    child: Center(
-                      child: Text(widget.rightText,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500)),
-                    ),
-                  ),
-                ),
+                child: _detectorPart(
+                    true, widget.rightText, currentTheme.textColor!),
               ),
             ],
           ),

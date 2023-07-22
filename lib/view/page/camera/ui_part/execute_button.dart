@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/constant/custom_color.dart';
+import 'package:yagamy/constant/theme/execute_button_theme.dart';
 
 class ExecuteButton extends StatefulWidget {
   const ExecuteButton({
@@ -8,13 +8,13 @@ class ExecuteButton extends StatefulWidget {
     required this.title,
     required this.isActivated,
     required this.onTap,
-    this.textColor = Colors.white,
+    this.textColor,
   }) : super(key: key);
 
   final String title;
   final bool isActivated;
   final void Function() onTap;
-  final Color textColor;
+  final Color? textColor;
 
   @override
   State<ExecuteButton> createState() => _ExecuteButtonState();
@@ -47,6 +47,8 @@ class _Activated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ExecuteButtonTheme currentTheme =
+        Theme.of(context).extension<ExecuteButtonTheme>()!;
     return Material(
       elevation: 10,
       borderRadius: BorderRadius.circular(30),
@@ -56,7 +58,7 @@ class _Activated extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: CustomColor.executeButtonGradient,
+            colors: currentTheme.backgroundGradient!,
           ),
         ),
         width: 300,
@@ -65,8 +67,7 @@ class _Activated extends StatelessWidget {
           onTap: onTap,
           child: Center(
             child: Text(title,
-                style: const TextStyle(
-                    color: CustomColor.textColorOnExecuteButton, fontSize: 24)),
+                style: TextStyle(color: currentTheme.textColor!, fontSize: 24)),
           ),
         ),
       ),
@@ -87,10 +88,13 @@ class _Deactivated extends StatelessWidget {
         decoration: BoxDecoration(color: Theme.of(context).disabledColor),
         width: 300,
         height: 50,
-        child: const Center(
+        child: Center(
           child: Text('Not Ready.',
               style: TextStyle(
-                  color: CustomColor.textColorOnExecuteButton, fontSize: 24)),
+                  color: Theme.of(context)
+                      .extension<ExecuteButtonTheme>()!
+                      .textColor!,
+                  fontSize: 24)),
         ),
       ),
     );
