@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static final ThemeData defalutAppTheme = ThemeData(
     colorScheme: ColorScheme.light(
-      primary: const Color(0xff47d5e6),
+      primary: const Color.fromRGBO(71, 213, 230, 1.0),
       outline: Colors.grey.shade300,
     ),
     appBarTheme: const AppBarTheme(

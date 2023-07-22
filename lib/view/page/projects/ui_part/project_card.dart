@@ -26,12 +26,11 @@ class ProjectCard extends StatelessWidget {
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
-      //margin: EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(left: 10, top: 4, right: 10, bottom: 4),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () {},
         child: SizedBox(
-          width: 350,
           height: 110,
           child: Row(
             children: <Widget>[

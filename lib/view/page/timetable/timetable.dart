@@ -16,8 +16,6 @@ class _TimetablePageState extends State<TimetablePage>
     with SingleTickerProviderStateMixin {
   late final TabController _tabController;
 
-  static const double _tabSpace = 55;
-
   @override
   void initState() {
     super.initState();
@@ -33,7 +31,6 @@ class _TimetablePageState extends State<TimetablePage>
   @override
   Widget build(BuildContext context) {
     return Center(
-      //NestedScrollview
       child: NestedScrollView(
         physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -46,20 +43,8 @@ class _TimetablePageState extends State<TimetablePage>
                   controller: _tabController,
                   isScrollable: true,
                   tabs: const <Widget>[
-                    Tab(
-                      child: Row(children: [
-                        SizedBox(width: _tabSpace),
-                        Text('1日目'),
-                        SizedBox(width: _tabSpace)
-                      ]),
-                    ),
-                    Tab(
-                      child: Row(children: [
-                        SizedBox(width: _tabSpace),
-                        Text('2日目'),
-                        SizedBox(width: _tabSpace)
-                      ]),
-                    ),
+                    Tab(child: Text('1日目')),
+                    Tab(child: Text('2日目')),
                   ],
                 ),
               ),
@@ -81,7 +66,6 @@ class _TimetablePageState extends State<TimetablePage>
                       child: SlideButton(
                         leftText: 'メインステージ',
                         rightText: '14棟ホール',
-                        width: 320,
                         height: 30,
                       ),
                     ),
@@ -89,7 +73,7 @@ class _TimetablePageState extends State<TimetablePage>
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
                           return const PerformanceCard(
-                            title: 'title',
+                            title: '踊ってない夜を知らない',
                             imageUrl: 'https://picsum.photos/500/500',
                             time: '10:00-10:30',
                           );
@@ -101,7 +85,7 @@ class _TimetablePageState extends State<TimetablePage>
                 );
               },
             ),
-            SizedBox(),
+            const SizedBox()
           ],
         ),
       ),

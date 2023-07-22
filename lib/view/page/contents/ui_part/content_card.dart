@@ -19,11 +19,11 @@ class ContentCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
           side: BorderSide(color: Theme.of(context).colorScheme.outline),
           borderRadius: const BorderRadius.all(Radius.circular(8))),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
         child: SizedBox(
-          width: 350,
           height: 100,
           child: Row(
             children: <Widget>[

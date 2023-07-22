@@ -11,7 +11,6 @@ class SlideButton extends StatefulWidget {
     this.sliderColor = CustomColor.slideButtonSliderColor,
     this.backgroundBorderRadius = const BorderRadius.all(Radius.circular(9)),
     this.sliderBorderRadius = const BorderRadius.all(Radius.circular(7)),
-    required this.width,
     required this.height,
     this.margin = const EdgeInsets.only(left: 30, top: 5, right: 30, bottom: 5),
     super.key,
@@ -23,7 +22,6 @@ class SlideButton extends StatefulWidget {
   final Color sliderColor;
   final BorderRadiusGeometry? backgroundBorderRadius;
   final BorderRadiusGeometry? sliderBorderRadius;
-  final double width;
   final double height;
   final EdgeInsetsGeometry? margin;
 
@@ -52,18 +50,19 @@ class _SlideButtonState extends State<SlideButton> {
         color: widget.backgroundColor,
         borderRadius: widget.backgroundBorderRadius,
       ),
-      width: widget.width,
       height: widget.height,
       margin: widget.margin,
       child: Stack(
         alignment: Alignment.centerLeft,
         children: [
-          ShowSelectedBar(
-            isSlide: isSlide,
-            sliderColor: widget.sliderColor,
-            borderRadius: widget.sliderBorderRadius,
-            width: widget.width * 0.5,
-            height: widget.height * 0.8,
+          FractionallySizedBox(
+            widthFactor: 0.5,
+            child: ShowSelectedBar(
+              isSlide: isSlide,
+              sliderColor: widget.sliderColor,
+              borderRadius: widget.sliderBorderRadius,
+              height: widget.height * 0.85,
+            ),
           ),
           Row(
             children: [
@@ -72,7 +71,6 @@ class _SlideButtonState extends State<SlideButton> {
                 child: GestureDetector(
                   onTap: () => setState(() {
                     isSlide = false;
-                    print(context.size);
                   }),
                   behavior: HitTestBehavior.translucent,
                   child: Container(

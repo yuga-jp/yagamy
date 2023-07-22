@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class CustomColor {
   static const Color unSelectedSearchButtonColor =
-      Color.fromARGB(255, 238, 238, 238);
+      Color.fromRGBO(238, 238, 238, 1.0);
   static const Color textColorOnUnSelectedSearchButton =
-      Color.fromARGB(255, 66, 66, 66);
+      Color.fromRGBO(66, 66, 66, 1.0);
   static const Color selectedSearchButtonColor =
-      Color.fromARGB(255, 66, 66, 66);
+      Color.fromRGBO(66, 66, 66, 1.0);
   static const Color textColorOnSelectedSearchButton = Colors.white;
 
-  static const groupDisplayColor = Color.fromARGB(255, 97, 97, 97);
+  static const groupDisplayColor = Color.fromRGBO(97, 97, 97, 1.0);
 
   static const Color slideButtonBackgroundColor =
-      Color.fromARGB(255, 238, 238, 238);
+      Color.fromRGBO(238, 238, 238, 1.0);
   static const Color slideButtonSliderColor = Colors.white;
 
   static List<Color> executeButtonGradient = const <Color>[
