@@ -45,6 +45,8 @@ class _TimetablePageState extends State<TimetablePage>
                     Tab(child: Text('2日目')),
                   ],
                 ),
+                floating: true,
+                pinned: true,
               ),
             )
           ];
@@ -76,7 +78,7 @@ class _TimetablePageState extends State<TimetablePage>
                             time: '10:00-10:30',
                           );
                         },
-                        childCount: 3,
+                        childCount: 10,
                       ),
                     ),
                   ],

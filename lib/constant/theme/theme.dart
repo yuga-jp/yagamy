@@ -31,8 +31,10 @@ class AppTheme {
         thickness: 0.5,
       ),
       tabBarTheme: const TabBarTheme(
+        indicatorSize: TabBarIndicatorSize.label,
         dividerColor: Colors.transparent,
         labelColor: Colors.black,
+        labelPadding: EdgeInsets.only(left: 30, right: 30),
         labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
         unselectedLabelStyle:
             TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
