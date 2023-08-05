@@ -5,6 +5,7 @@ import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/contents/contents.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
+import 'package:yagamy/view/page/project_info/project_info.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
 
@@ -95,7 +96,13 @@ class ProjectsLocation extends BeamLocation<BeamState> {
           title: 'Projects',
           type: BeamPageType.noTransition,
           child: ProjectsPage(),
-        )
+        ),
+        const BeamPage(
+          key: ValueKey('project'),
+          title: 'Project',
+          type: BeamPageType.material,
+          child: ProjectInfoPage(),
+        ),
       ];
 }
 

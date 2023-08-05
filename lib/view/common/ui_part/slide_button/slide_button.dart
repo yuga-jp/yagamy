@@ -10,7 +10,7 @@ class SlideButton extends StatefulWidget {
     this.backgroundColor,
     this.sliderColor,
     this.backgroundBorderRadius = const BorderRadius.all(Radius.circular(9)),
-    this.sliderBorderRadius = const BorderRadius.all(Radius.circular(7)),
+    this.sliderBorderRadius = const BorderRadius.all(Radius.circular(9)),
     required this.height,
     this.margin = const EdgeInsets.only(left: 30, top: 5, right: 30, bottom: 5),
     super.key,
@@ -66,7 +66,7 @@ class _SlideButtonState extends State<SlideButton> {
         Theme.of(context).extension<SlideButtonTheme>()!;
     return Container(
       decoration: BoxDecoration(
-        color: widget.backgroundColor,
+        color: widget.backgroundColor ?? Theme.of(context).extension<SlideButtonTheme>()!.backgroundColor,
         borderRadius: widget.backgroundBorderRadius,
       ),
       height: widget.height,

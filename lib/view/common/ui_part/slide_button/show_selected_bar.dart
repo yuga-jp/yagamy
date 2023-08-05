@@ -68,7 +68,6 @@ class _ShowSelectedState extends State<ShowSelectedBar>
             borderRadius: widget.borderRadius,
           ),
           height: widget.height,
-          margin: const EdgeInsets.only(left: 5, right: 5),
         ),
       ),
     );

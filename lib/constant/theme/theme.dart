@@ -52,7 +52,7 @@ class AppTheme {
           groupDisplayColor: Color.fromRGBO(97, 97, 97, 1.0),
         ),
         SlideButtonTheme(
-          backgroundColor: Color.fromRGBO(238, 238, 238, 1.0),
+          backgroundColor: Color.fromRGBO(230, 230, 230, 1.0),
           sliderColor: Colors.white,
           textColor: Colors.black,
         ),
