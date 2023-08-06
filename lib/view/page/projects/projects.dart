@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:yagamy/view/page/projects/ui_part/search_button_bar.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
 
-class ProjectsPage extends StatefulWidget {
+class ProjectsPage extends ConsumerStatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
 
   @override
-  State<ProjectsPage> createState() => _ProjectsPageState();
+  ConsumerState<ProjectsPage> createState() => _ProjectsPageState();
 }
 
-class _ProjectsPageState extends State<ProjectsPage> {
+class _ProjectsPageState extends ConsumerState<ProjectsPage> {
   @override
   void initState() {
     super.initState();
@@ -42,12 +45,15 @@ class _ProjectsPageState extends State<ProjectsPage> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return const ProjectCard(
+                return ProjectCard(
                   title: 'Quiz30問！',
                   groupName: '慶應Quiz研究会',
                   imageUrl: 'https://picsum.photos/300/300',
                   placeName: '14棟-101教室',
                   time: '10:00-15:00',
+                  onTap: () {
+                    GoRouter.of(context).go('/projects/project');
+                  },
                 );
               },
               childCount: 10,

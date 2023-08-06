@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:yagamy/provider/provider.dart';
-import 'package:yagamy/router/routes.dart';
+import 'package:go_router/go_router.dart';
 
-class CustomNavigationBar extends ConsumerStatefulWidget {
-  const CustomNavigationBar({Key? key}) : super(key: key);
+class CustomNavigationBar extends StatefulWidget {
+  const CustomNavigationBar({
+    required this.navigationShell,
+    super.key,
+  });
+
+  final StatefulNavigationShell navigationShell;
 
   @override
-  ConsumerState<CustomNavigationBar> createState() =>
-      _CustomNavigationBarState();
+  State<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
 
-class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
+class _CustomNavigationBarState extends State<CustomNavigationBar> {
   @override
   void initState() {
     super.initState();
@@ -25,7 +27,6 @@ class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = ref.watch(selectedIndexProvider);
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -54,10 +55,9 @@ class _CustomNavigationBarState extends ConsumerState<CustomNavigationBar> {
         ),
       ],
       onTap: (index) {
-        ref.read(selectedIndexProvider.notifier).state = index;
-        navigationRouterDelegates[selectedIndex].update(rebuild: false);
+        widget.navigationShell.goBranch(index);
       },
-      currentIndex: selectedIndex,
+      currentIndex: widget.navigationShell.currentIndex,
       showUnselectedLabels: true,
     );
   }

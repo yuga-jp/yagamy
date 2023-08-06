@@ -10,6 +10,7 @@ class ProjectCard extends StatelessWidget {
     required this.imageUrl,
     this.placeName = '',
     this.time = '',
+    this.onTap,
   }) : super(key: key);
 
   final String title;
@@ -17,6 +18,7 @@ class ProjectCard extends StatelessWidget {
   final String imageUrl;
   final String placeName;
   final String time;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class ProjectCard extends StatelessWidget {
       margin: const EdgeInsets.only(left: 10, top: 4, right: 10, bottom: 4),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: SizedBox(
           height: 110,
           child: Row(
@@ -103,7 +105,8 @@ class _ProjectInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProjectCardTheme currentTheme = Theme.of(context).extension<ProjectCardTheme>()!;
+    final ProjectCardTheme currentTheme =
+        Theme.of(context).extension<ProjectCardTheme>()!;
     return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
       width: 240,
