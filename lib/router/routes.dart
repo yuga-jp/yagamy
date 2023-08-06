@@ -14,6 +14,10 @@ final GoRouter router = GoRouter(
   initialLocation: '/home',
   debugLogDiagnostics: true,
   routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      redirect: (_, __) => '/home',
+    ),
     StatefulShellRoute.indexedStack(
         builder: (
           BuildContext context,
@@ -40,13 +44,23 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: '/projects',
               pageBuilder: (BuildContext context, GoRouterState state) {
+                // if (GoRouter.of(context).canPop()) {
+                //   return const MaterialPage(child: ProjectsPage());
+                // }
                 return buildPageWithoutAnimation(
                   context: context,
                   state: state,
                   child: const ProjectsPage(),
                 );
               },
-              routes: <RouteBase>[],
+              routes: <RouteBase>[
+                GoRoute(
+                  path: 'project',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const ProjectInfoPage();
+                  },
+                )
+              ],
             ),
           ]),
           StatefulShellBranch(routes: <RouteBase>[

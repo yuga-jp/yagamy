@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:yagamy/provider/provider.dart';
 
 import 'package:yagamy/view/page/projects/ui_part/search_button_bar.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
@@ -52,6 +53,7 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
                   placeName: '14棟-101教室',
                   time: '10:00-15:00',
                   onTap: () {
+                    ref.read(showProjectAppBar.notifier).state = true;
                     GoRouter.of(context).go('/projects/project');
                   },
                 );
