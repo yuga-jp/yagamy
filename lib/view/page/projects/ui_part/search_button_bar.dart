@@ -73,7 +73,7 @@ class _SingleSearchBarState extends ConsumerState<_SingleSearchButtonBar> {
             children: [
               index == 0 ? const SizedBox(width: 10) : const SizedBox(width: 4),
               SearchButton(
-                title: widget.list[index].name,
+                searcherProp: widget.list[index],
                 onTap: () {
                   setState(() {
                     if (ref.watch(selectedSearcherProvider) ==

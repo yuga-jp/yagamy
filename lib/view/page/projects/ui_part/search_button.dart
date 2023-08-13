@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/provider/provider.dart';
 
 import 'package:yagamy/constant/theme/search_button_theme.dart';
@@ -7,11 +8,11 @@ import 'package:yagamy/constant/theme/search_button_theme.dart';
 class SearchButton extends ConsumerStatefulWidget {
   const SearchButton({
     Key? key,
-    required this.title,
+    required this.searcherProp,
     required this.onTap,
   }) : super(key: key);
 
-  final String title;
+  final SearcherProp searcherProp;
   final void Function() onTap;
 
   @override
@@ -32,15 +33,15 @@ class _SearchButtonState extends ConsumerState<SearchButton> {
   @override
   Widget build(BuildContext context) {
     final SearchButtonTheme currentTheme = Theme.of(context).extension<SearchButtonTheme>()!;
-    return ref.watch(selectedSearcherProvider).name == widget.title
+    return ref.watch(selectedSearcherProvider) == widget.searcherProp
         ? _Button(
-            widget.title,
+            widget.searcherProp.name,
             widget.onTap,
             currentTheme.selectedColor!,
             currentTheme.selectedTextColor!,
           )
         : _Button(
-            widget.title,
+            widget.searcherProp.name,
             widget.onTap,
             currentTheme.unSelectedColor!,
             currentTheme.unSelectedTextColor!,
