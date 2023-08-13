@@ -27,42 +27,39 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomScrollView(
-        physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-        slivers: <Widget>[
-          const SliverAppBar(
-            actions: <Widget>[
-              Icon(Icons.search),
-              SizedBox(width: 15),
-            ],
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(80),
-              child: SearchButtonBar(),
-            ),
-            floating: true,
-            pinned: true,
+    return CustomScrollView(
+      physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      slivers: <Widget>[
+        const SliverAppBar(
+          actions: <Widget>[
+            Icon(Icons.search),
+            SizedBox(width: 15),
+          ],
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(80),
+            child: SearchButtonBar(),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return ProjectCard(
-                  title: 'Quiz30問！',
-                  groupName: '慶應Quiz研究会',
-                  imageUrl: 'https://picsum.photos/300/300',
-                  placeName: '14棟-101教室',
-                  time: '10:00-15:00',
-                  onTap: () {
-                    ref.read(showProjectAppBar.notifier).state = true;
-                    GoRouter.of(context).go('/projects/project');
-                  },
-                );
-              },
-              childCount: 10,
-            ),
+          floating: true,
+          pinned: true,
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return ProjectCard(
+                title: 'Quiz30問！',
+                groupName: '慶應Quiz研究会',
+                imageUrl: 'https://picsum.photos/300/300',
+                placeName: '14棟-101教室',
+                time: '10:00-15:00',
+                onTap: () {
+                  GoRouter.of(context).go('/projects/project');
+                },
+              );
+            },
+            childCount: 10,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

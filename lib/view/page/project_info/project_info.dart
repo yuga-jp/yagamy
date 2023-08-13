@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
+
 class ProjectInfoPage extends StatefulWidget {
   const ProjectInfoPage({Key? key}) : super(key: key);
 
@@ -20,8 +22,19 @@ class _ProjectInfoPageState extends State<ProjectInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('a'),
+    return CustomScrollView(
+      physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      slivers: <Widget>[
+        SliverAppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+          ),
+          title: Text('aa'),
+        ),
+      ],
     );
   }
 }

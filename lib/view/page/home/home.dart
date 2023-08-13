@@ -20,6 +20,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox();
+    return const CustomScrollView(
+      physics: ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      slivers: <Widget>[
+        SliverAppBar(
+          title: Text('Yagamy'),
+          actions: <Widget>[
+            Icon(Icons.account_circle_outlined),
+            SizedBox(width: 15),
+          ],
+        )
+      ],
+    );
   }
 }
