@@ -41,9 +41,10 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
           floating: true,
           pinned: true,
         ),
-        SliverList(
+        SliverFixedExtentList(
+          itemExtent: 118.0,
           delegate: SliverChildBuilderDelegate(
-            (context, index) {
+            (BuildContext context, int index) {
               return ProjectCard(
                 title: 'Quiz30問！',
                 groupName: '慶應Quiz研究会',
