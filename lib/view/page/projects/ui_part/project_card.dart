@@ -81,7 +81,7 @@ class _ProjectInfo extends StatelessWidget {
       width: 125,
       child: Row(
         children: [
-          const Icon(Icons.place, size: 18),
+          const Icon(Icons.location_on_outlined, size: 18),
           Text(place,
               style: TextStyle(
                   color: textColor, fontSize: 15, fontWeight: FontWeight.w500))
@@ -120,7 +120,7 @@ class _ProjectInfo extends StatelessWidget {
           const SizedBox(height: 3),
           Row(
             children: [
-              Icon(Icons.group,
+              Icon(Icons.group_outlined,
                   size: 18, color: currentTheme.groupDisplayColor!),
               const SizedBox(width: 5),
               Text(groupName,

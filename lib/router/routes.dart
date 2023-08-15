@@ -37,16 +37,13 @@ final GoRouter router = GoRouter(
                   child: const HomePage(),
                 );
               },
-              routes: <RouteBase>[],
+              routes: const <RouteBase>[],
             ),
           ]),
           StatefulShellBranch(routes: <RouteBase>[
             GoRoute(
               path: '/projects',
               pageBuilder: (BuildContext context, GoRouterState state) {
-                // if (GoRouter.of(context).canPop()) {
-                //   return const MaterialPage(child: ProjectsPage());
-                // }
                 return buildPageWithoutAnimation(
                   context: context,
                   state: state,
@@ -73,7 +70,7 @@ final GoRouter router = GoRouter(
                   child: const TimetablePage(),
                 );
               },
-              routes: <RouteBase>[],
+              routes: const <RouteBase>[],
             ),
           ]),
           StatefulShellBranch(routes: <RouteBase>[
@@ -86,7 +83,7 @@ final GoRouter router = GoRouter(
                   child: const MapPage(),
                 );
               },
-              routes: <RouteBase>[],
+              routes: const <RouteBase>[],
             ),
           ]),
           StatefulShellBranch(routes: <RouteBase>[
@@ -99,7 +96,7 @@ final GoRouter router = GoRouter(
                   child: const ContentsPage(),
                 );
               },
-              routes: <RouteBase>[],
+              routes: const <RouteBase>[],
             ),
           ]),
         ])

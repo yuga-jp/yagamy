@@ -13,7 +13,7 @@ class ProjectInfoBody extends StatelessWidget {
     final ProjectInfoTheme currentTheme =
         Theme.of(context).extension<ProjectInfoTheme>()!;
 
-    const double leftPadding = 15;
+    const double horizontalIndent = 15;
 
     return SliverList(
       delegate: SliverChildBuilderDelegate(
@@ -22,24 +22,30 @@ class ProjectInfoBody extends StatelessWidget {
             case 0:
               return Padding(
                 padding: const EdgeInsets.only(
-                    left: leftPadding, top: 12, right: 0, bottom: 5),
+                    left: horizontalIndent,
+                    top: 12,
+                    right: horizontalIndent,
+                    bottom: 5),
                 child: Text(
                   project.title,
                   style: TextStyle(
                       color: currentTheme.titleColor,
-                      fontSize: 26,
+                      fontSize: 25,
                       fontWeight: FontWeight.w700),
                 ),
               );
             case 1:
               return Padding(
                 padding: const EdgeInsets.only(
-                    left: leftPadding, top: 5, right: 0, bottom: 5),
+                    left: horizontalIndent,
+                    top: 5,
+                    right: horizontalIndent,
+                    bottom: 5),
                 child: Text(
                   project.shortIntro,
                   style: TextStyle(
                     color: currentTheme.shortIntroColor,
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -65,15 +71,15 @@ class ProjectInfoBody extends StatelessWidget {
             case 3:
               return Padding(
                 padding: const EdgeInsets.only(
-                  left: leftPadding,
+                  left: horizontalIndent,
                   top: 3,
-                  right: 0,
+                  right: horizontalIndent,
                   bottom: 3,
                 ),
                 child: Row(
                   children: [
                     Icon(
-                      Icons.group,
+                      Icons.group_outlined,
                       size: 18,
                       color: currentTheme.groupNameColor,
                     ),
@@ -86,6 +92,74 @@ class ProjectInfoBody extends StatelessWidget {
                           fontWeight: FontWeight.w300),
                     )
                   ],
+                ),
+              );
+            case 4:
+              return Padding(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  top: 3,
+                  right: 23,
+                  bottom: 3,
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2.5, right: 3),
+                      child: Icon(
+                        Icons.location_on_outlined,
+                        size: 19,
+                        color: currentTheme.timePlaceColor,
+                      ),
+                    ),
+                    Text(
+                      project.place,
+                      style: TextStyle(
+                        color: currentTheme.timePlaceColor,
+                        fontSize: 19,
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2.5, right: 3),
+                      child: Icon(
+                        Icons.schedule_outlined,
+                        size: 19,
+                        color: currentTheme.timePlaceColor,
+                      ),
+                    ),
+                    Text(
+                      project.time,
+                      style: TextStyle(
+                        color: currentTheme.timePlaceColor,
+                        fontSize: 19,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            case 5:
+              return const Divider(
+                height: 10,
+                indent: horizontalIndent,
+                endIndent: horizontalIndent,
+              );
+            case 6:
+              return Padding(
+                padding: const EdgeInsets.only(
+                  left: horizontalIndent,
+                  top: 10,
+                  right: horizontalIndent,
+                  bottom: 20,
+                ),
+                child: Text(
+                  project.intro,
+                  style: TextStyle(
+                    color: currentTheme.introColor,
+                    fontSize: 14,
+                    height: 1.7,
+                  ),
                 ),
               );
             default:

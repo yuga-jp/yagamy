@@ -58,6 +58,9 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         widget.navigationShell.goBranch(index);
       },
       currentIndex: widget.navigationShell.currentIndex,
+      type: BottomNavigationBarType.fixed,
+      selectedFontSize: 13,
+      unselectedFontSize: 13,
       showUnselectedLabels: true,
     );
   }

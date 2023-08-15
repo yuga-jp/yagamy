@@ -8,28 +8,25 @@ import 'package:yagamy/constant/theme/project_info_theme.dart';
 
 class AppTheme {
   static final ThemeData defalutAppTheme = ThemeData(
-    colorScheme: ColorScheme.light(
-      primary: const Color.fromRGBO(71, 213, 230, 1.0),
-      outline: Colors.grey.shade300,
+    colorScheme: const ColorScheme.light(
+      primary: Color.fromRGBO(71, 213, 230, 1.0),
+      outline: Color.fromRGBO(224, 224, 224, 1),
     ),
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
-      elevation: 0.5,
+      elevation: 1.0,
       iconTheme: IconThemeData(color: Colors.black, size: 30),
       titleTextStyle: TextStyle(
         color: Colors.black,
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: FontWeight.w600,
       ),
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-    ),
     cardTheme: const CardTheme(color: Colors.white),
     dividerTheme: const DividerThemeData(
-      color: Colors.black,
-      space: 30,
-      thickness: 0.5,
+      color: Color.fromRGBO(140, 140, 140, 1.0),
+      thickness: 2.0,
     ),
     tabBarTheme: const TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
