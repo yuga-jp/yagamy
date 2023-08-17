@@ -25,34 +25,38 @@ class _ProjectInfoPageState extends State<ProjectInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-      slivers: <Widget>[
-        SliverAppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
+    return Material(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: CustomScrollView(
+        physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        slivers: <Widget>[
+          SliverAppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                GoRouter.of(context).pop();
+              },
+            ),
+            title: const Text('企画紹介'),
+            centerTitle: true,
+            floating: true,
           ),
-          title: const Text('企画紹介'),
-          centerTitle: true,
-        ),
-        const ProjectInfoBody(
-          Project(
-            title: '有名人企画',
-            place: 'メインステージ',
-            time: '日 / 15:00 - 16:00',
-            groupName: '矢上祭実行委員会ステージ局',
-            shortIntro: 'まつきりなさんによる矢上祭オリジナルトークショー！',
-            intro:
-                '矢上祭名物、有名人企画！\n今回のゲストは…\nまつきりなさん！\n\nヒロインを演じた「触れた、だけだった。」はYouTubeで1,300万PVを突破し話題に。\nインスタストーリーやYouTubeでの恋愛相談返しや美容コンテンツも人気を博しています！\n\nそんなまつきりなさんに、今回なんと質問も大募集しております！矢上祭公式Twitterから質問どしどし応募しております！\nぜひ当日お越しください！',
-            detailIntro: '',
-            groupIntro: '',
-            mainImageUrl: 'https://picsum.photos/300/400',
+          const ProjectInfoBody(
+            Project(
+              title: '有名人企画',
+              place: 'メインステージ',
+              time: '日 / 15:00 - 16:00',
+              groupName: '矢上祭実行委員会ステージ局',
+              shortIntro: 'まつきりなさんによる矢上祭オリジナルトークショー！',
+              intro:
+                  '矢上祭名物、有名人企画！\n今回のゲストは…\nまつきりなさん！\n\nヒロインを演じた「触れた、だけだった。」はYouTubeで1,300万PVを突破し話題に。\nインスタストーリーやYouTubeでの恋愛相談返しや美容コンテンツも人気を博しています！\n\nそんなまつきりなさんに、今回なんと質問も大募集しております！矢上祭公式Twitterから質問どしどし応募しております！\nぜひ当日お越しください！',
+              detailIntro: '',
+              groupIntro: '',
+              mainImageUrl: 'https://picsum.photos/300/400',
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
