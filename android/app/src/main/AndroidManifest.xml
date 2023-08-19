@@ -33,4 +33,19 @@
     </application>
 
     <uses-permission android:name="android.permission.NFC" />
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="twitter" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="instagram" />
+        </intent>
+    </queries>
 </manifest>

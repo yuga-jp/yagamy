@@ -26,9 +26,12 @@ mixin _$Project {
   String get groupName => throw _privateConstructorUsedError;
   String get shortIntro => throw _privateConstructorUsedError;
   String get intro => throw _privateConstructorUsedError;
-  String get detailIntro => throw _privateConstructorUsedError;
+  String get introExtension => throw _privateConstructorUsedError;
   String get groupIntro => throw _privateConstructorUsedError;
   String get mainImageUrl => throw _privateConstructorUsedError;
+  String get twitterUrl => throw _privateConstructorUsedError;
+  String get instagramUrl => throw _privateConstructorUsedError;
+  String get homepageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,9 +50,12 @@ abstract class $ProjectCopyWith<$Res> {
       String groupName,
       String shortIntro,
       String intro,
-      String detailIntro,
+      String introExtension,
       String groupIntro,
-      String mainImageUrl});
+      String mainImageUrl,
+      String twitterUrl,
+      String instagramUrl,
+      String homepageUrl});
 }
 
 /// @nodoc
@@ -71,9 +77,12 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
-    Object? detailIntro = null,
+    Object? introExtension = null,
     Object? groupIntro = null,
     Object? mainImageUrl = null,
+    Object? twitterUrl = null,
+    Object? instagramUrl = null,
+    Object? homepageUrl = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -100,9 +109,9 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.intro
           : intro // ignore: cast_nullable_to_non_nullable
               as String,
-      detailIntro: null == detailIntro
-          ? _value.detailIntro
-          : detailIntro // ignore: cast_nullable_to_non_nullable
+      introExtension: null == introExtension
+          ? _value.introExtension
+          : introExtension // ignore: cast_nullable_to_non_nullable
               as String,
       groupIntro: null == groupIntro
           ? _value.groupIntro
@@ -111,6 +120,18 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
       mainImageUrl: null == mainImageUrl
           ? _value.mainImageUrl
           : mainImageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      twitterUrl: null == twitterUrl
+          ? _value.twitterUrl
+          : twitterUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      instagramUrl: null == instagramUrl
+          ? _value.instagramUrl
+          : instagramUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      homepageUrl: null == homepageUrl
+          ? _value.homepageUrl
+          : homepageUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -130,9 +151,12 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String groupName,
       String shortIntro,
       String intro,
-      String detailIntro,
+      String introExtension,
       String groupIntro,
-      String mainImageUrl});
+      String mainImageUrl,
+      String twitterUrl,
+      String instagramUrl,
+      String homepageUrl});
 }
 
 /// @nodoc
@@ -151,9 +175,12 @@ class __$$_ProjectCopyWithImpl<$Res>
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
-    Object? detailIntro = null,
+    Object? introExtension = null,
     Object? groupIntro = null,
     Object? mainImageUrl = null,
+    Object? twitterUrl = null,
+    Object? instagramUrl = null,
+    Object? homepageUrl = null,
   }) {
     return _then(_$_Project(
       title: null == title
@@ -180,9 +207,9 @@ class __$$_ProjectCopyWithImpl<$Res>
           ? _value.intro
           : intro // ignore: cast_nullable_to_non_nullable
               as String,
-      detailIntro: null == detailIntro
-          ? _value.detailIntro
-          : detailIntro // ignore: cast_nullable_to_non_nullable
+      introExtension: null == introExtension
+          ? _value.introExtension
+          : introExtension // ignore: cast_nullable_to_non_nullable
               as String,
       groupIntro: null == groupIntro
           ? _value.groupIntro
@@ -191,6 +218,18 @@ class __$$_ProjectCopyWithImpl<$Res>
       mainImageUrl: null == mainImageUrl
           ? _value.mainImageUrl
           : mainImageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      twitterUrl: null == twitterUrl
+          ? _value.twitterUrl
+          : twitterUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      instagramUrl: null == instagramUrl
+          ? _value.instagramUrl
+          : instagramUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      homepageUrl: null == homepageUrl
+          ? _value.homepageUrl
+          : homepageUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -206,9 +245,12 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       required this.groupName,
       required this.shortIntro,
       required this.intro,
-      required this.detailIntro,
+      required this.introExtension,
       required this.groupIntro,
-      required this.mainImageUrl});
+      required this.mainImageUrl,
+      required this.twitterUrl,
+      required this.instagramUrl,
+      required this.homepageUrl});
 
   factory _$_Project.fromJson(Map<String, dynamic> json) =>
       _$$_ProjectFromJson(json);
@@ -226,15 +268,21 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   @override
   final String intro;
   @override
-  final String detailIntro;
+  final String introExtension;
   @override
   final String groupIntro;
   @override
   final String mainImageUrl;
+  @override
+  final String twitterUrl;
+  @override
+  final String instagramUrl;
+  @override
+  final String homepageUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Project(title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, detailIntro: $detailIntro, groupIntro: $groupIntro, mainImageUrl: $mainImageUrl)';
+    return 'Project(title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, mainImageUrl: $mainImageUrl, twitterUrl: $twitterUrl, instagramUrl: $instagramUrl, homepageUrl: $homepageUrl)';
   }
 
   @override
@@ -248,9 +296,12 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('shortIntro', shortIntro))
       ..add(DiagnosticsProperty('intro', intro))
-      ..add(DiagnosticsProperty('detailIntro', detailIntro))
+      ..add(DiagnosticsProperty('introExtension', introExtension))
       ..add(DiagnosticsProperty('groupIntro', groupIntro))
-      ..add(DiagnosticsProperty('mainImageUrl', mainImageUrl));
+      ..add(DiagnosticsProperty('mainImageUrl', mainImageUrl))
+      ..add(DiagnosticsProperty('twitterUrl', twitterUrl))
+      ..add(DiagnosticsProperty('instagramUrl', instagramUrl))
+      ..add(DiagnosticsProperty('homepageUrl', homepageUrl));
   }
 
   @override
@@ -266,18 +317,36 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
             (identical(other.shortIntro, shortIntro) ||
                 other.shortIntro == shortIntro) &&
             (identical(other.intro, intro) || other.intro == intro) &&
-            (identical(other.detailIntro, detailIntro) ||
-                other.detailIntro == detailIntro) &&
+            (identical(other.introExtension, introExtension) ||
+                other.introExtension == introExtension) &&
             (identical(other.groupIntro, groupIntro) ||
                 other.groupIntro == groupIntro) &&
             (identical(other.mainImageUrl, mainImageUrl) ||
-                other.mainImageUrl == mainImageUrl));
+                other.mainImageUrl == mainImageUrl) &&
+            (identical(other.twitterUrl, twitterUrl) ||
+                other.twitterUrl == twitterUrl) &&
+            (identical(other.instagramUrl, instagramUrl) ||
+                other.instagramUrl == instagramUrl) &&
+            (identical(other.homepageUrl, homepageUrl) ||
+                other.homepageUrl == homepageUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, place, time, groupName,
-      shortIntro, intro, detailIntro, groupIntro, mainImageUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      title,
+      place,
+      time,
+      groupName,
+      shortIntro,
+      intro,
+      introExtension,
+      groupIntro,
+      mainImageUrl,
+      twitterUrl,
+      instagramUrl,
+      homepageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -301,9 +370,12 @@ abstract class _Project implements Project {
       required final String groupName,
       required final String shortIntro,
       required final String intro,
-      required final String detailIntro,
+      required final String introExtension,
       required final String groupIntro,
-      required final String mainImageUrl}) = _$_Project;
+      required final String mainImageUrl,
+      required final String twitterUrl,
+      required final String instagramUrl,
+      required final String homepageUrl}) = _$_Project;
 
   factory _Project.fromJson(Map<String, dynamic> json) = _$_Project.fromJson;
 
@@ -320,11 +392,17 @@ abstract class _Project implements Project {
   @override
   String get intro;
   @override
-  String get detailIntro;
+  String get introExtension;
   @override
   String get groupIntro;
   @override
   String get mainImageUrl;
+  @override
+  String get twitterUrl;
+  @override
+  String get instagramUrl;
+  @override
+  String get homepageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectCopyWith<_$_Project> get copyWith =>

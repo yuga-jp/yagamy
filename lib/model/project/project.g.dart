@@ -13,9 +13,12 @@ _$_Project _$$_ProjectFromJson(Map<String, dynamic> json) => _$_Project(
       groupName: json['groupName'] as String,
       shortIntro: json['shortIntro'] as String,
       intro: json['intro'] as String,
-      detailIntro: json['detailIntro'] as String,
+      introExtension: json['introExtension'] as String,
       groupIntro: json['groupIntro'] as String,
       mainImageUrl: json['mainImageUrl'] as String,
+      twitterUrl: json['twitterUrl'] as String,
+      instagramUrl: json['instagramUrl'] as String,
+      homepageUrl: json['homepageUrl'] as String,
     );
 
 Map<String, dynamic> _$$_ProjectToJson(_$_Project instance) =>
@@ -26,7 +29,10 @@ Map<String, dynamic> _$$_ProjectToJson(_$_Project instance) =>
       'groupName': instance.groupName,
       'shortIntro': instance.shortIntro,
       'intro': instance.intro,
-      'detailIntro': instance.detailIntro,
+      'introExtension': instance.introExtension,
       'groupIntro': instance.groupIntro,
       'mainImageUrl': instance.mainImageUrl,
+      'twitterUrl': instance.twitterUrl,
+      'instagramUrl': instance.instagramUrl,
+      'homepageUrl': instance.homepageUrl,
     };

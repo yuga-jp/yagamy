@@ -14,9 +14,12 @@ class Project with _$Project {
     required String groupName,
     required String shortIntro,
     required String intro,
-    required String detailIntro,
+    required String introExtension,
     required String groupIntro,
     required String mainImageUrl,
+    required String twitterUrl,
+    required String instagramUrl,
+    required String homepageUrl,
   }) = _Project;
 
   factory Project.fromJson(Map<String, Object?> json) =>

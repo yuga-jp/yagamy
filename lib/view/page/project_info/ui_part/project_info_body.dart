@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/model/project/project.dart';
+import 'package:yagamy/utility/url_generator.dart';
+import 'package:yagamy/utility/url_launcher_helper.dart';
 
 class ProjectInfoBody extends StatelessWidget {
   const ProjectInfoBody(this.project, {super.key});
@@ -151,10 +156,10 @@ class ProjectInfoBody extends StatelessWidget {
                   left: horizontalIndent,
                   top: 10,
                   right: horizontalIndent,
-                  bottom: 20,
+                  bottom: 18,
                 ),
                 child: Text(
-                  project.intro,
+                  '${project.intro}\n${project.introExtension}',
                   style: TextStyle(
                     color: currentTheme.introColor,
                     fontSize: 14,
@@ -162,6 +167,90 @@ class ProjectInfoBody extends StatelessWidget {
                   ),
                 ),
               );
+            case 7:
+              if (project.groupIntro.isNotEmpty) {
+                return Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(),
+                    child: Text(
+                      project.groupName,
+                      style: TextStyle(
+                          color: currentTheme.titleColor,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                );
+              }
+              return null;
+            case 8:
+              return Padding(
+                padding: const EdgeInsets.only(
+                  left: horizontalIndent,
+                  top: 10,
+                  right: horizontalIndent,
+                  bottom: 12,
+                ),
+                child: Text(
+                  project.groupIntro,
+                  style: TextStyle(
+                    color: currentTheme.introColor,
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
+                ),
+              );
+            case 9:
+              if (project.twitterUrl.isNotEmpty ||
+                  project.instagramUrl.isNotEmpty ||
+                  project.homepageUrl.isNotEmpty) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    project.twitterUrl.isNotEmpty
+                        ? Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: IconButton(
+                              icon: SvgPicture.asset(
+                                'assets/logo/x-twitter.svg',
+                                width: 22,
+                                height: 22,
+                                colorFilter: ColorFilter.mode(
+                                    currentTheme.titleColor!, BlendMode.dst),
+                              ),
+                              onPressed: () {
+                                launchUrlTwitter('keio_seiken');
+                              },
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                    project.instagramUrl.isNotEmpty
+                        ? Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: IconButton(
+                              icon: const FaIcon(FontAwesomeIcons.instagram),
+                              onPressed: () {
+                                launchUrlInstagram('keio_piano_society');
+                              },
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                    project.homepageUrl.isNotEmpty
+                        ? Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: IconButton(
+                              icon: const Icon(Icons.web),
+                              onPressed: () {
+                                launchUrl(Uri.parse('https://o-keis.net/'));
+                              },
+                              iconSize: 28,
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                  ],
+                );
+              }
+              return null;
             default:
               return null;
           }
