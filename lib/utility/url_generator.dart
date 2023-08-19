@@ -4,7 +4,7 @@ class UrlGenerator {
   final String userId;
 
   Uri toTwitterScheme() {
-    return Uri.parse('twitter://user?id=$userId');
+    return Uri.parse('twitter://user?screen_name=$userId');
   }
 
   Uri toTwitterHttpsScheme() {

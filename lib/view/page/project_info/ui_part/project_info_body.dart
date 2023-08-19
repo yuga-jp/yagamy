@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/utility/url_generator.dart';
 import 'package:yagamy/utility/url_launcher_helper.dart';
 
 class ProjectInfoBody extends StatelessWidget {
