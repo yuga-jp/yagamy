@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yagamy/constant/theme/search_button_theme.dart';
 import 'package:yagamy/constant/theme/execute_button_theme.dart';
 import 'package:yagamy/constant/theme/project_card_theme.dart';
+import 'package:yagamy/constant/theme/shimmer_theme.dart';
 import 'package:yagamy/constant/theme/slide_button_theme.dart';
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 
@@ -77,7 +78,16 @@ class AppTheme {
         groupNameColor: Color.fromRGBO(97, 97, 97, 1.0),
         timePlaceColor: Colors.black,
         introColor: Colors.black,
-      )
+      ),
+      ShimmerTheme(
+        shimmerGradient: LinearGradient(
+          colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+          stops: [0.1, 0.3, 0.4],
+          begin: Alignment(-1.0, -0.3),
+          end: Alignment(1.0, 0.3),
+          tileMode: TileMode.clamp,
+        ),
+      ),
     ],
   );
 }

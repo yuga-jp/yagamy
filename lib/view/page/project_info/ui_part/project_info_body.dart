@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -200,13 +201,13 @@ class ProjectInfoBody extends StatelessWidget {
                 ),
               );
             case 9:
-              if (project.twitterUrl.isNotEmpty ||
-                  project.instagramUrl.isNotEmpty ||
+              if (project.twitterId.isNotEmpty ||
+                  project.instagramId.isNotEmpty ||
                   project.homepageUrl.isNotEmpty) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    project.twitterUrl.isNotEmpty
+                    project.twitterId.isNotEmpty
                         ? Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
                             child: IconButton(
@@ -223,7 +224,7 @@ class ProjectInfoBody extends StatelessWidget {
                             ),
                           )
                         : const SizedBox.shrink(),
-                    project.instagramUrl.isNotEmpty
+                    project.instagramId.isNotEmpty
                         ? Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
                             child: IconButton(

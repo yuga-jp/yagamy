@@ -26,7 +26,7 @@ class ExecuteButtonTheme extends ThemeExtension<ExecuteButtonTheme> {
       return this;
     }
     return ExecuteButtonTheme(
-      backgroundGradient: null,
+      backgroundGradient: backgroundGradient,
       textColor: Color.lerp(textColor, other.textColor, t),
     );
   }

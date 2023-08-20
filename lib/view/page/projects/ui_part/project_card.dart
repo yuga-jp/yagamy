@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:yagamy/constant/theme/project_card_theme.dart';
+import 'package:yagamy/model/project/project.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
     Key? key,
-    required this.title,
-    this.groupName = '',
-    required this.imageUrl,
-    this.placeName = '',
-    this.time = '',
+    required this.project,
     this.onTap,
   }) : super(key: key);
 
-  final String title;
-  final String groupName;
-  final String imageUrl;
-  final String placeName;
-  final String time;
+  final Project project;
   final void Function()? onTap;
 
   @override
@@ -37,8 +30,8 @@ class ProjectCard extends StatelessWidget {
           height: 110,
           child: Row(
             children: <Widget>[
-              _ProjectImage(imageUrl),
-              _ProjectInfo(title, groupName, placeName, time),
+              _ProjectImage(project.thumbnailUrl),
+              _ProjectInfo(project.title, project.groupName, project.place, project.time),
             ],
           ),
         ),

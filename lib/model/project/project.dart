@@ -16,9 +16,10 @@ class Project with _$Project {
     required String intro,
     required String introExtension,
     required String groupIntro,
+    required String thumbnailUrl,
     required String mainImageUrl,
-    required String twitterUrl,
-    required String instagramUrl,
+    required String twitterId,
+    required String instagramId,
     required String homepageUrl,
   }) = _Project;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yagamy/model/searcher_prop.dart';
-import 'package:yagamy/provider/provider.dart';
+import 'package:yagamy/provider/selected_searcher_provider.dart';
 
 import 'package:yagamy/constant/theme/search_button_theme.dart';
 

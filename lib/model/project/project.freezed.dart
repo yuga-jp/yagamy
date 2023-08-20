@@ -28,9 +28,10 @@ mixin _$Project {
   String get intro => throw _privateConstructorUsedError;
   String get introExtension => throw _privateConstructorUsedError;
   String get groupIntro => throw _privateConstructorUsedError;
+  String get thumbnailUrl => throw _privateConstructorUsedError;
   String get mainImageUrl => throw _privateConstructorUsedError;
-  String get twitterUrl => throw _privateConstructorUsedError;
-  String get instagramUrl => throw _privateConstructorUsedError;
+  String get twitterId => throw _privateConstructorUsedError;
+  String get instagramId => throw _privateConstructorUsedError;
   String get homepageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,9 +53,10 @@ abstract class $ProjectCopyWith<$Res> {
       String intro,
       String introExtension,
       String groupIntro,
+      String thumbnailUrl,
       String mainImageUrl,
-      String twitterUrl,
-      String instagramUrl,
+      String twitterId,
+      String instagramId,
       String homepageUrl});
 }
 
@@ -79,9 +81,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? intro = null,
     Object? introExtension = null,
     Object? groupIntro = null,
+    Object? thumbnailUrl = null,
     Object? mainImageUrl = null,
-    Object? twitterUrl = null,
-    Object? instagramUrl = null,
+    Object? twitterId = null,
+    Object? instagramId = null,
     Object? homepageUrl = null,
   }) {
     return _then(_value.copyWith(
@@ -117,17 +120,21 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.groupIntro
           : groupIntro // ignore: cast_nullable_to_non_nullable
               as String,
+      thumbnailUrl: null == thumbnailUrl
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       mainImageUrl: null == mainImageUrl
           ? _value.mainImageUrl
           : mainImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      twitterUrl: null == twitterUrl
-          ? _value.twitterUrl
-          : twitterUrl // ignore: cast_nullable_to_non_nullable
+      twitterId: null == twitterId
+          ? _value.twitterId
+          : twitterId // ignore: cast_nullable_to_non_nullable
               as String,
-      instagramUrl: null == instagramUrl
-          ? _value.instagramUrl
-          : instagramUrl // ignore: cast_nullable_to_non_nullable
+      instagramId: null == instagramId
+          ? _value.instagramId
+          : instagramId // ignore: cast_nullable_to_non_nullable
               as String,
       homepageUrl: null == homepageUrl
           ? _value.homepageUrl
@@ -153,9 +160,10 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String intro,
       String introExtension,
       String groupIntro,
+      String thumbnailUrl,
       String mainImageUrl,
-      String twitterUrl,
-      String instagramUrl,
+      String twitterId,
+      String instagramId,
       String homepageUrl});
 }
 
@@ -177,9 +185,10 @@ class __$$_ProjectCopyWithImpl<$Res>
     Object? intro = null,
     Object? introExtension = null,
     Object? groupIntro = null,
+    Object? thumbnailUrl = null,
     Object? mainImageUrl = null,
-    Object? twitterUrl = null,
-    Object? instagramUrl = null,
+    Object? twitterId = null,
+    Object? instagramId = null,
     Object? homepageUrl = null,
   }) {
     return _then(_$_Project(
@@ -215,17 +224,21 @@ class __$$_ProjectCopyWithImpl<$Res>
           ? _value.groupIntro
           : groupIntro // ignore: cast_nullable_to_non_nullable
               as String,
+      thumbnailUrl: null == thumbnailUrl
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       mainImageUrl: null == mainImageUrl
           ? _value.mainImageUrl
           : mainImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      twitterUrl: null == twitterUrl
-          ? _value.twitterUrl
-          : twitterUrl // ignore: cast_nullable_to_non_nullable
+      twitterId: null == twitterId
+          ? _value.twitterId
+          : twitterId // ignore: cast_nullable_to_non_nullable
               as String,
-      instagramUrl: null == instagramUrl
-          ? _value.instagramUrl
-          : instagramUrl // ignore: cast_nullable_to_non_nullable
+      instagramId: null == instagramId
+          ? _value.instagramId
+          : instagramId // ignore: cast_nullable_to_non_nullable
               as String,
       homepageUrl: null == homepageUrl
           ? _value.homepageUrl
@@ -247,9 +260,10 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       required this.intro,
       required this.introExtension,
       required this.groupIntro,
+      required this.thumbnailUrl,
       required this.mainImageUrl,
-      required this.twitterUrl,
-      required this.instagramUrl,
+      required this.twitterId,
+      required this.instagramId,
       required this.homepageUrl});
 
   factory _$_Project.fromJson(Map<String, dynamic> json) =>
@@ -272,17 +286,19 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   @override
   final String groupIntro;
   @override
+  final String thumbnailUrl;
+  @override
   final String mainImageUrl;
   @override
-  final String twitterUrl;
+  final String twitterId;
   @override
-  final String instagramUrl;
+  final String instagramId;
   @override
   final String homepageUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Project(title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, mainImageUrl: $mainImageUrl, twitterUrl: $twitterUrl, instagramUrl: $instagramUrl, homepageUrl: $homepageUrl)';
+    return 'Project(title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
   }
 
   @override
@@ -298,9 +314,10 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       ..add(DiagnosticsProperty('intro', intro))
       ..add(DiagnosticsProperty('introExtension', introExtension))
       ..add(DiagnosticsProperty('groupIntro', groupIntro))
+      ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
       ..add(DiagnosticsProperty('mainImageUrl', mainImageUrl))
-      ..add(DiagnosticsProperty('twitterUrl', twitterUrl))
-      ..add(DiagnosticsProperty('instagramUrl', instagramUrl))
+      ..add(DiagnosticsProperty('twitterId', twitterId))
+      ..add(DiagnosticsProperty('instagramId', instagramId))
       ..add(DiagnosticsProperty('homepageUrl', homepageUrl));
   }
 
@@ -321,12 +338,14 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
                 other.introExtension == introExtension) &&
             (identical(other.groupIntro, groupIntro) ||
                 other.groupIntro == groupIntro) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.mainImageUrl, mainImageUrl) ||
                 other.mainImageUrl == mainImageUrl) &&
-            (identical(other.twitterUrl, twitterUrl) ||
-                other.twitterUrl == twitterUrl) &&
-            (identical(other.instagramUrl, instagramUrl) ||
-                other.instagramUrl == instagramUrl) &&
+            (identical(other.twitterId, twitterId) ||
+                other.twitterId == twitterId) &&
+            (identical(other.instagramId, instagramId) ||
+                other.instagramId == instagramId) &&
             (identical(other.homepageUrl, homepageUrl) ||
                 other.homepageUrl == homepageUrl));
   }
@@ -343,9 +362,10 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       intro,
       introExtension,
       groupIntro,
+      thumbnailUrl,
       mainImageUrl,
-      twitterUrl,
-      instagramUrl,
+      twitterId,
+      instagramId,
       homepageUrl);
 
   @JsonKey(ignore: true)
@@ -372,9 +392,10 @@ abstract class _Project implements Project {
       required final String intro,
       required final String introExtension,
       required final String groupIntro,
+      required final String thumbnailUrl,
       required final String mainImageUrl,
-      required final String twitterUrl,
-      required final String instagramUrl,
+      required final String twitterId,
+      required final String instagramId,
       required final String homepageUrl}) = _$_Project;
 
   factory _Project.fromJson(Map<String, dynamic> json) = _$_Project.fromJson;
@@ -396,11 +417,13 @@ abstract class _Project implements Project {
   @override
   String get groupIntro;
   @override
+  String get thumbnailUrl;
+  @override
   String get mainImageUrl;
   @override
-  String get twitterUrl;
+  String get twitterId;
   @override
-  String get instagramUrl;
+  String get instagramId;
   @override
   String get homepageUrl;
   @override
