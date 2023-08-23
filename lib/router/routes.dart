@@ -19,15 +19,16 @@ final GoRouter router = GoRouter(
       redirect: (_, __) => '/home',
     ),
     StatefulShellRoute.indexedStack(
-        builder: (
-          BuildContext context,
-          GoRouterState state,
-          StatefulNavigationShell navigationShell,
-        ) {
-          return NavigationPages(navigationShell: navigationShell);
-        },
-        branches: <StatefulShellBranch>[
-          StatefulShellBranch(routes: <RouteBase>[
+      builder: (
+        BuildContext context,
+        GoRouterState state,
+        StatefulNavigationShell navigationShell,
+      ) {
+        return NavigationPages(navigationShell: navigationShell);
+      },
+      branches: <StatefulShellBranch>[
+        StatefulShellBranch(
+          routes: <RouteBase>[
             GoRoute(
               path: '/home',
               pageBuilder: (BuildContext context, GoRouterState state) {
@@ -39,8 +40,10 @@ final GoRouter router = GoRouter(
               },
               routes: const <RouteBase>[],
             ),
-          ]),
-          StatefulShellBranch(routes: <RouteBase>[
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
             GoRoute(
               path: '/projects',
               pageBuilder: (BuildContext context, GoRouterState state) {
@@ -52,15 +55,19 @@ final GoRouter router = GoRouter(
               },
               routes: <RouteBase>[
                 GoRoute(
-                  path: 'project',
+                  path: 'project/:id',
                   builder: (BuildContext context, GoRouterState state) {
-                    return const ProjectInfoPage();
+                    return ProjectInfoPage(
+                      int.tryParse(state.pathParameters['id']!),
+                    );
                   },
                 )
               ],
             ),
-          ]),
-          StatefulShellBranch(routes: <RouteBase>[
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
             GoRoute(
               path: '/timetable',
               pageBuilder: (BuildContext context, GoRouterState state) {
@@ -72,8 +79,10 @@ final GoRouter router = GoRouter(
               },
               routes: const <RouteBase>[],
             ),
-          ]),
-          StatefulShellBranch(routes: <RouteBase>[
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
             GoRoute(
               path: '/map',
               pageBuilder: (BuildContext context, GoRouterState state) {
@@ -85,8 +94,10 @@ final GoRouter router = GoRouter(
               },
               routes: const <RouteBase>[],
             ),
-          ]),
-          StatefulShellBranch(routes: <RouteBase>[
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
             GoRoute(
               path: '/contents',
               pageBuilder: (BuildContext context, GoRouterState state) {
@@ -98,8 +109,10 @@ final GoRouter router = GoRouter(
               },
               routes: const <RouteBase>[],
             ),
-          ]),
-        ])
+          ],
+        ),
+      ],
+    )
   ],
 );
 

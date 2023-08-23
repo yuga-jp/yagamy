@@ -22,8 +22,10 @@ class ProjectInfoBody extends StatelessWidget {
 
     return SliverList(
       delegate: SliverChildBuilderDelegate(
+        childCount: 10,
         (BuildContext context, int index) {
           switch (index) {
+            // title
             case 0:
               return Padding(
                 padding: const EdgeInsets.only(
@@ -39,6 +41,8 @@ class ProjectInfoBody extends StatelessWidget {
                       fontWeight: FontWeight.w700),
                 ),
               );
+
+            // shortIntro
             case 1:
               return Padding(
                 padding: const EdgeInsets.only(
@@ -55,6 +59,8 @@ class ProjectInfoBody extends StatelessWidget {
                   ),
                 ),
               );
+
+            // mainImage
             case 2:
               return Container(
                 decoration: BoxDecoration(
@@ -73,6 +79,8 @@ class ProjectInfoBody extends StatelessWidget {
                 ),
                 clipBehavior: Clip.antiAlias,
               );
+
+            // groupName
             case 3:
               return Padding(
                 padding: const EdgeInsets.only(
@@ -99,6 +107,8 @@ class ProjectInfoBody extends StatelessWidget {
                   ],
                 ),
               );
+
+            // timePlace
             case 4:
               return Padding(
                 padding: const EdgeInsets.only(
@@ -144,12 +154,15 @@ class ProjectInfoBody extends StatelessWidget {
                   ],
                 ),
               );
+
             case 5:
               return const Divider(
                 height: 10,
                 indent: horizontalIndent,
                 endIndent: horizontalIndent,
               );
+
+            // intro
             case 6:
               return Padding(
                 padding: const EdgeInsets.only(
@@ -167,6 +180,7 @@ class ProjectInfoBody extends StatelessWidget {
                   ),
                 ),
               );
+
             case 7:
               if (project.groupIntro.isNotEmpty) {
                 return Center(
@@ -182,24 +196,29 @@ class ProjectInfoBody extends StatelessWidget {
                   ),
                 );
               }
-              return null;
+              return const SizedBox.shrink();
+
+            // groupIntro
             case 8:
-              return Padding(
-                padding: const EdgeInsets.only(
-                  left: horizontalIndent,
-                  top: 10,
-                  right: horizontalIndent,
-                  bottom: 12,
-                ),
-                child: Text(
-                  project.groupIntro,
-                  style: TextStyle(
-                    color: currentTheme.introColor,
-                    fontSize: 14,
-                    height: 1.5,
+              if (project.groupIntro.isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(
+                    left: horizontalIndent,
+                    top: 10,
+                    right: horizontalIndent,
+                    bottom: 12,
                   ),
-                ),
-              );
+                  child: Text(
+                    project.groupIntro,
+                    style: TextStyle(
+                      color: currentTheme.introColor,
+                      fontSize: 14,
+                      height: 1.5,
+                    ),
+                  ),
+                );
+              }
+              return const SizedBox.shrink();
             case 9:
               if (project.twitterId.isNotEmpty ||
                   project.instagramId.isNotEmpty ||
@@ -250,9 +269,10 @@ class ProjectInfoBody extends StatelessWidget {
                   ],
                 );
               }
-              return null;
+              return const SizedBox.shrink();
+              
             default:
-              return null;
+              return const SizedBox.shrink();
           }
         },
       ),

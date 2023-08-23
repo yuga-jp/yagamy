@@ -8,6 +8,7 @@ part 'project.g.dart';
 @freezed
 class Project with _$Project {
   const factory Project({
+    required int id,
     required String title,
     required String place,
     required String time,

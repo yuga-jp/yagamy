@@ -20,6 +20,7 @@ Project _$ProjectFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Project {
+  int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get place => throw _privateConstructorUsedError;
   String get time => throw _privateConstructorUsedError;
@@ -45,7 +46,8 @@ abstract class $ProjectCopyWith<$Res> {
       _$ProjectCopyWithImpl<$Res, Project>;
   @useResult
   $Res call(
-      {String title,
+      {int id,
+      String title,
       String place,
       String time,
       String groupName,
@@ -73,6 +75,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? place = null,
     Object? time = null,
@@ -88,6 +91,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? homepageUrl = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -152,7 +159,8 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String title,
+      {int id,
+      String title,
       String place,
       String time,
       String groupName,
@@ -177,6 +185,7 @@ class __$$_ProjectCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? place = null,
     Object? time = null,
@@ -192,6 +201,10 @@ class __$$_ProjectCopyWithImpl<$Res>
     Object? homepageUrl = null,
   }) {
     return _then(_$_Project(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -252,7 +265,8 @@ class __$$_ProjectCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Project with DiagnosticableTreeMixin implements _Project {
   const _$_Project(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.place,
       required this.time,
       required this.groupName,
@@ -269,6 +283,8 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   factory _$_Project.fromJson(Map<String, dynamic> json) =>
       _$$_ProjectFromJson(json);
 
+  @override
+  final int id;
   @override
   final String title;
   @override
@@ -298,7 +314,7 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Project(title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
+    return 'Project(id: $id, title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
   }
 
   @override
@@ -306,6 +322,7 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Project'))
+      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('place', place))
       ..add(DiagnosticsProperty('time', time))
@@ -326,6 +343,7 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Project &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.place, place) || other.place == place) &&
             (identical(other.time, time) || other.time == time) &&
@@ -354,6 +372,7 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       title,
       place,
       time,
@@ -384,7 +403,8 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
 
 abstract class _Project implements Project {
   const factory _Project(
-      {required final String title,
+      {required final int id,
+      required final String title,
       required final String place,
       required final String time,
       required final String groupName,
@@ -400,6 +420,8 @@ abstract class _Project implements Project {
 
   factory _Project.fromJson(Map<String, dynamic> json) = _$_Project.fromJson;
 
+  @override
+  int get id;
   @override
   String get title;
   @override

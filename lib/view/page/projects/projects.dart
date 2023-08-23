@@ -73,10 +73,12 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
               itemExtent: 118.0,
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
+                  final project = projects[index];
                   return ProjectCard(
-                    project: projects[index],
+                    project: project,
                     onTap: () {
-                      GoRouter.of(context).go('/projects/project/$index');
+                      GoRouter.of(context)
+                          .go('/projects/project/${project.id}');
                     },
                   );
                 },

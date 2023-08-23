@@ -66,7 +66,7 @@ class ProjectCardLoading extends StatelessWidget {
                         width: 100,
                         height: 20,
                       ),
-                      const SizedBox(width: 25),
+                      const SizedBox(width: 35),
                       Container(
                         decoration: BoxDecoration(
                           color: emptyColor,

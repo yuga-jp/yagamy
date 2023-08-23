@@ -5,10 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/model/project/project.dart';
-
-class ProjectsNotifier extends StateNotifier<List<Project>> {
-  ProjectsNotifier() : super([]);
-}
+import 'package:yagamy/model/searcher_prop.dart';
 
 final projectsProvider = FutureProvider<List<Project>>((ref) async {
   final content = json.decode(
@@ -23,3 +20,17 @@ final projectsProvider = FutureProvider<List<Project>>((ref) async {
 
   return projects;
 });
+
+final filteredProjectsProvider =
+    NotifierProvider.family<ProjectsNotifier, List<Project>, SearcherProp>(() {
+  return ProjectsNotifier();
+});
+
+class ProjectsNotifier extends Notifier<List<Project>> {
+  ProjectsNotifier() : super();
+
+  @override
+  List<Project> build() {
+    return ref.watch(projectsProvider).value!;
+  }
+}
