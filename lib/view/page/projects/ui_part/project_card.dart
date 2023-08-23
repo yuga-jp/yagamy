@@ -17,7 +17,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
-      elevation: 1,
+      elevation: 0,
       shape: RoundedRectangleBorder(
         side: BorderSide(color: Theme.of(context).colorScheme.outline),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
@@ -31,7 +31,8 @@ class ProjectCard extends StatelessWidget {
           child: Row(
             children: <Widget>[
               _ProjectImage(project.thumbnailUrl),
-              _ProjectInfo(project.title, project.groupName, project.place, project.time),
+              _ProjectInfo(project.title, project.groupName, project.place,
+                  project.time),
             ],
           ),
         ),
@@ -52,8 +53,9 @@ class _ProjectImage extends StatelessWidget {
           image:
               DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.fill),
           border: Border.all(
-              color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
-              width: 5),
+            color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
+            width: 5,
+          ),
           borderRadius: BorderRadius.circular(15)),
       width: 110,
       height: 110,
@@ -102,7 +104,6 @@ class _ProjectInfo extends StatelessWidget {
         Theme.of(context).extension<ProjectCardTheme>()!;
     return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
-      width: 240,
       height: 110,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,11 +117,14 @@ class _ProjectInfo extends StatelessWidget {
               Icon(Icons.group_outlined,
                   size: 18, color: currentTheme.groupDisplayColor!),
               const SizedBox(width: 5),
-              Text(groupName,
-                  style: TextStyle(
-                      color: currentTheme.groupDisplayColor!,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w300))
+              Text(
+                groupName,
+                style: TextStyle(
+                  color: currentTheme.groupDisplayColor!,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
             ],
           ),
           const Expanded(child: SizedBox()),
