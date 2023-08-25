@@ -118,7 +118,7 @@ class ProjectInfoBody extends StatelessWidget {
                   bottom: 3,
                 ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 2.5, right: 3),
@@ -135,7 +135,7 @@ class ProjectInfoBody extends StatelessWidget {
                         fontSize: 19,
                       ),
                     ),
-                    const Expanded(child: SizedBox()),
+                    const SizedBox(width: 55),
                     Padding(
                       padding: const EdgeInsets.only(top: 2.5, right: 3),
                       child: Icon(
