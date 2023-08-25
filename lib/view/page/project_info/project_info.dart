@@ -10,11 +10,11 @@ import 'package:yagamy/view/page/project_info/ui_part/project_info_body.dart';
 class ProjectInfoPage extends ConsumerWidget {
   const ProjectInfoPage(this.id, {super.key});
 
-  final int? id;
+  final int id;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    AsyncValue<Project> project = ref.watch(projectProvider(id!));
+    AsyncValue<Project> project = ref.watch(projectProvider(id));
     return project.when(
       loading: () {
         return const CircularProgressIndicator();

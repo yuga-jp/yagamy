@@ -1,16 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'project.dart';
+part of 'raw_project.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Project _$$_ProjectFromJson(Map<String, dynamic> json) => _$_Project(
+_$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
+    _$_RawProject(
       id: json['id'] as int,
       title: json['title'] as String,
-      place: json['place'] as String,
-      time: json['time'] as String,
+      area: json['area'] as String,
+      floor: json['floor'] as String,
+      placeDetail: json['placeDetail'] as String,
+      hoursFirstDay: json['hoursFirstDay'] as String,
+      hoursSecondDay: json['hoursSecondDay'] as String,
       groupName: json['groupName'] as String,
       shortIntro: json['shortIntro'] as String,
       intro: json['intro'] as String,
@@ -23,12 +27,15 @@ _$_Project _$$_ProjectFromJson(Map<String, dynamic> json) => _$_Project(
       homepageUrl: json['homepageUrl'] as String,
     );
 
-Map<String, dynamic> _$$_ProjectToJson(_$_Project instance) =>
+Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
-      'place': instance.place,
-      'time': instance.time,
+      'area': instance.area,
+      'floor': instance.floor,
+      'placeDetail': instance.placeDetail,
+      'hoursFirstDay': instance.hoursFirstDay,
+      'hoursSecondDay': instance.hoursSecondDay,
       'groupName': instance.groupName,
       'shortIntro': instance.shortIntro,
       'intro': instance.intro,

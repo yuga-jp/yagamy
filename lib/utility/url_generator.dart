@@ -3,16 +3,8 @@ class UrlGenerator {
 
   final String userId;
 
-  Uri toTwitterScheme() {
-    return Uri.parse('twitter://user?screen_name=$userId');
-  }
-
   Uri toTwitterHttpsScheme() {
     return Uri.parse('https://twitter.com/$userId');
-  }
-
-  Uri toInstagramScheme() {
-    return Uri.parse('instagram://user?username=$userId');
   }
 
   Uri toInstagramHttpsScheme() {

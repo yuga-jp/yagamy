@@ -31,8 +31,8 @@ class ProjectCard extends StatelessWidget {
           child: Row(
             children: <Widget>[
               _ProjectImage(project.thumbnailUrl),
-              _ProjectInfo(project.title, project.groupName, project.place,
-                  project.time),
+              _ProjectInfo(project.title, project.groupName, project.placeString,
+                  project.hoursString),
             ],
           ),
         ),

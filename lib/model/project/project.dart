@@ -1,29 +1,70 @@
-import 'package:flutter/foundation.dart';
+import 'package:yagamy/model/project/raw_project.dart';
+import 'package:yagamy/utility/to_place_string.dart';
 
-import 'package:freezed_annotation/freezed_annotation.dart';
+class Project {
+  Project({
+    required this.id,
+    required this.title,
+    required this.placeString,
+    required this.hoursString,
+    required this.groupName,
+    required this.shortIntro,
+    required this.intro,
+    required this.introExtension,
+    required this.groupIntro,
+    required this.thumbnailUrl,
+    required this.mainImageUrl,
+    required this.twitterId,
+    required this.instagramId,
+    required this.homepageUrl,
+  });
 
-part 'project.freezed.dart';
-part 'project.g.dart';
+  Project.fromRawProject(RawProject rawProject)
+      : id = rawProject.id,
+        title = rawProject.title,
+        placeString = toPlaceString(
+            rawProject.area, rawProject.floor, rawProject.placeDetail),
+        hoursString = rawProject.hoursFirstDay,
+        groupName = rawProject.groupName,
+        shortIntro = rawProject.shortIntro,
+        intro = rawProject.intro,
+        introExtension = rawProject.introExtension,
+        groupIntro = rawProject.groupIntro,
+        thumbnailUrl = rawProject.thumbnailUrl,
+        mainImageUrl = rawProject.mainImageUrl,
+        twitterId = rawProject.twitterId,
+        instagramId = rawProject.instagramId,
+        homepageUrl = rawProject.homepageUrl;
 
-@freezed
-class Project with _$Project {
-  const factory Project({
-    required int id,
-    required String title,
-    required String place,
-    required String time,
-    required String groupName,
-    required String shortIntro,
-    required String intro,
-    required String introExtension,
-    required String groupIntro,
-    required String thumbnailUrl,
-    required String mainImageUrl,
-    required String twitterId,
-    required String instagramId,
-    required String homepageUrl,
-  }) = _Project;
+  Project.empty({
+    this.id = 0,
+    this.title = '',
+    this.placeString = '',
+    this.hoursString = '',
+    this.groupName = '',
+    this.shortIntro = '',
+    this.intro = '',
+    this.introExtension = '',
+    this.groupIntro = '',
+    this.thumbnailUrl = '',
+    this.mainImageUrl = '',
+    this.twitterId = '',
+    this.instagramId = '',
+    this.homepageUrl = '',
+  });
 
-  factory Project.fromJson(Map<String, Object?> json) =>
-      _$ProjectFromJson(json);
+  final int id;
+  final String title;
+  final String placeString;
+  final String hoursString;
+  final String groupName;
+  final String shortIntro;
+  final String intro;
+  final String introExtension;
+  final String groupIntro;
+  final String thumbnailUrl;
+  final String mainImageUrl;
+  final String twitterId;
+  final String instagramId;
+  final String homepageUrl;
 }

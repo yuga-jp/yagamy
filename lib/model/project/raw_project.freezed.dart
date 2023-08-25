@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'project.dart';
+part of 'raw_project.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,16 +14,19 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Project _$ProjectFromJson(Map<String, dynamic> json) {
-  return _Project.fromJson(json);
+RawProject _$RawProjectFromJson(Map<String, dynamic> json) {
+  return _RawProject.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Project {
+mixin _$RawProject {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get place => throw _privateConstructorUsedError;
-  String get time => throw _privateConstructorUsedError;
+  String get area => throw _privateConstructorUsedError;
+  String get floor => throw _privateConstructorUsedError;
+  String get placeDetail => throw _privateConstructorUsedError;
+  String get hoursFirstDay => throw _privateConstructorUsedError;
+  String get hoursSecondDay => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
   String get shortIntro => throw _privateConstructorUsedError;
   String get intro => throw _privateConstructorUsedError;
@@ -37,19 +40,24 @@ mixin _$Project {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProjectCopyWith<Project> get copyWith => throw _privateConstructorUsedError;
+  $RawProjectCopyWith<RawProject> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProjectCopyWith<$Res> {
-  factory $ProjectCopyWith(Project value, $Res Function(Project) then) =
-      _$ProjectCopyWithImpl<$Res, Project>;
+abstract class $RawProjectCopyWith<$Res> {
+  factory $RawProjectCopyWith(
+          RawProject value, $Res Function(RawProject) then) =
+      _$RawProjectCopyWithImpl<$Res, RawProject>;
   @useResult
   $Res call(
       {int id,
       String title,
-      String place,
-      String time,
+      String area,
+      String floor,
+      String placeDetail,
+      String hoursFirstDay,
+      String hoursSecondDay,
       String groupName,
       String shortIntro,
       String intro,
@@ -63,9 +71,9 @@ abstract class $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProjectCopyWithImpl<$Res, $Val extends Project>
-    implements $ProjectCopyWith<$Res> {
-  _$ProjectCopyWithImpl(this._value, this._then);
+class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
+    implements $RawProjectCopyWith<$Res> {
+  _$RawProjectCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,8 +85,11 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? place = null,
-    Object? time = null,
+    Object? area = null,
+    Object? floor = null,
+    Object? placeDetail = null,
+    Object? hoursFirstDay = null,
+    Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
@@ -99,13 +110,25 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      place: null == place
-          ? _value.place
-          : place // ignore: cast_nullable_to_non_nullable
+      area: null == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
               as String,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
+      floor: null == floor
+          ? _value.floor
+          : floor // ignore: cast_nullable_to_non_nullable
+              as String,
+      placeDetail: null == placeDetail
+          ? _value.placeDetail
+          : placeDetail // ignore: cast_nullable_to_non_nullable
+              as String,
+      hoursFirstDay: null == hoursFirstDay
+          ? _value.hoursFirstDay
+          : hoursFirstDay // ignore: cast_nullable_to_non_nullable
+              as String,
+      hoursSecondDay: null == hoursSecondDay
+          ? _value.hoursSecondDay
+          : hoursSecondDay // ignore: cast_nullable_to_non_nullable
               as String,
       groupName: null == groupName
           ? _value.groupName
@@ -152,17 +175,21 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
 }
 
 /// @nodoc
-abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
-  factory _$$_ProjectCopyWith(
-          _$_Project value, $Res Function(_$_Project) then) =
-      __$$_ProjectCopyWithImpl<$Res>;
+abstract class _$$_RawProjectCopyWith<$Res>
+    implements $RawProjectCopyWith<$Res> {
+  factory _$$_RawProjectCopyWith(
+          _$_RawProject value, $Res Function(_$_RawProject) then) =
+      __$$_RawProjectCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int id,
       String title,
-      String place,
-      String time,
+      String area,
+      String floor,
+      String placeDetail,
+      String hoursFirstDay,
+      String hoursSecondDay,
       String groupName,
       String shortIntro,
       String intro,
@@ -176,10 +203,11 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ProjectCopyWithImpl<$Res>
-    extends _$ProjectCopyWithImpl<$Res, _$_Project>
-    implements _$$_ProjectCopyWith<$Res> {
-  __$$_ProjectCopyWithImpl(_$_Project _value, $Res Function(_$_Project) _then)
+class __$$_RawProjectCopyWithImpl<$Res>
+    extends _$RawProjectCopyWithImpl<$Res, _$_RawProject>
+    implements _$$_RawProjectCopyWith<$Res> {
+  __$$_RawProjectCopyWithImpl(
+      _$_RawProject _value, $Res Function(_$_RawProject) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -187,8 +215,11 @@ class __$$_ProjectCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? place = null,
-    Object? time = null,
+    Object? area = null,
+    Object? floor = null,
+    Object? placeDetail = null,
+    Object? hoursFirstDay = null,
+    Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
@@ -200,7 +231,7 @@ class __$$_ProjectCopyWithImpl<$Res>
     Object? instagramId = null,
     Object? homepageUrl = null,
   }) {
-    return _then(_$_Project(
+    return _then(_$_RawProject(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -209,13 +240,25 @@ class __$$_ProjectCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      place: null == place
-          ? _value.place
-          : place // ignore: cast_nullable_to_non_nullable
+      area: null == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
               as String,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
+      floor: null == floor
+          ? _value.floor
+          : floor // ignore: cast_nullable_to_non_nullable
+              as String,
+      placeDetail: null == placeDetail
+          ? _value.placeDetail
+          : placeDetail // ignore: cast_nullable_to_non_nullable
+              as String,
+      hoursFirstDay: null == hoursFirstDay
+          ? _value.hoursFirstDay
+          : hoursFirstDay // ignore: cast_nullable_to_non_nullable
+              as String,
+      hoursSecondDay: null == hoursSecondDay
+          ? _value.hoursSecondDay
+          : hoursSecondDay // ignore: cast_nullable_to_non_nullable
               as String,
       groupName: null == groupName
           ? _value.groupName
@@ -263,12 +306,15 @@ class __$$_ProjectCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Project with DiagnosticableTreeMixin implements _Project {
-  const _$_Project(
+class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
+  const _$_RawProject(
       {required this.id,
       required this.title,
-      required this.place,
-      required this.time,
+      required this.area,
+      required this.floor,
+      required this.placeDetail,
+      required this.hoursFirstDay,
+      required this.hoursSecondDay,
       required this.groupName,
       required this.shortIntro,
       required this.intro,
@@ -280,17 +326,23 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       required this.instagramId,
       required this.homepageUrl});
 
-  factory _$_Project.fromJson(Map<String, dynamic> json) =>
-      _$$_ProjectFromJson(json);
+  factory _$_RawProject.fromJson(Map<String, dynamic> json) =>
+      _$$_RawProjectFromJson(json);
 
   @override
   final int id;
   @override
   final String title;
   @override
-  final String place;
+  final String area;
   @override
-  final String time;
+  final String floor;
+  @override
+  final String placeDetail;
+  @override
+  final String hoursFirstDay;
+  @override
+  final String hoursSecondDay;
   @override
   final String groupName;
   @override
@@ -314,18 +366,21 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Project(id: $id, title: $title, place: $place, time: $time, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'Project'))
+      ..add(DiagnosticsProperty('type', 'RawProject'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('place', place))
-      ..add(DiagnosticsProperty('time', time))
+      ..add(DiagnosticsProperty('area', area))
+      ..add(DiagnosticsProperty('floor', floor))
+      ..add(DiagnosticsProperty('placeDetail', placeDetail))
+      ..add(DiagnosticsProperty('hoursFirstDay', hoursFirstDay))
+      ..add(DiagnosticsProperty('hoursSecondDay', hoursSecondDay))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('shortIntro', shortIntro))
       ..add(DiagnosticsProperty('intro', intro))
@@ -342,11 +397,17 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Project &&
+            other is _$_RawProject &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.place, place) || other.place == place) &&
-            (identical(other.time, time) || other.time == time) &&
+            (identical(other.area, area) || other.area == area) &&
+            (identical(other.floor, floor) || other.floor == floor) &&
+            (identical(other.placeDetail, placeDetail) ||
+                other.placeDetail == placeDetail) &&
+            (identical(other.hoursFirstDay, hoursFirstDay) ||
+                other.hoursFirstDay == hoursFirstDay) &&
+            (identical(other.hoursSecondDay, hoursSecondDay) ||
+                other.hoursSecondDay == hoursSecondDay) &&
             (identical(other.groupName, groupName) ||
                 other.groupName == groupName) &&
             (identical(other.shortIntro, shortIntro) ||
@@ -374,8 +435,11 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
       runtimeType,
       id,
       title,
-      place,
-      time,
+      area,
+      floor,
+      placeDetail,
+      hoursFirstDay,
+      hoursSecondDay,
       groupName,
       shortIntro,
       intro,
@@ -390,23 +454,26 @@ class _$_Project with DiagnosticableTreeMixin implements _Project {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProjectCopyWith<_$_Project> get copyWith =>
-      __$$_ProjectCopyWithImpl<_$_Project>(this, _$identity);
+  _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>
+      __$$_RawProjectCopyWithImpl<_$_RawProject>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProjectToJson(
+    return _$$_RawProjectToJson(
       this,
     );
   }
 }
 
-abstract class _Project implements Project {
-  const factory _Project(
+abstract class _RawProject implements RawProject {
+  const factory _RawProject(
       {required final int id,
       required final String title,
-      required final String place,
-      required final String time,
+      required final String area,
+      required final String floor,
+      required final String placeDetail,
+      required final String hoursFirstDay,
+      required final String hoursSecondDay,
       required final String groupName,
       required final String shortIntro,
       required final String intro,
@@ -416,18 +483,25 @@ abstract class _Project implements Project {
       required final String mainImageUrl,
       required final String twitterId,
       required final String instagramId,
-      required final String homepageUrl}) = _$_Project;
+      required final String homepageUrl}) = _$_RawProject;
 
-  factory _Project.fromJson(Map<String, dynamic> json) = _$_Project.fromJson;
+  factory _RawProject.fromJson(Map<String, dynamic> json) =
+      _$_RawProject.fromJson;
 
   @override
   int get id;
   @override
   String get title;
   @override
-  String get place;
+  String get area;
   @override
-  String get time;
+  String get floor;
+  @override
+  String get placeDetail;
+  @override
+  String get hoursFirstDay;
+  @override
+  String get hoursSecondDay;
   @override
   String get groupName;
   @override
@@ -450,6 +524,6 @@ abstract class _Project implements Project {
   String get homepageUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_ProjectCopyWith<_$_Project> get copyWith =>
+  _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>
       throw _privateConstructorUsedError;
 }

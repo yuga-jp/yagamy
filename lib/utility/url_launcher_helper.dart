@@ -10,11 +10,9 @@ Future launchUrlCustom(Uri url, {Uri? anotherUrl}) async {
 }
 
 Future launchUrlTwitter(String twitterId) async {
-  await launchUrlCustom(UrlGenerator(twitterId).toTwitterScheme(),
-      anotherUrl: UrlGenerator(twitterId).toTwitterHttpsScheme());
+  await launchUrl(UrlGenerator(twitterId).toTwitterHttpsScheme());
 }
 
 Future launchUrlInstagram(String instagramId) async {
-  await launchUrlCustom(UrlGenerator(instagramId).toInstagramScheme(),
-      anotherUrl: UrlGenerator(instagramId).toInstagramHttpsScheme());
+  await launchUrl(UrlGenerator(instagramId).toInstagramHttpsScheme());
 }

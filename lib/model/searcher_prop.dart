@@ -13,13 +13,13 @@ enum SearcherProp {
   information(name: '情報提供', type: SearcherType.categories),
   otherCategories(name: 'その他', type: SearcherType.categories),
   building11th(name: '11棟', type: SearcherType.places),
-  building12th(name: '12棟', type: SearcherType.places),
+  building12thFirst(name: '12棟1階', type: SearcherType.places),
+  building12thSecond(name: '12棟2階', type: SearcherType.places),
+  boothPlace(name: '模擬店ロード', type: SearcherType.places),
   building14th(name: '14棟', type: SearcherType.places),
-  building16th(name: '16棟', type: SearcherType.places),
-  street(name: 'ストリート', type: SearcherType.places),
-  ground(name: 'グラウンド', type: SearcherType.places),
-  gym(name: '体育館', type: SearcherType.places),
   mainStage(name: 'メインステージ', type: SearcherType.places),
+  eastArea(name: '東側エリア', type: SearcherType.places),
+  ground(name: 'グラウンド', type: SearcherType.places),
   otherPlaces(name: 'その他', type: SearcherType.places);
 
   const SearcherProp({required this.name, required this.type});

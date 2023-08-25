@@ -129,7 +129,7 @@ class ProjectInfoBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.place,
+                      project.placeString,
                       style: TextStyle(
                         color: currentTheme.timePlaceColor,
                         fontSize: 19,
@@ -145,7 +145,7 @@ class ProjectInfoBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.time,
+                      project.hoursString,
                       style: TextStyle(
                         color: currentTheme.timePlaceColor,
                         fontSize: 19,
@@ -238,7 +238,7 @@ class ProjectInfoBody extends StatelessWidget {
                                     currentTheme.titleColor!, BlendMode.dst),
                               ),
                               onPressed: () {
-                                launchUrlTwitter('keio_seiken');
+                                launchUrlTwitter(project.twitterId);
                               },
                             ),
                           )
@@ -249,7 +249,7 @@ class ProjectInfoBody extends StatelessWidget {
                             child: IconButton(
                               icon: const FaIcon(FontAwesomeIcons.instagram),
                               onPressed: () {
-                                launchUrlInstagram('keio_piano_society');
+                                launchUrlInstagram(project.instagramId);
                               },
                             ),
                           )
@@ -260,7 +260,7 @@ class ProjectInfoBody extends StatelessWidget {
                             child: IconButton(
                               icon: const Icon(Icons.web),
                               onPressed: () {
-                                launchUrl(Uri.parse('https://o-keis.net/'));
+                                launchUrl(Uri.parse(project.homepageUrl));
                               },
                               iconSize: 28,
                             ),
