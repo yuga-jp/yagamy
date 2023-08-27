@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/shimmer_theme.dart';
 
 import 'package:yagamy/model/project/project.dart';
@@ -11,8 +10,8 @@ import 'package:yagamy/provider/selected_searcher_provider.dart';
 import 'package:yagamy/view/common/ui_part/shimmer/shimmer.dart';
 import 'package:yagamy/view/common/ui_part/shimmer/shimmer_loading.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_card_loading.dart';
-import 'package:yagamy/view/page/projects/ui_part/search_button_bar.dart';
-import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
+import 'package:yagamy/view/page/projects/ui_part/projects_body.dart';
+import 'package:yagamy/view/page/projects/ui_part/projects_place_body.dart';
 
 class ProjectsPage extends ConsumerStatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -58,76 +57,18 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
       data: (projects) {
         List<Project> filteredProjects = ref.watch(
             filteredProjectsProvider(ref.watch(selectedSearcherProvider)));
-            
-        return ref.watch(selectedSearcherProvider) == SearcherProp.initial
-            ? CustomScrollView(
-                physics: const ScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics()),
-                slivers: <Widget>[
-                  const SliverAppBar(
-                    actions: <Widget>[
-                      Icon(Icons.search),
-                      SizedBox(width: 15),
-                    ],
-                    bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(80),
-                      child: SearchButtonBar(),
-                    ),
-                    floating: true,
-                    pinned: true,
-                  ),
-                  SliverFixedExtentList(
-                    itemExtent: 118.0,
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        final project = projects[index];
-                        return ProjectCard(
-                          project: project,
-                          onTap: () {
-                            GoRouter.of(context)
-                                .go('/projects/project/${project.id}');
-                          },
-                        );
-                      },
-                      childCount: projects.length,
-                    ),
-                  ),
-                ],
-              )
-            : CustomScrollView(
-                physics: const ScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics()),
-                slivers: <Widget>[
-                  const SliverAppBar(
-                    actions: <Widget>[
-                      Icon(Icons.search),
-                      SizedBox(width: 15),
-                    ],
-                    bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(80),
-                      child: SearchButtonBar(),
-                    ),
-                    floating: true,
-                    pinned: true,
-                  ),
-                  SliverFixedExtentList(
-                    itemExtent: 118.0,
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        final project = filteredProjects[index];
-                        return ProjectCard(
-                          project: project,
-                          onTap: () {
-                            GoRouter.of(context)
-                                .go('/projects/project/${project.id}');
-                          },
-                        );
-                      },
-                      childCount: filteredProjects.length,
-                    ),
-                  ),
-                ],
-              );
+        final SearcherProp selectedSearcher =
+            ref.watch(selectedSearcherProvider);
+
+        return selectedSearcher == SearcherProp.initial
+            ? ProjectsBody(projects: projects)
+            : selectedSearcher.isCategoryProp()
+                ? ProjectsBody(projects: filteredProjects)
+                : ProjectsPlaceBody(
+                    searcherProp: selectedSearcher,
+                    projects: filteredProjects,
+                    backgroundImageUrl: 'https://picsum.photos/1200',
+                  );
       },
     );
   }

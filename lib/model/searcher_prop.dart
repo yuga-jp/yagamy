@@ -2,7 +2,7 @@ import 'package:yagamy/model/searcher_type.dart';
 
 enum SearcherProp {
   initial(name: '', type: SearcherType.initial),
-  
+
   exhibiton(name: '展示', type: SearcherType.categories),
   experience(name: '体験型', type: SearcherType.categories),
   activity(name: 'アクティビティ', type: SearcherType.categories),
@@ -27,4 +27,8 @@ enum SearcherProp {
 
   final String name;
   final SearcherType type;
+
+  bool isCategoryProp() {
+    return type == SearcherType.categories;
+  }
 }

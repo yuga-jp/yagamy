@@ -15,25 +15,28 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: Theme.of(context).colorScheme.outline),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
-      ),
-      margin: const EdgeInsets.only(left: 10, top: 4, right: 10, bottom: 4),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: SizedBox(
-          height: 110,
-          child: Row(
-            children: <Widget>[
-              _ProjectImage(project.thumbnailUrl),
-              _ProjectInfo(project.title, project.groupName, project.placeString,
-                  project.hoursString),
-            ],
+    return Material(
+      color: Colors.white,
+      child: Card(
+        color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: Theme.of(context).colorScheme.outline),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+        ),
+        margin: const EdgeInsets.only(left: 10, top: 4, right: 10, bottom: 4),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onTap,
+          child: SizedBox(
+            height: 110,
+            child: Row(
+              children: <Widget>[
+                _ProjectImage(project.thumbnailUrl),
+                _ProjectInfo(project.title, project.groupName,
+                    project.placeString, project.hoursString),
+              ],
+            ),
           ),
         ),
       ),
