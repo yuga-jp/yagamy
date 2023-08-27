@@ -31,7 +31,11 @@ class ProjectsNotifier extends FamilyNotifier<List<Project>, SearcherProp> {
   ProjectsNotifier() : super();
 
   @override
-  List<Project> build(SearcherProp prop) {
-    return ref.watch(projectsProvider).value!;
+  List<Project> build(SearcherProp arg) {
+    return ref.watch(projectsProvider).value!.where((project) {
+      return project.searcherProps
+          .where((element) => element == arg)
+          .isNotEmpty;
+    }).toList();
   }
 }

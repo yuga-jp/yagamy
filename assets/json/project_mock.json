@@ -16,7 +16,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "Keio_Sakumon",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "activity",
+        "categorySub": "science"
     },
     {
         "id": 2,
@@ -35,7 +37,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "le_lien_rouge",
         "instagramId": "lelienrouge",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "foodsSelling",
+        "categorySub": ""
     },
     {
         "id": 3,
@@ -54,7 +58,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "",
         "instagramId": "hatobas_keio_",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "foodsSelling",
+        "categorySub": ""
     },
     {
         "id": 4,
@@ -73,7 +79,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "keio_seiken",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "liveTalk",
+        "categorySub": ""
     },
     {
         "id": 5,
@@ -92,7 +100,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "o_keis",
         "instagramId": "keio_okeis",
-        "homepageUrl": "https://o-keis.net/"
+        "homepageUrl": "https://o-keis.net/",
+        "categoryMain": "performance",
+        "categorySub": "liveTalk"
     },
     {
         "id": 6,
@@ -111,7 +121,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "KRA_Rogiken",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "exhibiton",
+        "categorySub": ""
     },
     {
         "id": 7,
@@ -130,7 +142,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "liveTalk",
+        "categorySub": ""
     },
     {
         "id": 8,
@@ -149,7 +163,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "kpsconcert_info",
         "instagramId": "keio_piano_society",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "performance",
+        "categorySub": "foodsSelling"
     },
     {
         "id": 9,
@@ -168,7 +184,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "foodsSelling",
+        "categorySub": ""
     },
     {
         "id": 10,
@@ -187,7 +205,9 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "keio_tenken",
         "instagramId": "keio.tenken",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "exhibiton",
+        "categorySub": "science"
     },
     {
         "id": 11,
@@ -206,6 +226,8 @@
         "mainImageUrl": "https://picsum.photos/800/600",
         "twitterId": "kcs1959",
         "instagramId": "",
-        "homepageUrl": ""
+        "homepageUrl": "",
+        "categoryMain": "exhibiton",
+        "categorySub": "experience"
     }
 ]

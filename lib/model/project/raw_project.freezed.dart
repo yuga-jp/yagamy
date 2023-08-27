@@ -37,6 +37,8 @@ mixin _$RawProject {
   String get twitterId => throw _privateConstructorUsedError;
   String get instagramId => throw _privateConstructorUsedError;
   String get homepageUrl => throw _privateConstructorUsedError;
+  String get categoryMain => throw _privateConstructorUsedError;
+  String get categorySub => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -67,7 +69,9 @@ abstract class $RawProjectCopyWith<$Res> {
       String mainImageUrl,
       String twitterId,
       String instagramId,
-      String homepageUrl});
+      String homepageUrl,
+      String categoryMain,
+      String categorySub});
 }
 
 /// @nodoc
@@ -100,6 +104,8 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? twitterId = null,
     Object? instagramId = null,
     Object? homepageUrl = null,
+    Object? categoryMain = null,
+    Object? categorySub = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -170,6 +176,14 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.homepageUrl
           : homepageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      categoryMain: null == categoryMain
+          ? _value.categoryMain
+          : categoryMain // ignore: cast_nullable_to_non_nullable
+              as String,
+      categorySub: null == categorySub
+          ? _value.categorySub
+          : categorySub // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -199,7 +213,9 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String mainImageUrl,
       String twitterId,
       String instagramId,
-      String homepageUrl});
+      String homepageUrl,
+      String categoryMain,
+      String categorySub});
 }
 
 /// @nodoc
@@ -230,6 +246,8 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? twitterId = null,
     Object? instagramId = null,
     Object? homepageUrl = null,
+    Object? categoryMain = null,
+    Object? categorySub = null,
   }) {
     return _then(_$_RawProject(
       id: null == id
@@ -300,6 +318,14 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.homepageUrl
           : homepageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      categoryMain: null == categoryMain
+          ? _value.categoryMain
+          : categoryMain // ignore: cast_nullable_to_non_nullable
+              as String,
+      categorySub: null == categorySub
+          ? _value.categorySub
+          : categorySub // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -324,7 +350,9 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.mainImageUrl,
       required this.twitterId,
       required this.instagramId,
-      required this.homepageUrl});
+      required this.homepageUrl,
+      required this.categoryMain,
+      required this.categorySub});
 
   factory _$_RawProject.fromJson(Map<String, dynamic> json) =>
       _$$_RawProjectFromJson(json);
@@ -363,10 +391,14 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   final String instagramId;
   @override
   final String homepageUrl;
+  @override
+  final String categoryMain;
+  @override
+  final String categorySub;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub)';
   }
 
   @override
@@ -390,7 +422,9 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       ..add(DiagnosticsProperty('mainImageUrl', mainImageUrl))
       ..add(DiagnosticsProperty('twitterId', twitterId))
       ..add(DiagnosticsProperty('instagramId', instagramId))
-      ..add(DiagnosticsProperty('homepageUrl', homepageUrl));
+      ..add(DiagnosticsProperty('homepageUrl', homepageUrl))
+      ..add(DiagnosticsProperty('categoryMain', categoryMain))
+      ..add(DiagnosticsProperty('categorySub', categorySub));
   }
 
   @override
@@ -426,30 +460,37 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
             (identical(other.instagramId, instagramId) ||
                 other.instagramId == instagramId) &&
             (identical(other.homepageUrl, homepageUrl) ||
-                other.homepageUrl == homepageUrl));
+                other.homepageUrl == homepageUrl) &&
+            (identical(other.categoryMain, categoryMain) ||
+                other.categoryMain == categoryMain) &&
+            (identical(other.categorySub, categorySub) ||
+                other.categorySub == categorySub));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      area,
-      floor,
-      placeDetail,
-      hoursFirstDay,
-      hoursSecondDay,
-      groupName,
-      shortIntro,
-      intro,
-      introExtension,
-      groupIntro,
-      thumbnailUrl,
-      mainImageUrl,
-      twitterId,
-      instagramId,
-      homepageUrl);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        title,
+        area,
+        floor,
+        placeDetail,
+        hoursFirstDay,
+        hoursSecondDay,
+        groupName,
+        shortIntro,
+        intro,
+        introExtension,
+        groupIntro,
+        thumbnailUrl,
+        mainImageUrl,
+        twitterId,
+        instagramId,
+        homepageUrl,
+        categoryMain,
+        categorySub
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -483,7 +524,9 @@ abstract class _RawProject implements RawProject {
       required final String mainImageUrl,
       required final String twitterId,
       required final String instagramId,
-      required final String homepageUrl}) = _$_RawProject;
+      required final String homepageUrl,
+      required final String categoryMain,
+      required final String categorySub}) = _$_RawProject;
 
   factory _RawProject.fromJson(Map<String, dynamic> json) =
       _$_RawProject.fromJson;
@@ -522,6 +565,10 @@ abstract class _RawProject implements RawProject {
   String get instagramId;
   @override
   String get homepageUrl;
+  @override
+  String get categoryMain;
+  @override
+  String get categorySub;
   @override
   @JsonKey(ignore: true)
   _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>

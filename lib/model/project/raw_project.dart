@@ -25,6 +25,8 @@ class RawProject with _$RawProject {
     required String twitterId,
     required String instagramId,
     required String homepageUrl,
+    required String categoryMain,
+    required String categorySub,
   }) = _RawProject;
 
   factory RawProject.fromJson(Map<String, Object?> json) =>

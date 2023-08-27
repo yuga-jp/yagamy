@@ -25,6 +25,8 @@ _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
       twitterId: json['twitterId'] as String,
       instagramId: json['instagramId'] as String,
       homepageUrl: json['homepageUrl'] as String,
+      categoryMain: json['categoryMain'] as String,
+      categorySub: json['categorySub'] as String,
     );
 
 Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
@@ -46,4 +48,6 @@ Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
       'twitterId': instance.twitterId,
       'instagramId': instance.instagramId,
       'homepageUrl': instance.homepageUrl,
+      'categoryMain': instance.categoryMain,
+      'categorySub': instance.categorySub,
     };

@@ -1,5 +1,7 @@
 import 'package:yagamy/model/project/raw_project.dart';
+import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/utility/to_place_string.dart';
+import 'package:yagamy/utility/to_searcher_prop.dart';
 
 class Project {
   Project({
@@ -17,6 +19,7 @@ class Project {
     required this.twitterId,
     required this.instagramId,
     required this.homepageUrl,
+    required this.searcherProps,
   });
 
   Project.fromRawProject(RawProject rawProject)
@@ -34,7 +37,9 @@ class Project {
         mainImageUrl = rawProject.mainImageUrl,
         twitterId = rawProject.twitterId,
         instagramId = rawProject.instagramId,
-        homepageUrl = rawProject.homepageUrl;
+        homepageUrl = rawProject.homepageUrl,
+        searcherProps = toSearcherPropList(
+            rawProject.categoryMain, rawProject.categorySub, rawProject.area, rawProject.floor);
 
   Project.empty({
     this.id = 0,
@@ -51,6 +56,7 @@ class Project {
     this.twitterId = '',
     this.instagramId = '',
     this.homepageUrl = '',
+    this.searcherProps = const [],
   });
 
   final int id;
@@ -67,4 +73,5 @@ class Project {
   final String twitterId;
   final String instagramId;
   final String homepageUrl;
+  final List<SearcherProp> searcherProps;
 }
