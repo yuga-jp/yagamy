@@ -4,13 +4,14 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 
 final projectsProvider = FutureProvider<List<Project>>((ref) async {
   final content = json.decode(
-    await rootBundle.loadString('assets/json/project_mock.json'),
+    await rootBundle.loadString(Assets.json.projectMock),
   );
 
   final projects = <Project>[];

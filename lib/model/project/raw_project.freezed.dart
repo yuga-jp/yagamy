@@ -20,7 +20,7 @@ RawProject _$RawProjectFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RawProject {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get area => throw _privateConstructorUsedError;
   String get floor => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $RawProjectCopyWith<$Res> {
       _$RawProjectCopyWithImpl<$Res, RawProject>;
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String title,
       String area,
       String floor,
@@ -111,7 +111,7 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -197,7 +197,7 @@ abstract class _$$_RawProjectCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String title,
       String area,
       String floor,
@@ -253,7 +253,7 @@ class __$$_RawProjectCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -358,7 +358,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       _$$_RawProjectFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   @override
@@ -508,7 +508,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
 
 abstract class _RawProject implements RawProject {
   const factory _RawProject(
-      {required final int id,
+      {required final String id,
       required final String title,
       required final String area,
       required final String floor,
@@ -532,7 +532,7 @@ abstract class _RawProject implements RawProject {
       _$_RawProject.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get title;
   @override

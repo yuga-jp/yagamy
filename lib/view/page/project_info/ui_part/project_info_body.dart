@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:yagamy/constant/theme/project_info_theme.dart';
+import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/utility/url_launcher_helper.dart';
 
@@ -65,8 +66,8 @@ class ProjectInfoBody extends StatelessWidget {
               return Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(project.mainImageUrl),
-                      fit: BoxFit.fill,
+                      image: AssetImage(project.mainImageUrl),
+                      fit: BoxFit.contain,
                     ),
                     borderRadius: BorderRadius.circular(15)),
                 width: MediaQuery.of(context).size.width,
@@ -231,7 +232,7 @@ class ProjectInfoBody extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 8, right: 8),
                             child: IconButton(
                               icon: SvgPicture.asset(
-                                'assets/logo/x-twitter.svg',
+                                Assets.logo.xTwitter.path,
                                 width: 22,
                                 height: 22,
                                 colorFilter: ColorFilter.mode(

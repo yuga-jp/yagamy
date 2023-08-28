@@ -57,9 +57,7 @@ final GoRouter router = GoRouter(
                 GoRoute(
                   path: 'project/:id',
                   builder: (BuildContext context, GoRouterState state) {
-                    return ProjectInfoPage(
-                      int.tryParse(state.pathParameters['id']!) ?? 0,
-                    );
+                    return ProjectInfoPage(state.pathParameters['id'] ?? '0');
                   },
                 )
               ],

@@ -8,7 +8,7 @@ part of 'raw_project.dart';
 
 _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
     _$_RawProject(
-      id: json['id'] as int,
+      id: json['id'] as String,
       title: json['title'] as String,
       area: json['area'] as String,
       floor: json['floor'] as String,

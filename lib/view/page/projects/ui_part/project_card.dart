@@ -54,7 +54,7 @@ class _ProjectImage extends StatelessWidget {
     return Ink(
       decoration: BoxDecoration(
           image:
-              DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.fill),
+              DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.contain),
           border: Border.all(
             color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
             width: 5,

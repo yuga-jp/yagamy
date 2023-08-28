@@ -3,7 +3,7 @@ import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/provider/projects_provider.dart';
 
 final projectProvider =
-    FutureProvider.autoDispose.family<Project, int>((ref, id) async {
+    FutureProvider.autoDispose.family<Project, String>((ref, id) async {
   final projects = ref.watch(projectsProvider);
   return projects.maybeWhen(
     orElse: () {

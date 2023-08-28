@@ -10,7 +10,7 @@ import 'package:yagamy/view/page/project_info/ui_part/project_info_body.dart';
 class ProjectInfoPage extends ConsumerWidget {
   const ProjectInfoPage(this.id, {super.key});
 
-  final int id;
+  final String id;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -81,6 +81,9 @@ SearcherProp _toSearcherPropPlace(String area, String floor) {
     case '25':
       searcherProp = SearcherProp.eastArea;
       break;
+    case 'gym':
+      searcherProp = SearcherProp.eastArea;
+      break;
     case 'booth':
       searcherProp = SearcherProp.booth;
       break;

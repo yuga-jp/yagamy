@@ -37,6 +37,9 @@ String toPlaceString(String area, String floor, String placeDetail) {
     case '25':
       return placeString += '25棟周辺';
 
+    case 'gym':
+      return placeString += '体育館';
+
     case 'booth':
       return placeString += '模擬店ロード $placeDetail';
 

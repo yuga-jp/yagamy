@@ -8,7 +8,7 @@ part 'raw_project.g.dart';
 @freezed
 class RawProject with _$RawProject {
   const factory RawProject({
-    required int id,
+    required String id,
     required String title,
     required String area,
     required String floor,
