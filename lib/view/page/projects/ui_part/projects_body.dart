@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/projects_body_theme.dart';
-
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
-import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
+import 'package:yagamy/view/page/projects/ui_part/project_list.dart';
 import 'package:yagamy/view/page/projects/ui_part/search_button_bar.dart';
 
-class ProjectsBody extends ConsumerWidget {
+class ProjectsBody extends StatelessWidget {
   const ProjectsBody({
     required this.searcherProp,
     required this.projects,
@@ -23,7 +20,7 @@ class ProjectsBody extends ConsumerWidget {
   final String backgroundImageUrl;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final ProjectsBodyTheme currentTheme =
         Theme.of(context).extension<ProjectsBodyTheme>()!;
     return Stack(
@@ -92,22 +89,7 @@ class ProjectsBody extends ConsumerWidget {
                         ),
                       ),
                     ),
-              SliverFixedExtentList(
-                itemExtent: 118.0,
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                    final project = projects[index];
-                    return ProjectCard(
-                      project: project,
-                      onTap: () {
-                        GoRouter.of(context)
-                            .go('/projects/project/${project.id}');
-                      },
-                    );
-                  },
-                  childCount: projects.length,
-                ),
-              ),
+              ProjectList(projects: projects),
             ],
           ),
         ),
