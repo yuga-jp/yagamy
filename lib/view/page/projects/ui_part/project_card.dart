@@ -33,8 +33,10 @@ class ProjectCard extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 _ProjectImage(project.thumbnailUrl),
-                _ProjectInfo(project.title, project.groupName,
-                    project.placeString, project.hoursString),
+                Flexible(
+                  child: _ProjectInfo(project.title, project.groupName,
+                      project.placeString, project.hoursString),
+                ),
               ],
             ),
           ),
@@ -106,26 +108,32 @@ class _ProjectInfo extends StatelessWidget {
     final ProjectCardTheme currentTheme =
         Theme.of(context).extension<ProjectCardTheme>()!;
     return Container(
-      padding: const EdgeInsets.only(left: 7, top: 7, bottom: 5),
+      padding: const EdgeInsets.only(left: 7, top: 7, right: 7, bottom: 5),
       height: 110,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            softWrap: false,
+            overflow: TextOverflow.ellipsis,
+          ),
           const SizedBox(height: 3),
           Row(
             children: [
               Icon(Icons.group_outlined,
                   size: 18, color: currentTheme.groupDisplayColor!),
-              const SizedBox(width: 5),
-              Text(
-                groupName,
-                style: TextStyle(
-                  color: currentTheme.groupDisplayColor!,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w300,
+              Flexible(
+                child: Text(
+                  groupName,
+                  style: TextStyle(
+                    color: currentTheme.groupDisplayColor!,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  softWrap: false,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
