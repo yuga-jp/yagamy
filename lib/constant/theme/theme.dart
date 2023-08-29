@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yagamy/constant/theme/projects_body_place_theme.dart';
+import 'package:yagamy/constant/theme/projects_body_theme.dart';
 
 import 'package:yagamy/constant/theme/search_button_theme.dart';
 import 'package:yagamy/constant/theme/execute_button_theme.dart';
@@ -89,7 +89,7 @@ class AppTheme {
           tileMode: TileMode.clamp,
         ),
       ),
-      ProjectsPlaceBodyTheme(
+      ProjectsBodyTheme(
         backgroundBaseColor: Color.fromRGBO(255, 255, 255, 0.25),
         gradientStartColor: Colors.transparent,
         gradientEndColor: Color.fromRGBO(255, 255, 255, 1.0),

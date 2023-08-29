@@ -31,4 +31,8 @@ enum SearcherProp {
   bool isCategoryProp() {
     return type == SearcherType.categories;
   }
+
+  bool isPlaceProp() {
+    return type == SearcherType.places;
+  }
 }

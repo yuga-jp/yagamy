@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProjectsPlaceBodyTheme extends ThemeExtension<ProjectsPlaceBodyTheme> {
-  const ProjectsPlaceBodyTheme({
+class ProjectsBodyTheme extends ThemeExtension<ProjectsBodyTheme> {
+  const ProjectsBodyTheme({
     required this.backgroundBaseColor,
     required this.gradientStartColor,
     required this.gradientEndColor,
@@ -12,12 +12,12 @@ class ProjectsPlaceBodyTheme extends ThemeExtension<ProjectsPlaceBodyTheme> {
   final Color? gradientEndColor;
 
   @override
-  ProjectsPlaceBodyTheme copyWith({
+  ProjectsBodyTheme copyWith({
     Color? backgroundBaseColor,
     Color? gradientStartColor,
     Color? gradientEndColor,
   }) {
-    return ProjectsPlaceBodyTheme(
+    return ProjectsBodyTheme(
       backgroundBaseColor: backgroundBaseColor ?? this.backgroundBaseColor,
       gradientStartColor: gradientStartColor ?? this.gradientStartColor,
       gradientEndColor: gradientEndColor ?? this.gradientEndColor,
@@ -25,11 +25,11 @@ class ProjectsPlaceBodyTheme extends ThemeExtension<ProjectsPlaceBodyTheme> {
   }
 
   @override
-  ProjectsPlaceBodyTheme lerp(ProjectsPlaceBodyTheme? other, double t) {
-    if (other is! ProjectsPlaceBodyTheme) {
+  ProjectsBodyTheme lerp(ProjectsBodyTheme? other, double t) {
+    if (other is! ProjectsBodyTheme) {
       return this;
     }
-    return ProjectsPlaceBodyTheme(
+    return ProjectsBodyTheme(
       backgroundBaseColor:
           Color.lerp(backgroundBaseColor, other.backgroundBaseColor, t),
       gradientStartColor:

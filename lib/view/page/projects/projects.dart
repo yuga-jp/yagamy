@@ -11,7 +11,6 @@ import 'package:yagamy/view/common/ui_part/shimmer/shimmer.dart';
 import 'package:yagamy/view/common/ui_part/shimmer/shimmer_loading.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_card_loading.dart';
 import 'package:yagamy/view/page/projects/ui_part/projects_body.dart';
-import 'package:yagamy/view/page/projects/ui_part/projects_place_body.dart';
 
 class ProjectsPage extends ConsumerStatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -61,10 +60,18 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
             ref.watch(selectedSearcherProvider);
 
         return selectedSearcher == SearcherProp.initial
-            ? ProjectsBody(projects: projects)
+            ? ProjectsBody(
+                searcherProp: selectedSearcher,
+                projects: projects,
+                backgroundImageUrl: '',
+              )
             : selectedSearcher.isCategoryProp()
-                ? ProjectsBody(projects: filteredProjects)
-                : ProjectsPlaceBody(
+                ? ProjectsBody(
+                    searcherProp: selectedSearcher,
+                    projects: filteredProjects,
+                    backgroundImageUrl: '',
+                  )
+                : ProjectsBody(
                     searcherProp: selectedSearcher,
                     projects: filteredProjects,
                     backgroundImageUrl: 'https://picsum.photos/1200',
