@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/projects_body_place_theme.dart';
 import 'package:yagamy/model/project/project.dart';
@@ -22,80 +23,89 @@ class ProjectsPlaceBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final ProjectsPlaceBodyTheme currentTheme =
         Theme.of(context).extension<ProjectsPlaceBodyTheme>()!;
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(backgroundImageUrl),
-          fit: BoxFit.fitWidth,
-          alignment: Alignment.topCenter,
-        ),
-      ),
-      child: Material(
-        color: currentTheme.backgroundBaseColor,
-        child: CustomScrollView(
-          physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          slivers: <Widget>[
-            const SliverAppBar(
-              actions: <Widget>[
-                Icon(Icons.search),
-                SizedBox(width: 15),
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: [
+        ShaderMask(
+          shaderCallback: (Rect bounds) {
+            return LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                currentTheme.gradientStartColor!,
+                currentTheme.gradientEndColor!,
               ],
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(80),
-                child: SearchButtonBar(),
-              ),
-              elevation: 0.0,
-              shadowColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              floating: true,
-              pinned: true,
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      currentTheme.gradientStartColor!,
-                      currentTheme.gradientEndColor!,
+              stops: const [0.0, 0.9],
+            ).createShader(bounds);
+          },
+          blendMode: BlendMode.srcOver,
+          child: Image.network(
+            backgroundImageUrl,
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        Material(
+          color: currentTheme.backgroundBaseColor,
+          child: CustomScrollView(
+            physics:
+                const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            slivers: <Widget>[
+              SliverLayoutBuilder(
+                builder: (BuildContext context, SliverConstraints constraints) {
+                  return SliverAppBar(
+                    actions: const <Widget>[
+                      Icon(Icons.search),
+                      SizedBox(width: 15),
                     ],
-                    stops: const [0.0, 1.0],
-                  ),
-                ),
-                height: 170,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      searcherProp.name,
-                      style: const TextStyle(
-                          fontSize: 35, fontWeight: FontWeight.w600),
+                    bottom: const PreferredSize(
+                      preferredSize: Size.fromHeight(80),
+                      child: SearchButtonBar(),
                     ),
-                    const SizedBox(height: 20)
-                  ],
-                ),
-              ),
-            ),
-            SliverFixedExtentList(
-              itemExtent: 118.0,
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  final project = projects[index];
-                  return ProjectCard(
-                    project: project,
-                    onTap: () {
-                      GoRouter.of(context)
-                          .go('/projects/project/${project.id}');
-                    },
+                    elevation: 0.0,
+                    scrolledUnderElevation: 0.0,
+                    backgroundColor: Color.fromRGBO(255, 255, 255,
+                        (constraints.scrollOffset / 200).clamp(0, 1.0)),
+                    floating: true,
+                    pinned: true,
                   );
                 },
-                childCount: projects.length,
               ),
-            ),
-          ],
-        ),
-      ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 170,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        searcherProp.name,
+                        style: const TextStyle(
+                            fontSize: 35, fontWeight: FontWeight.w600),
+                      ),
+                      const SizedBox(height: 20)
+                    ],
+                  ),
+                ),
+              ),
+              SliverFixedExtentList(
+                itemExtent: 118.0,
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    final project = projects[index];
+                    return ProjectCard(
+                      project: project,
+                      onTap: () {
+                        GoRouter.of(context)
+                            .go('/projects/project/${project.id}');
+                      },
+                    );
+                  },
+                  childCount: projects.length,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }

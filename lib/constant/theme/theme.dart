@@ -91,7 +91,7 @@ class AppTheme {
       ),
       ProjectsPlaceBodyTheme(
         backgroundBaseColor: Color.fromRGBO(255, 255, 255, 0.25),
-        gradientStartColor: Color.fromRGBO(255, 255, 255, 0.0),
+        gradientStartColor: Colors.transparent,
         gradientEndColor: Color.fromRGBO(255, 255, 255, 1.0),
       ),
     ],

@@ -16,7 +16,7 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Colors.transparent,
       child: Card(
         color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
         elevation: 0,
