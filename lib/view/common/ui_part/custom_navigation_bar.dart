@@ -32,26 +32,26 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         BottomNavigationBarItem(
           activeIcon: Icon(Icons.home),
           icon: Icon(Icons.home_outlined),
-          label: 'Home',
+          label: 'ホーム',
         ),
         BottomNavigationBarItem(
           activeIcon: Icon(Icons.event_note),
           icon: Icon(Icons.event_note_outlined),
-          label: 'Projects',
+          label: '企画一覧',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.schedule),
-          label: 'Timetable',
+          label: 'タイムテーブル',
         ),
         BottomNavigationBarItem(
           activeIcon: Icon(Icons.map),
           icon: Icon(Icons.map_outlined),
-          label: 'Map',
+          label: 'マップ',
         ),
         BottomNavigationBarItem(
           activeIcon: Icon(Icons.gamepad),
           icon: Icon(Icons.gamepad_outlined),
-          label: 'Contents',
+          label: 'コンテンツ',
         ),
       ],
       onTap: (index) {
@@ -59,8 +59,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       },
       currentIndex: widget.navigationShell.currentIndex,
       type: BottomNavigationBarType.fixed,
-      selectedFontSize: 13,
-      unselectedFontSize: 13,
+      selectedFontSize: 11,
+      unselectedFontSize: 11,
       showUnselectedLabels: true,
     );
   }
