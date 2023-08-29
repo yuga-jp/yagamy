@@ -16,7 +16,7 @@ class NavigationPages extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: SafeArea(child: navigationShell),
+      body: navigationShell,
       bottomNavigationBar:
           CustomNavigationBar(navigationShell: navigationShell),
       resizeToAvoidBottomInset: false,
