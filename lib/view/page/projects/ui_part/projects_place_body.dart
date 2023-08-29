@@ -53,10 +53,10 @@ class ProjectsPlaceBody extends StatelessWidget {
               SliverLayoutBuilder(
                 builder: (BuildContext context, SliverConstraints constraints) {
                   return SliverAppBar(
-                    actions: const <Widget>[
-                      Icon(Icons.search),
-                      SizedBox(width: 15),
-                    ],
+                    title: const Text(
+                      '企画一覧',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     bottom: const PreferredSize(
                       preferredSize: Size.fromHeight(80),
                       child: SearchButtonBar(),
