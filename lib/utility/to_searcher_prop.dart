@@ -87,6 +87,9 @@ SearcherProp _toSearcherPropPlace(String area, String floor) {
     case 'booth':
       searcherProp = SearcherProp.booth;
       break;
+    case 'ground':
+      searcherProp = SearcherProp.ground;
+      break;
     case 'mainstage':
       searcherProp = SearcherProp.mainStage;
       break;
