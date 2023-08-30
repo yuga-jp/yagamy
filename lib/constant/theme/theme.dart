@@ -11,7 +11,7 @@ import 'package:yagamy/constant/theme/project_info_theme.dart';
 class AppTheme {
   static final ThemeData defalutAppTheme = ThemeData(
     colorScheme: const ColorScheme.light(
-      primary: Color.fromRGBO(255, 222, 0, 1.0),
+      primary: Color.fromRGBO(255, 139, 68, 1.0),
       outline: Color.fromRGBO(224, 224, 224, 1),
     ),
     scaffoldBackgroundColor: Colors.white,

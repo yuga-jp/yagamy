@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
+import 'package:yagamy/view/page/home/ui_part/top_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,22 +43,7 @@ class _HomePageState extends State<HomePage> {
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              Card(
-                elevation: 0.0,
-                shape: RoundedRectangleBorder(
-                  side:
-                      BorderSide(color: Theme.of(context).colorScheme.outline),
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                ),
-                margin: const EdgeInsets.only(
-                    left: 10, top: 5, right: 10, bottom: 10),
-                child: const Column(
-                  children: [
-                    Text('第24回矢上祭'),
-                    Text('2023年9月23日(土) 10:00-'),
-                  ],
-                ),
-              ),
+              const TopCard(),
             ],
           ),
         ),
