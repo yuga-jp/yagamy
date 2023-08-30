@@ -12,6 +12,8 @@ class AppTheme {
   static final ThemeData defalutAppTheme = ThemeData(
     colorScheme: const ColorScheme.light(
       primary: Color.fromRGBO(255, 139, 68, 1.0),
+      secondary: Color.fromRGBO(255, 205, 66, 1.0),
+      tertiary: Color.fromRGBO(255, 92, 70, 1.0),
       outline: Color.fromRGBO(224, 224, 224, 1),
     ),
     scaffoldBackgroundColor: Colors.white,
