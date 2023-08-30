@@ -59,7 +59,7 @@ class _ProjectImage extends StatelessWidget {
               DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.contain),
           border: Border.all(
             color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
-            width: 5,
+            width: 2.5,
           ),
           borderRadius: BorderRadius.circular(15)),
       width: 110,
