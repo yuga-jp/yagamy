@@ -98,13 +98,15 @@ class ProjectInfoBody extends StatelessWidget {
                       color: currentTheme.groupNameColor,
                     ),
                     const SizedBox(width: 5),
-                    Text(
-                      project.groupName,
-                      style: TextStyle(
-                          color: currentTheme.groupNameColor,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w300),
-                    )
+                    Expanded(
+                      child: Text(
+                        project.groupName,
+                        style: TextStyle(
+                            color: currentTheme.groupNameColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300),
+                      ),
+                    ),
                   ],
                 ),
               );
@@ -186,7 +188,12 @@ class ProjectInfoBody extends StatelessWidget {
               if (project.groupIntro.isNotEmpty) {
                 return Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(),
+                    padding: const EdgeInsets.only(
+                      left: horizontalIndent,
+                      top: 0,
+                      right: horizontalIndent,
+                      bottom: 0,
+                    ),
                     child: Text(
                       project.groupName,
                       style: TextStyle(
@@ -271,7 +278,7 @@ class ProjectInfoBody extends StatelessWidget {
                 );
               }
               return const SizedBox.shrink();
-              
+
             default:
               return const SizedBox.shrink();
           }
