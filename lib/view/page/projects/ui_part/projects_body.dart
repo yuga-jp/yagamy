@@ -63,8 +63,10 @@ class ProjectsBody extends StatelessWidget {
                     elevation: !searcherProp.isPlaceProp() ? null : 0.0,
                     scrolledUnderElevation:
                         !searcherProp.isPlaceProp() ? null : 0.0,
-                    backgroundColor: currentTheme.gradientEndColor!.withOpacity(
-                        (constraints.scrollOffset / 200).clamp(0.0, 1.0)),
+                    backgroundColor: !searcherProp.isPlaceProp()
+                        ? currentTheme.gradientEndColor
+                        : currentTheme.gradientEndColor!.withOpacity(
+                            (constraints.scrollOffset / 200).clamp(0.0, 1.0)),
                     centerTitle: true,
                     floating: true,
                     pinned: true,
