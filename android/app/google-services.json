@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "3176467202",
+    "project_id": "yagamy-6bb6d",
+    "storage_bucket": "yagamy-6bb6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3176467202:android:bc5cb24d7e5b298781d01b",
+        "android_client_info": {
+          "package_name": "com.yagamifestival.yagamy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3176467202-74a76ce52lmim0uqjjdmtd1chuk6jgrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApZUMyMTtx5Un0Ula3PWgg0kzVrVWW3Ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3176467202-74a76ce52lmim0uqjjdmtd1chuk6jgrk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "3176467202-nb6hbhrvmhbt7pgsq3jbs0595cunaa8t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yagamifestival.yagamy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
