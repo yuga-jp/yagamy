@@ -10,12 +10,12 @@ import 'package:yagamy/router/routes.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
 
-  // final messaging = FirebaseMessaging.instance;
-  // await messaging.requestPermission();
-  // final token = await messaging.getToken();
-  // print('FCM Token: $token');
+  final messaging = FirebaseMessaging.instance;
+  await messaging.requestPermission();
+  final token = await messaging.getToken();
+  print('FCM Token: $token');
 
   runApp(const ProviderScope(child: MyApp()));
 }
