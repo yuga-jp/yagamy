@@ -14,17 +14,17 @@ import 'package:flutter/services.dart';
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
-  /// File path: assets/json/notification.json
-  String get notification => 'assets/json/notification.json';
-
-  /// File path: assets/json/project_mock.json
-  String get projectMock => 'assets/json/project_mock.json';
+  /// File path: assets/json/notifications.json
+  String get notifications => 'assets/json/notifications.json';
 
   /// File path: assets/json/project_mock_copy.json
   String get projectMockCopy => 'assets/json/project_mock_copy.json';
 
+  /// File path: assets/json/projects.json
+  String get projects => 'assets/json/projects.json';
+
   /// List of all assets
-  List<String> get values => [notification, projectMock, projectMockCopy];
+  List<String> get values => [notifications, projectMockCopy, projects];
 }
 
 class $AssetsLogoGen {

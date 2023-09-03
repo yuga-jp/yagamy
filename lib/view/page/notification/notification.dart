@@ -5,7 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
-import 'package:yagamy/model/notification_priority.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/provider/notifications_provider.dart';
 import 'package:yagamy/provider/projects_provider.dart';
@@ -52,11 +51,14 @@ class _NotificationPageState extends ConsumerState<NotificationPage> {
           centerTitle: false,
         ),
         SliverFixedExtentList(
-          delegate:
-              SliverChildBuilderDelegate((BuildContext context, int index) {
-            return NotificationCard(notification: notifications.value!.first);
-          }),
-          itemExtent: 70,
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return NotificationCard(
+                  notification: notifications.value![index]);
+            },
+            childCount: notifications.value!.length,
+          ),
+          itemExtent: 60,
         )
       ],
     );

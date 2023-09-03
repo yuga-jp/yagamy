@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yagamy/constant/theme/notification_theme.dart';
 import 'package:yagamy/constant/theme/projects_body_theme.dart';
 
 import 'package:yagamy/constant/theme/search_button_theme.dart';
@@ -95,6 +96,11 @@ class AppTheme {
         backgroundBaseColor: Color.fromRGBO(255, 255, 255, 0.25),
         gradientStartColor: Colors.transparent,
         gradientEndColor: Color.fromRGBO(255, 255, 255, 1.0),
+      ),
+      NotificationCardTheme(
+        titleColor: Colors.black,
+        bodyColor: Colors.grey,
+        borderColor: Colors.grey,
       ),
     ],
   );

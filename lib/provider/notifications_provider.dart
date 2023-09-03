@@ -11,7 +11,7 @@ import 'package:yagamy/model/notification/raw_notification.dart';
 final notificationsProvider =
     FutureProvider<List<ParsedNotification>>((ref) async {
   final content = json.decode(
-    await rootBundle.loadString(Assets.json.notification),
+    await rootBundle.loadString(Assets.json.notifications),
   );
 
   final notifications = <ParsedNotification>[];
