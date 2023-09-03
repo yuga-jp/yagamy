@@ -22,6 +22,7 @@ class Project {
     required this.instagramId,
     required this.homepageUrl,
     required this.searcherProps,
+    required this.stampRally,
   });
 
   Project.fromRawProject(RawProject rawProject)
@@ -40,8 +41,9 @@ class Project {
         twitterId = rawProject.twitterId,
         instagramId = rawProject.instagramId,
         homepageUrl = rawProject.homepageUrl,
-        searcherProps = toSearcherPropList(
-            rawProject.categoryMain, rawProject.categorySub, rawProject.area, rawProject.floor);
+        searcherProps = toSearcherPropList(rawProject.categoryMain,
+            rawProject.categorySub, rawProject.area, rawProject.floor),
+        stampRally = rawProject.stampRally == 'true';
 
   Project.empty({
     this.id = '0',
@@ -59,6 +61,7 @@ class Project {
     this.instagramId = '',
     this.homepageUrl = '',
     this.searcherProps = const [],
+    this.stampRally = false,
   });
 
   final String id;
@@ -76,4 +79,5 @@ class Project {
   final String instagramId;
   final String homepageUrl;
   final List<SearcherProp> searcherProps;
+  final bool stampRally;
 }

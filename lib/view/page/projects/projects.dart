@@ -35,7 +35,7 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
     AsyncValue<List<Project>> projects = ref.watch(projectsProvider);
 
     return projects.when(
-      loading: (() {
+      loading: () {
         return Shimmer(
           linearGradient:
               Theme.of(context).extension<ShimmerTheme>()!.shimmerGradient!,
@@ -49,7 +49,7 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
                 itemCount: 10,
               )),
         );
-      }),
+      },
       error: (error, stackTrace) {
         return Text('Error: $error');
       },

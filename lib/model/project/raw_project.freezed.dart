@@ -39,6 +39,7 @@ mixin _$RawProject {
   String get homepageUrl => throw _privateConstructorUsedError;
   String get categoryMain => throw _privateConstructorUsedError;
   String get categorySub => throw _privateConstructorUsedError;
+  String get stampRally => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -71,7 +72,8 @@ abstract class $RawProjectCopyWith<$Res> {
       String instagramId,
       String homepageUrl,
       String categoryMain,
-      String categorySub});
+      String categorySub,
+      String stampRally});
 }
 
 /// @nodoc
@@ -106,6 +108,7 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? homepageUrl = null,
     Object? categoryMain = null,
     Object? categorySub = null,
+    Object? stampRally = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -184,6 +187,10 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.categorySub
           : categorySub // ignore: cast_nullable_to_non_nullable
               as String,
+      stampRally: null == stampRally
+          ? _value.stampRally
+          : stampRally // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -215,7 +222,8 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String instagramId,
       String homepageUrl,
       String categoryMain,
-      String categorySub});
+      String categorySub,
+      String stampRally});
 }
 
 /// @nodoc
@@ -248,6 +256,7 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? homepageUrl = null,
     Object? categoryMain = null,
     Object? categorySub = null,
+    Object? stampRally = null,
   }) {
     return _then(_$_RawProject(
       id: null == id
@@ -326,6 +335,10 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.categorySub
           : categorySub // ignore: cast_nullable_to_non_nullable
               as String,
+      stampRally: null == stampRally
+          ? _value.stampRally
+          : stampRally // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -352,7 +365,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.instagramId,
       required this.homepageUrl,
       required this.categoryMain,
-      required this.categorySub});
+      required this.categorySub,
+      required this.stampRally});
 
   factory _$_RawProject.fromJson(Map<String, dynamic> json) =>
       _$$_RawProjectFromJson(json);
@@ -395,10 +409,12 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   final String categoryMain;
   @override
   final String categorySub;
+  @override
+  final String stampRally;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
   }
 
   @override
@@ -424,7 +440,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       ..add(DiagnosticsProperty('instagramId', instagramId))
       ..add(DiagnosticsProperty('homepageUrl', homepageUrl))
       ..add(DiagnosticsProperty('categoryMain', categoryMain))
-      ..add(DiagnosticsProperty('categorySub', categorySub));
+      ..add(DiagnosticsProperty('categorySub', categorySub))
+      ..add(DiagnosticsProperty('stampRally', stampRally));
   }
 
   @override
@@ -464,7 +481,9 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
             (identical(other.categoryMain, categoryMain) ||
                 other.categoryMain == categoryMain) &&
             (identical(other.categorySub, categorySub) ||
-                other.categorySub == categorySub));
+                other.categorySub == categorySub) &&
+            (identical(other.stampRally, stampRally) ||
+                other.stampRally == stampRally));
   }
 
   @JsonKey(ignore: true)
@@ -489,7 +508,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
         instagramId,
         homepageUrl,
         categoryMain,
-        categorySub
+        categorySub,
+        stampRally
       ]);
 
   @JsonKey(ignore: true)
@@ -526,7 +546,8 @@ abstract class _RawProject implements RawProject {
       required final String instagramId,
       required final String homepageUrl,
       required final String categoryMain,
-      required final String categorySub}) = _$_RawProject;
+      required final String categorySub,
+      required final String stampRally}) = _$_RawProject;
 
   factory _RawProject.fromJson(Map<String, dynamic> json) =
       _$_RawProject.fromJson;
@@ -569,6 +590,8 @@ abstract class _RawProject implements RawProject {
   String get categoryMain;
   @override
   String get categorySub;
+  @override
+  String get stampRally;
   @override
   @JsonKey(ignore: true)
   _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>
