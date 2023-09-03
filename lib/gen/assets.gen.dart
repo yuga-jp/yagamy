@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
+  /// File path: assets/json/notification.json
+  String get notification => 'assets/json/notification.json';
+
   /// File path: assets/json/project_mock.json
   String get projectMock => 'assets/json/project_mock.json';
 
@@ -21,7 +24,7 @@ class $AssetsJsonGen {
   String get projectMockCopy => 'assets/json/project_mock_copy.json';
 
   /// List of all assets
-  List<String> get values => [projectMock, projectMockCopy];
+  List<String> get values => [notification, projectMock, projectMockCopy];
 }
 
 class $AssetsLogoGen {
@@ -166,6 +169,10 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage37 =>
       const AssetGenImage('assets/project/main_image/main_image_37.jpeg');
 
+  /// File path: assets/project/main_image/main_image_38.jpeg
+  AssetGenImage get mainImage38 =>
+      const AssetGenImage('assets/project/main_image/main_image_38.jpeg');
+
   /// File path: assets/project/main_image/main_image_39.jpeg
   AssetGenImage get mainImage39 =>
       const AssetGenImage('assets/project/main_image/main_image_39.jpeg');
@@ -238,6 +245,10 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage62 =>
       const AssetGenImage('assets/project/main_image/main_image_62.jpg');
 
+  /// File path: assets/project/main_image/main_image_65.png
+  AssetGenImage get mainImage65 =>
+      const AssetGenImage('assets/project/main_image/main_image_65.png');
+
   /// File path: assets/project/main_image/main_image_7.jpeg
   AssetGenImage get mainImage7 =>
       const AssetGenImage('assets/project/main_image/main_image_7.jpeg');
@@ -285,6 +296,7 @@ class $AssetsProjectMainImageGen {
         mainImage34,
         mainImage35,
         mainImage37,
+        mainImage38,
         mainImage39,
         mainImage4,
         mainImage40,
@@ -303,6 +315,7 @@ class $AssetsProjectMainImageGen {
         mainImage59,
         mainImage6,
         mainImage62,
+        mainImage65,
         mainImage7,
         mainImage8,
         mainImage9,
@@ -429,6 +442,10 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail37 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_37.jpeg');
 
+  /// File path: assets/project/thumbnail/thumbnail_38.jpeg
+  AssetGenImage get thumbnail38 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_38.jpeg');
+
   /// File path: assets/project/thumbnail/thumbnail_39.png
   AssetGenImage get thumbnail39 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_39.png');
@@ -501,6 +518,10 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail62 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_62.jpeg');
 
+  /// File path: assets/project/thumbnail/thumbnail_65.png
+  AssetGenImage get thumbnail65 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_65.png');
+
   /// File path: assets/project/thumbnail/thumbnail_7.jpeg
   AssetGenImage get thumbnail7 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_7.jpeg');
@@ -548,6 +569,7 @@ class $AssetsProjectThumbnailGen {
         thumbnail34,
         thumbnail35,
         thumbnail37,
+        thumbnail38,
         thumbnail39,
         thumbnail4,
         thumbnail40,
@@ -566,6 +588,7 @@ class $AssetsProjectThumbnailGen {
         thumbnail59,
         thumbnail6,
         thumbnail62,
+        thumbnail65,
         thumbnail7,
         thumbnail8,
         thumbnail9,

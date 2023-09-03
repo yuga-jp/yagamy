@@ -49,9 +49,9 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           label: 'マップ',
         ),
         BottomNavigationBarItem(
-          activeIcon: Icon(Icons.gamepad),
-          icon: Icon(Icons.gamepad_outlined),
-          label: 'コンテンツ',
+          activeIcon: Icon(Icons.notifications),
+          icon: Icon(Icons.notifications_outlined),
+          label: '通知',
         ),
       ],
       onTap: (index) {

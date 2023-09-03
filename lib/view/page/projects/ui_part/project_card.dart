@@ -81,10 +81,10 @@ class _ProjectInfo extends StatelessWidget {
       width: 135,
       child: Row(
         children: [
-          const Icon(Icons.location_on_outlined, size: 18),
+          const Icon(Icons.location_on_outlined, size: 17),
           Text(place,
               style: TextStyle(
-                  color: textColor, fontSize: 15, fontWeight: FontWeight.w500))
+                  color: textColor, fontSize: 14, fontWeight: FontWeight.w500))
         ],
       ),
     );
@@ -94,10 +94,10 @@ class _ProjectInfo extends StatelessWidget {
     return SizedBox(
       child: Row(
         children: [
-          const Icon(Icons.schedule, size: 18),
+          const Icon(Icons.schedule, size: 17),
           Text(time,
               style: TextStyle(
-                  color: textColor, fontSize: 15, fontWeight: FontWeight.w500))
+                  color: textColor, fontSize: 14, fontWeight: FontWeight.w500))
         ],
       ),
     );
@@ -115,7 +115,7 @@ class _ProjectInfo extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             softWrap: false,
             overflow: TextOverflow.ellipsis,
           ),
@@ -123,13 +123,13 @@ class _ProjectInfo extends StatelessWidget {
           Row(
             children: [
               Icon(Icons.group_outlined,
-                  size: 18, color: currentTheme.groupDisplayColor!),
+                  size: 17, color: currentTheme.groupDisplayColor!),
               Flexible(
                 child: Text(
                   groupName,
                   style: TextStyle(
                     color: currentTheme.groupDisplayColor!,
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w300,
                   ),
                   softWrap: false,

@@ -27,6 +27,7 @@ class RawProject with _$RawProject {
     required String homepageUrl,
     required String categoryMain,
     required String categorySub,
+    required String stampRally,
   }) = _RawProject;
 
   factory RawProject.fromJson(Map<String, Object?> json) =>

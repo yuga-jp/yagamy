@@ -18,7 +18,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "2",
@@ -39,7 +40,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "3",
@@ -60,7 +62,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "liveTalk",
-        "categorySub": "watching"
+        "categorySub": "watching",
+        "stampRally": ""
     },
     {
         "id": "4",
@@ -81,7 +84,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "watching",
-        "categorySub": "experience"
+        "categorySub": "experience",
+        "stampRally": ""
     },
     {
         "id": "5",
@@ -93,16 +97,17 @@
         "hoursSecondDay": "",
         "groupName": "Le Lien Rouge",
         "shortIntro": "アイスティーを提供します！",
-        "intro": "紅茶サークルLe Lien Rouge(ルリアンルージュ)のティーサロンです。\\nイートインおよびテイクアウトで、残暑厳しい矢上祭にピッタリのアイスティー4種類と軽いお菓子を提供します。",
+        "intro": "紅茶サークルLe Lien Rouge(ルリアンルージュ)のティーサロンです。\nイートインおよびテイクアウトで、残暑厳しい矢上祭にピッタリのアイスティー4種類と軽いお菓子を提供します。",
         "introExtension": "",
-        "groupIntro": "紅茶サークルLe Lien Rouge(ルリアンルージュ)は、文字通り皆で紅茶を飲みに行ったり、紅茶を取り巻く文化を楽しんだりするサークルです。\\n2019年創設で現在は100名弱の会員がおり、アフタヌーンティーや喫茶店巡りを楽しんだりお茶会を開いたりしています。",
+        "groupIntro": "紅茶サークルLe Lien Rouge(ルリアンルージュ)は、文字通り皆で紅茶を飲みに行ったり、紅茶を取り巻く文化を楽しんだりするサークルです。\n2019年創設で現在は100名弱の会員がおり、アフタヌーンティーや喫茶店巡りを楽しんだりお茶会を開いたりしています。",
         "thumbnailUrl": "",
         "mainImageUrl": "",
         "twitterId": "le_lien_rouge",
         "instagramId": "lelienrouge",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "6",
@@ -123,7 +128,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "experience",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "7",
@@ -144,7 +150,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "performance",
-        "categorySub": "liveTalk"
+        "categorySub": "liveTalk",
+        "stampRally": "stamp"
     },
     {
         "id": "8",
@@ -165,7 +172,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "experience"
+        "categorySub": "experience",
+        "stampRally": "stamp"
     },
     {
         "id": "9",
@@ -186,7 +194,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "experience",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "10",
@@ -207,7 +216,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "11",
@@ -228,7 +238,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "12",
@@ -249,14 +260,15 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "13",
         "title": "矢上ナビゲーション",
         "area": "12",
         "floor": "2",
-        "placeDetail": "202AB",
+        "placeDetail": "202A, B",
         "hoursFirstDay": "",
         "hoursSecondDay": "",
         "groupName": "矢上祭実行委員会 室内局",
@@ -270,7 +282,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "information",
-        "categorySub": "exhibiton"
+        "categorySub": "exhibiton",
+        "stampRally": ""
     },
     {
         "id": "14",
@@ -282,16 +295,17 @@
         "hoursSecondDay": "",
         "groupName": "湘南学祭実行委員会",
         "shortIntro": "夜の夏祭りを再現しました！",
-        "intro": "教室一面を暗くし、提灯などの明かりで一面を照らし夜の夏祭りを再現しました！\\n射的、お面作り、ポップコーン、ラムネの四つの屋台をご用意したのでお楽しみください！\\n休憩所として竹椅子もご用意しておりますので是非お立ち寄りください！",
+        "intro": "教室一面を暗くし、提灯などの明かりで一面を照らし夜の夏祭りを再現しました！\n射的、お面作り、ポップコーン、ラムネの四つの屋台をご用意したのでお楽しみください！\n休憩所として竹椅子もご用意しておりますので是非お立ち寄りください！",
         "introExtension": "",
-        "groupIntro": "毎年7月上旬に慶應義塾大学湘南藤沢キャンパスで開催される七夕祭を運営する組織です。\\n詳しくは、公式HP、各種SNSをご確認ください。",
+        "groupIntro": "毎年7月上旬に慶應義塾大学湘南藤沢キャンパスで開催される七夕祭を運営する組織です。\n詳しくは、公式HP、各種SNSをご確認ください。",
         "thumbnailUrl": "",
         "mainImageUrl": "",
         "twitterId": "tanabata_fes",
         "instagramId": "tanabata_fes",
         "homepageUrl": "https://www.tanabata-fes.com",
         "categoryMain": "exhibiton",
-        "categorySub": "foodsSelling"
+        "categorySub": "foodsSelling",
+        "stampRally": "stamp"
     },
     {
         "id": "15",
@@ -312,7 +326,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "goodsSelling"
+        "categorySub": "goodsSelling",
+        "stampRally": ""
     },
     {
         "id": "16",
@@ -325,7 +340,7 @@
         "groupName": "猫サークル ひよねこ",
         "shortIntro": "ひよねこの活動内容紹介や、グッズの販売を行っています！",
         "intro": "猫サークル ひよねこでは、地域の方と協力して、日吉キャンパス内の猫を保護及び管理するボランティア活動を行っています！今回はその地域猫活動の紹介や猫の写真展示、グッズ販売を行っています！日吉の猫たちに癒されてみてはいかがでしょうか？",
-        "introExtension": "ポスターを用いて慶應における地域猫活動の歴史や、現在の活動内容を紹介しています。また、日吉にする猫たちの写真も展示しています！\\nポストカード等のグッズも販売する予定です！",
+        "introExtension": "ポスターを用いて慶應における地域猫活動の歴史や、現在の活動内容を紹介しています。また、日吉にする猫たちの写真も展示しています！\nポストカード等のグッズも販売する予定です！",
         "groupIntro": "ひよねこは設立して10年ほどの新しいサークルで、地域の方々と協力して、日吉キャンパス内で地域猫活動を行うサークルです！基本的な活動は週に２回のえさやりで、日吉キャンパスの中で行っています！サークル活動を通して、猫と触れ合い、地域猫活動を体験してもらうことが目的です！",
         "thumbnailUrl": "",
         "mainImageUrl": "",
@@ -333,7 +348,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "goodsSelling"
+        "categorySub": "goodsSelling",
+        "stampRally": ""
     },
     {
         "id": "17",
@@ -345,8 +361,8 @@
         "hoursSecondDay": "",
         "groupName": "作問サークル",
         "shortIntro": "ちょっと算数・数学で遊んでいきませんか？",
-        "intro": "作サーが作るのは算数数学の「問い」？それは△．私たちが作る問いは，解く過程でワクワクできる「Toy」でもあるのです！\\nお子様も楽しめるパズルから大人も熟考する問題まで，幅広い「トイ」を用意してお待ちしております！",
-        "introExtension": "今年作問サークルは以下の企画をおこなう予定です．\\n・算数パズル：子供の方も同伴の大人の方も楽しめます．\\n・矢上杯：中高生以上を対象にしています．一部問題はコンテストサイトに投稿予定です．\\n・（体験企画：余裕があれば，少し変わった円周率近似企画や数学黒板アートをする予定です）",
+        "intro": "作サーが作るのは算数数学の「問い」？それは△．私たちが作る問いは，解く過程でワクワクできる「Toy」でもあるのです！\nお子様も楽しめるパズルから大人も熟考する問題まで，幅広い「トイ」を用意してお待ちしております！",
+        "introExtension": "今年作問サークルは以下の企画をおこなう予定です．\n・算数パズル：子供の方も同伴の大人の方も楽しめます．\n・矢上杯：中高生以上を対象にしています．一部問題はコンテストサイトに投稿予定です．\n・（体験企画：余裕があれば，少し変わった円周率近似企画や数学黒板アートをする予定です）",
         "groupIntro": "作問サークルは，主に算数数学に関する自作問題を作っています．去年は年間で32問を作りました．教科書には無い一風変わった問題や競技数学で出てくるようなヒラメキ問題を作っており，メンバーは各々のタイミングで自由に活動しています．今年度は，前年度以上に矢上祭を盛り上げられるように企画制作していきます！",
         "thumbnailUrl": "",
         "mainImageUrl": "",
@@ -354,7 +370,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "experience",
-        "categorySub": "science"
+        "categorySub": "science",
+        "stampRally": "stamp"
     },
     {
         "id": "18",
@@ -375,7 +392,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "science"
+        "categorySub": "science",
+        "stampRally": "stamp"
     },
     {
         "id": "19",
@@ -396,7 +414,8 @@
         "instagramId": "keio_okeis",
         "homepageUrl": "https://o-keis.net/",
         "categoryMain": "performance",
-        "categorySub": "liveTalk"
+        "categorySub": "liveTalk",
+        "stampRally": "stamp"
     },
     {
         "id": "20",
@@ -417,7 +436,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "experience"
+        "categorySub": "experience",
+        "stampRally": "stamp"
     },
     {
         "id": "21",
@@ -438,7 +458,8 @@
         "instagramId": "keio.tenken",
         "homepageUrl": "",
         "categoryMain": "exhibiton",
-        "categorySub": "goodsSelling"
+        "categorySub": "goodsSelling",
+        "stampRally": "stamp"
     },
     {
         "id": "22",
@@ -459,7 +480,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "23",
@@ -480,7 +502,8 @@
         "instagramId": "keioseikyo2023_",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "24",
@@ -501,7 +524,8 @@
         "instagramId": "keio.tenken",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "25",
@@ -522,7 +546,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "26",
@@ -534,16 +559,17 @@
         "hoursSecondDay": "",
         "groupName": "理工学部 1年オ組",
         "shortIntro": "”お”いしいチュロスを作ります！！",
-        "intro": "店の名前は、 ”お” 組で ”お” いしいチュロスを作るのでおチュロスです！\\n\\n40cmの特大チュロスを販売します！！\\n\\nフレーバーは、プレーン、チョコ、抹茶、ストロベリーを予定しております\\n\\nカリカリのチュロスに甘い砂糖をふりかけた美味しいチュロスをぜひ食べに来ませんか？",
+        "intro": "店の名前は、 ”お” 組で ”お” いしいチュロスを作るのでおチュロスです！\n\n40cmの特大チュロスを販売します！！\n\nフレーバーは、プレーン、チョコ、抹茶、ストロベリーを予定しております\n\nカリカリのチュロスに甘い砂糖をふりかけた美味しいチュロスをぜひ食べに来ませんか？",
         "introExtension": "",
-        "groupIntro": "理工学部１年オ組（中国語選択）です！\\nクラス全体がアットホームで仲が良いです！",
+        "groupIntro": "理工学部１年オ組（中国語選択）です！\nクラス全体がアットホームで仲が良いです！",
         "thumbnailUrl": "",
         "mainImageUrl": "",
         "twitterId": "2023ogumi",
         "instagramId": "2023ogumi",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "27",
@@ -564,7 +590,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "28",
@@ -585,7 +612,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "29",
@@ -606,7 +634,8 @@
         "instagramId": "keio_kegumi",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "30",
@@ -618,7 +647,7 @@
         "hoursSecondDay": "",
         "groupName": "理工学部 1年ヘ組",
         "shortIntro": "まだまだ暑いこの季節にかき氷をどうぞ！！",
-        "intro": "こんにちは！1年へ組です！\\n夏を感じることが出来なかったそこのあなたも！夏を感じ足りていないそこのあなたも！熱気で溢れかえる矢上祭で夏を味わいませんか！？かき氷とジュースで今年の夏を締めくくろう！",
+        "intro": "こんにちは！1年へ組です！\n夏を感じることが出来なかったそこのあなたも！夏を感じ足りていないそこのあなたも！熱気で溢れかえる矢上祭で夏を味わいませんか！？かき氷とジュースで今年の夏を締めくくろう！",
         "introExtension": "",
         "groupIntro": "",
         "thumbnailUrl": "",
@@ -627,7 +656,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "31",
@@ -648,7 +678,8 @@
         "instagramId": "bingbingbing_yagami",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "32",
@@ -669,7 +700,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "33",
@@ -690,7 +722,8 @@
         "instagramId": "",
         "homepageUrl": "https://www.applc.keio.ac.jp/~terasaka/",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "34",
@@ -702,7 +735,7 @@
         "hoursSecondDay": "",
         "groupName": "バスケットボールフリーク鳩バスケットボールサークル",
         "shortIntro": "鳩プレゼンツ！『鳩貴族』！！",
-        "intro": "あの有名なチェーン店、「鳥貴族」さんをオマージュしました！\\n慶應義塾内でも最大規模のサークル『鳩バス』による『 鳩 貴族 』として、焼鳥を販売します！格安で焼鳥を販売しております！\\nまた、焼鳥だけでなくノンアルコールビールやジュースも販売中！！\\n是非一緒に矢上祭を楽しみましょう！",
+        "intro": "あの有名なチェーン店、「鳥貴族」さんをオマージュしました！\n慶應義塾内でも最大規模のサークル『鳩バス』による『 鳩 貴族 』として、焼鳥を販売します！格安で焼鳥を販売しております！\nまた、焼鳥だけでなくノンアルコールビールやジュースも販売中！！\n是非一緒に矢上祭を楽しみましょう！",
         "introExtension": "",
         "groupIntro": "私たちバスケットボールフリーク鳩バスは、慶應義塾大学では最大級レベル！公認バスケサークル内ではダントツの人数の多さを誇ります！！\n今年も１００人以上の１年生が入サーしてくれました！\n鳩バスでは「週１練習　月１イベント」をモットーにしてます\nなので、バスケ未経験者でも大歓迎！サークルの半分以上がバスケ未経験者だとか（笑）\nバスケもイベントも充実してるので、大学生活楽しくなること間違いなし！\nちなみに、、、次の月１イベント（１０月イベント）は　鳩バス大目玉イベントの　”ハロウィンパーティー”　です！もちろんクラブ貸し切ります！！！\n年中入サー可能なのでまだ入ってない人はこの機会に是非！",
         "thumbnailUrl": "",
@@ -711,7 +744,8 @@
         "instagramId": "hatobas_keio_",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "35",
@@ -723,7 +757,7 @@
         "hoursSecondDay": "",
         "groupName": "理工学部 1年タ組",
         "shortIntro": "色々な味のチュロス売ってます！",
-        "intro": "1年タ組では、様々なフレーバーで、食べやすいサイズのチュロスを売っています！\\n普段、ドイツ語を仲良く学ぶタ組の送る匠なドイチュロ、是非ご賞味ください！",
+        "intro": "1年タ組では、様々なフレーバーで、食べやすいサイズのチュロスを売っています！\n普段、ドイツ語を仲良く学ぶタ組の送る匠なドイチュロ、是非ご賞味ください！",
         "introExtension": "",
         "groupIntro": "理工学部のドイツ語選択、1年タ組です！",
         "thumbnailUrl": "",
@@ -732,7 +766,8 @@
         "instagramId": "keio_yagamifes_deutschurro",
         "homepageUrl": "",
         "categoryMain": "foodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "36",
@@ -753,7 +788,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "37",
@@ -774,19 +810,20 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "goodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "38",
-        "title": "",
+        "title": "小学校訪問企画",
         "area": "14west",
         "floor": "1",
         "placeDetail": "",
         "hoursFirstDay": "",
         "hoursSecondDay": "",
-        "groupName": "",
-        "shortIntro": "",
-        "intro": "",
+        "groupName": "矢上祭実行委員会 広報局",
+        "shortIntro": "小学生と作ったちぎり絵を展示しています",
+        "intro": "矢上キャンパスの近くにある木月小学校、矢上小学校の1、2年生と一緒に大きなちぎり絵を作成しました。",
         "introExtension": "",
         "groupIntro": "",
         "thumbnailUrl": "",
@@ -794,8 +831,9 @@
         "twitterId": "",
         "instagramId": "",
         "homepageUrl": "",
-        "categoryMain": "",
-        "categorySub": ""
+        "categoryMain": "exhibiton",
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "39",
@@ -816,7 +854,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "experience",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "40",
@@ -837,7 +876,8 @@
         "instagramId": "keio_piano_society",
         "homepageUrl": "",
         "categoryMain": "performance",
-        "categorySub": "foodsSelling"
+        "categorySub": "foodsSelling",
+        "stampRally": "stamp"
     },
     {
         "id": "41",
@@ -849,7 +889,7 @@
         "hoursSecondDay": "",
         "groupName": "矢上祭実行委員会 総務局",
         "shortIntro": "スタンプを集めると景品がもらえます。",
-        "intro": "各企画に設置されているスタンプを集める。全てのスタンプを集めなくても、集めた個数に応じた景品がもらえる。\\n景品は先着順。",
+        "intro": "各企画に設置されているスタンプを集める。全てのスタンプを集めなくても、集めた個数に応じた景品がもらえる。\n景品は先着順。",
         "introExtension": "",
         "groupIntro": "",
         "thumbnailUrl": "",
@@ -858,7 +898,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "42",
@@ -870,7 +911,7 @@
         "hoursSecondDay": "",
         "groupName": "ジャパンアニメカルチャー研究会",
         "shortIntro": "小野坂さん・小西さん×慶應の異色コラボ！",
-        "intro": "声優の小野坂昌也さんと小西克幸さんのYouTubeチャンネル「小野坂昌也☆ニューヤングTV」とコラボしてトークショーを行います！\\nぜひ、ニューヤングTV×慶應の異色のコラボをお楽しみください！ご来場お待ちしております！",
+        "intro": "声優の小野坂昌也さんと小西克幸さんのYouTubeチャンネル「小野坂昌也☆ニューヤングTV」とコラボしてトークショーを行います！\nぜひ、ニューヤングTV×慶應の異色のコラボをお楽しみください！ご来場お待ちしております！",
         "introExtension": "",
         "groupIntro": "ジャパンアニメカルチャー研究会（通称JACK）は、慶應義塾大学の学園祭内において、声優やアニメ業界の方々をお招きしたイベントの開催を目的としているサークルです！",
         "thumbnailUrl": "",
@@ -879,7 +920,8 @@
         "instagramId": "",
         "homepageUrl": "https://jack-keio.com/",
         "categoryMain": "liveTalk",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "43",
@@ -900,7 +942,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "liveTalk",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "44",
@@ -921,7 +964,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": "goodsSelling"
+        "categorySub": "goodsSelling",
+        "stampRally": ""
     },
     {
         "id": "45",
@@ -942,7 +986,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "goodsSelling",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "46",
@@ -963,7 +1008,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": "exhibiton"
+        "categorySub": "exhibiton",
+        "stampRally": "stamp"
     },
     {
         "id": "47",
@@ -984,7 +1030,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "science",
-        "categorySub": "experience"
+        "categorySub": "experience",
+        "stampRally": ""
     },
     {
         "id": "48",
@@ -1005,7 +1052,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "49",
@@ -1026,7 +1074,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "activity",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "50",
@@ -1047,7 +1096,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "51",
@@ -1068,7 +1118,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": "stamp"
     },
     {
         "id": "52",
@@ -1089,7 +1140,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "performance",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "53",
@@ -1110,7 +1162,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "54",
@@ -1131,7 +1184,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "55",
@@ -1152,7 +1206,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "56",
@@ -1173,7 +1228,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "watching",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "57",
@@ -1194,7 +1250,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "58",
@@ -1215,7 +1272,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "59",
@@ -1236,7 +1294,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "watching",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "60",
@@ -1257,7 +1316,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "61",
@@ -1278,7 +1338,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "62",
@@ -1299,7 +1360,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "liveTalk",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "63",
@@ -1320,7 +1382,8 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
     },
     {
         "id": "64",
@@ -1341,6 +1404,29 @@
         "instagramId": "",
         "homepageUrl": "",
         "categoryMain": "",
-        "categorySub": ""
+        "categorySub": "",
+        "stampRally": ""
+    },
+    {
+        "id": "65",
+        "title": "総合案内所",
+        "area": "14east",
+        "floor": "out",
+        "placeDetail": "",
+        "hoursFirstDay": "",
+        "hoursSecondDay": "",
+        "groupName": "矢上祭実行委員会 総務局",
+        "shortIntro": "何かお困りごとがありましたら近くの委員に声をかけるかこちらまでお願いします。",
+        "intro": "何かお困りごとがありましたら近くの委員に声をかけるかこちらまでお願いします。",
+        "introExtension": "",
+        "groupIntro": "",
+        "thumbnailUrl": "",
+        "mainImageUrl": "",
+        "twitterId": "",
+        "instagramId": "",
+        "homepageUrl": "",
+        "categoryMain": "information",
+        "categorySub": "",
+        "stampRally": ""
     }
 ]
