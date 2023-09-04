@@ -5,7 +5,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:yagamy/constant/theme/theme.dart';
+import 'package:yagamy/model/notification/parsed_notification.dart';
+import 'package:yagamy/model/notification/raw_notification.dart';
 import 'package:yagamy/router/routes.dart';
+import 'package:yagamy/storage/notifications_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,9 +16,24 @@ void main() async {
   await Firebase.initializeApp();
 
   final messaging = FirebaseMessaging.instance;
-  await messaging.requestPermission();
-  final token = await messaging.getToken();
-  print('FCM Token: $token');
+  await messaging.requestPermission(
+    alert: true,
+    announcement: false,
+    badge: true,
+    carPlay: true,
+    criticalAlert: false,
+    provisional: true,
+    sound: false,
+  );
+  // when the application is in the foreground
+  FirebaseMessaging.onMessage.listen(
+    (RemoteMessage message) {
+      message.data;
+    },
+  );
+
+  // when the application is in the background or terminated
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -32,4 +50,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
+}
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+
+  await NotificationsStorage.writeNotifications(
+      ParsedNotification.fromRawNotification(
+          RawNotification.fromJson(message.data)));
 }

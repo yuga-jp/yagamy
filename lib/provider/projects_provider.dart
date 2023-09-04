@@ -11,7 +11,7 @@ import 'package:yagamy/model/searcher_prop.dart';
 
 final projectsProvider = FutureProvider<List<Project>>((ref) async {
   final content = json.decode(
-    await rootBundle.loadString(Assets.json.projects),
+    await rootBundle.loadString(Assets.json.projectsInitial),
   );
 
   final projects = <Project>[];

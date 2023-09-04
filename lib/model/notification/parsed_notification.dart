@@ -1,3 +1,4 @@
+import 'package:yagamy/extension/notification_priority_extension.dart';
 import 'package:yagamy/model/notification/raw_notification.dart';
 import 'package:yagamy/model/notification_priority.dart';
 import 'package:yagamy/utility/to_notification_priority.dart';
@@ -8,7 +9,7 @@ class ParsedNotification {
     required this.body,
     required this.sentTime,
     required this.priority,
-    required this.relatedProject,
+    required this.relatedProjectId,
   });
 
   ParsedNotification.fromRawNotification(RawNotification rawNotification)
@@ -16,11 +17,21 @@ class ParsedNotification {
         body = rawNotification.body,
         sentTime = rawNotification.sentTime,
         priority = toNotificationPriority(rawNotification.priority),
-        relatedProject = rawNotification.relatedProjectId;
+        relatedProjectId = rawNotification.relatedProjectId;
 
   final String title;
   final String body;
   final DateTime sentTime;
   final NotificationPriority priority;
-  final String relatedProject;
+  final String relatedProjectId;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'body': body,
+      'sentTime': sentTime.toString(),
+      'priority': priority.priorityToString(),
+      'relatedProjectId': relatedProjectId,
+    };
+  }
 }
