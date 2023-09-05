@@ -25,7 +25,10 @@ mixin _$RawProject {
   String get area => throw _privateConstructorUsedError;
   String get floor => throw _privateConstructorUsedError;
   String get placeDetail => throw _privateConstructorUsedError;
-  String get hoursFirstDay => throw _privateConstructorUsedError;
+  DateTime get hoursStartFirstDay => throw _privateConstructorUsedError;
+  DateTime get hoursEndFirstday => throw _privateConstructorUsedError;
+  DateTime get hoursStartSecondDay => throw _privateConstructorUsedError;
+  DateTime get hoursEndSecondDay => throw _privateConstructorUsedError;
   String get hoursSecondDay => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
   String get shortIntro => throw _privateConstructorUsedError;
@@ -59,7 +62,10 @@ abstract class $RawProjectCopyWith<$Res> {
       String area,
       String floor,
       String placeDetail,
-      String hoursFirstDay,
+      DateTime hoursStartFirstDay,
+      DateTime hoursEndFirstday,
+      DateTime hoursStartSecondDay,
+      DateTime hoursEndSecondDay,
       String hoursSecondDay,
       String groupName,
       String shortIntro,
@@ -94,7 +100,10 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? area = null,
     Object? floor = null,
     Object? placeDetail = null,
-    Object? hoursFirstDay = null,
+    Object? hoursStartFirstDay = null,
+    Object? hoursEndFirstday = null,
+    Object? hoursStartSecondDay = null,
+    Object? hoursEndSecondDay = null,
     Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
@@ -131,10 +140,22 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.placeDetail
           : placeDetail // ignore: cast_nullable_to_non_nullable
               as String,
-      hoursFirstDay: null == hoursFirstDay
-          ? _value.hoursFirstDay
-          : hoursFirstDay // ignore: cast_nullable_to_non_nullable
-              as String,
+      hoursStartFirstDay: null == hoursStartFirstDay
+          ? _value.hoursStartFirstDay
+          : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursEndFirstday: null == hoursEndFirstday
+          ? _value.hoursEndFirstday
+          : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursStartSecondDay: null == hoursStartSecondDay
+          ? _value.hoursStartSecondDay
+          : hoursStartSecondDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursEndSecondDay: null == hoursEndSecondDay
+          ? _value.hoursEndSecondDay
+          : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       hoursSecondDay: null == hoursSecondDay
           ? _value.hoursSecondDay
           : hoursSecondDay // ignore: cast_nullable_to_non_nullable
@@ -209,7 +230,10 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String area,
       String floor,
       String placeDetail,
-      String hoursFirstDay,
+      DateTime hoursStartFirstDay,
+      DateTime hoursEndFirstday,
+      DateTime hoursStartSecondDay,
+      DateTime hoursEndSecondDay,
       String hoursSecondDay,
       String groupName,
       String shortIntro,
@@ -242,7 +266,10 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? area = null,
     Object? floor = null,
     Object? placeDetail = null,
-    Object? hoursFirstDay = null,
+    Object? hoursStartFirstDay = null,
+    Object? hoursEndFirstday = null,
+    Object? hoursStartSecondDay = null,
+    Object? hoursEndSecondDay = null,
     Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
@@ -279,10 +306,22 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.placeDetail
           : placeDetail // ignore: cast_nullable_to_non_nullable
               as String,
-      hoursFirstDay: null == hoursFirstDay
-          ? _value.hoursFirstDay
-          : hoursFirstDay // ignore: cast_nullable_to_non_nullable
-              as String,
+      hoursStartFirstDay: null == hoursStartFirstDay
+          ? _value.hoursStartFirstDay
+          : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursEndFirstday: null == hoursEndFirstday
+          ? _value.hoursEndFirstday
+          : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursStartSecondDay: null == hoursStartSecondDay
+          ? _value.hoursStartSecondDay
+          : hoursStartSecondDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hoursEndSecondDay: null == hoursEndSecondDay
+          ? _value.hoursEndSecondDay
+          : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       hoursSecondDay: null == hoursSecondDay
           ? _value.hoursSecondDay
           : hoursSecondDay // ignore: cast_nullable_to_non_nullable
@@ -352,7 +391,10 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.area,
       required this.floor,
       required this.placeDetail,
-      required this.hoursFirstDay,
+      required this.hoursStartFirstDay,
+      required this.hoursEndFirstday,
+      required this.hoursStartSecondDay,
+      required this.hoursEndSecondDay,
       required this.hoursSecondDay,
       required this.groupName,
       required this.shortIntro,
@@ -382,7 +424,13 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @override
   final String placeDetail;
   @override
-  final String hoursFirstDay;
+  final DateTime hoursStartFirstDay;
+  @override
+  final DateTime hoursEndFirstday;
+  @override
+  final DateTime hoursStartSecondDay;
+  @override
+  final DateTime hoursEndSecondDay;
   @override
   final String hoursSecondDay;
   @override
@@ -414,7 +462,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursFirstDay: $hoursFirstDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstday: $hoursEndFirstday, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
   }
 
   @override
@@ -427,7 +475,10 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       ..add(DiagnosticsProperty('area', area))
       ..add(DiagnosticsProperty('floor', floor))
       ..add(DiagnosticsProperty('placeDetail', placeDetail))
-      ..add(DiagnosticsProperty('hoursFirstDay', hoursFirstDay))
+      ..add(DiagnosticsProperty('hoursStartFirstDay', hoursStartFirstDay))
+      ..add(DiagnosticsProperty('hoursEndFirstday', hoursEndFirstday))
+      ..add(DiagnosticsProperty('hoursStartSecondDay', hoursStartSecondDay))
+      ..add(DiagnosticsProperty('hoursEndSecondDay', hoursEndSecondDay))
       ..add(DiagnosticsProperty('hoursSecondDay', hoursSecondDay))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('shortIntro', shortIntro))
@@ -455,8 +506,14 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
             (identical(other.floor, floor) || other.floor == floor) &&
             (identical(other.placeDetail, placeDetail) ||
                 other.placeDetail == placeDetail) &&
-            (identical(other.hoursFirstDay, hoursFirstDay) ||
-                other.hoursFirstDay == hoursFirstDay) &&
+            (identical(other.hoursStartFirstDay, hoursStartFirstDay) ||
+                other.hoursStartFirstDay == hoursStartFirstDay) &&
+            (identical(other.hoursEndFirstday, hoursEndFirstday) ||
+                other.hoursEndFirstday == hoursEndFirstday) &&
+            (identical(other.hoursStartSecondDay, hoursStartSecondDay) ||
+                other.hoursStartSecondDay == hoursStartSecondDay) &&
+            (identical(other.hoursEndSecondDay, hoursEndSecondDay) ||
+                other.hoursEndSecondDay == hoursEndSecondDay) &&
             (identical(other.hoursSecondDay, hoursSecondDay) ||
                 other.hoursSecondDay == hoursSecondDay) &&
             (identical(other.groupName, groupName) ||
@@ -495,7 +552,10 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
         area,
         floor,
         placeDetail,
-        hoursFirstDay,
+        hoursStartFirstDay,
+        hoursEndFirstday,
+        hoursStartSecondDay,
+        hoursEndSecondDay,
         hoursSecondDay,
         groupName,
         shortIntro,
@@ -533,7 +593,10 @@ abstract class _RawProject implements RawProject {
       required final String area,
       required final String floor,
       required final String placeDetail,
-      required final String hoursFirstDay,
+      required final DateTime hoursStartFirstDay,
+      required final DateTime hoursEndFirstday,
+      required final DateTime hoursStartSecondDay,
+      required final DateTime hoursEndSecondDay,
       required final String hoursSecondDay,
       required final String groupName,
       required final String shortIntro,
@@ -563,7 +626,13 @@ abstract class _RawProject implements RawProject {
   @override
   String get placeDetail;
   @override
-  String get hoursFirstDay;
+  DateTime get hoursStartFirstDay;
+  @override
+  DateTime get hoursEndFirstday;
+  @override
+  DateTime get hoursStartSecondDay;
+  @override
+  DateTime get hoursEndSecondDay;
   @override
   String get hoursSecondDay;
   @override
