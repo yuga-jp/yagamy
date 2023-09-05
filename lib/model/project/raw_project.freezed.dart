@@ -25,10 +25,10 @@ mixin _$RawProject {
   String get area => throw _privateConstructorUsedError;
   String get floor => throw _privateConstructorUsedError;
   String get placeDetail => throw _privateConstructorUsedError;
-  DateTime get hoursStartFirstDay => throw _privateConstructorUsedError;
-  DateTime get hoursEndFirstday => throw _privateConstructorUsedError;
-  DateTime get hoursStartSecondDay => throw _privateConstructorUsedError;
-  DateTime get hoursEndSecondDay => throw _privateConstructorUsedError;
+  DateTime? get hoursStartFirstDay => throw _privateConstructorUsedError;
+  DateTime? get hoursEndFirstday => throw _privateConstructorUsedError;
+  DateTime? get hoursStartSecondDay => throw _privateConstructorUsedError;
+  DateTime? get hoursEndSecondDay => throw _privateConstructorUsedError;
   String get hoursSecondDay => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
   String get shortIntro => throw _privateConstructorUsedError;
@@ -62,10 +62,10 @@ abstract class $RawProjectCopyWith<$Res> {
       String area,
       String floor,
       String placeDetail,
-      DateTime hoursStartFirstDay,
-      DateTime hoursEndFirstday,
-      DateTime hoursStartSecondDay,
-      DateTime hoursEndSecondDay,
+      DateTime? hoursStartFirstDay,
+      DateTime? hoursEndFirstday,
+      DateTime? hoursStartSecondDay,
+      DateTime? hoursEndSecondDay,
       String hoursSecondDay,
       String groupName,
       String shortIntro,
@@ -100,10 +100,10 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? area = null,
     Object? floor = null,
     Object? placeDetail = null,
-    Object? hoursStartFirstDay = null,
-    Object? hoursEndFirstday = null,
-    Object? hoursStartSecondDay = null,
-    Object? hoursEndSecondDay = null,
+    Object? hoursStartFirstDay = freezed,
+    Object? hoursEndFirstday = freezed,
+    Object? hoursStartSecondDay = freezed,
+    Object? hoursEndSecondDay = freezed,
     Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
@@ -140,22 +140,22 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.placeDetail
           : placeDetail // ignore: cast_nullable_to_non_nullable
               as String,
-      hoursStartFirstDay: null == hoursStartFirstDay
+      hoursStartFirstDay: freezed == hoursStartFirstDay
           ? _value.hoursStartFirstDay
           : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursEndFirstday: null == hoursEndFirstday
+              as DateTime?,
+      hoursEndFirstday: freezed == hoursEndFirstday
           ? _value.hoursEndFirstday
           : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursStartSecondDay: null == hoursStartSecondDay
+              as DateTime?,
+      hoursStartSecondDay: freezed == hoursStartSecondDay
           ? _value.hoursStartSecondDay
           : hoursStartSecondDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursEndSecondDay: null == hoursEndSecondDay
+              as DateTime?,
+      hoursEndSecondDay: freezed == hoursEndSecondDay
           ? _value.hoursEndSecondDay
           : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       hoursSecondDay: null == hoursSecondDay
           ? _value.hoursSecondDay
           : hoursSecondDay // ignore: cast_nullable_to_non_nullable
@@ -230,10 +230,10 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String area,
       String floor,
       String placeDetail,
-      DateTime hoursStartFirstDay,
-      DateTime hoursEndFirstday,
-      DateTime hoursStartSecondDay,
-      DateTime hoursEndSecondDay,
+      DateTime? hoursStartFirstDay,
+      DateTime? hoursEndFirstday,
+      DateTime? hoursStartSecondDay,
+      DateTime? hoursEndSecondDay,
       String hoursSecondDay,
       String groupName,
       String shortIntro,
@@ -266,10 +266,10 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? area = null,
     Object? floor = null,
     Object? placeDetail = null,
-    Object? hoursStartFirstDay = null,
-    Object? hoursEndFirstday = null,
-    Object? hoursStartSecondDay = null,
-    Object? hoursEndSecondDay = null,
+    Object? hoursStartFirstDay = freezed,
+    Object? hoursEndFirstday = freezed,
+    Object? hoursStartSecondDay = freezed,
+    Object? hoursEndSecondDay = freezed,
     Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
@@ -306,22 +306,22 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.placeDetail
           : placeDetail // ignore: cast_nullable_to_non_nullable
               as String,
-      hoursStartFirstDay: null == hoursStartFirstDay
+      hoursStartFirstDay: freezed == hoursStartFirstDay
           ? _value.hoursStartFirstDay
           : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursEndFirstday: null == hoursEndFirstday
+              as DateTime?,
+      hoursEndFirstday: freezed == hoursEndFirstday
           ? _value.hoursEndFirstday
           : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursStartSecondDay: null == hoursStartSecondDay
+              as DateTime?,
+      hoursStartSecondDay: freezed == hoursStartSecondDay
           ? _value.hoursStartSecondDay
           : hoursStartSecondDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hoursEndSecondDay: null == hoursEndSecondDay
+              as DateTime?,
+      hoursEndSecondDay: freezed == hoursEndSecondDay
           ? _value.hoursEndSecondDay
           : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       hoursSecondDay: null == hoursSecondDay
           ? _value.hoursSecondDay
           : hoursSecondDay // ignore: cast_nullable_to_non_nullable
@@ -424,13 +424,13 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @override
   final String placeDetail;
   @override
-  final DateTime hoursStartFirstDay;
+  final DateTime? hoursStartFirstDay;
   @override
-  final DateTime hoursEndFirstday;
+  final DateTime? hoursEndFirstday;
   @override
-  final DateTime hoursStartSecondDay;
+  final DateTime? hoursStartSecondDay;
   @override
-  final DateTime hoursEndSecondDay;
+  final DateTime? hoursEndSecondDay;
   @override
   final String hoursSecondDay;
   @override
@@ -593,10 +593,10 @@ abstract class _RawProject implements RawProject {
       required final String area,
       required final String floor,
       required final String placeDetail,
-      required final DateTime hoursStartFirstDay,
-      required final DateTime hoursEndFirstday,
-      required final DateTime hoursStartSecondDay,
-      required final DateTime hoursEndSecondDay,
+      required final DateTime? hoursStartFirstDay,
+      required final DateTime? hoursEndFirstday,
+      required final DateTime? hoursStartSecondDay,
+      required final DateTime? hoursEndSecondDay,
       required final String hoursSecondDay,
       required final String groupName,
       required final String shortIntro,
@@ -626,13 +626,13 @@ abstract class _RawProject implements RawProject {
   @override
   String get placeDetail;
   @override
-  DateTime get hoursStartFirstDay;
+  DateTime? get hoursStartFirstDay;
   @override
-  DateTime get hoursEndFirstday;
+  DateTime? get hoursEndFirstday;
   @override
-  DateTime get hoursStartSecondDay;
+  DateTime? get hoursStartSecondDay;
   @override
-  DateTime get hoursEndSecondDay;
+  DateTime? get hoursEndSecondDay;
   @override
   String get hoursSecondDay;
   @override
