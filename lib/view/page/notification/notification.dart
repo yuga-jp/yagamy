@@ -59,6 +59,19 @@ class _NotificationPageState extends ConsumerState<NotificationPage> {
             childCount: notifications.value!.length,
           ),
           itemExtent: 60,
+        ),
+        SliverToBoxAdapter(
+          child: InkWell(
+            child: Container(
+              width: 20,
+              height: 20,
+              color: Colors.red,
+            ),
+            onTap: () {
+              print('aaa');
+              setState(() {});
+            },
+          ),
         )
       ],
     );

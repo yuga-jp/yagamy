@@ -22,13 +22,17 @@ void main() async {
     badge: true,
     carPlay: true,
     criticalAlert: false,
-    provisional: true,
+    provisional: false,
     sound: false,
   );
+
+  final token = await messaging.getToken();
+  print('FCM token: $token');
+
   // when the application is in the foreground
   FirebaseMessaging.onMessage.listen(
     (RemoteMessage message) {
-      message.data;
+      return;
     },
   );
 
@@ -54,8 +58,14 @@ class MyApp extends StatelessWidget {
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
+  print(message);
 
   await NotificationsStorage.writeNotifications(
-      ParsedNotification.fromRawNotification(
-          RawNotification.fromJson(message.data)));
+      ParsedNotification.fromRawNotification(RawNotification.fromJson({
+    'title': message.notification!.title,
+    'body': message.notification!.body,
+    'sentTime': message.sentTime,
+    'priority': '3',
+    'relatedProjectId': '0'
+  })));
 }

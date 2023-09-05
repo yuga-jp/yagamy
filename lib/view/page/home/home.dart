@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,6 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final messaging = FirebaseMessaging.instance;
+  String? token;
+  bool showToken = false;
   @override
   void initState() {
     super.initState();
@@ -52,7 +56,22 @@ class _HomePageState extends State<HomePage> {
                 child: PageView(
                   children: [
                     const TopCard(),
-                    Text('aaa'),
+                    Column(
+                      children: [
+                        TextButton(
+                          onPressed: (() async {
+                            token = await messaging.getToken();
+                            setState(() {
+                              showToken = true;
+                            });
+                          }),
+                          child: const Text('get fcm token'),
+                        ),
+                        showToken
+                            ? SelectableText('$token')
+                            : const SizedBox.shrink()
+                      ],
+                    )
                   ],
                 ),
               )
