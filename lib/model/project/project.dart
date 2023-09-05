@@ -2,6 +2,7 @@ import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/utility/get_main_image_path.dart';
 import 'package:yagamy/utility/get_thumbnail_path.dart';
+import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/to_place_string.dart';
 import 'package:yagamy/utility/to_searcher_prop.dart';
 
@@ -30,7 +31,12 @@ class Project {
         title = rawProject.title,
         placeString = toPlaceString(
             rawProject.area, rawProject.floor, rawProject.placeDetail),
-        hoursString = rawProject.hoursFirstDay,
+        hoursString = toHoursString(
+          rawProject.hoursStartFirstDay,
+          rawProject.hoursEndFirstday,
+          rawProject.hoursStartSecondDay,
+          rawProject.hoursEndSecondDay,
+        ),
         groupName = rawProject.groupName,
         shortIntro = rawProject.shortIntro,
         intro = rawProject.intro,
