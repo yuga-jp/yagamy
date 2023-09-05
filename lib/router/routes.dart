@@ -5,7 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
-import 'package:yagamy/view/page/notification/notification.dart';
+import 'package:yagamy/view/page/notification_info/notification_info.dart';
+import 'package:yagamy/view/page/notifications/notifications.dart';
 import 'package:yagamy/view/page/project_info/project_info.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
@@ -97,15 +98,21 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
-              path: '/notification',
+              path: '/notifications',
               pageBuilder: (BuildContext context, GoRouterState state) {
                 return buildPageWithoutAnimation(
                   context: context,
                   state: state,
-                  child: const NotificationPage(),
+                  child: const NotificationsPage(),
                 );
               },
-              routes: const <RouteBase>[],
+              routes: <RouteBase>[
+                GoRoute(
+                    path: 'notification/:id',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return NotificationInfoPage(state.pathParameters['id'] ?? '0');
+                    })
+              ],
             ),
           ],
         ),

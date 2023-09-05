@@ -8,16 +8,16 @@ import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/provider/notifications_provider.dart';
 import 'package:yagamy/provider/projects_provider.dart';
-import 'package:yagamy/view/page/home/ui_part/notification_card.dart';
+import 'package:yagamy/view/page/notifications/ui_part/notification_card.dart';
 
-class NotificationPage extends ConsumerStatefulWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+class NotificationsPage extends ConsumerStatefulWidget {
+  const NotificationsPage({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<NotificationPage> createState() => _NotificationPageState();
+  ConsumerState<NotificationsPage> createState() => _NotificationsPageState();
 }
 
-class _NotificationPageState extends ConsumerState<NotificationPage> {
+class _NotificationsPageState extends ConsumerState<NotificationsPage> {
   @override
   void initState() {
     super.initState();
@@ -60,19 +60,6 @@ class _NotificationPageState extends ConsumerState<NotificationPage> {
           ),
           itemExtent: 60,
         ),
-        SliverToBoxAdapter(
-          child: InkWell(
-            child: Container(
-              width: 20,
-              height: 20,
-              color: Colors.red,
-            ),
-            onTap: () {
-              print('aaa');
-              setState(() {});
-            },
-          ),
-        )
       ],
     );
   }

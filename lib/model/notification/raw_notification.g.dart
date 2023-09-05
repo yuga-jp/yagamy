@@ -8,6 +8,7 @@ part of 'raw_notification.dart';
 
 _$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
     _$_RawNotification(
+      id: json['id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
       sentTime: DateTime.parse(json['sentTime'] as String),
@@ -17,6 +18,7 @@ _$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_RawNotificationToJson(_$_RawNotification instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'body': instance.body,
       'sentTime': instance.sentTime.toIso8601String(),

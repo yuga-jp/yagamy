@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/notification_theme.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/notification_priority.dart';
@@ -30,7 +31,9 @@ class NotificationCard extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).go('/notifications/notification/${notification.id}');
+        },
         child: Row(
           children: [
             SizedBox(

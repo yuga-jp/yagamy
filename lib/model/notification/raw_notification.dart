@@ -6,6 +6,7 @@ part 'raw_notification.g.dart';
 @freezed
 class RawNotification with _$RawNotification {
   const factory RawNotification({
+    required String id,
     required String title,
     required String body,
     required DateTime sentTime,

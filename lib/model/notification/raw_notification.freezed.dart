@@ -20,6 +20,7 @@ RawNotification _$RawNotificationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RawNotification {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
   DateTime get sentTime => throw _privateConstructorUsedError;
@@ -39,7 +40,8 @@ abstract class $RawNotificationCopyWith<$Res> {
       _$RawNotificationCopyWithImpl<$Res, RawNotification>;
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String body,
       DateTime sentTime,
       String priority,
@@ -59,6 +61,7 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? body = null,
     Object? sentTime = null,
@@ -66,6 +69,10 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
     Object? relatedProjectId = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -99,7 +106,8 @@ abstract class _$$_RawNotificationCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String body,
       DateTime sentTime,
       String priority,
@@ -117,6 +125,7 @@ class __$$_RawNotificationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? body = null,
     Object? sentTime = null,
@@ -124,6 +133,10 @@ class __$$_RawNotificationCopyWithImpl<$Res>
     Object? relatedProjectId = null,
   }) {
     return _then(_$_RawNotification(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -152,7 +165,8 @@ class __$$_RawNotificationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RawNotification implements _RawNotification {
   const _$_RawNotification(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.body,
       required this.sentTime,
       required this.priority,
@@ -161,6 +175,8 @@ class _$_RawNotification implements _RawNotification {
   factory _$_RawNotification.fromJson(Map<String, dynamic> json) =>
       _$$_RawNotificationFromJson(json);
 
+  @override
+  final String id;
   @override
   final String title;
   @override
@@ -174,7 +190,7 @@ class _$_RawNotification implements _RawNotification {
 
   @override
   String toString() {
-    return 'RawNotification(title: $title, body: $body, sentTime: $sentTime, priority: $priority, relatedProjectId: $relatedProjectId)';
+    return 'RawNotification(id: $id, title: $title, body: $body, sentTime: $sentTime, priority: $priority, relatedProjectId: $relatedProjectId)';
   }
 
   @override
@@ -182,6 +198,7 @@ class _$_RawNotification implements _RawNotification {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RawNotification &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.body, body) || other.body == body) &&
             (identical(other.sentTime, sentTime) ||
@@ -195,7 +212,7 @@ class _$_RawNotification implements _RawNotification {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, title, body, sentTime, priority, relatedProjectId);
+      runtimeType, id, title, body, sentTime, priority, relatedProjectId);
 
   @JsonKey(ignore: true)
   @override
@@ -213,7 +230,8 @@ class _$_RawNotification implements _RawNotification {
 
 abstract class _RawNotification implements RawNotification {
   const factory _RawNotification(
-      {required final String title,
+      {required final String id,
+      required final String title,
       required final String body,
       required final DateTime sentTime,
       required final String priority,
@@ -222,6 +240,8 @@ abstract class _RawNotification implements RawNotification {
   factory _RawNotification.fromJson(Map<String, dynamic> json) =
       _$_RawNotification.fromJson;
 
+  @override
+  String get id;
   @override
   String get title;
   @override
