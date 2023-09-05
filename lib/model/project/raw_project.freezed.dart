@@ -29,7 +29,6 @@ mixin _$RawProject {
   DateTime? get hoursEndFirstday => throw _privateConstructorUsedError;
   DateTime? get hoursStartSecondDay => throw _privateConstructorUsedError;
   DateTime? get hoursEndSecondDay => throw _privateConstructorUsedError;
-  String get hoursSecondDay => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
   String get shortIntro => throw _privateConstructorUsedError;
   String get intro => throw _privateConstructorUsedError;
@@ -66,7 +65,6 @@ abstract class $RawProjectCopyWith<$Res> {
       DateTime? hoursEndFirstday,
       DateTime? hoursStartSecondDay,
       DateTime? hoursEndSecondDay,
-      String hoursSecondDay,
       String groupName,
       String shortIntro,
       String intro,
@@ -104,7 +102,6 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? hoursEndFirstday = freezed,
     Object? hoursStartSecondDay = freezed,
     Object? hoursEndSecondDay = freezed,
-    Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
@@ -156,10 +153,6 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.hoursEndSecondDay
           : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hoursSecondDay: null == hoursSecondDay
-          ? _value.hoursSecondDay
-          : hoursSecondDay // ignore: cast_nullable_to_non_nullable
-              as String,
       groupName: null == groupName
           ? _value.groupName
           : groupName // ignore: cast_nullable_to_non_nullable
@@ -234,7 +227,6 @@ abstract class _$$_RawProjectCopyWith<$Res>
       DateTime? hoursEndFirstday,
       DateTime? hoursStartSecondDay,
       DateTime? hoursEndSecondDay,
-      String hoursSecondDay,
       String groupName,
       String shortIntro,
       String intro,
@@ -270,7 +262,6 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? hoursEndFirstday = freezed,
     Object? hoursStartSecondDay = freezed,
     Object? hoursEndSecondDay = freezed,
-    Object? hoursSecondDay = null,
     Object? groupName = null,
     Object? shortIntro = null,
     Object? intro = null,
@@ -322,10 +313,6 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.hoursEndSecondDay
           : hoursEndSecondDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hoursSecondDay: null == hoursSecondDay
-          ? _value.hoursSecondDay
-          : hoursSecondDay // ignore: cast_nullable_to_non_nullable
-              as String,
       groupName: null == groupName
           ? _value.groupName
           : groupName // ignore: cast_nullable_to_non_nullable
@@ -395,7 +382,6 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.hoursEndFirstday,
       required this.hoursStartSecondDay,
       required this.hoursEndSecondDay,
-      required this.hoursSecondDay,
       required this.groupName,
       required this.shortIntro,
       required this.intro,
@@ -432,8 +418,6 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @override
   final DateTime? hoursEndSecondDay;
   @override
-  final String hoursSecondDay;
-  @override
   final String groupName;
   @override
   final String shortIntro;
@@ -462,7 +446,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstday: $hoursEndFirstday, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, hoursSecondDay: $hoursSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstday: $hoursEndFirstday, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
   }
 
   @override
@@ -479,7 +463,6 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       ..add(DiagnosticsProperty('hoursEndFirstday', hoursEndFirstday))
       ..add(DiagnosticsProperty('hoursStartSecondDay', hoursStartSecondDay))
       ..add(DiagnosticsProperty('hoursEndSecondDay', hoursEndSecondDay))
-      ..add(DiagnosticsProperty('hoursSecondDay', hoursSecondDay))
       ..add(DiagnosticsProperty('groupName', groupName))
       ..add(DiagnosticsProperty('shortIntro', shortIntro))
       ..add(DiagnosticsProperty('intro', intro))
@@ -514,8 +497,6 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
                 other.hoursStartSecondDay == hoursStartSecondDay) &&
             (identical(other.hoursEndSecondDay, hoursEndSecondDay) ||
                 other.hoursEndSecondDay == hoursEndSecondDay) &&
-            (identical(other.hoursSecondDay, hoursSecondDay) ||
-                other.hoursSecondDay == hoursSecondDay) &&
             (identical(other.groupName, groupName) ||
                 other.groupName == groupName) &&
             (identical(other.shortIntro, shortIntro) ||
@@ -556,7 +537,6 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
         hoursEndFirstday,
         hoursStartSecondDay,
         hoursEndSecondDay,
-        hoursSecondDay,
         groupName,
         shortIntro,
         intro,
@@ -597,7 +577,6 @@ abstract class _RawProject implements RawProject {
       required final DateTime? hoursEndFirstday,
       required final DateTime? hoursStartSecondDay,
       required final DateTime? hoursEndSecondDay,
-      required final String hoursSecondDay,
       required final String groupName,
       required final String shortIntro,
       required final String intro,
@@ -633,8 +612,6 @@ abstract class _RawProject implements RawProject {
   DateTime? get hoursStartSecondDay;
   @override
   DateTime? get hoursEndSecondDay;
-  @override
-  String get hoursSecondDay;
   @override
   String get groupName;
   @override

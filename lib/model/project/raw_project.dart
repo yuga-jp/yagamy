@@ -17,7 +17,6 @@ class RawProject with _$RawProject {
     required DateTime? hoursEndFirstday,
     required DateTime? hoursStartSecondDay,
     required DateTime? hoursEndSecondDay,
-    required String hoursSecondDay,
     required String groupName,
     required String shortIntro,
     required String intro,

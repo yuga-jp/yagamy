@@ -25,7 +25,6 @@ _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
       hoursEndSecondDay: json['hoursEndSecondDay'] == null
           ? null
           : DateTime.parse(json['hoursEndSecondDay'] as String),
-      hoursSecondDay: json['hoursSecondDay'] as String,
       groupName: json['groupName'] as String,
       shortIntro: json['shortIntro'] as String,
       intro: json['intro'] as String,
@@ -52,7 +51,6 @@ Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
       'hoursEndFirstday': instance.hoursEndFirstday?.toIso8601String(),
       'hoursStartSecondDay': instance.hoursStartSecondDay?.toIso8601String(),
       'hoursEndSecondDay': instance.hoursEndSecondDay?.toIso8601String(),
-      'hoursSecondDay': instance.hoursSecondDay,
       'groupName': instance.groupName,
       'shortIntro': instance.shortIntro,
       'intro': instance.intro,
