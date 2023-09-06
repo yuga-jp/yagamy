@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -66,7 +67,7 @@ class ProjectInfoBody extends StatelessWidget {
               return Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(project.mainImageUrl),
+                      image: CachedNetworkImageProvider(project.mainImageUrl),
                       fit: BoxFit.contain,
                     ),
                     borderRadius: BorderRadius.circular(15)),

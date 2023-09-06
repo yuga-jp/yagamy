@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:yagamy/constant/theme/project_card_theme.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 
@@ -55,8 +57,10 @@ class _ProjectImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-          image:
-              DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.contain),
+          image: DecorationImage(
+            image: CachedNetworkImageProvider(imageUrl),
+            fit: BoxFit.contain,
+          ),
           border: Border.all(
             color: Theme.of(context).extension<ProjectCardTheme>()!.color!,
             width: 2.5,
