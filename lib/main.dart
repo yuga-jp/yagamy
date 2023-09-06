@@ -23,7 +23,7 @@ void main() async {
     sound: false,
   );
 
-  await messaging.subscribeToTopic('/topics/all-users');
+  await messaging.subscribeToTopic('broadcast');
 
   runApp(const ProviderScope(child: MyApp()));
 }
