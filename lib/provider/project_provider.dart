@@ -1,16 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/provider/projects_provider.dart';
+import 'package:yagamy/repository/project_repository.dart';
 
 final projectProvider =
     FutureProvider.autoDispose.family<Project, String>((ref, id) async {
-  final projects = ref.watch(projectsProvider);
-  return projects.maybeWhen(
-    orElse: () {
-      return Project.empty();
-    },
-    data: (projects) {
-      return projects.where((project) => id == project.id).first;
-    },
-  );
+  return ProjectRepository.fetchProject(id);
 });

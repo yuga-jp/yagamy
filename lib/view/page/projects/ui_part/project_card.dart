@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:yagamy/constant/theme/project_card_theme.dart';
-import 'package:yagamy/model/project/project.dart';
+import 'package:yagamy/model/project/project_for_card.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -10,7 +10,7 @@ class ProjectCard extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
-  final Project project;
+  final ProjectForCard project;
   final void Function()? onTap;
 
   @override

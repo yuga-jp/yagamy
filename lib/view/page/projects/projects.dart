@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yagamy/constant/theme/shimmer_theme.dart';
 
-import 'package:yagamy/model/project/project.dart';
+import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/provider/projects_provider.dart';
 import 'package:yagamy/provider/selected_searcher_provider.dart';
@@ -32,7 +32,7 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
 
   @override
   Widget build(BuildContext context) {
-    AsyncValue<List<Project>> projects = ref.watch(projectsProvider);
+    AsyncValue<List<ProjectForCard>> projects = ref.watch(projectsProvider);
 
     return projects.when(
       loading: () {
@@ -54,7 +54,7 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
         return Text('Error: $error');
       },
       data: (projects) {
-        List<Project> filteredProjects = ref.watch(
+        List<ProjectForCard> filteredProjects = ref.watch(
             filteredProjectsProvider(ref.watch(selectedSearcherProvider)));
         final SearcherProp selectedSearcher =
             ref.watch(selectedSearcherProvider);
