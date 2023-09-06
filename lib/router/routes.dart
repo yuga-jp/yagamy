@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:yagamy/model/notification/parsed_notification.dart';
 
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/home/home.dart';
@@ -60,7 +61,7 @@ final GoRouter router = GoRouter(
                   builder: (BuildContext context, GoRouterState state) {
                     return ProjectInfoPage(state.pathParameters['id'] ?? '0');
                   },
-                )
+                ),
               ],
             ),
           ],
@@ -108,10 +109,14 @@ final GoRouter router = GoRouter(
               },
               routes: <RouteBase>[
                 GoRoute(
-                    path: 'notification/:id',
-                    builder: (BuildContext context, GoRouterState state) {
-                      return NotificationInfoPage(state.pathParameters['id'] ?? '0');
-                    })
+                  path: 'notification/:id',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return NotificationInfoPage(
+                      state.pathParameters['id'] ?? '0',
+                      data: state.extra as ParsedNotification,
+                    );
+                  },
+                ),
               ],
             ),
           ],

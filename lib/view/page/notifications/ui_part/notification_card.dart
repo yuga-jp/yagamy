@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/notification_theme.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/notification_priority.dart';
 
-class NotificationCard extends StatelessWidget {
+class NotificationCard extends ConsumerWidget {
   const NotificationCard({required this.notification, super.key});
 
   final ParsedNotification notification;
@@ -21,7 +22,7 @@ class NotificationCard extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final NotificationCardTheme currentTheme =
         Theme.of(context).extension<NotificationCardTheme>()!;
     return Container(
@@ -32,7 +33,8 @@ class NotificationCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          GoRouter.of(context).go('/notifications/notification/${notification.id}');
+          GoRouter.of(context)
+              .go('/notifications/notification/${notification.id}');
         },
         child: Row(
           children: [

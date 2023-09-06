@@ -21,6 +21,14 @@ class ParsedNotification {
         priority = toNotificationPriority(rawNotification.priority),
         relatedProjectId = rawNotification.relatedProjectId;
 
+  ParsedNotification.empty({
+    this.id = '0',
+    this.title = '',
+    this.body = '',
+    this.priority = NotificationPriority.low,
+    this.relatedProjectId = '0',
+  }) : sentTime = DateTime.now();
+
   final String id;
   final String title;
   final String body;

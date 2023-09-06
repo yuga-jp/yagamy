@@ -19,9 +19,9 @@ class ProjectInfoPage extends ConsumerWidget {
       loading: () {
         return const CircularProgressIndicator();
       },
-      error: ((error, stackTrace) {
+      error: (error, stackTrace) {
         return Text('Error: $error');
-      }),
+      },
       data: (project) {
         return Material(
           color: Theme.of(context).scaffoldBackgroundColor,

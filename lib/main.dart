@@ -5,10 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:yagamy/constant/theme/theme.dart';
-import 'package:yagamy/model/notification/parsed_notification.dart';
-import 'package:yagamy/model/notification/raw_notification.dart';
 import 'package:yagamy/router/routes.dart';
-import 'package:yagamy/storage/notifications_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,9 +25,6 @@ void main() async {
 
   await messaging.subscribeToTopic('/topics/all-users');
 
-  // when the application is in the background or terminated
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -46,16 +40,4 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}
-
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
-  await NotificationsStorage.writeNotifications(
-      ParsedNotification.fromRawNotification(RawNotification.fromJson({
-    'title': message.notification!.title,
-    'body': message.notification!.body,
-    'sentTime': message.sentTime,
-    'priority': message.data['priority'],
-    'relatedProjectId': message.data['relatedProjectId'],
-  })));
 }
