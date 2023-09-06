@@ -1,7 +1,5 @@
 import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
-import 'package:yagamy/utility/get_main_image_path.dart';
-import 'package:yagamy/utility/get_thumbnail_path.dart';
 import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/to_place_string.dart';
 import 'package:yagamy/utility/to_searcher_prop.dart';
@@ -42,8 +40,8 @@ class Project {
         intro = rawProject.intro,
         introExtension = rawProject.introExtension,
         groupIntro = rawProject.groupIntro,
-        thumbnailUrl = getThumbnailPath(rawProject.id, rawProject.thumbnailUrl),
-        mainImageUrl = getMainImagePath(rawProject.id, rawProject.mainImageUrl),
+        thumbnailUrl = rawProject.thumbnailUrl,
+        mainImageUrl = rawProject.mainImageUrl,
         twitterId = rawProject.twitterId,
         instagramId = rawProject.instagramId,
         homepageUrl = rawProject.homepageUrl,
