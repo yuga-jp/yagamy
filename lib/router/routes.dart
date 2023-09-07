@@ -113,7 +113,9 @@ final GoRouter router = GoRouter(
                   builder: (BuildContext context, GoRouterState state) {
                     return NotificationInfoPage(
                       state.pathParameters['id'] ?? '0',
-                      data: state.extra as ParsedNotification,
+                      data: state.extra == null
+                          ? null
+                          : state.extra as ParsedNotification,
                     );
                   },
                 ),
