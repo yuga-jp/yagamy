@@ -10,7 +10,7 @@ class RawNotification with _$RawNotification {
     required String title,
     required String body,
     required DateTime sentTime,
-    required String priority,
+    required int priority,
     required String relatedProjectId,
   }) = _RawNotification;
 

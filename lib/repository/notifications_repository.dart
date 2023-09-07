@@ -8,13 +8,21 @@ import 'package:yagamy/repository/base_url.dart';
 
 class NotificationsRepository {
   static Future<List<ParsedNotification>> fetchNotifications() async {
-    final response = await http.get(Uri.parse('${BaseUrl.baseUrl}/notifications/'));
+    final response =
+        await http.get(Uri.parse('${BaseUrl.baseUrl}/notifications/'));
     final notifications = <ParsedNotification>[];
 
     if (response.statusCode == 200) {
       for (var notification in json.decode(response.body)) {
-        notifications.add(ParsedNotification.fromRawNotification(
-            RawNotification.fromJson(notification)));
+        notifications.add(
+            ParsedNotification.fromRawNotification(RawNotification.fromJson({
+          'id': notification['id'],
+          'title': notification['title'],
+          'body': notification['body'],
+          'sentTime': notification['createdAt'],
+          'priority': notification['priority'],
+          'relatedProjectId': '0',
+        })));
       }
     } else {
       throw Exception('Failed to load notifications.');
