@@ -21,7 +21,7 @@ class NotificationInfoBody extends StatelessWidget {
               GoRouter.of(context).pop();
             },
           ),
-          title: const Text('企画紹介'),
+          title: const Text('通知詳細'),
           centerTitle: true,
           floating: true,
         ),

@@ -49,6 +49,8 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
                 height: 40,
               ),
               centerTitle: false,
+              floating: true,
+              pinned: true,
             ),
             SliverFixedExtentList(
               delegate: SliverChildBuilderDelegate(

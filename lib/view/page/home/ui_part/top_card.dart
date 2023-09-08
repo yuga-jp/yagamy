@@ -96,7 +96,7 @@ class TopCard extends StatelessWidget {
                   style: TextStyle(fontSize: 15),
                 ),
                 TextSpan(
-                  text: ' 10:00-',
+                  text: ' 12:00-18:00',
                   style: TextStyle(fontSize: 25),
                 ),
               ],
@@ -128,7 +128,7 @@ class TopCard extends StatelessWidget {
                   style: TextStyle(fontSize: 15),
                 ),
                 TextSpan(
-                  text: ' 10:00-',
+                  text: ' 10:00-19:00',
                   style: TextStyle(fontSize: 25),
                 ),
               ],

@@ -27,7 +27,7 @@ String toPlaceString(String area, String floor, String placeDetail) {
       placeString += '14棟東';
       if (floor == 'B2' || floor == '1') {
         placeString += ' $floor階';
-      }  else if (floor == 'out') {
+      } else if (floor == 'out') {
         placeString += '周辺';
       }
       if (placeDetail.isNotEmpty) {
@@ -49,6 +49,9 @@ String toPlaceString(String area, String floor, String placeDetail) {
 
     case 'ground':
       return placeString += 'グラウンド';
+
+    case 'miniground':
+      return placeString += 'ミニグラウンド';
 
     case 'mainstage':
       return placeString += 'メインステージ';
