@@ -10,8 +10,8 @@ class RawNotification with _$RawNotification {
     required String title,
     required String body,
     required DateTime sentTime,
-    required int priority,
-    required int relatedProjectId,
+    required String priority,
+    required String relatedProjectId,
   }) = _RawNotification;
 
   factory RawNotification.fromJson(Map<String, Object?> json) =>
