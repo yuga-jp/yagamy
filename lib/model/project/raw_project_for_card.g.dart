@@ -29,7 +29,7 @@ _$_RawProjectForCard _$$_RawProjectForCardFromJson(Map<String, dynamic> json) =>
       thumbnailUrl: json['thumbnailUrl'] as String,
       categoryMain: json['categoryMain'] as String,
       categorySub: json['categorySub'] as String,
-      stampRally: json['stampRally'] as String,
+      stampRally: json['stampRally'] as bool,
     );
 
 Map<String, dynamic> _$$_RawProjectForCardToJson(

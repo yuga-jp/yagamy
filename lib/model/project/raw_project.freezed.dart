@@ -41,7 +41,7 @@ mixin _$RawProject {
   String get homepageUrl => throw _privateConstructorUsedError;
   String get categoryMain => throw _privateConstructorUsedError;
   String get categorySub => throw _privateConstructorUsedError;
-  String get stampRally => throw _privateConstructorUsedError;
+  bool get stampRally => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -77,7 +77,7 @@ abstract class $RawProjectCopyWith<$Res> {
       String homepageUrl,
       String categoryMain,
       String categorySub,
-      String stampRally});
+      bool stampRally});
 }
 
 /// @nodoc
@@ -204,7 +204,7 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
       stampRally: null == stampRally
           ? _value.stampRally
           : stampRally // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
     ) as $Val);
   }
 }
@@ -239,7 +239,7 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String homepageUrl,
       String categoryMain,
       String categorySub,
-      String stampRally});
+      bool stampRally});
 }
 
 /// @nodoc
@@ -364,7 +364,7 @@ class __$$_RawProjectCopyWithImpl<$Res>
       stampRally: null == stampRally
           ? _value.stampRally
           : stampRally // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
     ));
   }
 }
@@ -442,7 +442,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @override
   final String categorySub;
   @override
-  final String stampRally;
+  final bool stampRally;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -589,7 +589,7 @@ abstract class _RawProject implements RawProject {
       required final String homepageUrl,
       required final String categoryMain,
       required final String categorySub,
-      required final String stampRally}) = _$_RawProject;
+      required final bool stampRally}) = _$_RawProject;
 
   factory _RawProject.fromJson(Map<String, dynamic> json) =
       _$_RawProject.fromJson;
@@ -637,7 +637,7 @@ abstract class _RawProject implements RawProject {
   @override
   String get categorySub;
   @override
-  String get stampRally;
+  bool get stampRally;
   @override
   @JsonKey(ignore: true)
   _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>

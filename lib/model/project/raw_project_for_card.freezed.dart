@@ -33,7 +33,7 @@ mixin _$RawProjectForCard {
   String get thumbnailUrl => throw _privateConstructorUsedError;
   String get categoryMain => throw _privateConstructorUsedError;
   String get categorySub => throw _privateConstructorUsedError;
-  String get stampRally => throw _privateConstructorUsedError;
+  bool get stampRally => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,7 +61,7 @@ abstract class $RawProjectForCardCopyWith<$Res> {
       String thumbnailUrl,
       String categoryMain,
       String categorySub,
-      String stampRally});
+      bool stampRally});
 }
 
 /// @nodoc
@@ -148,7 +148,7 @@ class _$RawProjectForCardCopyWithImpl<$Res, $Val extends RawProjectForCard>
       stampRally: null == stampRally
           ? _value.stampRally
           : stampRally // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
     ) as $Val);
   }
 }
@@ -175,7 +175,7 @@ abstract class _$$_RawProjectForCardCopyWith<$Res>
       String thumbnailUrl,
       String categoryMain,
       String categorySub,
-      String stampRally});
+      bool stampRally});
 }
 
 /// @nodoc
@@ -260,7 +260,7 @@ class __$$_RawProjectForCardCopyWithImpl<$Res>
       stampRally: null == stampRally
           ? _value.stampRally
           : stampRally // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
     ));
   }
 }
@@ -314,7 +314,7 @@ class _$_RawProjectForCard implements _RawProjectForCard {
   @override
   final String categorySub;
   @override
-  final String stampRally;
+  final bool stampRally;
 
   @override
   String toString() {
@@ -401,7 +401,7 @@ abstract class _RawProjectForCard implements RawProjectForCard {
       required final String thumbnailUrl,
       required final String categoryMain,
       required final String categorySub,
-      required final String stampRally}) = _$_RawProjectForCard;
+      required final bool stampRally}) = _$_RawProjectForCard;
 
   factory _RawProjectForCard.fromJson(Map<String, dynamic> json) =
       _$_RawProjectForCard.fromJson;
@@ -433,7 +433,7 @@ abstract class _RawProjectForCard implements RawProjectForCard {
   @override
   String get categorySub;
   @override
-  String get stampRally;
+  bool get stampRally;
   @override
   @JsonKey(ignore: true)
   _$$_RawProjectForCardCopyWith<_$_RawProjectForCard> get copyWith =>

@@ -19,7 +19,7 @@ class RawProjectForCard with _$RawProjectForCard {
     required String thumbnailUrl,
     required String categoryMain,
     required String categorySub,
-    required String stampRally,
+    required bool stampRally,
   }) = _RawProjectForCard;
 
   factory RawProjectForCard.fromJson(Map<String, Object?> json) =>

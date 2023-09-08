@@ -37,7 +37,7 @@ _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
       homepageUrl: json['homepageUrl'] as String,
       categoryMain: json['categoryMain'] as String,
       categorySub: json['categorySub'] as String,
-      stampRally: json['stampRally'] as String,
+      stampRally: json['stampRally'] as bool,
     );
 
 Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
