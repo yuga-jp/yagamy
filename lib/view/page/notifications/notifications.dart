@@ -40,7 +40,7 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
       },
       data: (notifications) {
         return CustomScrollView(
-          physics: const ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+          physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           slivers: <Widget>[
             SliverAppBar(
               title: SvgPicture.asset(

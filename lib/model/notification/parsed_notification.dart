@@ -26,7 +26,7 @@ class ParsedNotification {
     this.title = '',
     this.body = '',
     this.priority = NotificationPriority.low,
-    this.relatedProjectId = '0',
+    this.relatedProjectId = 0,
   }) : sentTime = DateTime.now();
 
   final String id;
@@ -34,7 +34,7 @@ class ParsedNotification {
   final String body;
   final DateTime sentTime;
   final NotificationPriority priority;
-  final String relatedProjectId;
+  final int relatedProjectId;
 
   Map<String, dynamic> toJson() {
     return {

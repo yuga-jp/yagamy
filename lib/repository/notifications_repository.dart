@@ -21,7 +21,7 @@ class NotificationsRepository {
           'body': notification['body'],
           'sentTime': notification['createdAt'],
           'priority': notification['priority'],
-          'relatedProjectId': '0',
+          'relatedProjectId': notification['relatedProjectId'],
         })));
       }
     } else {

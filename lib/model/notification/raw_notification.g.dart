@@ -13,7 +13,7 @@ _$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
       body: json['body'] as String,
       sentTime: DateTime.parse(json['sentTime'] as String),
       priority: json['priority'] as int,
-      relatedProjectId: json['relatedProjectId'] as String,
+      relatedProjectId: json['relatedProjectId'] as int,
     );
 
 Map<String, dynamic> _$$_RawNotificationToJson(_$_RawNotification instance) =>

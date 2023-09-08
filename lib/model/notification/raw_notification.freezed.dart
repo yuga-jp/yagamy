@@ -25,7 +25,7 @@ mixin _$RawNotification {
   String get body => throw _privateConstructorUsedError;
   DateTime get sentTime => throw _privateConstructorUsedError;
   int get priority => throw _privateConstructorUsedError;
-  String get relatedProjectId => throw _privateConstructorUsedError;
+  int get relatedProjectId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +45,7 @@ abstract class $RawNotificationCopyWith<$Res> {
       String body,
       DateTime sentTime,
       int priority,
-      String relatedProjectId});
+      int relatedProjectId});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
       relatedProjectId: null == relatedProjectId
           ? _value.relatedProjectId
           : relatedProjectId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 }
@@ -111,7 +111,7 @@ abstract class _$$_RawNotificationCopyWith<$Res>
       String body,
       DateTime sentTime,
       int priority,
-      String relatedProjectId});
+      int relatedProjectId});
 }
 
 /// @nodoc
@@ -156,7 +156,7 @@ class __$$_RawNotificationCopyWithImpl<$Res>
       relatedProjectId: null == relatedProjectId
           ? _value.relatedProjectId
           : relatedProjectId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -186,7 +186,7 @@ class _$_RawNotification implements _RawNotification {
   @override
   final int priority;
   @override
-  final String relatedProjectId;
+  final int relatedProjectId;
 
   @override
   String toString() {
@@ -235,7 +235,7 @@ abstract class _RawNotification implements RawNotification {
       required final String body,
       required final DateTime sentTime,
       required final int priority,
-      required final String relatedProjectId}) = _$_RawNotification;
+      required final int relatedProjectId}) = _$_RawNotification;
 
   factory _RawNotification.fromJson(Map<String, dynamic> json) =
       _$_RawNotification.fromJson;
@@ -251,7 +251,7 @@ abstract class _RawNotification implements RawNotification {
   @override
   int get priority;
   @override
-  String get relatedProjectId;
+  int get relatedProjectId;
   @override
   @JsonKey(ignore: true)
   _$$_RawNotificationCopyWith<_$_RawNotification> get copyWith =>
