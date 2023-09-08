@@ -77,7 +77,7 @@ Future<void> _handleMessage(RemoteMessage message) async {
       id: '',
       title: message.notification!.title!,
       body: message.notification!.body!,
-      sentTime: message.sentTime!,
+      sentTime: DateTime.now(),
       priority: toNotificationPriority(int.tryParse(message.data['priority']) ?? 0),
       relatedProjectId: int.tryParse(message.data['relatedProjectId']) ?? 0,
     ),
