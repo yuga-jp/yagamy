@@ -1,5 +1,7 @@
 import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
+import 'package:yagamy/utility/empty_to_main_image_placeholder_url.dart';
+import 'package:yagamy/utility/empty_to_thumbnail_placeholder_url.dart';
 import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/to_place_string.dart';
 import 'package:yagamy/utility/to_searcher_prop.dart';
@@ -40,14 +42,14 @@ class Project {
         intro = rawProject.intro,
         introExtension = rawProject.introExtension,
         groupIntro = rawProject.groupIntro,
-        thumbnailUrl = rawProject.thumbnailUrl,
-        mainImageUrl = rawProject.mainImageUrl,
+        thumbnailUrl = emptyToThumbnailPlaceholderUrl(rawProject.thumbnailUrl),
+        mainImageUrl = emptyToMainImagePlaceholderUrl(rawProject.mainImageUrl),
         twitterId = rawProject.twitterId,
         instagramId = rawProject.instagramId,
         homepageUrl = rawProject.homepageUrl,
         searcherProps = toSearcherPropList(rawProject.categoryMain,
             rawProject.categorySub, rawProject.area, rawProject.floor),
-        stampRally = rawProject.stampRally == 'true';
+        stampRally = rawProject.stampRally;
 
   Project.empty({
     this.id = '0',

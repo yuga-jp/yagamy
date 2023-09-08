@@ -1,21 +1,25 @@
 String toHoursString(
-  DateTime? hoursStartFirstDay,
-  DateTime? hoursEndFirstday,
-  DateTime? hoursStartSecondDay,
-  DateTime? hoursEndSecondDay,
+  DateTime? s1,
+  DateTime? e1,
+  DateTime? s2,
+  DateTime? e2,
 ) {
-  String hoursString = '';
-  if (hoursStartFirstDay == null &&
-      hoursStartSecondDay == null &&
-      hoursStartSecondDay == null &&
-      hoursEndSecondDay == null) {
-    hoursString = '両日';
-  } else if (hoursStartFirstDay != null && hoursEndFirstday != null) {
-    hoursString =
-        '${hoursStartFirstDay.hour}:${hoursStartFirstDay.minute}-${hoursEndFirstday.hour}:${hoursEndFirstday.minute}';
-  } else if (hoursStartSecondDay != null && hoursEndSecondDay != null) {
-    hoursString =
-        '${hoursStartSecondDay.hour}:${hoursStartSecondDay.minute}-${hoursEndSecondDay.hour}:${hoursEndSecondDay.minute}';
+  if (s1 == null && e1 == null && s2 == null && e2 == null) {
+    return '両日';
+  } else if (s2 == null && e2 == null) {
+    if (s1 != null && e1 != null) {
+      return '23/${s1.hour}:${s1.minute}-${e1.hour}:${e1.minute}';
+    }
+    if (s1 != null && e1 == null) {
+      return '23/${s1.hour}:${s1.minute}-';
+    }
+  } else if (s1 == null && s1 == null) {
+    if (s2 != null && e2 != null) {
+      return '24/${s2.hour}:${s2.minute}-${e2.hour}:${e2.minute}';
+    }
+    if (s2 != null && e2 == null) {
+      return '24/${s2.hour}:${s2.minute}-';
+    }
   }
-  return hoursString;
+  return '';
 }

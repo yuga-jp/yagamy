@@ -1,5 +1,6 @@
 import 'package:yagamy/model/project/raw_project_for_card.dart';
 import 'package:yagamy/model/searcher_prop.dart';
+import 'package:yagamy/utility/empty_to_thumbnail_placeholder_url.dart';
 import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/to_place_string.dart';
 import 'package:yagamy/utility/to_searcher_prop.dart';
@@ -28,13 +29,13 @@ class ProjectForCard {
           rawProjectForCard.hoursEndSecondDay,
         ),
         groupName = rawProjectForCard.groupName,
-        thumbnailUrl = rawProjectForCard.thumbnailUrl,
+        thumbnailUrl = emptyToThumbnailPlaceholderUrl(rawProjectForCard.thumbnailUrl),
         searcherProps = toSearcherPropList(
             rawProjectForCard.categoryMain,
             rawProjectForCard.categorySub,
             rawProjectForCard.area,
             rawProjectForCard.floor),
-        stampRally = rawProjectForCard.stampRally == 'true';
+        stampRally = rawProjectForCard.stampRally;
 
   final String id;
   final String title;
