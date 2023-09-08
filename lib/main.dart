@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -57,6 +55,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+@pragma('vm:entry-point')
 Future<void> setupInterctedMessage() async {
   // Get any messages which caused the application to open from a terminated state
   RemoteMessage? initialMessage =
@@ -70,17 +69,17 @@ Future<void> setupInterctedMessage() async {
   FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
 }
 
+@pragma('vm:entry-point')
 Future<void> _handleMessage(RemoteMessage message) async {
-  final content = json.decode(message.data['payload']);
   router.go(
     '/notifications/message',
     extra: ParsedNotification(
       id: '',
-      title: content['title'],
-      body: content['body'],
-      sentTime: DateTime.now(),
-      priority: toNotificationPriority(int.tryParse(content['priority']) ?? 0),
-      relatedProjectId: int.tryParse(content['relatedProjectId']) ?? 0,
+      title: message.notification!.title!,
+      body: message.notification!.body!,
+      sentTime: message.sentTime!,
+      priority: toNotificationPriority(int.tryParse(message.data['priority']) ?? 0),
+      relatedProjectId: int.tryParse(message.data['relatedProjectId']) ?? 0,
     ),
   );
 }
