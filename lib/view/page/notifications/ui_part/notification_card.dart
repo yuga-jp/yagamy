@@ -28,7 +28,7 @@ class NotificationCard extends ConsumerWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: currentTheme.borderColor!, width: 0.5),
+          bottom: BorderSide(color: currentTheme.borderColor!, width: 0.5),
         ),
       ),
       child: InkWell(

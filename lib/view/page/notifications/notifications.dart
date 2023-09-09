@@ -33,10 +33,47 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
 
     return notifications.when(
       loading: () {
-        return const Text('loading');
+        return CustomScrollView(
+          physics: const ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+          slivers: <Widget>[
+            SliverAppBar(
+              title: SvgPicture.asset(
+                Assets.logo.yagamiFestival2023.path,
+                width: 100,
+                height: 40,
+              ),
+              centerTitle: false,
+              floating: true,
+              pinned: true,
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                alignment: Alignment.center,
+                height: 40,
+                margin: const EdgeInsets.only(top: 15),
+                child: const CircularProgressIndicator.adaptive(),
+              ),
+            ),
+          ],
+        );
       },
       error: (error, stackTrace) {
-        return const Text('error');
+        return CustomScrollView(
+          physics: const ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+          slivers: <Widget>[
+            SliverAppBar(
+              title: SvgPicture.asset(
+                Assets.logo.yagamiFestival2023.path,
+                width: 100,
+                height: 40,
+              ),
+              centerTitle: false,
+              floating: true,
+              pinned: true,
+            ),
+            const SliverToBoxAdapter(child: Text('読み込みに失敗しました')),
+          ],
+        );
       },
       data: (notifications) {
         return CustomScrollView(
