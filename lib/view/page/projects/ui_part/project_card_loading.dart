@@ -6,7 +6,7 @@ class ProjectCardLoading extends StatelessWidget {
     super.key,
   });
 
-  final Color emptyColor = Colors.grey;
+  static const Color emptyColor = Colors.grey;
 
   @override
   Widget build(BuildContext context) {

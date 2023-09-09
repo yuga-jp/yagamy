@@ -51,7 +51,18 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
         );
       },
       error: (error, stackTrace) {
-        return Text('Error: $error');
+        return const CustomScrollView(
+          physics: ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+          slivers: [
+            SliverAppBar(
+              title: Text('企画一覧'),
+              centerTitle: true,
+              floating: true,
+              pinned: true,
+            ),
+            SliverToBoxAdapter(child: Text('読み込みに失敗しました'))
+          ],
+        );
       },
       data: (projects) {
         List<ProjectForCard> filteredProjects = ref.watch(
