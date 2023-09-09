@@ -15,12 +15,12 @@ class ProjectInfoBody extends StatelessWidget {
 
   final Project project;
 
+  static const double horizontalIndent = 15;
+
   @override
   Widget build(BuildContext context) {
     final ProjectInfoTheme currentTheme =
         Theme.of(context).extension<ProjectInfoTheme>()!;
-
-    const double horizontalIndent = 15;
 
     return SliverList(
       delegate: SliverChildBuilderDelegate(
