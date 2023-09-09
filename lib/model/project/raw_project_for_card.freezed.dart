@@ -26,7 +26,7 @@ mixin _$RawProjectForCard {
   String get floor => throw _privateConstructorUsedError;
   String get placeDetail => throw _privateConstructorUsedError;
   DateTime? get hoursStartFirstDay => throw _privateConstructorUsedError;
-  DateTime? get hoursEndFirstday => throw _privateConstructorUsedError;
+  DateTime? get hoursEndFirstDay => throw _privateConstructorUsedError;
   DateTime? get hoursStartSecondDay => throw _privateConstructorUsedError;
   DateTime? get hoursEndSecondDay => throw _privateConstructorUsedError;
   String get groupName => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $RawProjectForCardCopyWith<$Res> {
       String floor,
       String placeDetail,
       DateTime? hoursStartFirstDay,
-      DateTime? hoursEndFirstday,
+      DateTime? hoursEndFirstDay,
       DateTime? hoursStartSecondDay,
       DateTime? hoursEndSecondDay,
       String groupName,
@@ -83,7 +83,7 @@ class _$RawProjectForCardCopyWithImpl<$Res, $Val extends RawProjectForCard>
     Object? floor = null,
     Object? placeDetail = null,
     Object? hoursStartFirstDay = freezed,
-    Object? hoursEndFirstday = freezed,
+    Object? hoursEndFirstDay = freezed,
     Object? hoursStartSecondDay = freezed,
     Object? hoursEndSecondDay = freezed,
     Object? groupName = null,
@@ -117,9 +117,9 @@ class _$RawProjectForCardCopyWithImpl<$Res, $Val extends RawProjectForCard>
           ? _value.hoursStartFirstDay
           : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hoursEndFirstday: freezed == hoursEndFirstday
-          ? _value.hoursEndFirstday
-          : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
+      hoursEndFirstDay: freezed == hoursEndFirstDay
+          ? _value.hoursEndFirstDay
+          : hoursEndFirstDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       hoursStartSecondDay: freezed == hoursStartSecondDay
           ? _value.hoursStartSecondDay
@@ -168,7 +168,7 @@ abstract class _$$_RawProjectForCardCopyWith<$Res>
       String floor,
       String placeDetail,
       DateTime? hoursStartFirstDay,
-      DateTime? hoursEndFirstday,
+      DateTime? hoursEndFirstDay,
       DateTime? hoursStartSecondDay,
       DateTime? hoursEndSecondDay,
       String groupName,
@@ -195,7 +195,7 @@ class __$$_RawProjectForCardCopyWithImpl<$Res>
     Object? floor = null,
     Object? placeDetail = null,
     Object? hoursStartFirstDay = freezed,
-    Object? hoursEndFirstday = freezed,
+    Object? hoursEndFirstDay = freezed,
     Object? hoursStartSecondDay = freezed,
     Object? hoursEndSecondDay = freezed,
     Object? groupName = null,
@@ -229,9 +229,9 @@ class __$$_RawProjectForCardCopyWithImpl<$Res>
           ? _value.hoursStartFirstDay
           : hoursStartFirstDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      hoursEndFirstday: freezed == hoursEndFirstday
-          ? _value.hoursEndFirstday
-          : hoursEndFirstday // ignore: cast_nullable_to_non_nullable
+      hoursEndFirstDay: freezed == hoursEndFirstDay
+          ? _value.hoursEndFirstDay
+          : hoursEndFirstDay // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       hoursStartSecondDay: freezed == hoursStartSecondDay
           ? _value.hoursStartSecondDay
@@ -275,7 +275,7 @@ class _$_RawProjectForCard implements _RawProjectForCard {
       required this.floor,
       required this.placeDetail,
       required this.hoursStartFirstDay,
-      required this.hoursEndFirstday,
+      required this.hoursEndFirstDay,
       required this.hoursStartSecondDay,
       required this.hoursEndSecondDay,
       required this.groupName,
@@ -300,7 +300,7 @@ class _$_RawProjectForCard implements _RawProjectForCard {
   @override
   final DateTime? hoursStartFirstDay;
   @override
-  final DateTime? hoursEndFirstday;
+  final DateTime? hoursEndFirstDay;
   @override
   final DateTime? hoursStartSecondDay;
   @override
@@ -318,7 +318,7 @@ class _$_RawProjectForCard implements _RawProjectForCard {
 
   @override
   String toString() {
-    return 'RawProjectForCard(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstday: $hoursEndFirstday, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, groupName: $groupName, thumbnailUrl: $thumbnailUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
+    return 'RawProjectForCard(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstDay: $hoursEndFirstDay, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, groupName: $groupName, thumbnailUrl: $thumbnailUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
   }
 
   @override
@@ -334,8 +334,8 @@ class _$_RawProjectForCard implements _RawProjectForCard {
                 other.placeDetail == placeDetail) &&
             (identical(other.hoursStartFirstDay, hoursStartFirstDay) ||
                 other.hoursStartFirstDay == hoursStartFirstDay) &&
-            (identical(other.hoursEndFirstday, hoursEndFirstday) ||
-                other.hoursEndFirstday == hoursEndFirstday) &&
+            (identical(other.hoursEndFirstDay, hoursEndFirstDay) ||
+                other.hoursEndFirstDay == hoursEndFirstDay) &&
             (identical(other.hoursStartSecondDay, hoursStartSecondDay) ||
                 other.hoursStartSecondDay == hoursStartSecondDay) &&
             (identical(other.hoursEndSecondDay, hoursEndSecondDay) ||
@@ -362,7 +362,7 @@ class _$_RawProjectForCard implements _RawProjectForCard {
       floor,
       placeDetail,
       hoursStartFirstDay,
-      hoursEndFirstday,
+      hoursEndFirstDay,
       hoursStartSecondDay,
       hoursEndSecondDay,
       groupName,
@@ -394,7 +394,7 @@ abstract class _RawProjectForCard implements RawProjectForCard {
       required final String floor,
       required final String placeDetail,
       required final DateTime? hoursStartFirstDay,
-      required final DateTime? hoursEndFirstday,
+      required final DateTime? hoursEndFirstDay,
       required final DateTime? hoursStartSecondDay,
       required final DateTime? hoursEndSecondDay,
       required final String groupName,
@@ -419,7 +419,7 @@ abstract class _RawProjectForCard implements RawProjectForCard {
   @override
   DateTime? get hoursStartFirstDay;
   @override
-  DateTime? get hoursEndFirstday;
+  DateTime? get hoursEndFirstDay;
   @override
   DateTime? get hoursStartSecondDay;
   @override

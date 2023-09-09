@@ -32,10 +32,10 @@ class Project {
         placeString = toPlaceString(
             rawProject.area, rawProject.floor, rawProject.placeDetail),
         hoursString = toHoursString(
-          rawProject.hoursStartFirstDay,
-          rawProject.hoursEndFirstday,
-          rawProject.hoursStartSecondDay,
-          rawProject.hoursEndSecondDay,
+          rawProject.hoursStartFirstDay?.add(const Duration(hours: 9)),
+          rawProject.hoursEndFirstDay?.add(const Duration(hours: 9)),
+          rawProject.hoursStartSecondDay?.add(const Duration(hours: 9)),
+          rawProject.hoursEndSecondDay?.add(const Duration(hours: 9)),
         ),
         groupName = rawProject.groupName,
         shortIntro = rawProject.shortIntro,

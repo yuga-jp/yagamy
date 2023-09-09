@@ -16,9 +16,9 @@ _$_RawProjectForCard _$$_RawProjectForCardFromJson(Map<String, dynamic> json) =>
       hoursStartFirstDay: json['hoursStartFirstDay'] == null
           ? null
           : DateTime.parse(json['hoursStartFirstDay'] as String),
-      hoursEndFirstday: json['hoursEndFirstday'] == null
+      hoursEndFirstDay: json['hoursEndFirstDay'] == null
           ? null
-          : DateTime.parse(json['hoursEndFirstday'] as String),
+          : DateTime.parse(json['hoursEndFirstDay'] as String),
       hoursStartSecondDay: json['hoursStartSecondDay'] == null
           ? null
           : DateTime.parse(json['hoursStartSecondDay'] as String),
@@ -41,7 +41,7 @@ Map<String, dynamic> _$$_RawProjectForCardToJson(
       'floor': instance.floor,
       'placeDetail': instance.placeDetail,
       'hoursStartFirstDay': instance.hoursStartFirstDay?.toIso8601String(),
-      'hoursEndFirstday': instance.hoursEndFirstday?.toIso8601String(),
+      'hoursEndFirstDay': instance.hoursEndFirstDay?.toIso8601String(),
       'hoursStartSecondDay': instance.hoursStartSecondDay?.toIso8601String(),
       'hoursEndSecondDay': instance.hoursEndSecondDay?.toIso8601String(),
       'groupName': instance.groupName,

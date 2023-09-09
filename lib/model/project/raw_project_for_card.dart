@@ -12,7 +12,7 @@ class RawProjectForCard with _$RawProjectForCard {
     required String floor,
     required String placeDetail,
     required DateTime? hoursStartFirstDay,
-    required DateTime? hoursEndFirstday,
+    required DateTime? hoursEndFirstDay,
     required DateTime? hoursStartSecondDay,
     required DateTime? hoursEndSecondDay,
     required String groupName,
