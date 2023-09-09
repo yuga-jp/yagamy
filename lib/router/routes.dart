@@ -67,36 +67,36 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
-        StatefulShellBranch(
-          routes: <RouteBase>[
-            GoRoute(
-              path: '/timetable',
-              pageBuilder: (BuildContext context, GoRouterState state) {
-                return buildPageWithoutAnimation(
-                  context: context,
-                  state: state,
-                  child: const TimetablePage(),
-                );
-              },
-              routes: const <RouteBase>[],
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: <RouteBase>[
-            GoRoute(
-              path: '/map',
-              pageBuilder: (BuildContext context, GoRouterState state) {
-                return buildPageWithoutAnimation(
-                  context: context,
-                  state: state,
-                  child: const MapPage(),
-                );
-              },
-              routes: const <RouteBase>[],
-            ),
-          ],
-        ),
+        // StatefulShellBranch(
+        //   routes: <RouteBase>[
+        //     GoRoute(
+        //       path: '/timetable',
+        //       pageBuilder: (BuildContext context, GoRouterState state) {
+        //         return buildPageWithoutAnimation(
+        //           context: context,
+        //           state: state,
+        //           child: const TimetablePage(),
+        //         );
+        //       },
+        //       routes: const <RouteBase>[],
+        //     ),
+        //   ],
+        // ),
+        // StatefulShellBranch(
+        //   routes: <RouteBase>[
+        //     GoRoute(
+        //       path: '/map',
+        //       pageBuilder: (BuildContext context, GoRouterState state) {
+        //         return buildPageWithoutAnimation(
+        //           context: context,
+        //           state: state,
+        //           child: const MapPage(),
+        //         );
+        //       },
+        //       routes: const <RouteBase>[],
+        //     ),
+        //   ],
+        // ),
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
