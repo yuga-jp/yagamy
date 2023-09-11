@@ -117,9 +117,9 @@ class ProjectInfoBody extends StatelessWidget {
             case 4:
               return Padding(
                 padding: const EdgeInsets.only(
-                  left: 20,
+                  left: 0,
                   top: 3,
-                  right: 23,
+                  right: 0,
                   bottom: 3,
                 ),
                 child: Row(
