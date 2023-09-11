@@ -1,3 +1,4 @@
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/project/raw_project_for_card.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/utility/empty_to_thumbnail_placeholder_url.dart';
@@ -22,20 +23,36 @@ class ProjectForCard {
         title = rawProjectForCard.title,
         placeString = toPlaceString(rawProjectForCard.area,
             rawProjectForCard.floor, rawProjectForCard.placeDetail),
-        hoursString = toHoursString(
+        hoursString = toHoursStringForCard(
           rawProjectForCard.hoursStartFirstDay?.add(const Duration(hours: 9)),
           rawProjectForCard.hoursEndFirstDay?.add(const Duration(hours: 9)),
           rawProjectForCard.hoursStartSecondDay?.add(const Duration(hours: 9)),
           rawProjectForCard.hoursEndSecondDay?.add(const Duration(hours: 9)),
         ),
         groupName = rawProjectForCard.groupName,
-        thumbnailUrl = emptyToThumbnailPlaceholderUrl(rawProjectForCard.thumbnailUrl),
+        thumbnailUrl =
+            emptyToThumbnailPlaceholderUrl(rawProjectForCard.thumbnailUrl),
         searcherProps = toSearcherPropList(
             rawProjectForCard.categoryMain,
             rawProjectForCard.categorySub,
             rawProjectForCard.area,
             rawProjectForCard.floor),
         stampRally = rawProjectForCard.stampRally;
+
+  ProjectForCard.fromProject(Project project)
+      : id = project.id,
+        title = project.title,
+        placeString = project.placeString,
+        hoursString = toHoursStringForCard(
+          project.hoursStartFirstDay,
+          project.hoursEndFirstDay,
+          project.hoursStartSecondDay,
+          project.hoursEndSecondDay,
+        ),
+        groupName = project.groupName,
+        thumbnailUrl = project.thumbnailUrl,
+        searcherProps = project.searcherProps,
+        stampRally = project.stampRally;
 
   final String id;
   final String title;

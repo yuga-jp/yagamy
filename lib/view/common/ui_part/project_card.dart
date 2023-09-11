@@ -82,7 +82,7 @@ class _ProjectInfo extends StatelessWidget {
 
   Widget _projectPlace(String place, Color textColor) {
     return SizedBox(
-      width: 135,
+      width: 140,
       child: Row(
         children: [
           const Icon(Icons.location_on_outlined, size: 17),

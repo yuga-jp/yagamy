@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:yagamy/constant/theme/shimmer_theme.dart';
 
+import 'package:yagamy/constant/theme/shimmer_theme.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/provider/projects_provider.dart';
 import 'package:yagamy/provider/selected_searcher_provider.dart';
+import 'package:yagamy/view/page/projects/ui_part/project_card_loading.dart';
 import 'package:yagamy/view/common/ui_part/shimmer/shimmer.dart';
 import 'package:yagamy/view/common/ui_part/shimmer/shimmer_loading.dart';
-import 'package:yagamy/view/page/projects/ui_part/project_card_loading.dart';
 import 'package:yagamy/view/page/projects/ui_part/projects_body.dart';
 
 class ProjectsPage extends ConsumerStatefulWidget {

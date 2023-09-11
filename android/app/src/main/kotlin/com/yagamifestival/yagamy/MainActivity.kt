@@ -1,4 +1,4 @@
-package com.example.yagamy
+package com.yagamifestival.yagamy
 
 import io.flutter.embedding.android.FlutterActivity
 

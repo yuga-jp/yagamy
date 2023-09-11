@@ -10,6 +10,7 @@ class NotificationsRepository {
   static Future<List<ParsedNotification>> fetchNotifications() async {
     final response =
         await http.get(Uri.parse('${BaseUrl.baseUrl}/notifications/'));
+
     final notifications = <ParsedNotification>[];
 
     if (response.statusCode == 200) {

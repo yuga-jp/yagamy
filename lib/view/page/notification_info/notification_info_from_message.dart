@@ -12,7 +12,10 @@ class NotificationInfoFromMessagePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Material(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: NotificationInfoBody(notification),
+      child: NotificationInfoBody(
+        notification: notification,
+        isFromMessage: true,
+      ),
     );
   }
 }

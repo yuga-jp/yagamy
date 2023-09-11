@@ -20,13 +20,16 @@ class NotificationInfoPage extends ConsumerWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       child: notification.when(
         loading: () {
-          return const CircularProgressIndicator();
+          return const CircularProgressIndicator.adaptive();
         },
         error: (error, stackTrace) {
           return Text('Error: $error');
         },
         data: (notification) {
-          return NotificationInfoBody(notification);
+          return NotificationInfoBody(
+            notification: notification,
+            isFromMessage: false,
+          );
         },
       ),
     );

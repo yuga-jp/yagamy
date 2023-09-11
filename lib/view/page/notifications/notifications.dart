@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
+import 'package:yagamy/provider/is_notification_refresh_provider.dart';
 import 'package:yagamy/provider/notifications_provider.dart';
 import 'package:yagamy/view/page/notifications/ui_part/notification_card.dart';
 
@@ -30,6 +31,7 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
   Widget build(BuildContext context) {
     AsyncValue<List<ParsedNotification>> notifications =
         ref.watch(notificationsProvider);
+    ref.watch(isNotificationRefreshProvider);
 
     return notifications.when(
       loading: () {

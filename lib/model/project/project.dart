@@ -2,7 +2,6 @@ import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/utility/empty_to_main_image_placeholder_url.dart';
 import 'package:yagamy/utility/empty_to_thumbnail_placeholder_url.dart';
-import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/to_place_string.dart';
 import 'package:yagamy/utility/to_searcher_prop.dart';
 
@@ -11,7 +10,10 @@ class Project {
     required this.id,
     required this.title,
     required this.placeString,
-    required this.hoursString,
+    this.hoursStartFirstDay,
+    this.hoursEndFirstDay,
+    this.hoursStartSecondDay,
+    this.hoursEndSecondDay,
     required this.groupName,
     required this.shortIntro,
     required this.intro,
@@ -31,12 +33,14 @@ class Project {
         title = rawProject.title,
         placeString = toPlaceString(
             rawProject.area, rawProject.floor, rawProject.placeDetail),
-        hoursString = toHoursString(
-          rawProject.hoursStartFirstDay?.add(const Duration(hours: 9)),
-          rawProject.hoursEndFirstDay?.add(const Duration(hours: 9)),
-          rawProject.hoursStartSecondDay?.add(const Duration(hours: 9)),
-          rawProject.hoursEndSecondDay?.add(const Duration(hours: 9)),
-        ),
+        hoursStartFirstDay =
+            rawProject.hoursStartFirstDay?.add(const Duration(hours: 9)),
+        hoursEndFirstDay =
+            rawProject.hoursEndFirstDay?.add(const Duration(hours: 9)),
+        hoursStartSecondDay =
+            rawProject.hoursStartSecondDay?.add(const Duration(hours: 9)),
+        hoursEndSecondDay =
+            rawProject.hoursEndSecondDay?.add(const Duration(hours: 9)),
         groupName = rawProject.groupName,
         shortIntro = rawProject.shortIntro,
         intro = rawProject.intro,
@@ -55,7 +59,10 @@ class Project {
     this.id = '0',
     this.title = '',
     this.placeString = '',
-    this.hoursString = '',
+    this.hoursStartFirstDay,
+    this.hoursEndFirstDay,
+    this.hoursStartSecondDay,
+    this.hoursEndSecondDay,
     this.groupName = '',
     this.shortIntro = '',
     this.intro = '',
@@ -73,7 +80,10 @@ class Project {
   final String id;
   final String title;
   final String placeString;
-  final String hoursString;
+  final DateTime? hoursStartFirstDay;
+  final DateTime? hoursEndFirstDay;
+  final DateTime? hoursStartSecondDay;
+  final DateTime? hoursEndSecondDay;
   final String groupName;
   final String shortIntro;
   final String intro;

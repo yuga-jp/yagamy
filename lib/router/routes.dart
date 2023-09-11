@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:yagamy/model/notification/parsed_notification.dart';
 
+import 'package:yagamy/model/notification/parsed_notification.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
@@ -10,6 +11,7 @@ import 'package:yagamy/view/page/notification_info/notification_info.dart';
 import 'package:yagamy/view/page/notification_info/notification_info_from_message.dart';
 import 'package:yagamy/view/page/notifications/notifications.dart';
 import 'package:yagamy/view/page/project_info/project_info.dart';
+import 'package:yagamy/view/page/project_info/project_info_from_notification.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
 
@@ -67,36 +69,36 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
-        // StatefulShellBranch(
-        //   routes: <RouteBase>[
-        //     GoRoute(
-        //       path: '/timetable',
-        //       pageBuilder: (BuildContext context, GoRouterState state) {
-        //         return buildPageWithoutAnimation(
-        //           context: context,
-        //           state: state,
-        //           child: const TimetablePage(),
-        //         );
-        //       },
-        //       routes: const <RouteBase>[],
-        //     ),
-        //   ],
-        // ),
-        // StatefulShellBranch(
-        //   routes: <RouteBase>[
-        //     GoRoute(
-        //       path: '/map',
-        //       pageBuilder: (BuildContext context, GoRouterState state) {
-        //         return buildPageWithoutAnimation(
-        //           context: context,
-        //           state: state,
-        //           child: const MapPage(),
-        //         );
-        //       },
-        //       routes: const <RouteBase>[],
-        //     ),
-        //   ],
-        // ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
+            GoRoute(
+              path: '/timetable',
+              pageBuilder: (BuildContext context, GoRouterState state) {
+                return buildPageWithoutAnimation(
+                  context: context,
+                  state: state,
+                  child: const TimetablePage(),
+                );
+              },
+              routes: const <RouteBase>[],
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
+            GoRoute(
+              path: '/map',
+              pageBuilder: (BuildContext context, GoRouterState state) {
+                return buildPageWithoutAnimation(
+                  context: context,
+                  state: state,
+                  child: const MapPage(),
+                );
+              },
+              routes: const <RouteBase>[],
+            ),
+          ],
+        ),
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
@@ -110,20 +112,30 @@ final GoRouter router = GoRouter(
               },
               routes: <RouteBase>[
                 GoRoute(
-                  path: 'notification/:id',
+                    path: 'notification/:id',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return NotificationInfoPage(
+                        state.pathParameters['id'] ?? '0',
+                      );
+                    },
+                    routes: <RouteBase>[
+                      GoRoute(
+                        path: 'project',
+                        builder: (BuildContext context, GoRouterState state) {
+                          return ProjectInfoFromNotificationPage(
+                            state.extra as Project,
+                          );
+                        },
+                      ),
+                    ]),
+                GoRoute(
+                  path: 'message',
                   builder: (BuildContext context, GoRouterState state) {
-                    return NotificationInfoPage(
-                      state.pathParameters['id'] ?? '0',
+                    return NotificationInfoFromMessagePage(
+                      state.extra as ParsedNotification,
                     );
                   },
                 ),
-                GoRoute(
-                    path: 'message',
-                    builder: (BuildContext context, GoRouterState state) {
-                      return NotificationInfoFromMessagePage(
-                        state.extra as ParsedNotification,
-                      );
-                    })
               ],
             ),
           ],

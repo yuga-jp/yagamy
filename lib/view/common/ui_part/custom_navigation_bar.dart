@@ -39,15 +39,15 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           icon: Icon(Icons.event_note_outlined),
           label: '企画一覧',
         ),
-        // BottomNavigationBarItem(
-        //   icon: Icon(Icons.schedule),
-        //   label: 'タイムテーブル',
-        // ),
-        // BottomNavigationBarItem(
-        //   activeIcon: Icon(Icons.map),
-        //   icon: Icon(Icons.map_outlined),
-        //   label: 'マップ',
-        // ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.schedule),
+          label: 'タイムテーブル',
+        ),
+        BottomNavigationBarItem(
+          activeIcon: Icon(Icons.map),
+          icon: Icon(Icons.map_outlined),
+          label: 'マップ',
+        ),
         BottomNavigationBarItem(
           activeIcon: Icon(Icons.notifications),
           icon: Icon(Icons.notifications_outlined),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:yagamy/model/project/project_for_card.dart';
-import 'package:yagamy/view/page/projects/ui_part/project_card.dart';
+import 'package:yagamy/view/common/ui_part/project_card.dart';
 
 class ProjectList extends StatefulWidget {
   const ProjectList({required this.projects, super.key});

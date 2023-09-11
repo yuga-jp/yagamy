@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/project/project.dart';
+import 'package:yagamy/utility/to_hours_string.dart';
 import 'package:yagamy/utility/url_launcher_helper.dart';
 
 class ProjectInfoBody extends StatelessWidget {
@@ -39,7 +40,7 @@ class ProjectInfoBody extends StatelessWidget {
                   project.title,
                   style: TextStyle(
                       color: currentTheme.titleColor,
-                      fontSize: 25,
+                      fontSize: 23,
                       fontWeight: FontWeight.w700),
                 ),
               );
@@ -136,10 +137,10 @@ class ProjectInfoBody extends StatelessWidget {
                       project.placeString,
                       style: TextStyle(
                         color: currentTheme.timePlaceColor,
-                        fontSize: 19,
+                        fontSize: 17,
                       ),
                     ),
-                    const SizedBox(width: 55),
+                    const SizedBox(width: 25),
                     Padding(
                       padding: const EdgeInsets.only(top: 2.5, right: 3),
                       child: Icon(
@@ -149,10 +150,15 @@ class ProjectInfoBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.hoursString,
+                      toHoursString(
+                        project.hoursStartFirstDay,
+                        project.hoursEndFirstDay,
+                        project.hoursStartSecondDay,
+                        project.hoursEndSecondDay,
+                      ),
                       style: TextStyle(
                         color: currentTheme.timePlaceColor,
-                        fontSize: 19,
+                        fontSize: 17,
                       ),
                     )
                   ],
