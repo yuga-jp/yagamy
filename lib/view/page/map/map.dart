@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yagamy/gen/assets.gen.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -20,6 +22,8 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return InteractiveViewer(
+      child: SvgPicture.asset(Assets.map.mainMap.path),
+    );
   }
 }

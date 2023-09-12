@@ -11,6 +11,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsIconGen {
+  const $AssetsIconGen();
+
+  /// File path: assets/icon/icon_1024x1024.png
+  AssetGenImage get icon1024x1024 =>
+      const AssetGenImage('assets/icon/icon_1024x1024.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icon1024x1024];
+}
+
 class $AssetsLogoGen {
   const $AssetsLogoGen();
 
@@ -25,10 +36,22 @@ class $AssetsLogoGen {
   List<SvgGenImage> get values => [xTwitter, yagamiFestival2023];
 }
 
+class $AssetsMapGen {
+  const $AssetsMapGen();
+
+  /// File path: assets/map/main_map.svg
+  SvgGenImage get mainMap => const SvgGenImage('assets/map/main_map.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [mainMap];
+}
+
 class Assets {
   Assets._();
 
+  static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
+  static const $AssetsMapGen map = $AssetsMapGen();
 }
 
 class AssetGenImage {
