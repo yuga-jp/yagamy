@@ -1,0 +1,22 @@
+[
+    {
+        "posX": "100",
+        "posY": "450",
+        "relatedProjectId": "1"
+    },
+    {
+        "posX": "200",
+        "posY": "450",
+        "relatedProjectId": "1"
+    },
+    {
+        "posX": "300",
+        "posY": "300",
+        "relatedProjectId": "1"
+    },
+    {
+        "posX": "550",
+        "posY": "430",
+        "relatedProjectId": "1"
+    }
+]

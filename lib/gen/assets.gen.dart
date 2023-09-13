@@ -42,8 +42,11 @@ class $AssetsMapGen {
   /// File path: assets/map/main_map.svg
   SvgGenImage get mainMap => const SvgGenImage('assets/map/main_map.svg');
 
+  /// File path: assets/map/pin_data.json
+  String get pinData => 'assets/map/pin_data.json';
+
   /// List of all assets
-  List<SvgGenImage> get values => [mainMap];
+  List<dynamic> get values => [mainMap, pinData];
 }
 
 class Assets {
