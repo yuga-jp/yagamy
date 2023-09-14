@@ -95,7 +95,13 @@ final GoRouter router = GoRouter(
                   child: const MapPage(),
                 );
               },
-              routes: const <RouteBase>[],
+              routes: <RouteBase>[
+                GoRoute(
+                    path: 'project/:id',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return ProjectInfoPage(state.pathParameters['id']!);
+                    })
+              ],
             ),
           ],
         ),

@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+
+import 'package:yagamy/model/project/project_for_card.dart';
+
+class ProjectPin extends ConsumerWidget {
+  const ProjectPin({
+    required this.size,
+    required this.scale,
+    required this.project,
+    super.key,
+  });
+
+  final Size size;
+  final double scale;
+  final ProjectForCard project;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Stack(
+      alignment: Alignment.topCenter,
+      clipBehavior: Clip.none,
+      children: [
+        GestureDetector(
+          onTap: () {
+            GoRouter.of(context).go('/map/project/${project.id}');
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.purple,
+              image: DecorationImage(
+                image: CachedNetworkImageProvider(project.thumbnailUrl),
+              ),
+              border: Border.all(color: Colors.purple, width: 2 / scale),
+              borderRadius: BorderRadius.circular(8 / scale),
+            ),
+            width: size.width / scale,
+            height: size.width / scale,
+          ),
+        ),
+        Positioned(
+          top: size.width / scale,
+          child: SizedBox(
+            width: size.width / scale,
+            height: (size.height - size.width) / scale,
+            child: const CustomPaint(
+              painter: _IsoscelesTrianglePainter(color: Colors.purple),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _IsoscelesTrianglePainter extends CustomPainter {
+  const _IsoscelesTrianglePainter({this.color = Colors.white});
+
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint();
+
+    paint.color = color;
+    final path = Path();
+    path.moveTo(size.width / 2, size.height);
+    path.lineTo(size.width * 0.25, 0);
+    path.lineTo(size.width * 0.75, 0);
+    path.close();
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
