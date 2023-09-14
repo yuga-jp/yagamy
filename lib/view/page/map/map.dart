@@ -45,44 +45,96 @@ class _MapPageState extends ConsumerState<MapPage> {
       return const SizedBox.shrink();
     }
 
-    return InteractiveViewer(
-      maxScale: 8.0,
-      onInteractionUpdate: (ScaleUpdateDetails details) {
-        setState(() {
-          scale = _transformationController.value.getMaxScaleOnAxis();
-        });
-      },
-      transformationController: _transformationController,
-      child: Stack(
-        children: <Widget>[
-          SvgPicture.asset(Assets.map.mainMap.path),
-          for (PinData pinData in pinDataList.value!)
-            Positioned(
-              left: calcPosX(
-                pinData.posX,
-                scale,
-                pinData.pinType.size.width,
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: [
+        InteractiveViewer(
+          maxScale: 8.0,
+          onInteractionUpdate: (ScaleUpdateDetails details) {
+            setState(() {
+              scale = _transformationController.value.getMaxScaleOnAxis();
+            });
+          },
+          transformationController: _transformationController,
+          child: Stack(
+            children: <Widget>[
+              SvgPicture.asset(
+                Assets.map.mainMap.path,
               ),
-              top: calcPosY(
-                pinData.posY,
-                scale,
-                pinData.pinType.size.height,
-                pinData.pinType.pinPoint,
-              ),
-              child: MapPin(
-                pinType: pinData.pinType,
-                size: pinData.pinType.size,
-                scale: scale,
-                project: pinData.relatedProjectId.isNotEmpty
-                    ? projects.value!
-                        .where(
-                            (project) => project.id == pinData.relatedProjectId)
-                        .first
-                    : null,
-              ),
+              for (PinData pinData in pinDataList.value!)
+                Positioned(
+                  left: calcPosX(
+                    pinData.posX,
+                    scale,
+                    pinData.pinType.size.width,
+                  ),
+                  top: calcPosY(
+                    pinData.posY,
+                    scale,
+                    pinData.pinType.size.height,
+                    pinData.pinType.pinPoint,
+                  ),
+                  child: MapPin(
+                    pinType: pinData.pinType,
+                    size: pinData.pinType.size,
+                    scale: scale,
+                    project: pinData.relatedProjectId.isNotEmpty
+                        ? projects.value!
+                            .where((project) =>
+                                project.id == pinData.relatedProjectId)
+                            .first
+                        : null,
+                  ),
+                ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: MediaQuery.of(context).size.height * 0.2,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: DraggableScrollableSheet(
+              initialChildSize: 0.33,
+              minChildSize: 0.33,
+              snap: true,
+              snapSizes: const <double>[0.33, 0.5, 1.0],
+              builder:
+                  (BuildContext context, ScrollController scrollController) {
+                return Material(
+                  color: const Color.fromRGBO(245, 245, 245, 1.0),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                  ),
+                  clipBehavior: Clip.hardEdge,
+                  child: ListView(
+                    controller: scrollController,
+                    physics:
+                        const ScrollPhysics(parent: ClampingScrollPhysics()),
+                    padding: const EdgeInsets.only(top: 10),
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(200, 200, 200, 1.0),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        width: 100,
+                        height: 8,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * 0.44,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 }
