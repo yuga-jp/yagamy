@@ -39,14 +39,74 @@ class $AssetsLogoGen {
 class $AssetsMapGen {
   const $AssetsMapGen();
 
-  /// File path: assets/map/main_map.svg
-  SvgGenImage get mainMap => const SvgGenImage('assets/map/main_map.svg');
+  /// File path: assets/map/aed.svg
+  SvgGenImage get aed => const SvgGenImage('assets/map/aed.svg');
+
+  /// File path: assets/map/booth_headquarter.svg
+  SvgGenImage get boothHeadquarter =>
+      const SvgGenImage('assets/map/booth_headquarter.svg');
+
+  /// File path: assets/map/elevator.svg
+  SvgGenImage get elevator => const SvgGenImage('assets/map/elevator.svg');
+
+  /// File path: assets/map/headquarter.svg
+  SvgGenImage get headquarter =>
+      const SvgGenImage('assets/map/headquarter.svg');
+
+  /// File path: assets/map/information_center.svg
+  SvgGenImage get informationCenter =>
+      const SvgGenImage('assets/map/information_center.svg');
+
+  /// File path: assets/map/outdoor_rest_area.svg
+  SvgGenImage get outdoorRestArea =>
+      const SvgGenImage('assets/map/outdoor_rest_area.svg');
 
   /// File path: assets/map/pin_data.json
   String get pinData => 'assets/map/pin_data.json';
 
+  /// File path: assets/map/public_phone.svg
+  SvgGenImage get publicPhone =>
+      const SvgGenImage('assets/map/public_phone.svg');
+
+  /// File path: assets/map/restroom.svg
+  SvgGenImage get restroom => const SvgGenImage('assets/map/restroom.svg');
+
+  /// File path: assets/map/restroom_men.svg
+  SvgGenImage get restroomMen =>
+      const SvgGenImage('assets/map/restroom_men.svg');
+
+  /// File path: assets/map/restroom_women.svg
+  SvgGenImage get restroomWomen =>
+      const SvgGenImage('assets/map/restroom_women.svg');
+
+  /// File path: assets/map/security_office.svg
+  SvgGenImage get securityOffice =>
+      const SvgGenImage('assets/map/security_office.svg');
+
+  /// File path: assets/map/trash_can.svg
+  SvgGenImage get trashCan => const SvgGenImage('assets/map/trash_can.svg');
+
+  /// File path: assets/map/whole_area_map.svg
+  SvgGenImage get wholeAreaMap =>
+      const SvgGenImage('assets/map/whole_area_map.svg');
+
   /// List of all assets
-  List<dynamic> get values => [mainMap, pinData];
+  List<dynamic> get values => [
+        aed,
+        boothHeadquarter,
+        elevator,
+        headquarter,
+        informationCenter,
+        outdoorRestArea,
+        pinData,
+        publicPhone,
+        restroom,
+        restroomMen,
+        restroomWomen,
+        securityOffice,
+        trashCan,
+        wholeAreaMap
+      ];
 }
 
 class Assets {

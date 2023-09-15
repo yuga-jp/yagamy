@@ -46,47 +46,58 @@ class _MapPageState extends ConsumerState<MapPage> {
     }
 
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       children: [
         InteractiveViewer(
           maxScale: 8.0,
+          minScale: 1.0,
           onInteractionUpdate: (ScaleUpdateDetails details) {
             setState(() {
               scale = _transformationController.value.getMaxScaleOnAxis();
             });
           },
           transformationController: _transformationController,
-          child: Stack(
-            children: <Widget>[
-              SvgPicture.asset(
-                Assets.map.mainMap.path,
-              ),
-              for (PinData pinData in pinDataList.value!)
-                Positioned(
-                  left: calcPosX(
-                    pinData.posX,
-                    scale,
-                    pinData.pinType.size.width,
-                  ),
-                  top: calcPosY(
-                    pinData.posY,
-                    scale,
-                    pinData.pinType.size.height,
-                    pinData.pinType.pinPoint,
-                  ),
-                  child: MapPin(
-                    pinType: pinData.pinType,
-                    size: pinData.pinType.size,
-                    scale: scale,
-                    project: pinData.relatedProjectId.isNotEmpty
-                        ? projects.value!
-                            .where((project) =>
-                                project.id == pinData.relatedProjectId)
-                            .first
-                        : null,
+          child: Container(
+            alignment: Alignment.center,
+            child: Stack(
+              alignment: Alignment.center,
+              clipBehavior: Clip.none,
+              children: <Widget>[
+                SizedBox(
+                  height: MediaQuery.of(context).size.width / 2,
+                  child: SvgPicture.asset(
+                    Assets.map.wholeAreaMap.path,
+                    alignment: Alignment.center,
                   ),
                 ),
-            ],
+                if (scale > 2.0)
+                  for (PinData pinData in pinDataList.value!)
+                    Positioned(
+                      left: calcPosX(
+                        pinData.posX,
+                        scale,
+                        pinData.pinType.size.width,
+                      ),
+                      top: calcPosY(
+                        pinData.posY,
+                        scale,
+                        pinData.pinType.size.height,
+                        pinData.pinType.pinPoint,
+                      ),
+                      child: MapPin(
+                        pinType: pinData.pinType,
+                        size: pinData.pinType.size,
+                        scale: scale,
+                        project: pinData.relatedProjectId.isNotEmpty
+                            ? projects.value!
+                                .where((project) =>
+                                    project.id == pinData.relatedProjectId)
+                                .first
+                            : null,
+                      ),
+                    ),
+              ],
+            ),
           ),
         ),
         Positioned(
@@ -95,10 +106,10 @@ class _MapPageState extends ConsumerState<MapPage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: DraggableScrollableSheet(
-              initialChildSize: 0.33,
-              minChildSize: 0.33,
+              initialChildSize: 0.38,
+              minChildSize: 0.38,
               snap: true,
-              snapSizes: const <double>[0.33, 0.5, 1.0],
+              snapSizes: const <double>[0.38, 0.5, 1.0],
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Material(
