@@ -8,13 +8,15 @@ import 'package:yagamy/model/project/project_for_card.dart';
 
 class ProjectPin extends ConsumerWidget {
   const ProjectPin({
-    required this.size,
+    required this.width,
+    required this.height,
     required this.scale,
     required this.project,
     super.key,
   });
 
-  final Size size;
+  final double width;
+  final double height;
   final double scale;
   final ProjectForCard project;
 
@@ -37,15 +39,15 @@ class ProjectPin extends ConsumerWidget {
               border: Border.all(color: Colors.purple, width: 2 / scale),
               borderRadius: BorderRadius.circular(8 / scale),
             ),
-            width: size.width / scale,
-            height: size.width / scale,
+            width: width,
+            height: width,
           ),
         ),
         Positioned(
-          top: size.width / scale,
+          top: width,
           child: SizedBox(
-            width: size.width / scale,
-            height: (size.height - size.width) / scale,
+            width: width,
+            height: height - width,
             child: const CustomPaint(
               painter: _IsoscelesTrianglePainter(color: Colors.purple),
             ),

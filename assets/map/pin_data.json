@@ -1,19 +1,19 @@
 [
     {
-        "posX": "4.5",
-        "posY": "85",
+        "posX": "-955",
+        "posY": "0",
         "pinType": "restroom",
         "relatedProjectId": ""
     },
     {
-        "posX": "13.5",
-        "posY": "85",
+        "posX": "-915",
+        "posY": "0",
         "pinType": "elevator",
         "relatedProjectId": ""
     },
     {
-        "posX": "22.5",
-        "posY": "85",
+        "posX": "-875",
+        "posY": "0",
         "pinType": "aed",
         "relatedProjectId": ""
     }

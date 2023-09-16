@@ -23,14 +23,15 @@ class _MapPageState extends ConsumerState<MapPage> {
       TransformationController();
   double scale = 1.0;
 
-  double calcPosX(double posX, double scale, double width) {
-    return posX + width * (1 - 1 / scale) / 2;
+  double calcPosX(double posX, double scale, double standardPinWidth) {
+    return posX + standardPinWidth * (1 - 1 / scale) / 2;
   }
 
-  double calcPosY(double posY, double scale, double height, PinPoint pinPoint) {
+  double calcPosY(
+      double posY, double scale, double standardPinHeight, PinPoint pinPoint) {
     return pinPoint == PinPoint.center
-        ? posY + height * (1 - 1 / scale) / 2
-        : posY + height * (1 - 1 / scale);
+        ? posY + standardPinHeight * (1 - 1 / scale) / 2
+        : posY + standardPinHeight * (1 - 1 / scale);
   }
 
   @override
@@ -70,30 +71,30 @@ class _MapPageState extends ConsumerState<MapPage> {
                     alignment: Alignment.center,
                   ),
                 ),
-                if (scale > 2.0)
+                if (scale > 0.9)
                   for (PinData pinData in pinDataList.value!)
-                    Positioned(
-                      left: calcPosX(
-                        pinData.posX,
-                        scale,
-                        pinData.pinType.size.width,
-                      ),
-                      top: calcPosY(
-                        pinData.posY,
-                        scale,
-                        pinData.pinType.size.height,
-                        pinData.pinType.pinPoint,
-                      ),
-                      child: MapPin(
-                        pinType: pinData.pinType,
-                        size: pinData.pinType.size,
-                        scale: scale,
-                        project: pinData.relatedProjectId.isNotEmpty
-                            ? projects.value!
-                                .where((project) =>
-                                    project.id == pinData.relatedProjectId)
-                                .first
-                            : null,
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width / 2,
+                      child: Align(
+                        alignment: Alignment(pinData.posX, pinData.posY),
+                        child: MapPin(
+                          pinType: pinData.pinType,
+                          width: pinData.pinType.size.width *
+                              MediaQuery.of(context).size.width /
+                              500 
+                              ,
+                          height: pinData.pinType.size.height *
+                              MediaQuery.of(context).size.width /
+                              500 
+                              ,
+                          scale: scale,
+                          project: pinData.relatedProjectId.isNotEmpty
+                              ? projects.value!
+                                  .where((project) =>
+                                      project.id == pinData.relatedProjectId)
+                                  .first
+                              : null,
+                        ),
                       ),
                     ),
               ],

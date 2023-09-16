@@ -10,8 +10,8 @@ class PinData {
   });
 
   PinData.fromJson(Map<String, dynamic> json)
-      : posX = double.parse(json['posX']),
-        posY = double.parse(json['posY']),
+      : posX = double.parse(json['posX']) / 1000,
+        posY = -double.parse(json['posY']) / 1000,
         pinType = json['pinType'].toString().toPinType(),
         relatedProjectId = json['relatedProjectId'];
 
