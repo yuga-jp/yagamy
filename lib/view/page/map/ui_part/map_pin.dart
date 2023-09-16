@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:yagamy/gen/assets.gen.dart';
 
+import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/view/page/map/ui_part/project_pin.dart';
@@ -157,8 +157,8 @@ class MapPin extends StatelessWidget {
             height: height / scale,
           ),
         );
-      // case PinType.project:
-      //   return ProjectPin(width: width, height: height, scale: scale, project: project);
+      case PinType.project:
+        return ProjectPin(width: width, height: height, scale: scale, project: project!);
       case PinType.defaultPin:
         return Icon(Icons.pin_drop_outlined, size: width / scale);
       default:

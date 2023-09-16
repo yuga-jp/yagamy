@@ -22,38 +22,39 @@ class ProjectPin extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      clipBehavior: Clip.none,
-      children: [
-        GestureDetector(
-          onTap: () {
-            GoRouter.of(context).go('/map/project/${project.id}');
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.purple,
-              image: DecorationImage(
-                image: CachedNetworkImageProvider(project.thumbnailUrl),
+    return Container(
+      alignment: Alignment.bottomCenter,
+      width: width,
+      height: height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).go('/map/project/${project.id}');
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                image: DecorationImage(
+                  image: CachedNetworkImageProvider(project.thumbnailUrl),
+                ),
+                border: Border.all(color: Colors.purple, width: 2 / scale),
+                borderRadius: BorderRadius.circular(8 / scale),
               ),
-              border: Border.all(color: Colors.purple, width: 2 / scale),
-              borderRadius: BorderRadius.circular(8 / scale),
+              width: width / scale,
+              height: width / scale,
             ),
-            width: width,
-            height: width,
           ),
-        ),
-        Positioned(
-          top: width,
-          child: SizedBox(
-            width: width,
-            height: height - width,
+          SizedBox(
+            width: width / scale,
+            height: (height - width) / scale,
             child: const CustomPaint(
               painter: _IsoscelesTrianglePainter(color: Colors.purple),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

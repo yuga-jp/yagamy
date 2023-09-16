@@ -81,12 +81,10 @@ class _MapPageState extends ConsumerState<MapPage> {
                           pinType: pinData.pinType,
                           width: pinData.pinType.size.width *
                               MediaQuery.of(context).size.width /
-                              500 
-                              ,
+                              500,
                           height: pinData.pinType.size.height *
                               MediaQuery.of(context).size.width /
-                              500 
-                              ,
+                              500,
                           scale: scale,
                           project: pinData.relatedProjectId.isNotEmpty
                               ? projects.value!
