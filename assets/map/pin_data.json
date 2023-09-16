@@ -16,5 +16,77 @@
         "posY": "0",
         "pinType": "aed",
         "relatedProjectId": ""
+    },
+    {
+        "posX": "-795",
+        "posY": "-70",
+        "pinType": "restroom",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-590",
+        "posY": "-200",
+        "pinType": "restroom",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-550",
+        "posY": "-200",
+        "pinType": "aed",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-570",
+        "posY": "-70",
+        "pinType": "headquarter",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-480",
+        "posY": "-60",
+        "pinType": "restroom",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-330",
+        "posY": "-80",
+        "pinType": "informationCenter",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-210",
+        "posY": "-110",
+        "pinType": "aed",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-170",
+        "posY": "-110",
+        "pinType": "elevator",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-180",
+        "posY": "-330",
+        "pinType": "securityOffice",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-120",
+        "posY": "-230",
+        "pinType": "aed",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-825",
+        "posY": "100",
+        "pinType": "trashCan",
+        "relatedProjectId": ""
+    },
+    {
+        "posX": "-785",
+        "posY": "100",
+        "pinType": "outdoorRestArea",
+        "relatedProjectId": ""
     }
 ]
