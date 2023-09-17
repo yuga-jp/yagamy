@@ -42,7 +42,7 @@ flutter:
    - assets/logo/
    - assets/map/icon/
    - assets/map/map/
-   - assets/map/pin_data
+   - assets/map/pin_data/
 
 flutter_gen:
   integrations:
