@@ -112,12 +112,54 @@ class $AssetsMapIconGen {
 class $AssetsMapMapGen {
   const $AssetsMapMapGen();
 
+  /// File path: assets/map/map/east_area_ground_map.svg
+  SvgGenImage get eastAreaGroundMap =>
+      const SvgGenImage('assets/map/map/east_area_ground_map.svg');
+
+  /// File path: assets/map/map/eleven_1_map.svg
+  SvgGenImage get eleven1Map =>
+      const SvgGenImage('assets/map/map/eleven_1_map.svg');
+
+  /// File path: assets/map/map/eleven_2_map.svg
+  SvgGenImage get eleven2Map =>
+      const SvgGenImage('assets/map/map/eleven_2_map.svg');
+
+  /// File path: assets/map/map/eleven_3_map.svg
+  SvgGenImage get eleven3Map =>
+      const SvgGenImage('assets/map/map/eleven_3_map.svg');
+
+  /// File path: assets/map/map/eleven_4_map.svg
+  SvgGenImage get eleven4Map =>
+      const SvgGenImage('assets/map/map/eleven_4_map.svg');
+
+  /// File path: assets/map/map/fourteen_map.svg
+  SvgGenImage get fourteenMap =>
+      const SvgGenImage('assets/map/map/fourteen_map.svg');
+
+  /// File path: assets/map/map/twelve_1_map.svg
+  SvgGenImage get twelve1Map =>
+      const SvgGenImage('assets/map/map/twelve_1_map.svg');
+
+  /// File path: assets/map/map/twelve_2_map.svg
+  SvgGenImage get twelve2Map =>
+      const SvgGenImage('assets/map/map/twelve_2_map.svg');
+
   /// File path: assets/map/map/whole_area_map.svg
   SvgGenImage get wholeAreaMap =>
       const SvgGenImage('assets/map/map/whole_area_map.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [wholeAreaMap];
+  List<SvgGenImage> get values => [
+        eastAreaGroundMap,
+        eleven1Map,
+        eleven2Map,
+        eleven3Map,
+        eleven4Map,
+        fourteenMap,
+        twelve1Map,
+        twelve2Map,
+        wholeAreaMap
+      ];
 }
 
 class $AssetsMapPinDataGen {
