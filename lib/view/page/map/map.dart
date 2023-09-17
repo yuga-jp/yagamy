@@ -67,7 +67,7 @@ class _MapPageState extends ConsumerState<MapPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.width / 2,
                   child: SvgPicture.asset(
-                    Assets.map.wholeAreaMap.path,
+                    Assets.map.map.wholeAreaMap.path,
                     alignment: Alignment.center,
                   ),
                 ),
@@ -86,12 +86,14 @@ class _MapPageState extends ConsumerState<MapPage> {
                               MediaQuery.of(context).size.width /
                               500,
                           scale: scale,
-                          project: pinData.relatedProjectId.isNotEmpty
+                          project: pinData.relatedProjectId != null
                               ? projects.value!
                                   .where((project) =>
                                       project.id == pinData.relatedProjectId)
                                   .first
                               : null,
+                          text: pinData.text,
+                          textAspectRatio: pinData.textAspectRatio,
                         ),
                       ),
                     ),

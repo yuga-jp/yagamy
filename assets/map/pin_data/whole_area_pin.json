@@ -1,0 +1,325 @@
+[
+    {
+        "posX": "-955",
+        "posY": "0",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "-915",
+        "posY": "0",
+        "pinType": "elevator"
+    },
+    {
+        "posX": "-875",
+        "posY": "0",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-795",
+        "posY": "-35",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "-590",
+        "posY": "-100",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "-550",
+        "posY": "-100",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-570",
+        "posY": "-35",
+        "pinType": "headquarter"
+    },
+    {
+        "posX": "-480",
+        "posY": "-30",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "-330",
+        "posY": "-40",
+        "pinType": "informationCenter"
+    },
+    {
+        "posX": "-210",
+        "posY": "-55",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-170",
+        "posY": "-55",
+        "pinType": "elevator"
+    },
+    {
+        "posX": "-180",
+        "posY": "-165",
+        "pinType": "securityOffice"
+    },
+    {
+        "posX": "-120",
+        "posY": "-115",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-825",
+        "posY": "50",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "-785",
+        "posY": "50",
+        "pinType": "outdoorRestArea"
+    },
+    {
+        "posX": "-750",
+        "posY": "135",
+        "pinType": "boothHeadquarter"
+    },
+    {
+        "posX": "-675",
+        "posY": "45",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "-600",
+        "posY": "45",
+        "pinType": "outdoorRestArea"
+    },
+    {
+        "posX": "-385",
+        "posY": "72.5",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-105",
+        "posY": "135",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-790",
+        "posY": "230",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-425",
+        "posY": "230",
+        "pinType": "aed"
+    },
+    {
+        "posX": "180",
+        "posY": "270",
+        "pinType": "aed"
+    },
+    {
+        "posX": "180",
+        "posY": "70",
+        "pinType": "publicPhone"
+    },
+    {
+        "posX": "400",
+        "posY": "70",
+        "pinType": "aed"
+    },
+    {
+        "posX": "320",
+        "posY": "-5",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "435",
+        "posY": "-100",
+        "pinType": "aed"
+    },
+    {
+        "posX": "680",
+        "posY": "75",
+        "pinType": "aed"
+    },
+    {
+        "posX": "710",
+        "posY": "75",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "650",
+        "posY": "100",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "760",
+        "posY": "-320",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-955",
+        "posY": "-80",
+        "pinType": "text",
+        "text": "11棟",
+        "textAspectRatio": "1.0"
+    },
+    {
+        "posX": "-715",
+        "posY": "-70",
+        "pinType": "text",
+        "text": "12棟",
+        "textAspectRatio": "1.0"
+    },
+    {
+        "posX": "-490",
+        "posY": "-100",
+        "pinType": "text",
+        "text": "14棟西",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "-285",
+        "posY": "-110",
+        "pinType": "text",
+        "text": "14棟東",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "105",
+        "posY": "-80",
+        "pinType": "textSub",
+        "text": "15棟",
+        "textAspectRatio": "1.0"
+    },
+    {
+        "posX": "385",
+        "posY": "-70",
+        "pinType": "textSub",
+        "text": "16A棟",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "605",
+        "posY": "-60",
+        "pinType": "textSub",
+        "text": "16B棟",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "605",
+        "posY": "-170",
+        "pinType": "textSub",
+        "text": "16D棟",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "765",
+        "posY": "160",
+        "pinType": "text",
+        "text": "体育館",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "810",
+        "posY": "0",
+        "pinType": "text",
+        "text": "ミニ\nグラウンド",
+        "textAspectRatio": "2.0"
+    },
+    {
+        "posX": "1000",
+        "posY": "80",
+        "pinType": "text",
+        "text": "グラウンド",
+        "textAspectRatio": "2.0"
+    },
+    {
+        "posX": "920",
+        "posY": "-140",
+        "pinType": "textSub",
+        "text": "テニスコート",
+        "textAspectRatio": "2.0"
+    },
+    {
+        "posX": "845",
+        "posY": "-350",
+        "pinType": "textSub",
+        "text": "07棟",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-900",
+        "posY": "115",
+        "pinType": "textSub",
+        "text": "22棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-620",
+        "posY": "105",
+        "pinType": "textSub",
+        "text": "23棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-280",
+        "posY": "105",
+        "pinType": "textSub",
+        "text": "24棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "135",
+        "posY": "105",
+        "pinType": "textSub",
+        "text": "25棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "500",
+        "posY": "105",
+        "pinType": "textSub",
+        "text": "26棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-1000",
+        "posY": "250",
+        "pinType": "textSub",
+        "text": "30棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-910",
+        "posY": "260",
+        "pinType": "textSub",
+        "text": "31棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-770",
+        "posY": "280",
+        "pinType": "textSub",
+        "text": "32棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "-280",
+        "posY": "280",
+        "pinType": "textSub",
+        "text": "34棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "260",
+        "posY": "280",
+        "pinType": "textSub",
+        "text": "35棟",
+        "textAspectRatio": "1.1"
+    },
+    {
+        "posX": "500",
+        "posY": "265",
+        "pinType": "textSub",
+        "text": "36棟",
+        "textAspectRatio": "1.1"
+    }
+]

@@ -39,74 +39,95 @@ class $AssetsLogoGen {
 class $AssetsMapGen {
   const $AssetsMapGen();
 
-  /// File path: assets/map/aed.svg
-  SvgGenImage get aed => const SvgGenImage('assets/map/aed.svg');
+  $AssetsMapIconGen get icon => const $AssetsMapIconGen();
+  $AssetsMapMapGen get map => const $AssetsMapMapGen();
+  $AssetsMapPinDataGen get pinData => const $AssetsMapPinDataGen();
+}
 
-  /// File path: assets/map/booth_headquarter.svg
+class $AssetsMapIconGen {
+  const $AssetsMapIconGen();
+
+  /// File path: assets/map/icon/aed.svg
+  SvgGenImage get aed => const SvgGenImage('assets/map/icon/aed.svg');
+
+  /// File path: assets/map/icon/booth_headquarter.svg
   SvgGenImage get boothHeadquarter =>
-      const SvgGenImage('assets/map/booth_headquarter.svg');
+      const SvgGenImage('assets/map/icon/booth_headquarter.svg');
 
-  /// File path: assets/map/elevator.svg
-  SvgGenImage get elevator => const SvgGenImage('assets/map/elevator.svg');
+  /// File path: assets/map/icon/elevator.svg
+  SvgGenImage get elevator => const SvgGenImage('assets/map/icon/elevator.svg');
 
-  /// File path: assets/map/headquarter.svg
+  /// File path: assets/map/icon/headquarter.svg
   SvgGenImage get headquarter =>
-      const SvgGenImage('assets/map/headquarter.svg');
+      const SvgGenImage('assets/map/icon/headquarter.svg');
 
-  /// File path: assets/map/information_center.svg
+  /// File path: assets/map/icon/information_center.svg
   SvgGenImage get informationCenter =>
-      const SvgGenImage('assets/map/information_center.svg');
+      const SvgGenImage('assets/map/icon/information_center.svg');
 
-  /// File path: assets/map/outdoor_rest_area.svg
+  /// File path: assets/map/icon/outdoor_rest_area.svg
   SvgGenImage get outdoorRestArea =>
-      const SvgGenImage('assets/map/outdoor_rest_area.svg');
+      const SvgGenImage('assets/map/icon/outdoor_rest_area.svg');
 
-  /// File path: assets/map/pin_data.json
-  String get pinData => 'assets/map/pin_data.json';
-
-  /// File path: assets/map/public_phone.svg
+  /// File path: assets/map/icon/public_phone.svg
   SvgGenImage get publicPhone =>
-      const SvgGenImage('assets/map/public_phone.svg');
+      const SvgGenImage('assets/map/icon/public_phone.svg');
 
-  /// File path: assets/map/restroom.svg
-  SvgGenImage get restroom => const SvgGenImage('assets/map/restroom.svg');
+  /// File path: assets/map/icon/restroom.svg
+  SvgGenImage get restroom => const SvgGenImage('assets/map/icon/restroom.svg');
 
-  /// File path: assets/map/restroom_men.svg
+  /// File path: assets/map/icon/restroom_men.svg
   SvgGenImage get restroomMen =>
-      const SvgGenImage('assets/map/restroom_men.svg');
+      const SvgGenImage('assets/map/icon/restroom_men.svg');
 
-  /// File path: assets/map/restroom_women.svg
+  /// File path: assets/map/icon/restroom_women.svg
   SvgGenImage get restroomWomen =>
-      const SvgGenImage('assets/map/restroom_women.svg');
+      const SvgGenImage('assets/map/icon/restroom_women.svg');
 
-  /// File path: assets/map/security_office.svg
+  /// File path: assets/map/icon/security_office.svg
   SvgGenImage get securityOffice =>
-      const SvgGenImage('assets/map/security_office.svg');
+      const SvgGenImage('assets/map/icon/security_office.svg');
 
-  /// File path: assets/map/trash_can.svg
-  SvgGenImage get trashCan => const SvgGenImage('assets/map/trash_can.svg');
-
-  /// File path: assets/map/whole_area_map.svg
-  SvgGenImage get wholeAreaMap =>
-      const SvgGenImage('assets/map/whole_area_map.svg');
+  /// File path: assets/map/icon/trash_can.svg
+  SvgGenImage get trashCan =>
+      const SvgGenImage('assets/map/icon/trash_can.svg');
 
   /// List of all assets
-  List<dynamic> get values => [
+  List<SvgGenImage> get values => [
         aed,
         boothHeadquarter,
         elevator,
         headquarter,
         informationCenter,
         outdoorRestArea,
-        pinData,
         publicPhone,
         restroom,
         restroomMen,
         restroomWomen,
         securityOffice,
-        trashCan,
-        wholeAreaMap
+        trashCan
       ];
+}
+
+class $AssetsMapMapGen {
+  const $AssetsMapMapGen();
+
+  /// File path: assets/map/map/whole_area_map.svg
+  SvgGenImage get wholeAreaMap =>
+      const SvgGenImage('assets/map/map/whole_area_map.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [wholeAreaMap];
+}
+
+class $AssetsMapPinDataGen {
+  const $AssetsMapPinDataGen();
+
+  /// File path: assets/map/pin_data/whole_area_pin.json
+  String get wholeAreaPin => 'assets/map/pin_data/whole_area_pin.json';
+
+  /// List of all assets
+  List<String> get values => [wholeAreaPin];
 }
 
 class Assets {

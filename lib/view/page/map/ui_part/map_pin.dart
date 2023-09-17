@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/view/page/map/ui_part/project_pin.dart';
+import 'package:yagamy/view/page/map/ui_part/square_pin.dart';
+import 'package:yagamy/view/page/map/ui_part/text_pin.dart';
 
 class MapPin extends StatelessWidget {
   const MapPin({
@@ -13,6 +14,8 @@ class MapPin extends StatelessWidget {
     required this.height,
     required this.scale,
     this.project,
+    this.text,
+    this.textAspectRatio,
     super.key,
   });
 
@@ -21,144 +24,117 @@ class MapPin extends StatelessWidget {
   final double height;
   final double scale;
   final ProjectForCard? project;
+  final String? text;
+  final double? textAspectRatio;
 
   @override
   Widget build(BuildContext context) {
     switch (pinType) {
       case PinType.headquarter:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.headquarter.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.headquarter.path,
         );
       case PinType.informationCenter:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.informationCenter.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.informationCenter.path,
         );
       case PinType.boothHeadquarter:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.boothHeadquarter.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.boothHeadquarter.path,
         );
       case PinType.outdoorRestArea:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.outdoorRestArea.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.outdoorRestArea.path,
         );
       case PinType.publicPhone:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.publicPhone.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.publicPhone.path,
         );
       case PinType.securityOffice:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.securityOffice.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.securityOffice.path,
         );
       case PinType.trashCan:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.trashCan.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.trashCan.path,
         );
       case PinType.aed:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.aed.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.aed.path,
         );
       case PinType.elevator:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.elevator.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.elevator.path,
         );
       case PinType.restroom:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.restroom.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.restroom.path,
         );
       case PinType.restroomMen:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.restroomMen.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.restroomMen.path,
         );
       case PinType.restroomWomen:
-        return Container(
-          alignment: Alignment.center,
+        return SquarePin(
           width: width,
           height: height,
-          child: SvgPicture.asset(
-            Assets.map.restroomWomen.path,
-            width: width / scale,
-            height: height / scale,
-          ),
+          scale: scale,
+          path: Assets.map.icon.restroomWomen.path,
         );
       case PinType.project:
-        return ProjectPin(width: width, height: height, scale: scale, project: project!);
+        return ProjectPin(
+          width: width,
+          height: height,
+          scale: scale,
+          project: project!,
+        );
+      case PinType.text:
+        return TextPin(
+          height: height,
+          scale: scale,
+          text: text!,
+          textAspectRatio: textAspectRatio!,
+        );
+      case PinType.textSub:
+        return TextPin(
+          height: height,
+          scale: scale,
+          text: text!,
+          textAspectRatio: textAspectRatio!,
+        );
       case PinType.defaultPin:
         return Icon(Icons.pin_drop_outlined, size: width / scale);
       default:

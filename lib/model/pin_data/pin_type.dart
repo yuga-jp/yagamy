@@ -20,9 +20,9 @@ enum PinType {
       name: '男性用お手洗い', pinPoint: PinPoint.center, size: Size.square(30)),
   restroomWomen(
       name: '女性用お手洗い', pinPoint: PinPoint.center, size: Size.square(30)),
-  project(
-      name: '', pinPoint: PinPoint.bottomCenter, size: Size(50, 50 * 1.2)),
-  text(name: '', pinPoint: PinPoint.center, size: Size.square(30)),
+  project(name: '', pinPoint: PinPoint.bottomCenter, size: Size(50, 50 * 1.2)),
+  text(name: '', pinPoint: PinPoint.center, size: Size.square(50)),
+  textSub(name: '', pinPoint: PinPoint.center, size: Size.square(40)),
   defaultPin(name: '', pinPoint: PinPoint.bottomCenter, size: Size.square(30));
 
   const PinType({

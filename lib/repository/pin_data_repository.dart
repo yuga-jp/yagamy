@@ -6,7 +6,7 @@ import 'package:yagamy/model/pin_data/pin_data.dart';
 
 class PinDataRepository {
   static Future<List<PinData>> fetchPinData() async {
-    final response = await rootBundle.loadString(Assets.map.pinData);
+    final response = await rootBundle.loadString(Assets.map.pinData.wholeAreaPin);
     final parsedResponse = json.decode(response);
     final pinDatas = <PinData>[];
 

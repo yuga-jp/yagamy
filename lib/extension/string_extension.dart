@@ -31,6 +31,8 @@ extension StringExtension on String {
         return PinType.project;
       case 'text':
         return PinType.text;
+      case 'textSub':
+        return PinType.textSub;
       case 'defaultPin':
         return PinType.defaultPin;
       default:

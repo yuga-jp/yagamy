@@ -6,17 +6,25 @@ class PinData {
     required this.posX,
     required this.posY,
     required this.pinType,
-    required this.relatedProjectId,
+    this.relatedProjectId,
+    this.text,
+    this.textAspectRatio,
   });
 
   PinData.fromJson(Map<String, dynamic> json)
       : posX = double.parse(json['posX']) / 1000,
-        posY = -double.parse(json['posY']) / 1000,
+        posY = -double.parse(json['posY']) / 500,
         pinType = json['pinType'].toString().toPinType(),
-        relatedProjectId = json['relatedProjectId'];
+        relatedProjectId = json['relatedProjectId'],
+        text = json['text'],
+        textAspectRatio = json['textAspectRatio'] != null
+            ? double.parse(json['textAspectRatio'])
+            : null;
 
   final double posX;
   final double posY;
   final PinType pinType;
-  final String relatedProjectId;
+  final String? relatedProjectId;
+  final String? text;
+  final double? textAspectRatio;
 }
