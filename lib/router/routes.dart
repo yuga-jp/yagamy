@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:yagamy/model/map_type.dart';
 
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
+import 'package:yagamy/view/page/map/ui_part/map_viewer.dart';
 import 'package:yagamy/view/page/notification_info/notification_info.dart';
 import 'package:yagamy/view/page/notification_info/notification_info_from_message.dart';
 import 'package:yagamy/view/page/notifications/notifications.dart';
@@ -88,19 +90,113 @@ final GoRouter router = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/map',
-              pageBuilder: (BuildContext context, GoRouterState state) {
-                return buildPageWithoutAnimation(
-                  context: context,
-                  state: state,
-                  child: const MapPage(),
-                );
+              redirect: (_, __) => '/map/whole_area',
+            ),
+            StatefulShellRoute.indexedStack(
+              builder: (
+                BuildContext context,
+                GoRouterState state,
+                StatefulNavigationShell navigationShell,
+              ) {
+                return MapPage(navigationShell: navigationShell);
               },
-              routes: <RouteBase>[
-                GoRoute(
-                    path: 'project/:id',
-                    builder: (BuildContext context, GoRouterState state) {
-                      return ProjectInfoPage(state.pathParameters['id']!);
-                    })
+              branches: <StatefulShellBranch>[
+                StatefulShellBranch(
+                  routes: <RouteBase>[
+                    GoRoute(
+                      path: '/map/whole_area',
+                      pageBuilder: (BuildContext context, GoRouterState state) {
+                        return buildPageWithoutAnimation(
+                          context: context,
+                          state: state,
+                          child: const MapViewer(mapType: MapType.wholeArea),
+                        );
+                      },
+                      routes: <RouteBase>[
+                        GoRoute(
+                          path: 'project/:id',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return ProjectInfoPage(state.pathParameters['id']!);
+                          },
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: '/map/eleven',
+                      pageBuilder: (BuildContext context, GoRouterState state) {
+                        return buildPageWithoutAnimation(
+                          context: context,
+                          state: state,
+                          child: const MapViewer(mapType: MapType.eleven3floor),
+                        );
+                      },
+                      routes: <RouteBase>[
+                        GoRoute(
+                          path: 'project/:id',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return ProjectInfoPage(state.pathParameters['id']!);
+                          },
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: '/map/twelve',
+                      pageBuilder: (BuildContext context, GoRouterState state) {
+                        return buildPageWithoutAnimation(
+                          context: context,
+                          state: state,
+                          child: const MapViewer(mapType: MapType.twelve1floor),
+                        );
+                      },
+                      routes: <RouteBase>[
+                        GoRoute(
+                          path: 'project/:id',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return ProjectInfoPage(state.pathParameters['id']!);
+                          },
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: '/map/fourteen',
+                      pageBuilder: (BuildContext context, GoRouterState state) {
+                        return buildPageWithoutAnimation(
+                          context: context,
+                          state: state,
+                          child: const MapViewer(mapType: MapType.fourteen),
+                        );
+                      },
+                      routes: <RouteBase>[
+                        GoRoute(
+                          path: 'project/:id',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return ProjectInfoPage(state.pathParameters['id']!);
+                          },
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: '/map/east_area_ground',
+                      pageBuilder: (BuildContext context, GoRouterState state) {
+                        return buildPageWithoutAnimation(
+                          context: context,
+                          state: state,
+                          child: MapViewer(
+                            mapType: MapType.eastAreaGround,
+                          ),
+                        );
+                      },
+                      routes: <RouteBase>[
+                        GoRoute(
+                          path: 'project/:id',
+                          builder: (BuildContext context, GoRouterState state) {
+                            return ProjectInfoPage(state.pathParameters['id']!);
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
           ],

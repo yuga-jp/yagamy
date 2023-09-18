@@ -165,11 +165,46 @@ class $AssetsMapMapGen {
 class $AssetsMapPinDataGen {
   const $AssetsMapPinDataGen();
 
+  /// File path: assets/map/pin_data/east_area_ground_pin.json
+  String get eastAreaGroundPin =>
+      'assets/map/pin_data/east_area_ground_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_1_pin.json
+  String get eleven1Pin => 'assets/map/pin_data/eleven_1_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_2_pin.json
+  String get eleven2Pin => 'assets/map/pin_data/eleven_2_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_3_pin.json
+  String get eleven3Pin => 'assets/map/pin_data/eleven_3_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_4_pin.json
+  String get eleven4Pin => 'assets/map/pin_data/eleven_4_pin.json';
+
+  /// File path: assets/map/pin_data/fourteen_pin.json
+  String get fourteenPin => 'assets/map/pin_data/fourteen_pin.json';
+
+  /// File path: assets/map/pin_data/twelve_1_pin.json
+  String get twelve1Pin => 'assets/map/pin_data/twelve_1_pin.json';
+
+  /// File path: assets/map/pin_data/twelve_2_pin.json
+  String get twelve2Pin => 'assets/map/pin_data/twelve_2_pin.json';
+
   /// File path: assets/map/pin_data/whole_area_pin.json
   String get wholeAreaPin => 'assets/map/pin_data/whole_area_pin.json';
 
   /// List of all assets
-  List<String> get values => [wholeAreaPin];
+  List<String> get values => [
+        eastAreaGroundPin,
+        eleven1Pin,
+        eleven2Pin,
+        eleven3Pin,
+        eleven4Pin,
+        fourteenPin,
+        twelve1Pin,
+        twelve2Pin,
+        wholeAreaPin
+      ];
 }
 
 class Assets {
