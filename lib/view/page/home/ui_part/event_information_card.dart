@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/model/event_type.dart';
+import 'package:yagamy/model/home/event_info.dart';
+import 'package:yagamy/provider/event_info_provider.dart';
 
-class EventInformationCard extends StatelessWidget {
+class EventInformationCard extends ConsumerWidget {
   const EventInformationCard({required this.eventType, super.key});
 
   final EventType eventType;
@@ -29,8 +32,34 @@ class EventInformationCard extends StatelessWidget {
     }
   }
 
+  String formatDateTimeToJapanese(DateTime dateTime) {
+    // make datetime to japanese
+    DateTime JSTDateTime = dateTime.toLocal();
+    String month = JSTDateTime.month.toString();
+    String day = JSTDateTime.day.toString();
+    String hour = JSTDateTime.hour.toString().padLeft(2, '0');
+    String minute = JSTDateTime.minute.toString().padLeft(2, '0');
+
+    return '${month}月${day}日 ${hour}:${minute}現在 ';
+  }
+
+  EventType? stringToEventType(String eventTypeStr) {
+    switch (eventTypeStr) {
+      case 'normal':
+        return EventType.normal;
+      case 'rain':
+        return EventType.rain;
+      case 'suspension':
+        return EventType.suspension;
+      default:
+        return null;
+    }
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<EventInfo> eventInfo = ref.watch(eventInfoProvider);
+
     return Card(
       elevation: 0.0,
       shape: RoundedRectangleBorder(
@@ -42,17 +71,22 @@ class EventInformationCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            '8月30日 22:31現在',
-            style: TextStyle(color: Colors.black, fontSize: 20),
+          Text(
+            eventInfo.when(
+              data: (data) => formatDateTimeToJapanese(data.updatedAt),
+              loading: () => 'Loading...',
+              error: (error, stackTrace) => 'Error',
+            ),
+            style: const TextStyle(color: Colors.black, fontSize: 20),
           ),
-          const SizedBox(width: 25),
           Icon(
-            _eventIcon(eventType),
+            _eventIcon(stringToEventType(eventInfo.value?.eventType ?? '') ??
+                EventType.normal),
             size: 25,
           ),
           Text(
-            _eventText(eventType),
+            _eventText(stringToEventType(eventInfo.value?.eventType ?? '') ??
+                EventType.normal),
             style: const TextStyle(color: Colors.black, fontSize: 20),
           ),
         ],
