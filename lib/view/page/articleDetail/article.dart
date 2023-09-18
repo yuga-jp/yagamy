@@ -6,7 +6,7 @@ import 'package:yagamy/model/home/article.dart';
 class ArticleDetailBody extends StatelessWidget {
   final Article article;
 
-  ArticleDetailBody({required this.article});
+  const ArticleDetailBody({super.key, required this.article});
 
   static const double horizontalIndent = 15;
 
@@ -59,8 +59,7 @@ class ArticleDetailBody extends StatelessWidget {
                       throw 'Could not launch $link';
                     }
                   },
-                  text:
-                      '矢上祭実行委員会室内局の特設ページが開設！ぜひチェックしてみてね！！ http://yagamifes-indoors-contents.site',
+                  text: article.body,
                   style: const TextStyle(fontSize: 16.0),
                   linkStyle: const TextStyle(color: Colors.blue),
                 ),
