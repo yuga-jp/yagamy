@@ -56,7 +56,7 @@ class _MapViewState extends ConsumerState<MapViewer> {
     }
 
     return InteractiveViewer(
-      maxScale: 8.0,
+      maxScale: 6.0,
       minScale: 1.0,
       onInteractionUpdate: (ScaleUpdateDetails details) {
         setState(() {
