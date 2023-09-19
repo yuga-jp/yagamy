@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:yagamy/model/map_type.dart';
-import 'package:yagamy/view/page/notification_info/ui_part/map_select_button.dart';
+import 'package:yagamy/provider/selected_map_type_provider.dart';
+import 'package:yagamy/view/page/map/ui_part/floor_select_bar.dart';
+import 'package:yagamy/view/page/map/ui_part/map_select_button.dart';
 
 class MapPage extends ConsumerStatefulWidget {
   const MapPage({
@@ -27,6 +29,11 @@ class _MapPageState extends ConsumerState<MapPage> {
       alignment: Alignment.center,
       children: [
         widget.navigationShell,
+        Positioned(
+          top: mediaQuerySize.height * 0.4,
+          left: mediaQuerySize.width * 0.05,
+          child: FloorSelectBar(mapType: ref.watch(selectedMapTypeProvider)),
+        ),
         Positioned(
           bottom: 0,
           child: SizedBox(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
+import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/view/page/map/ui_part/project_pin.dart';
@@ -16,6 +17,7 @@ class MapPin extends StatelessWidget {
     this.project,
     this.text,
     this.textAspectRatio,
+    required this.locatedMapType,
     super.key,
   });
 
@@ -26,6 +28,7 @@ class MapPin extends StatelessWidget {
   final ProjectForCard? project;
   final String? text;
   final double? textAspectRatio;
+  final MapType locatedMapType;
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +123,7 @@ class MapPin extends StatelessWidget {
           height: height,
           scale: scale,
           project: project!,
+          locatedMapType: locatedMapType,
         );
       case PinType.text:
         return TextPin(

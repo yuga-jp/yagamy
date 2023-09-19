@@ -7,8 +7,12 @@ import 'package:yagamy/model/pin_data/pin_data.dart';
 import 'package:yagamy/utility/map_type_to_path.dart';
 
 class PinDataRepository {
-  static Future<List<PinData>> fetchPinData(MapType mapType) async {
-    final response = await rootBundle.loadString(mapPinDataPath(mapType));
+  static Future<List<PinData>> fetchPinData(
+    MapType mapType,
+    FloorType? floorType,
+  ) async {
+    final response =
+        await rootBundle.loadString(mapPinDataPath(mapType, floorType));
     final parsedResponse = json.decode(response);
     final pinDatas = <PinData>[];
 

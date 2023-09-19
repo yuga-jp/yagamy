@@ -1,1 +1,143 @@
-[]
+[
+    {
+        "posX": "-740",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "5"
+    },
+    {
+        "posX": "-740",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "101",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-410",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "6"
+    },
+    {
+        "posX": "-410",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "102",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-80",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "7"
+    },
+    {
+        "posX": "-80",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "103",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "250",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "8"
+    },
+    {
+        "posX": "250",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "104",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "580",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "9"
+    },
+    {
+        "posX": "580",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "105",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "910",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "10"
+    },
+    {
+        "posX": "910",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "106",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-250",
+        "posY": "-190",
+        "pinType": "textSub",
+        "text": "108",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "210",
+        "posY": "-75",
+        "pinType": "project",
+        "relatedProjectId": "11"
+    },
+    {
+        "posX": "210",
+        "posY": "-245",
+        "pinType": "textSub",
+        "text": "109",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "650",
+        "posY": "-75",
+        "pinType": "project",
+        "relatedProjectId": "12"
+    },
+    {
+        "posX": "650",
+        "posY": "-245",
+        "pinType": "textSub",
+        "text": "110",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-955",
+        "posY": "200",
+        "pinType": "restroomMen"
+    },
+    {
+        "posX": "-955",
+        "posY": "100",
+        "pinType": "restroomWomen"
+    },
+    {
+        "posX": "885",
+        "posY": "-100",
+        "pinType": "restroomWomen"
+    },
+    {
+        "posX": "885",
+        "posY": "-200",
+        "pinType": "restroomMen"
+    },
+    {
+        "posX": "800",
+        "posY": "25",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "960",
+        "posY": "0",
+        "pinType": "aed"
+    }
+]

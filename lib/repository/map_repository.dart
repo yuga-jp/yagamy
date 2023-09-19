@@ -8,16 +8,31 @@ class MapRepository {
     final List<MapData> allMapData = [];
 
     for (var mapType in MapType.values) {
-      allMapData.add(await fetchMapData(mapType));
+      if (mapType.floorTypes == null) {
+        allMapData.add(await fetchMapData(mapType, null));
+      } else {
+        for (var floorType in mapType.floorTypes!) {
+          allMapData.add(await fetchMapData(mapType, floorType));
+        }
+      }
     }
 
     return allMapData;
   }
 
-  static Future<MapData> fetchMapData(MapType mapType) async {
-    final svgPath = mapSvgPath(mapType);
-    final pinData = await PinDataRepository.fetchPinData(mapType);
+  static Future<MapData> fetchMapData(
+    MapType mapType,
+    FloorType? floorType,
+  ) async {
+    final svgPath = mapSvgPath(mapType, floorType);
 
-    return MapData(mapType: mapType, mapSvgPath: svgPath, pinData: pinData);
+    final pinData = await PinDataRepository.fetchPinData(mapType, floorType);
+
+    return MapData(
+      mapType: mapType,
+      floorType: floorType,
+      mapSvgPath: svgPath,
+      pinData: pinData,
+    );
   }
 }

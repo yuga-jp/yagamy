@@ -17,6 +17,8 @@ import 'package:yagamy/view/page/project_info/project_info_from_notification.dar
 import 'package:yagamy/view/page/projects/projects.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
 
+final _mapPageNavigatorKey = GlobalKey<NavigatorState>();
+
 final GoRouter router = GoRouter(
   initialLocation: '/home',
   debugLogDiagnostics: true,
@@ -87,6 +89,7 @@ final GoRouter router = GoRouter(
           ],
         ),
         StatefulShellBranch(
+          navigatorKey: _mapPageNavigatorKey,
           routes: <RouteBase>[
             GoRoute(
               path: '/map',
@@ -118,6 +121,7 @@ final GoRouter router = GoRouter(
                           builder: (BuildContext context, GoRouterState state) {
                             return ProjectInfoPage(state.pathParameters['id']!);
                           },
+                          parentNavigatorKey: _mapPageNavigatorKey,
                         ),
                       ],
                     ),
@@ -127,7 +131,7 @@ final GoRouter router = GoRouter(
                         return buildPageWithoutAnimation(
                           context: context,
                           state: state,
-                          child: const MapViewer(mapType: MapType.eleven3floor),
+                          child: const MapViewer(mapType: MapType.eleven),
                         );
                       },
                       routes: <RouteBase>[
@@ -136,6 +140,7 @@ final GoRouter router = GoRouter(
                           builder: (BuildContext context, GoRouterState state) {
                             return ProjectInfoPage(state.pathParameters['id']!);
                           },
+                          parentNavigatorKey: _mapPageNavigatorKey,
                         ),
                       ],
                     ),
@@ -145,7 +150,7 @@ final GoRouter router = GoRouter(
                         return buildPageWithoutAnimation(
                           context: context,
                           state: state,
-                          child: const MapViewer(mapType: MapType.twelve1floor),
+                          child: const MapViewer(mapType: MapType.twelve),
                         );
                       },
                       routes: <RouteBase>[
@@ -154,6 +159,7 @@ final GoRouter router = GoRouter(
                           builder: (BuildContext context, GoRouterState state) {
                             return ProjectInfoPage(state.pathParameters['id']!);
                           },
+                          parentNavigatorKey: _mapPageNavigatorKey,
                         ),
                       ],
                     ),
@@ -172,6 +178,7 @@ final GoRouter router = GoRouter(
                           builder: (BuildContext context, GoRouterState state) {
                             return ProjectInfoPage(state.pathParameters['id']!);
                           },
+                          parentNavigatorKey: _mapPageNavigatorKey,
                         ),
                       ],
                     ),
@@ -181,9 +188,8 @@ final GoRouter router = GoRouter(
                         return buildPageWithoutAnimation(
                           context: context,
                           state: state,
-                          child: MapViewer(
-                            mapType: MapType.eastAreaGround,
-                          ),
+                          child:
+                              const MapViewer(mapType: MapType.eastAreaGround),
                         );
                       },
                       routes: <RouteBase>[
@@ -192,6 +198,7 @@ final GoRouter router = GoRouter(
                           builder: (BuildContext context, GoRouterState state) {
                             return ProjectInfoPage(state.pathParameters['id']!);
                           },
+                          parentNavigatorKey: _mapPageNavigatorKey,
                         ),
                       ],
                     ),

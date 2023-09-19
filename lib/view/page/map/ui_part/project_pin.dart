@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:yagamy/extension/map_type_extension.dart';
+import 'package:yagamy/model/map_type.dart';
 
 import 'package:yagamy/model/project/project_for_card.dart';
 
@@ -12,6 +14,7 @@ class ProjectPin extends ConsumerWidget {
     required this.height,
     required this.scale,
     required this.project,
+    required this.locatedMapType,
     super.key,
   });
 
@@ -19,6 +22,7 @@ class ProjectPin extends ConsumerWidget {
   final double height;
   final double scale;
   final ProjectForCard project;
+  final MapType locatedMapType;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,7 +35,7 @@ class ProjectPin extends ConsumerWidget {
         children: [
           GestureDetector(
             onTap: () {
-              GoRouter.of(context).go('/map/project/${project.id}');
+              GoRouter.of(context).go('/map/${locatedMapType.toStringPath()}/project/${project.id}');
             },
             child: Container(
               decoration: BoxDecoration(

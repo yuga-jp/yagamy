@@ -1,1 +1,90 @@
-[]
+[
+    {
+        "posX": "-970",
+        "posY": "230",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-800",
+        "posY": "100",
+        "pinType": "publicPhone"
+    },
+    {
+        "posX": "-250",
+        "posY": "100",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-200",
+        "posY": "-250",
+        "pinType": "aed"
+    },
+    {
+        "posX": "-400",
+        "posY": "-50",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "270",
+        "posY": "150",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "350",
+        "posY": "75",
+        "pinType": "aed"
+    },
+    {
+        "posX": "410",
+        "posY": "120",
+        "pinType": "restroom"
+    },
+    {
+        "posX": "-650",
+        "posY": "180",
+        "pinType": "project",
+        "relatedProjectId": "45"
+    },
+    {
+        "posX": "-120",
+        "posY": "70",
+        "pinType": "project",
+        "relatedProjectId": "46"
+    },
+    {
+        "posX": "390",
+        "posY": "400",
+        "pinType": "project",
+        "relatedProjectId": "47"
+    },
+    {
+        "posX": "385",
+        "posY": "-50",
+        "pinType": "project",
+        "relatedProjectId": "48"
+    },
+    {
+        "posX": "550",
+        "posY": "350",
+        "pinType": "project",
+        "relatedProjectId": "49"
+    },
+    {
+        "posX": "700",
+        "posY": "350",
+        "pinType": "project",
+        "relatedProjectId": "50"
+    },
+    {
+        "posX": "630",
+        "posY": "-50",
+        "pinType": "project",
+        "relatedProjectId": "51"
+    },
+    {
+        "posX": "900",
+        "posY": "150",
+        "pinType": "project",
+        "relatedProjectId": "52"
+    }
+]

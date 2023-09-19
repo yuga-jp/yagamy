@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,6 +9,8 @@ import 'package:yagamy/model/pin_data/pin_data.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/provider/map_provider.dart';
 import 'package:yagamy/provider/projects_provider.dart';
+import 'package:yagamy/provider/selected_floor_type_provider.dart';
+import 'package:yagamy/provider/selected_map_type_provider.dart';
 import 'package:yagamy/view/page/map/ui_part/map_pin.dart';
 
 class MapViewer extends ConsumerStatefulWidget {
@@ -29,7 +32,8 @@ class _MapViewState extends ConsumerState<MapViewer> {
   Widget build(BuildContext context) {
     final Size mediaQuerySize = MediaQuery.sizeOf(context);
 
-    final AsyncValue<MapData> mapData = ref.watch(mapProvider(widget.mapType));
+    final AsyncValue<List<MapData>> mapData =
+        ref.watch(mapProvider(ref.watch(selectedMapTypeProvider)));
     final AsyncValue<List<ProjectForCard>> projects =
         ref.watch(projectsProvider);
 
@@ -37,6 +41,18 @@ class _MapViewState extends ConsumerState<MapViewer> {
       return const SizedBox.shrink();
     } else if (mapData.hasError || projects.hasError) {
       return const SizedBox.shrink();
+    }
+
+    late final MapData currentMapData;
+
+    if (mapData.value!.length >= 2) {
+      currentMapData = mapData.value!
+          .where((mapData) =>
+              mapData.mapType == ref.watch(selectedMapTypeProvider) &&
+              mapData.floorType == ref.watch(selectedFloorTypeProvider))
+          .first;
+    } else {
+      currentMapData = mapData.value!.first;
     }
 
     return InteractiveViewer(
@@ -57,12 +73,12 @@ class _MapViewState extends ConsumerState<MapViewer> {
             SizedBox(
               height: mediaQuerySize.width / 2,
               child: SvgPicture.asset(
-                mapData.value!.mapSvgPath,
+                currentMapData.mapSvgPath,
                 alignment: Alignment.center,
               ),
             ),
             if (scale > 0.9)
-              for (PinData pinData in mapData.value!.pinData)
+              for (PinData pinData in currentMapData.pinData)
                 SizedBox(
                   height: mediaQuerySize.width / 2,
                   child: Align(
@@ -84,6 +100,7 @@ class _MapViewState extends ConsumerState<MapViewer> {
                           : null,
                       text: pinData.text,
                       textAspectRatio: pinData.textAspectRatio,
+                      locatedMapType: currentMapData.mapType,
                     ),
                   ),
                 ),
