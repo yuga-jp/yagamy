@@ -1,0 +1,75 @@
+[
+    {
+        "posX": "-680",
+        "posY": "-70",
+        "pinType": "trashCan"
+    },
+    {
+        "posX": "-585",
+        "posY": "-350",
+        "pinType": "outdoorRestArea"
+    },
+    {
+        "posX": "530",
+        "posY": "140",
+        "pinType": "aed"
+    },
+    {
+        "posX": "640",
+        "posY": "140",
+        "pinType": "elevator"
+    },
+    {
+        "posX": "-460",
+        "posY": "380",
+        "pinType": "project",
+        "relatedProjectId": "37"
+    },
+    {
+        "posX": "-975",
+        "posY": "-280",
+        "pinType": "project",
+        "relatedProjectId": "38"
+    },
+    {
+        "posX": "-800",
+        "posY": "-280",
+        "pinType": "project",
+        "relatedProjectId": "39"
+    },
+    {
+        "posX": "-550",
+        "posY": "50",
+        "pinType": "project",
+        "relatedProjectId": "40"
+    },
+    {
+        "posX": "-370",
+        "posY": "-100",
+        "pinType": "project",
+        "relatedProjectId": "41"
+    },
+    {
+        "posX": "395",
+        "posY": "-40",
+        "pinType": "project",
+        "relatedProjectId": "44"
+    },
+    {
+        "posX": "-900",
+        "posY": "250",
+        "pinType": "restroomWomen"
+    },
+    {
+        "posX": "-750",
+        "posY": "250",
+        "pinType": "restroomMen"
+    },
+    {
+        "posX": "835",
+        "posY": "200",
+        "pinType": "text",
+        "text": "↓B2\nMMR",
+        "textAspectRatio": "1.2"
+    }
+]

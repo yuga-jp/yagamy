@@ -1,0 +1,161 @@
+[
+    {
+        "posX": "-687",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "13"
+    },
+    {
+        "posX": "-815",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "202A",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "-585",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "202B",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "-350",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "14"
+    },
+    {
+        "posX": "-350",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "202C",
+        "textAspectRatio": "1.5"
+    },
+    {
+        "posX": "-190",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "15"
+    },
+    {
+        "posX": "-185",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "202D",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "-75",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "16"
+    },
+    {
+        "posX": "-75",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "202E",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "90",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "17"
+    },
+    {
+        "posX": "90",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "205",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "310",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "18"
+    },
+    {
+        "posX": "310",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "206",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "535",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "19"
+    },
+    {
+        "posX": "535",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "207",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "755",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "20"
+    },
+    {
+        "posX": "755",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "208",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "980",
+        "posY": "310",
+        "pinType": "project",
+        "relatedProjectId": "21"
+    },
+    {
+        "posX": "980",
+        "posY": "100",
+        "pinType": "textSub",
+        "text": "209",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "210",
+        "posY": "-245",
+        "pinType": "textSub",
+        "text": "210",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "650",
+        "posY": "-75",
+        "pinType": "project",
+        "relatedProjectId": "22"
+    },
+    {
+        "posX": "650",
+        "posY": "-245",
+        "pinType": "textSub",
+        "text": "211",
+        "textAspectRatio": "1.2"
+    },
+    {
+        "posX": "885",
+        "posY": "-100",
+        "pinType": "restroomWomen"
+    },
+    {
+        "posX": "885",
+        "posY": "-200",
+        "pinType": "restroomMen"
+    },
+    {
+        "posX": "200",
+        "posY": "-25",
+        "pinType": "trashCan"
+    }
+]
