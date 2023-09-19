@@ -74,18 +74,15 @@ class _ProjectsPageState extends ConsumerState<ProjectsPage> {
             ? ProjectsBody(
                 searcherProp: selectedSearcher,
                 projects: projects,
-                backgroundImageUrl: '',
               )
             : selectedSearcher.isCategoryProp()
                 ? ProjectsBody(
                     searcherProp: selectedSearcher,
                     projects: filteredProjects,
-                    backgroundImageUrl: '',
                   )
                 : ProjectsBody(
                     searcherProp: selectedSearcher,
                     projects: filteredProjects,
-                    backgroundImageUrl: 'https://picsum.photos/1200',
                   );
       },
     );

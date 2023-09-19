@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:yagamy/constant/theme/projects_body_theme.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/model/searcher_prop.dart';
+import 'package:yagamy/repository/area_image_repository.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_list.dart';
 import 'package:yagamy/view/page/projects/ui_part/search_button_bar.dart';
 
@@ -11,13 +12,11 @@ class ProjectsBody extends StatelessWidget {
   const ProjectsBody({
     required this.searcherProp,
     required this.projects,
-    required this.backgroundImageUrl,
     super.key,
   });
 
   final SearcherProp searcherProp;
   final List<ProjectForCard> projects;
-  final String backgroundImageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +40,16 @@ class ProjectsBody extends StatelessWidget {
                   ).createShader(bounds);
                 },
                 blendMode: BlendMode.srcOver,
-                child: Image.network(
-                  backgroundImageUrl,
-                  fit: BoxFit.fitWidth,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AreaImageRepository.fetchAreaImageProvider(
+                          searcherProp: searcherProp,
+                        ),
+                        fit: BoxFit.fitHeight),
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  height: 450,
                 ),
               ),
         Material(

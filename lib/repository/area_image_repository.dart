@@ -8,12 +8,19 @@ import 'package:yagamy/repository/base_url.dart';
 import 'package:yagamy/utility/get_image_url_end.dart';
 
 class AreaImageRepository {
-  static ImageProvider fetchAreaImage({
+  static ImageProvider fetchAreaImageProvider({
     SearcherProp? searcherProp,
     MapType? mapType,
   }) {
     return CachedNetworkImageProvider(
       '${BaseUrl.awsBaseUrl}/${getImageUrlEnd(searcherProp, mapType)}',
     );
+  }
+
+  static String getAreaImageUrl({
+    SearcherProp? searcherProp,
+    MapType? mapType,
+  }) {
+    return '${BaseUrl.awsBaseUrl}/${getImageUrlEnd(searcherProp, mapType)}';
   }
 }
