@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yagamy/extension/map_type_extension.dart';
 
+import 'package:yagamy/extension/map_type_extension.dart';
 import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/provider/selected_floor_type_provider.dart';
 import 'package:yagamy/provider/selected_map_type_provider.dart';
+import 'package:yagamy/repository/area_image_repository.dart';
 
 class MapSelectButton extends ConsumerStatefulWidget {
   const MapSelectButton({
     required this.mapType,
     required this.text,
-    required this.imageUrl,
     super.key,
   });
 
   final MapType mapType;
   final String text;
-  final String imageUrl;
 
   @override
   ConsumerState<MapSelectButton> createState() => _MapSelectButtonState();
@@ -61,7 +59,10 @@ class _MapSelectButtonState extends ConsumerState<MapSelectButton> {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: CachedNetworkImageProvider(widget.imageUrl),
+                      image: AreaImageRepository.fetchAreaImage(
+                        mapType: widget.mapType,
+                      ),
+                      fit: BoxFit.cover,
                     ),
                   ),
                   width: 80,

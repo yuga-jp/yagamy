@@ -92,7 +92,6 @@ class _MapPageState extends ConsumerState<MapPage> {
                                       mapType.displayName.isNotEmpty)
                                   .toList()[index]
                                   .displayName,
-                              imageUrl: 'https://picsum.photos/600',
                             );
                           },
                           itemCount: MapType.values
