@@ -1,0 +1,4 @@
+enum PinPoint {
+  center,
+  bottomCenter,
+}

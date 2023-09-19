@@ -11,6 +11,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsIconGen {
+  const $AssetsIconGen();
+
+  /// File path: assets/icon/icon_1024x1024.png
+  AssetGenImage get icon1024x1024 =>
+      const AssetGenImage('assets/icon/icon_1024x1024.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icon1024x1024];
+}
+
 class $AssetsLogoGen {
   const $AssetsLogoGen();
 
@@ -25,10 +36,183 @@ class $AssetsLogoGen {
   List<SvgGenImage> get values => [xTwitter, yagamiFestival2023];
 }
 
+class $AssetsMapGen {
+  const $AssetsMapGen();
+
+  $AssetsMapIconGen get icon => const $AssetsMapIconGen();
+  $AssetsMapMapGen get map => const $AssetsMapMapGen();
+  $AssetsMapPinDataGen get pinData => const $AssetsMapPinDataGen();
+}
+
+class $AssetsMapIconGen {
+  const $AssetsMapIconGen();
+
+  /// File path: assets/map/icon/aed.svg
+  SvgGenImage get aed => const SvgGenImage('assets/map/icon/aed.svg');
+
+  /// File path: assets/map/icon/booth_headquarter.svg
+  SvgGenImage get boothHeadquarter =>
+      const SvgGenImage('assets/map/icon/booth_headquarter.svg');
+
+  /// File path: assets/map/icon/elevator.svg
+  SvgGenImage get elevator => const SvgGenImage('assets/map/icon/elevator.svg');
+
+  /// File path: assets/map/icon/headquarter.svg
+  SvgGenImage get headquarter =>
+      const SvgGenImage('assets/map/icon/headquarter.svg');
+
+  /// File path: assets/map/icon/information_center.svg
+  SvgGenImage get informationCenter =>
+      const SvgGenImage('assets/map/icon/information_center.svg');
+
+  /// File path: assets/map/icon/outdoor_rest_area.svg
+  SvgGenImage get outdoorRestArea =>
+      const SvgGenImage('assets/map/icon/outdoor_rest_area.svg');
+
+  /// File path: assets/map/icon/public_phone.svg
+  SvgGenImage get publicPhone =>
+      const SvgGenImage('assets/map/icon/public_phone.svg');
+
+  /// File path: assets/map/icon/restroom.svg
+  SvgGenImage get restroom => const SvgGenImage('assets/map/icon/restroom.svg');
+
+  /// File path: assets/map/icon/restroom_men.svg
+  SvgGenImage get restroomMen =>
+      const SvgGenImage('assets/map/icon/restroom_men.svg');
+
+  /// File path: assets/map/icon/restroom_women.svg
+  SvgGenImage get restroomWomen =>
+      const SvgGenImage('assets/map/icon/restroom_women.svg');
+
+  /// File path: assets/map/icon/security_office.svg
+  SvgGenImage get securityOffice =>
+      const SvgGenImage('assets/map/icon/security_office.svg');
+
+  /// File path: assets/map/icon/trash_can.svg
+  SvgGenImage get trashCan =>
+      const SvgGenImage('assets/map/icon/trash_can.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        aed,
+        boothHeadquarter,
+        elevator,
+        headquarter,
+        informationCenter,
+        outdoorRestArea,
+        publicPhone,
+        restroom,
+        restroomMen,
+        restroomWomen,
+        securityOffice,
+        trashCan
+      ];
+}
+
+class $AssetsMapMapGen {
+  const $AssetsMapMapGen();
+
+  /// File path: assets/map/map/east_area_ground_map.svg
+  SvgGenImage get eastAreaGroundMap =>
+      const SvgGenImage('assets/map/map/east_area_ground_map.svg');
+
+  /// File path: assets/map/map/eleven_1_map.svg
+  SvgGenImage get eleven1Map =>
+      const SvgGenImage('assets/map/map/eleven_1_map.svg');
+
+  /// File path: assets/map/map/eleven_2_map.svg
+  SvgGenImage get eleven2Map =>
+      const SvgGenImage('assets/map/map/eleven_2_map.svg');
+
+  /// File path: assets/map/map/eleven_3_map.svg
+  SvgGenImage get eleven3Map =>
+      const SvgGenImage('assets/map/map/eleven_3_map.svg');
+
+  /// File path: assets/map/map/eleven_4_map.svg
+  SvgGenImage get eleven4Map =>
+      const SvgGenImage('assets/map/map/eleven_4_map.svg');
+
+  /// File path: assets/map/map/fourteen_map.svg
+  SvgGenImage get fourteenMap =>
+      const SvgGenImage('assets/map/map/fourteen_map.svg');
+
+  /// File path: assets/map/map/twelve_1_map.svg
+  SvgGenImage get twelve1Map =>
+      const SvgGenImage('assets/map/map/twelve_1_map.svg');
+
+  /// File path: assets/map/map/twelve_2_map.svg
+  SvgGenImage get twelve2Map =>
+      const SvgGenImage('assets/map/map/twelve_2_map.svg');
+
+  /// File path: assets/map/map/whole_area_map.svg
+  SvgGenImage get wholeAreaMap =>
+      const SvgGenImage('assets/map/map/whole_area_map.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        eastAreaGroundMap,
+        eleven1Map,
+        eleven2Map,
+        eleven3Map,
+        eleven4Map,
+        fourteenMap,
+        twelve1Map,
+        twelve2Map,
+        wholeAreaMap
+      ];
+}
+
+class $AssetsMapPinDataGen {
+  const $AssetsMapPinDataGen();
+
+  /// File path: assets/map/pin_data/east_area_ground_pin.json
+  String get eastAreaGroundPin =>
+      'assets/map/pin_data/east_area_ground_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_1_pin.json
+  String get eleven1Pin => 'assets/map/pin_data/eleven_1_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_2_pin.json
+  String get eleven2Pin => 'assets/map/pin_data/eleven_2_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_3_pin.json
+  String get eleven3Pin => 'assets/map/pin_data/eleven_3_pin.json';
+
+  /// File path: assets/map/pin_data/eleven_4_pin.json
+  String get eleven4Pin => 'assets/map/pin_data/eleven_4_pin.json';
+
+  /// File path: assets/map/pin_data/fourteen_pin.json
+  String get fourteenPin => 'assets/map/pin_data/fourteen_pin.json';
+
+  /// File path: assets/map/pin_data/twelve_1_pin.json
+  String get twelve1Pin => 'assets/map/pin_data/twelve_1_pin.json';
+
+  /// File path: assets/map/pin_data/twelve_2_pin.json
+  String get twelve2Pin => 'assets/map/pin_data/twelve_2_pin.json';
+
+  /// File path: assets/map/pin_data/whole_area_pin.json
+  String get wholeAreaPin => 'assets/map/pin_data/whole_area_pin.json';
+
+  /// List of all assets
+  List<String> get values => [
+        eastAreaGroundPin,
+        eleven1Pin,
+        eleven2Pin,
+        eleven3Pin,
+        eleven4Pin,
+        fourteenPin,
+        twelve1Pin,
+        twelve2Pin,
+        wholeAreaPin
+      ];
+}
+
 class Assets {
   Assets._();
 
+  static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
+  static const $AssetsMapGen map = $AssetsMapGen();
 }
 
 class AssetGenImage {

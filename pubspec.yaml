@@ -38,7 +38,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+   - assets/icon/
    - assets/logo/
+   - assets/map/icon/
+   - assets/map/map/
+   - assets/map/pin_data/
 
 flutter_gen:
   integrations:

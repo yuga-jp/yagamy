@@ -1,0 +1,28 @@
+[
+    {
+        "posX": "-150",
+        "posY": "50",
+        "pinType": "project",
+        "relatedProjectId": "3"
+    },
+    {
+        "posX": "370",
+        "posY": "230",
+        "pinType": "elevator"
+    },
+    {
+        "posX": "360",
+        "posY": "450",
+        "pinType": "restroomWomen"
+    },
+    {
+        "posX": "530",
+        "posY": "450",
+        "pinType": "restroomMen"
+    },
+    {
+        "posX": "550",
+        "posY": "-300",
+        "pinType": "aed"
+    }
+]
