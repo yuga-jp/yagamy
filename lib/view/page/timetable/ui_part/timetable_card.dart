@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yagamy/model/project/timetable_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
@@ -38,7 +39,9 @@ class TimetableCard extends StatelessWidget {
         child: Ink(
           color: Colors.black.withOpacity(0.4),
           child: InkWell(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).go('/timetable/project/${project.id}');
+              },
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
