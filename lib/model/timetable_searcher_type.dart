@@ -1,3 +1,3 @@
 enum TimetableSearcherTypeDay { firstDay, secondDay }
 
-enum TimetableSearcherTypePlace { stage, hall }
+enum TimetableSearcherTypePlace { stage, others }

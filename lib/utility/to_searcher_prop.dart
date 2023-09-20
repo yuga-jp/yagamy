@@ -3,9 +3,9 @@ import 'package:yagamy/model/searcher_prop.dart';
 List<SearcherProp> toSearcherPropList(
     String categoryMain, String categorySub, String area, String floor) {
   List<SearcherProp> propList = [];
-  SearcherProp? propCategoryMain = _toSearcherPropCategory(categoryMain);
-  SearcherProp? propCategorySub = _toSearcherPropCategory(categorySub);
-  SearcherProp propPlace = _toSearcherPropPlace(area, floor);
+  SearcherProp? propCategoryMain = toSearcherPropCategory(categoryMain);
+  SearcherProp? propCategorySub = toSearcherPropCategory(categorySub);
+  SearcherProp propPlace = toSearcherPropPlace(area, floor);
   if (propCategoryMain != null) {
     propList.add(propCategoryMain);
   }
@@ -16,7 +16,7 @@ List<SearcherProp> toSearcherPropList(
   return propList;
 }
 
-SearcherProp? _toSearcherPropCategory(String value) {
+SearcherProp? toSearcherPropCategory(String value) {
   SearcherProp? searcherProp;
   switch (value) {
     case 'exhibiton':
@@ -55,7 +55,7 @@ SearcherProp? _toSearcherPropCategory(String value) {
   return searcherProp;
 }
 
-SearcherProp _toSearcherPropPlace(String area, String floor) {
+SearcherProp toSearcherPropPlace(String area, String floor) {
   SearcherProp searcherProp = SearcherProp.initial;
   switch (area) {
     case '11':

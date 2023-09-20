@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/view/common/ui_part/slide_button/slide_button.dart';
-import 'package:yagamy/view/page/timetable/ui_part/performance_card.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TimetablePage extends StatefulWidget {
+import 'package:yagamy/model/project/timetable_project.dart';
+import 'package:yagamy/model/timetable_searcher_type.dart';
+import 'package:yagamy/provider/projects_provider.dart';
+import 'package:yagamy/provider/selected_main_stage.dart';
+import 'package:yagamy/view/page/timetable/ui_part/timetable_list.dart';
+
+class TimetablePage extends ConsumerStatefulWidget {
   const TimetablePage({Key? key}) : super(key: key);
 
   @override
-  State<TimetablePage> createState() => _TimetablePageState();
+  ConsumerState<TimetablePage> createState() => _TimetablePageState();
 }
 
-class _TimetablePageState extends State<TimetablePage>
+class _TimetablePageState extends ConsumerState<TimetablePage>
     with SingleTickerProviderStateMixin {
   late final TabController _tabController;
 
@@ -28,6 +33,11 @@ class _TimetablePageState extends State<TimetablePage>
 
   @override
   Widget build(BuildContext context) {
+    AsyncValue<List<TimetableProject>> projectsFirstDay =
+        ref.watch(timetableFirstDayProvider);
+    AsyncValue<List<TimetableProject>> projectsSecondDay =
+        ref.watch(timetableSecondDayProvider);
+
     return Center(
       child: NestedScrollView(
         physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -62,30 +72,140 @@ class _TimetablePageState extends State<TimetablePage>
                       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
                           context),
                     ),
-                    const SliverToBoxAdapter(
-                      child: SlideButton(
-                        leftText: 'メインステージ',
-                        rightText: '14棟ホール',
-                        height: 30,
+                    SliverToBoxAdapter(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: MediaQuery.of(context).size.width * 0.15,
+                        ),
+                        child: SegmentedButton(
+                          segments: const <ButtonSegment<bool>>[
+                            ButtonSegment(value: true, label: Text('メインステージ')),
+                            ButtonSegment(value: false, label: Text('その他')),
+                          ],
+                          selected: <bool>{
+                            ref.watch(isSelectedFirstDayMainStage)
+                          },
+                          onSelectionChanged: (Set<bool> newSelection) {
+                            ref
+                                .read(isSelectedFirstDayMainStage.notifier)
+                                .state = newSelection.first;
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (states) {
+                              if (states.contains(MaterialState.selected)) {
+                                return Theme.of(context).colorScheme.primary;
+                              } else {
+                                return Colors.transparent;
+                              }
+                            }),
+                            visualDensity: const VisualDensity(
+                                horizontal: -4, vertical: -4),
+                            enableFeedback: true,
+                            splashFactory: NoSplash.splashFactory,
+                          ),
+                          showSelectedIcon: false,
+                        ),
                       ),
                     ),
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          return const PerformanceCard(
-                            title: '踊ってない夜を知らない',
-                            imageUrl: 'https://picsum.photos/500/500',
-                            time: '10:00-10:30',
-                          );
-                        },
-                        childCount: 10,
-                      ),
+                    projectsFirstDay.when(
+                      loading: () {
+                        return const SliverToBoxAdapter(
+                          child: CircularProgressIndicator.adaptive(),
+                        );
+                      },
+                      error: (error, stackTrace) {
+                        return const SliverToBoxAdapter(
+                          child: SizedBox.shrink(),
+                        );
+                      },
+                      data: (projects) {
+                        List<TimetableProject> filteredTimetableFirstDay =
+                            ref.watch(filterdTimetableFirstDayProvider(
+                                ref.watch(isSelectedFirstDayMainStage)));
+                        return TimetableList(
+                          project: filteredTimetableFirstDay,
+                          day: TimetableSearcherTypeDay.firstDay,
+                        );
+                      },
                     ),
                   ],
                 );
               },
             ),
-            const SizedBox()
+            Builder(
+              builder: (BuildContext context) {
+                return CustomScrollView(
+                  slivers: <Widget>[
+                    SliverOverlapInjector(
+                      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+                          context),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: MediaQuery.of(context).size.width * 0.15,
+                        ),
+                        child: SegmentedButton(
+                          segments: const <ButtonSegment<bool>>[
+                            ButtonSegment(value: true, label: Text('メインステージ')),
+                            ButtonSegment(value: false, label: Text('その他')),
+                          ],
+                          selected: <bool>{
+                            ref.watch(isSelectedSecondDayMainStage)
+                          },
+                          onSelectionChanged: (Set<bool> newSelection) {
+                            ref
+                                .read(isSelectedSecondDayMainStage.notifier)
+                                .state = newSelection.first;
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (states) {
+                              if (states.contains(MaterialState.selected)) {
+                                return Theme.of(context).colorScheme.primary;
+                              } else {
+                                return Colors.transparent;
+                              }
+                            }),
+                            visualDensity: const VisualDensity(
+                                horizontal: -4, vertical: -4),
+                            enableFeedback: true,
+                            splashFactory: NoSplash.splashFactory,
+                          ),
+                          showSelectedIcon: false,
+                        ),
+                      ),
+                    ),
+                    projectsSecondDay.when(
+                      loading: () {
+                        return const SliverToBoxAdapter(
+                          child: CircularProgressIndicator.adaptive(),
+                        );
+                      },
+                      error: (error, stackTrace) {
+                        return const SliverToBoxAdapter(
+                          child: SizedBox.shrink(),
+                        );
+                      },
+                      data: (projects) {
+                        List<TimetableProject> filteredTimetableSecondDay =
+                            ref.watch(filteredTimetableSecondDayProvider(
+                                ref.watch(isSelectedSecondDayMainStage)));
+                        return TimetableList(
+                          project: filteredTimetableSecondDay,
+                          day: TimetableSearcherTypeDay.secondDay,
+                        );
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
           ],
         ),
       ),
