@@ -120,8 +120,13 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                     ),
                     projectsFirstDay.when(
                       loading: () {
-                        return const SliverToBoxAdapter(
-                          child: CircularProgressIndicator.adaptive(),
+                        return SliverToBoxAdapter(
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 40,
+                            margin: const EdgeInsets.only(top: 15),
+                            child: const CircularProgressIndicator.adaptive(),
+                          ),
                         );
                       },
                       error: (error, stackTrace) {
