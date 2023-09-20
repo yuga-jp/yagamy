@@ -43,7 +43,7 @@ class EventInformationCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            '8月30日 22:31現在',
+            '9月20日 22:00現在',
             style: TextStyle(color: Colors.black, fontSize: 20),
           ),
           const SizedBox(width: 25),

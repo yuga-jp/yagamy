@@ -36,10 +36,10 @@ class _HomePageState extends State<HomePage> {
             width: 100,
             height: 40,
           ),
-          actions: const <Widget>[
-            Icon(Icons.account_circle_outlined),
-            SizedBox(width: 15),
-          ],
+          // actions: const <Widget>[
+          //   Icon(Icons.account_circle_outlined),
+          //   SizedBox(width: 15),
+          // ],
           centerTitle: false,
         ),
         SliverList(

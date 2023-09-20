@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/project/timetable_project.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
 import 'package:yagamy/provider/projects_provider.dart';
@@ -46,6 +48,11 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: SliverAppBar(
+                title: SvgPicture.asset(
+                  Assets.logo.yagamiFestival2023.path,
+                  width: 100,
+                  height: 40,
+                ),
                 forceElevated: innerBoxIsScrolled,
                 bottom: TabBar(
                   controller: _tabController,
@@ -55,6 +62,7 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                     Tab(child: Text('2日目')),
                   ],
                 ),
+                centerTitle: false,
                 floating: true,
                 pinned: true,
               ),
