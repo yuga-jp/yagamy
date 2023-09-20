@@ -61,6 +61,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       type: BottomNavigationBarType.fixed,
       selectedFontSize: 11,
       unselectedFontSize: 11,
+      selectedLabelStyle: const TextStyle(overflow: TextOverflow.visible),
+      unselectedLabelStyle: const TextStyle(overflow: TextOverflow.visible),
       showUnselectedLabels: true,
     );
   }
