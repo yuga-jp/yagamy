@@ -24,7 +24,7 @@ class TimetableCard extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
-      margin: const EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+      margin: const EdgeInsets.only(left: 20, top: 5, right: 20, bottom: 5),
       clipBehavior: Clip.antiAlias,
       child: Ink(
         decoration: BoxDecoration(
@@ -43,10 +43,10 @@ class TimetableCard extends StatelessWidget {
                 GoRouter.of(context).go('/timetable/project/${project.id}');
               },
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.bottomLeft,
                 child: Padding(
                   padding:
-                      const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+                      const EdgeInsets.only(left: 15, right: 15, bottom: 3),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -45,9 +45,9 @@ class _MapPageState extends ConsumerState<MapPage> {
             child: DraggableScrollableSheet(
               initialChildSize: 0.22,
               minChildSize: 0.22,
-              maxChildSize: 0.8,
+              maxChildSize: 0.22,
               snap: true,
-              snapSizes: const <double>[0.22, 0.5, 0.8],
+              snapSizes: const <double>[0.22 /*, 0.5, 0.8*/],
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Material(
