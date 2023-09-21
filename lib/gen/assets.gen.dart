@@ -18,8 +18,16 @@ class $AssetsIconGen {
   AssetGenImage get icon1024x1024 =>
       const AssetGenImage('assets/icon/icon_1024x1024.png');
 
+  /// File path: assets/icon/icon_512X512.png
+  AssetGenImage get icon512X512 =>
+      const AssetGenImage('assets/icon/icon_512X512.png');
+
+  /// File path: assets/icon/icon_800x800.png
+  AssetGenImage get icon800x800 =>
+      const AssetGenImage('assets/icon/icon_800x800.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [icon1024x1024];
+  List<AssetGenImage> get values => [icon1024x1024, icon512X512, icon800x800];
 }
 
 class $AssetsLogoGen {

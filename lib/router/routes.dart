@@ -6,6 +6,7 @@ import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/view/navigation_pages.dart';
+import 'package:yagamy/view/page/article_detail/article_detail.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
 import 'package:yagamy/view/page/map/ui_part/map_viewer.dart';
@@ -47,7 +48,13 @@ final GoRouter router = GoRouter(
                   child: const HomePage(),
                 );
               },
-              routes: const <RouteBase>[],
+              routes: <RouteBase>[
+                GoRoute(
+                    path: 'article/:id',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return ArticleDetailPage(state.pathParameters['id']!);
+                    }),
+              ],
             ),
           ],
         ),
