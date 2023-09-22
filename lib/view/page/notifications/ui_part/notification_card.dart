@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yagamy/constant/theme/notification_theme.dart';
+import 'package:yagamy/extension/datetime_extension.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/notification_priority.dart';
 
@@ -38,25 +39,39 @@ class NotificationCard extends ConsumerWidget {
         },
         child: Row(
           children: [
+            const SizedBox(width: 5),
             SizedBox(
-              width: 55,
+              width: 40,
               child: _notificationPriorityIcon(notification.priority),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  notification.title,
-                  style:
-                      TextStyle(color: currentTheme.titleColor, fontSize: 16),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: Text(
+                    notification.title,
+                    style:
+                        TextStyle(color: currentTheme.titleColor, fontSize: 16),
+                    overflow: TextOverflow.fade,
+                  ),
                 ),
-                Text(
-                  notification.body,
-                  style: TextStyle(color: currentTheme.bodyColor, fontSize: 14),
+                Expanded(
+                  child: Text(
+                    notification.body,
+                    style:
+                        TextStyle(color: currentTheme.bodyColor, fontSize: 14),
+                  ),
                 ),
               ],
-            )
+            ),
+            const Expanded(child: SizedBox()),
+            Text(
+              notification.sentTime.toDisplayJpString(displayYear: false),
+              style: TextStyle(color: currentTheme.bodyColor),
+            ),
+            const SizedBox(width: 10),
           ],
         ),
       ),
