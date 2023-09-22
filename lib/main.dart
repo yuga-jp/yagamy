@@ -25,7 +25,7 @@ void main() async {
     sound: false,
   );
 
-  await messaging.subscribeToTopic('broadcast');
+  await messaging.subscribeToTopic('test');
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -80,6 +80,7 @@ Future<void> _handleMessage(RemoteMessage message) async {
       sentTime: DateTime.now(),
       priority: toNotificationPriority(message.data['priority']),
       relatedProjectId: message.data['relatedProjectId'],
+      url: message.data['url'],
     ),
   );
 }

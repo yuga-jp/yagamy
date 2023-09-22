@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:yagamy/model/map_type.dart';
 
 import 'package:yagamy/model/notification/parsed_notification.dart';
-import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/article_detail/article_detail.dart';
 import 'package:yagamy/view/page/home/home.dart';
@@ -14,7 +13,6 @@ import 'package:yagamy/view/page/notification_info/notification_info.dart';
 import 'package:yagamy/view/page/notification_info/notification_info_from_message.dart';
 import 'package:yagamy/view/page/notifications/notifications.dart';
 import 'package:yagamy/view/page/project_info/project_info.dart';
-import 'package:yagamy/view/page/project_info/project_info_from_notification.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
 import 'package:yagamy/view/page/timetable/timetable.dart';
 
@@ -235,22 +233,19 @@ final GoRouter router = GoRouter(
               },
               routes: <RouteBase>[
                 GoRoute(
-                    path: 'notification/:id',
-                    builder: (BuildContext context, GoRouterState state) {
-                      return NotificationInfoPage(
-                        state.pathParameters['id'] ?? '0',
-                      );
-                    },
-                    routes: <RouteBase>[
-                      GoRoute(
-                        path: 'project',
-                        builder: (BuildContext context, GoRouterState state) {
-                          return ProjectInfoFromNotificationPage(
-                            state.extra as Project,
-                          );
-                        },
-                      ),
-                    ]),
+                  path: 'notification/:id',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return NotificationInfoPage(
+                      state.pathParameters['id'] ?? '0',
+                    );
+                  },
+                ),
+                GoRoute(
+                  path: 'project/:id',
+                  builder: (BuildContext context, GoRouterState state) {
+                    return ProjectInfoPage(state.pathParameters['id']!);
+                  },
+                ),
                 GoRoute(
                   path: 'message',
                   builder: (BuildContext context, GoRouterState state) {

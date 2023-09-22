@@ -17,6 +17,7 @@ class NotificationsPage extends ConsumerStatefulWidget {
 }
 
 class _NotificationsPageState extends ConsumerState<NotificationsPage> {
+  bool isRefreshing = false;
   @override
   void initState() {
     super.initState();
@@ -29,7 +30,7 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
 
   @override
   Widget build(BuildContext context) {
-    AsyncValue<List<ParsedNotification>> notifications =
+    final AsyncValue<List<ParsedNotification>> notifications =
         ref.watch(notificationsProvider);
     ref.watch(isNotificationRefreshProvider);
 
@@ -78,29 +79,36 @@ class _NotificationsPageState extends ConsumerState<NotificationsPage> {
         );
       },
       data: (notifications) {
-        return CustomScrollView(
-          physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          slivers: <Widget>[
-            SliverAppBar(
-              title: SvgPicture.asset(
-                Assets.logo.yagamiFestival2023.path,
-                width: 100,
-                height: 40,
+        return RefreshIndicator.adaptive(
+          displacement: 100,
+          onRefresh: () async {
+            return await ref.refresh(notificationsProvider);
+          },
+          child: CustomScrollView(
+            physics:
+                const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            slivers: <Widget>[
+              SliverAppBar(
+                title: SvgPicture.asset(
+                  Assets.logo.yagamiFestival2023.path,
+                  width: 100,
+                  height: 40,
+                ),
+                centerTitle: false,
+                floating: true,
+                pinned: true,
               ),
-              centerTitle: false,
-              floating: true,
-              pinned: true,
-            ),
-            SliverFixedExtentList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return NotificationCard(notification: notifications[index]);
-                },
-                childCount: notifications.length,
+              SliverFixedExtentList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return NotificationCard(notification: notifications[index]);
+                  },
+                  childCount: notifications.length,
+                ),
+                itemExtent: 60,
               ),
-              itemExtent: 60,
-            ),
-          ],
+            ],
+          ),
         );
       },
     );

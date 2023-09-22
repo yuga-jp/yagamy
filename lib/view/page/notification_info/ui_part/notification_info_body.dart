@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/extension/datetime_extension.dart';
@@ -85,6 +86,18 @@ class NotificationInfoBody extends ConsumerWidget {
                       TextStyle(color: currentTheme.titleColor, fontSize: 15),
                 ),
               ),
+              notification.url.isNotEmpty
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: IconButton(
+                        icon: const Icon(Icons.web),
+                        onPressed: () {
+                          launchUrl(Uri.parse(notification.url));
+                        },
+                        iconSize: 28,
+                      ),
+                    )
+                  : const SizedBox.shrink(),
               const SizedBox(height: 40),
               project.when(
                 loading: () {
@@ -102,16 +115,12 @@ class NotificationInfoBody extends ConsumerWidget {
                   return ProjectCard(
                     project: ProjectForCard.fromProject(project),
                     onTap: () {
-                      isFromMessage
-                          ? null
-                          : GoRouter.of(context).go(
-                              '/notifications/notification/${notification.id}/project',
-                              extra: project,
-                            );
+                      GoRouter.of(context)
+                          .go('/notifications/project/${project.id}');
                     },
                   );
                 },
-              )
+              ),
             ],
           ),
         ),

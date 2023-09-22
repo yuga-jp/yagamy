@@ -23,12 +23,15 @@ class NotificationsRepository {
           'sentTime': notification['createdAt'],
           'priority': notification['priority'],
           'relatedProjectId': notification['relatedProjectId'],
+          'url': notification['url'],
         })));
       }
     } else {
       throw Exception('Failed to load notifications.');
     }
 
-    return notifications;
+    return notifications..sort((a, b) {
+      return b.sentTime.compareTo(a.sentTime);
+    });
   }
 }
