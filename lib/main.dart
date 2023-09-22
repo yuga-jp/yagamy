@@ -25,7 +25,7 @@ void main() async {
     sound: false,
   );
 
-  await messaging.subscribeToTopic('test');
+  await messaging.subscribeToTopic('broadcast');
 
   runApp(const ProviderScope(child: MyApp()));
 }
