@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/constant/theme/project_card_theme.dart';
+import 'package:yagamy/extension/sale_situation_type_extension.dart';
+import 'package:yagamy/extension/string_extension.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
+import 'package:yagamy/model/sale_siituation_type.dart';
+import 'package:yagamy/model/sale_situation/sale_situation.dart';
+import 'package:yagamy/provider/sale_situation_provider.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -36,8 +42,13 @@ class ProjectCard extends StatelessWidget {
               children: <Widget>[
                 _ProjectImage(project.thumbnailUrl),
                 Flexible(
-                  child: _ProjectInfo(project.title, project.groupName,
-                      project.placeString, project.hoursString),
+                  child: _ProjectInfo(
+                    project.title,
+                    project.groupName,
+                    project.placeString,
+                    project.hoursString,
+                    project.id,
+                  ),
                 ),
               ],
             ),
@@ -72,13 +83,20 @@ class _ProjectImage extends StatelessWidget {
   }
 }
 
-class _ProjectInfo extends StatelessWidget {
-  const _ProjectInfo(this.title, this.groupName, this.placeName, this.time);
+class _ProjectInfo extends ConsumerWidget {
+  const _ProjectInfo(
+    this.title,
+    this.groupName,
+    this.placeName,
+    this.time,
+    this.id,
+  );
 
   final String title;
   final String groupName;
   final String placeName;
   final String time;
+  final String id;
 
   Widget _projectPlace(String place, Color textColor) {
     return SizedBox(
@@ -107,10 +125,25 @@ class _ProjectInfo extends StatelessWidget {
     );
   }
 
+  Color saleSituationColor(SaleSituationType saleSituationType) {
+    switch (saleSituationType) {
+      case SaleSituationType.onSale:
+        return Colors.green;
+      case SaleSituationType.limited:
+        return Colors.yellow;
+      case SaleSituationType.unavailable:
+        return Colors.grey;
+    }
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final ProjectCardTheme currentTheme =
         Theme.of(context).extension<ProjectCardTheme>()!;
+
+    final AsyncValue<SaleSituation> saleSituation =
+        ref.watch(saleSituationProvider(id));
+
     return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, right: 7, bottom: 5),
       height: 110,
@@ -141,6 +174,25 @@ class _ProjectInfo extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          const Expanded(child: SizedBox()),
+          saleSituation.when(
+            loading: () {
+              return const SizedBox.shrink();
+            },
+            error: (error, stackTrace) {
+              return const SizedBox.shrink();
+            },
+            data: (saleSituation) {
+              return Text(
+                saleSituation.saleSituation.toSaleSituationType()!.toJpString(),
+                style: TextStyle(
+                  color: saleSituationColor(
+                      saleSituation.saleSituation.toSaleSituationType()!),
+                  fontSize: 14,
+                ),
+              );
+            },
           ),
           const Expanded(child: SizedBox()),
           Row(

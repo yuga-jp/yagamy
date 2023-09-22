@@ -12,7 +12,7 @@ class EventInfoRepository {
     if (response.statusCode == 200) {
       return EventInfo.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to load articles.');
+      throw Exception('Failed to load event info.');
     }
   }
 }
