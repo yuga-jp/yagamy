@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
-import 'package:yagamy/model/event_type.dart';
 import 'package:yagamy/view/page/home/ui_part/article_list.dart';
 import 'package:yagamy/view/page/home/ui_part/event_information_card.dart';
 import 'package:yagamy/view/page/home/ui_part/top_card.dart';
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              const EventInformationCard(eventType: EventType.normal),
+              const EventInformationCard(),
               SizedBox(
                 height: 250,
                 child: PageView(

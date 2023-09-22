@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yagamy/extension/int_extension.dart';
+import 'package:yagamy/extension/string_extension.dart';
+import 'package:yagamy/model/event_info/event_info.dart';
 
 import 'package:yagamy/model/event_type.dart';
+import 'package:yagamy/provider/event_info_provider.dart';
 
-class EventInformationCard extends StatelessWidget {
-  const EventInformationCard({required this.eventType, super.key});
+class EventInformationCard extends ConsumerWidget {
+  const EventInformationCard({super.key});
 
-  final EventType eventType;
+  String _toDisplayDateTime(DateTime dateTime) {
+    final DateTime localizedDateTime = dateTime.toLocal();
+    return '${localizedDateTime.month}月${localizedDateTime.day}日 ${localizedDateTime.hour.toDisplayDigit()}:${localizedDateTime.minute.toDisplayDigit()}現在';
+  }
 
   IconData _eventIcon(EventType eventType) {
     switch (eventType) {
@@ -30,7 +38,9 @@ class EventInformationCard extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<EventInfo> eventInfo = ref.watch(eventInfoProvider);
+
     return Card(
       elevation: 0.0,
       shape: RoundedRectangleBorder(
@@ -39,23 +49,33 @@ class EventInformationCard extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(left: 12, top: 5, right: 12, bottom: 10),
       clipBehavior: Clip.antiAlias,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            '9月20日 22:00現在',
-            style: TextStyle(color: Colors.black, fontSize: 20),
-          ),
-          const SizedBox(width: 25),
-          Icon(
-            _eventIcon(eventType),
-            size: 25,
-          ),
-          Text(
-            _eventText(eventType),
-            style: const TextStyle(color: Colors.black, fontSize: 20),
-          ),
-        ],
+      child: eventInfo.when(
+        loading: () {
+          return const SizedBox(height: 30);
+        },
+        error: (error, stackTrace) {
+          return const SizedBox();
+        },
+        data: (eventInfo) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                _toDisplayDateTime(eventInfo.updatedAt),
+                style: const TextStyle(color: Colors.black, fontSize: 20),
+              ),
+              const SizedBox(width: 25),
+              Icon(
+                _eventIcon(eventInfo.eventType.toEventType()!),
+                size: 25,
+              ),
+              Text(
+                _eventText(eventInfo.eventType.toEventType()!),
+                style: const TextStyle(color: Colors.black, fontSize: 20),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

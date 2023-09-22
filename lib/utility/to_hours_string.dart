@@ -11,15 +11,15 @@ String toHoursString(
     return ' 両日';
   } else if (s2 == null && e2 == null) {
     if (s1 != null && e1 != null) {
-      return '23日${s1.hour}:${s1.minute.toDisplayMinute()}-${e1.hour}:${e1.minute.toDisplayMinute()}';
+      return '23日${s1.hour}:${s1.minute.toDisplayDigit()}-${e1.hour}:${e1.minute.toDisplayDigit()}';
     } else if (s1 != null && e1 == null) {
-      return '23日${s1.hour}:${s1.minute.toDisplayMinute()}-';
+      return '23日${s1.hour}:${s1.minute.toDisplayDigit()}-';
     }
   } else if (s1 == null && s1 == null) {
     if (s2 != null && e2 != null) {
-      return '24日${s2.hour}:${s2.minute.toDisplayMinute()}-${e2.hour}:${e2.minute.toDisplayMinute()}';
+      return '24日${s2.hour}:${s2.minute.toDisplayDigit()}-${e2.hour}:${e2.minute.toDisplayDigit()}';
     } else if (s2 != null && e2 == null) {
-      return '24日${s2.hour}:${s2.minute.toDisplayMinute()}-';
+      return '24日${s2.hour}:${s2.minute.toDisplayDigit()}-';
     }
   }
   return '';
@@ -35,11 +35,11 @@ String toHoursStringForCard(
     return ' 両日';
   } else if (s2 == null && e2 == null) {
     if (s1 != null) {
-      return '23日${s1.hour}:${s1.minute.toDisplayMinute()}-';
+      return '23日${s1.hour}:${s1.minute.toDisplayDigit()}-';
     }
   } else if (s1 == null && s1 == null) {
     if (s2 != null) {
-      return '24日${s2.hour}:${s2.minute.toDisplayMinute()}-';
+      return '24日${s2.hour}:${s2.minute.toDisplayDigit()}-';
     }
   }
   return '';
@@ -54,17 +54,17 @@ String toHoursStringForTimetable(
 ) {
   if (day == TimetableSearcherTypeDay.firstDay) {
     if (s1 != null && e1 != null) {
-      return '${s1.hour}:${s1.minute.toDisplayMinute()}-${e1.hour}:${e1.minute.toDisplayMinute()}';
+      return '${s1.hour}:${s1.minute.toDisplayDigit()}-${e1.hour}:${e1.minute.toDisplayDigit()}';
     } else if (s1 != null && e1 == null) {
-      return '${s1.hour}:${s1.minute.toDisplayMinute()}-';
+      return '${s1.hour}:${s1.minute.toDisplayDigit()}-';
     }
   }
 
   if (day == TimetableSearcherTypeDay.secondDay) {
     if (s2 != null && e2 != null) {
-      return '${s2.hour}:${s2.minute.toDisplayMinute()}-${e2.hour}:${e2.minute.toDisplayMinute()}';
+      return '${s2.hour}:${s2.minute.toDisplayDigit()}-${e2.hour}:${e2.minute.toDisplayDigit()}';
     } else if (s2 != null && e2 == null) {
-      return '${s2.hour}:${s2.minute.toDisplayMinute()}-';
+      return '${s2.hour}:${s2.minute.toDisplayDigit()}-';
     }
   }
   return '';

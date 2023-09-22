@@ -1,3 +1,4 @@
+import 'package:yagamy/model/event_type.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
 
 extension StringExtension on String {
@@ -37,6 +38,19 @@ extension StringExtension on String {
         return PinType.defaultPin;
       default:
         return PinType.defaultPin;
+    }
+  }
+
+  EventType? toEventType() {
+    switch (this) {
+      case 'normal':
+        return EventType.normal;
+      case 'rain':
+        return EventType.rain;
+      case 'suspension':
+        return EventType.suspension;
+      default:
+        return null;
     }
   }
 }
