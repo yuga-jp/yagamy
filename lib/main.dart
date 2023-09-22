@@ -5,27 +5,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:yagamy/constant/theme/theme.dart';
-import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/router/routes.dart';
-import 'package:yagamy/utility/to_notification_priority.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp();
-
-  final messaging = FirebaseMessaging.instance;
-  await messaging.requestPermission(
-    alert: true,
-    announcement: false,
-    badge: true,
-    carPlay: false,
-    criticalAlert: false,
-    provisional: false,
-    sound: false,
-  );
-
-  await messaging.subscribeToTopic('broadcast');
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -41,7 +26,30 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    requestMessagingPermission();
     setupInterctedMessage();
+  }
+
+  Future<void> requestMessagingPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: false,
+    );
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      try {
+        await messaging.subscribeToTopic('test');
+      } catch (e) {
+        debugPrint('subscription error: $e');
+      }
+    }
   }
 
   @override
@@ -72,15 +80,6 @@ Future<void> setupInterctedMessage() async {
 @pragma('vm:entry-point')
 Future<void> _handleMessage(RemoteMessage message) async {
   router.go(
-    '/notifications/message',
-    extra: ParsedNotification(
-      id: '',
-      title: message.notification!.title!,
-      body: message.notification!.body!,
-      sentTime: DateTime.now(),
-      priority: toNotificationPriority(message.data['priority']),
-      relatedProjectId: message.data['relatedProjectId'],
-      url: message.data['url'],
-    ),
+    '/notifications',
   );
 }

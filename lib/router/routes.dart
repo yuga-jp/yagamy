@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yagamy/model/map_type.dart';
 
-import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/view/navigation_pages.dart';
 import 'package:yagamy/view/page/article_detail/article_detail.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
 import 'package:yagamy/view/page/map/ui_part/map_viewer.dart';
 import 'package:yagamy/view/page/notification_info/notification_info.dart';
-import 'package:yagamy/view/page/notification_info/notification_info_from_message.dart';
 import 'package:yagamy/view/page/notifications/notifications.dart';
 import 'package:yagamy/view/page/project_info/project_info.dart';
 import 'package:yagamy/view/page/projects/projects.dart';
@@ -244,14 +242,6 @@ final GoRouter router = GoRouter(
                   path: 'project/:id',
                   builder: (BuildContext context, GoRouterState state) {
                     return ProjectInfoPage(state.pathParameters['id']!);
-                  },
-                ),
-                GoRoute(
-                  path: 'message',
-                  builder: (BuildContext context, GoRouterState state) {
-                    return NotificationInfoFromMessagePage(
-                      state.extra as ParsedNotification,
-                    );
                   },
                 ),
               ],
