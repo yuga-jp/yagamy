@@ -67,11 +67,8 @@ class ProjectInfoBody extends StatelessWidget {
             case 2:
               return Container(
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: CachedNetworkImageProvider(project.mainImageUrl),
-                      fit: BoxFit.contain,
-                    ),
-                    borderRadius: BorderRadius.circular(15)),
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width * 3 / 4,
                 margin: const EdgeInsets.only(
@@ -81,6 +78,10 @@ class ProjectInfoBody extends StatelessWidget {
                   bottom: 12,
                 ),
                 clipBehavior: Clip.antiAlias,
+                child: CachedNetworkImage(
+                  imageUrl: project.mainImageUrl,
+                  fit: BoxFit.fitHeight,
+                ),
               );
 
             // groupName
