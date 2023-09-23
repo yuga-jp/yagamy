@@ -9,19 +9,16 @@ import 'package:yagamy/extension/datetime_extension.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/project/project_for_card.dart';
-import 'package:yagamy/provider/is_notification_refresh_provider.dart';
 import 'package:yagamy/provider/project_provider.dart';
 import 'package:yagamy/view/common/ui_part/project_card.dart';
 
 class NotificationInfoBody extends ConsumerWidget {
   const NotificationInfoBody({
     required this.notification,
-    required this.isFromMessage,
     super.key,
   });
 
   final ParsedNotification notification;
-  final bool isFromMessage;
 
   static const double horizontalIndent = 15;
 
@@ -40,11 +37,6 @@ class NotificationInfoBody extends ConsumerWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              isFromMessage
-                  ? ref
-                      .read(isNotificationRefreshProvider.notifier)
-                      .update((state) => state + 1)
-                  : null;
               GoRouter.of(context).pop();
             },
           ),
@@ -55,31 +47,35 @@ class NotificationInfoBody extends ConsumerWidget {
         SliverList(
           delegate: SliverChildListDelegate(
             <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: horizontalIndent),
-                    child: Text(
-                      notification.title,
-                      style: TextStyle(
-                          color: currentTheme.titleColor, fontSize: 20),
-                    ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: horizontalIndent),
+                child: Text(
+                  notification.title,
+                  style:
+                      TextStyle(color: currentTheme.titleColor, fontSize: 20),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: horizontalIndent),
+                  child: Text(
+                    notification.sentTime.toDisplayJpString(),
+                    style: TextStyle(
+                        color: currentTheme.groupNameColor, fontSize: 13),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: horizontalIndent),
-                    child: Text(
-                      notification.sentTime.toDisplayJpString(),
-                      style: TextStyle(
-                          color: currentTheme.titleColor, fontSize: 13),
-                    ),
-                  ),
-                ],
+                ),
+              ),
+              const Divider(
+                indent: horizontalIndent,
+                endIndent: horizontalIndent,
               ),
               const SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.only(left: horizontalIndent),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: horizontalIndent),
                 child: Text(
                   notification.body,
                   style:

@@ -26,10 +26,7 @@ class NotificationInfoPage extends ConsumerWidget {
           return Text('Error: $error');
         },
         data: (notification) {
-          return NotificationInfoBody(
-            notification: notification,
-            isFromMessage: false,
-          );
+          return NotificationInfoBody(notification: notification);
         },
       ),
     );

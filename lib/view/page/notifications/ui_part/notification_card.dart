@@ -44,34 +44,41 @@ class NotificationCard extends ConsumerWidget {
               width: 40,
               child: _notificationPriorityIcon(notification.priority),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 10),
-                Expanded(
-                  child: Text(
-                    notification.title,
-                    style:
-                        TextStyle(color: currentTheme.titleColor, fontSize: 16),
-                    overflow: TextOverflow.fade,
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          notification.title,
+                          style: TextStyle(
+                              color: currentTheme.titleColor, fontSize: 16),
+                          overflow: TextOverflow.fade,
+                        ),
+                      ),
+                      Text(
+                        notification.sentTime.toNotificationPageJpString(),
+                        style: TextStyle(color: currentTheme.bodyColor),
+                      ),
+                      const SizedBox(width: 10),
+                    ],
                   ),
-                ),
-                Expanded(
-                  child: Text(
-                    notification.body,
-                    style:
-                        TextStyle(color: currentTheme.bodyColor, fontSize: 14),
+                  Expanded(
+                    child: Text(
+                      notification.body,
+                      style: TextStyle(
+                          color: currentTheme.bodyColor, fontSize: 14),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            const Expanded(child: SizedBox()),
-            Text(
-              notification.sentTime.toDisplayJpString(displayYear: false),
-              style: TextStyle(color: currentTheme.bodyColor),
-            ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 5),
           ],
         ),
       ),
