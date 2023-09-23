@@ -24,10 +24,10 @@ class ProjectForCard {
         placeString = toPlaceString(rawProjectForCard.area,
             rawProjectForCard.floor, rawProjectForCard.placeDetail),
         hoursString = toHoursStringForCard(
-          rawProjectForCard.hoursStartFirstDay?.add(const Duration(hours: 9)),
-          rawProjectForCard.hoursEndFirstDay?.add(const Duration(hours: 9)),
-          rawProjectForCard.hoursStartSecondDay?.add(const Duration(hours: 9)),
-          rawProjectForCard.hoursEndSecondDay?.add(const Duration(hours: 9)),
+          rawProjectForCard.hoursStartFirstDay?.toLocal(),
+          rawProjectForCard.hoursEndFirstDay?.toLocal(),
+          rawProjectForCard.hoursStartSecondDay?.toLocal(),
+          rawProjectForCard.hoursEndSecondDay?.toLocal(),
         ),
         groupName = rawProjectForCard.groupName,
         thumbnailUrl =

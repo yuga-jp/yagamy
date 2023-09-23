@@ -25,14 +25,10 @@ class TimetableProject {
           rawProjectForCard.floor,
           rawProjectForCard.placeDetail,
         ),
-        hoursStartFirstDay =
-            rawProjectForCard.hoursStartFirstDay?.add(const Duration(hours: 9)),
-        hoursEndFirstDay =
-            rawProjectForCard.hoursEndSecondDay?.add(const Duration(hours: 9)),
-        hoursStartSecondDay = rawProjectForCard.hoursStartSecondDay
-            ?.add(const Duration(hours: 9)),
-        hoursEndSecondDay =
-            rawProjectForCard.hoursEndSecondDay?.add(const Duration(hours: 9)),
+        hoursStartFirstDay = rawProjectForCard.hoursStartFirstDay?.toLocal(),
+        hoursEndFirstDay = rawProjectForCard.hoursEndFirstDay?.toLocal(),
+        hoursStartSecondDay = rawProjectForCard.hoursStartSecondDay?.toLocal(),
+        hoursEndSecondDay = rawProjectForCard.hoursEndSecondDay?.toLocal(),
         thumbnailUrl =
             emptyToThumbnailPlaceholderUrl(rawProjectForCard.thumbnailUrl),
         searcherProp = toSearcherPropPlace(
