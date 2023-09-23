@@ -33,7 +33,7 @@ class _MapSelectButtonState extends ConsumerState<MapSelectButton> {
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: GestureDetector(
         onTap: () {
-          HapticFeedback.mediumImpact();
+          HapticFeedback.selectionClick();
           ref.read(selectedFloorTypeProvider.notifier).state =
               FloorType.firstFloor;
           ref.read(selectedMapTypeProvider.notifier).state = widget.mapType;
