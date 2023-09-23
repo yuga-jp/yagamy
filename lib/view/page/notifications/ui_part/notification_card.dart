@@ -54,13 +54,17 @@ class NotificationCard extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                        child: Text(
-                          notification.title,
-                          style: TextStyle(
-                              color: currentTheme.titleColor, fontSize: 16),
-                          overflow: TextOverflow.fade,
+                        child: SizedBox(
+                          height: 25,
+                          child: Text(
+                            notification.title,
+                            style: TextStyle(
+                                color: currentTheme.titleColor, fontSize: 16),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ),
+                      const SizedBox(width: 5),
                       Text(
                         notification.sentTime.toNotificationPageJpString(),
                         style: TextStyle(color: currentTheme.bodyColor),

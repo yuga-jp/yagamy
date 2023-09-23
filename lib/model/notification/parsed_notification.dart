@@ -11,6 +11,7 @@ class ParsedNotification {
     required this.priority,
     required this.relatedProjectId,
     required this.url,
+    this.urlTitle
   });
 
   ParsedNotification.fromRawNotification(RawNotification rawNotification)
@@ -20,7 +21,8 @@ class ParsedNotification {
         sentTime = rawNotification.sentTime.add(const Duration(hours: 9)),
         priority = toNotificationPriority(rawNotification.priority),
         relatedProjectId = rawNotification.relatedProjectId,
-        url = rawNotification.url;
+        url = rawNotification.url,
+        urlTitle = rawNotification.urlTitle;
 
   ParsedNotification.empty({
     this.id = '0',
@@ -29,6 +31,7 @@ class ParsedNotification {
     this.priority = NotificationPriority.low,
     this.relatedProjectId = '0',
     this.url = '',
+    this.urlTitle = '',
   }) : sentTime = DateTime.now();
 
   final String id;
@@ -38,4 +41,5 @@ class ParsedNotification {
   final NotificationPriority priority;
   final String relatedProjectId;
   final String url;
+  final String? urlTitle;
 }

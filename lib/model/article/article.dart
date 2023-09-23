@@ -11,6 +11,7 @@ class Article with _$Article {
     required String body,
     required String thumbnailUrl,
     required String url,
+    String? urlTitle,
   }) = _Article;
 
   factory Article.fromJson(Map<String, dynamic> json) =>

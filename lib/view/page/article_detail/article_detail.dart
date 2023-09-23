@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -86,18 +86,34 @@ class ArticleDetailPage extends ConsumerWidget {
                       ),
                       const SizedBox(height: 20),
                       Text(article.body),
-                      article.url.isNotEmpty
-                          ? Padding(
-                              padding: const EdgeInsets.only(left: 8, right: 8),
-                              child: IconButton(
-                                icon: const Icon(Icons.web),
-                                onPressed: () {
-                                  launchUrl(Uri.parse(article.url));
-                                },
-                                iconSize: 28,
-                              ),
-                            )
-                          : const SizedBox.shrink(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          article.urlTitle != null
+                              ? Text(
+                                  '${article.urlTitle!} :',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                )
+                              : const SizedBox(),
+                          article.url.isNotEmpty
+                              ? Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 8, right: 8),
+                                  child: IconButton(
+                                    icon: const Icon(
+                                        Icons.open_in_browser_outlined),
+                                    onPressed: () {
+                                      launchUrl(Uri.parse(article.url));
+                                    },
+                                    iconSize: 28,
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
+                      const SizedBox(height: 30),
                     ],
                   );
                 },

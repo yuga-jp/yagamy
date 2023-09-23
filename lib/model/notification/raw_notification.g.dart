@@ -15,6 +15,7 @@ _$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
       priority: json['priority'] as String,
       relatedProjectId: json['relatedProjectId'] as String,
       url: json['url'] as String,
+      urlTitle: json['urlTitle'] as String?,
     );
 
 Map<String, dynamic> _$$_RawNotificationToJson(_$_RawNotification instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$_RawNotificationToJson(_$_RawNotification instance) =>
       'priority': instance.priority,
       'relatedProjectId': instance.relatedProjectId,
       'url': instance.url,
+      'urlTitle': instance.urlTitle,
     };

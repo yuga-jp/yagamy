@@ -27,6 +27,7 @@ mixin _$RawNotification {
   String get priority => throw _privateConstructorUsedError;
   String get relatedProjectId => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
+  String? get urlTitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +48,8 @@ abstract class $RawNotificationCopyWith<$Res> {
       DateTime sentTime,
       String priority,
       String relatedProjectId,
-      String url});
+      String url,
+      String? urlTitle});
 }
 
 /// @nodoc
@@ -70,6 +72,7 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
     Object? priority = null,
     Object? relatedProjectId = null,
     Object? url = null,
+    Object? urlTitle = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -100,6 +103,10 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      urlTitle: freezed == urlTitle
+          ? _value.urlTitle
+          : urlTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -119,7 +126,8 @@ abstract class _$$_RawNotificationCopyWith<$Res>
       DateTime sentTime,
       String priority,
       String relatedProjectId,
-      String url});
+      String url,
+      String? urlTitle});
 }
 
 /// @nodoc
@@ -140,6 +148,7 @@ class __$$_RawNotificationCopyWithImpl<$Res>
     Object? priority = null,
     Object? relatedProjectId = null,
     Object? url = null,
+    Object? urlTitle = freezed,
   }) {
     return _then(_$_RawNotification(
       id: null == id
@@ -170,6 +179,10 @@ class __$$_RawNotificationCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      urlTitle: freezed == urlTitle
+          ? _value.urlTitle
+          : urlTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -184,7 +197,8 @@ class _$_RawNotification implements _RawNotification {
       required this.sentTime,
       required this.priority,
       required this.relatedProjectId,
-      required this.url});
+      required this.url,
+      this.urlTitle});
 
   factory _$_RawNotification.fromJson(Map<String, dynamic> json) =>
       _$$_RawNotificationFromJson(json);
@@ -203,10 +217,12 @@ class _$_RawNotification implements _RawNotification {
   final String relatedProjectId;
   @override
   final String url;
+  @override
+  final String? urlTitle;
 
   @override
   String toString() {
-    return 'RawNotification(id: $id, title: $title, body: $body, sentTime: $sentTime, priority: $priority, relatedProjectId: $relatedProjectId, url: $url)';
+    return 'RawNotification(id: $id, title: $title, body: $body, sentTime: $sentTime, priority: $priority, relatedProjectId: $relatedProjectId, url: $url, urlTitle: $urlTitle)';
   }
 
   @override
@@ -223,13 +239,15 @@ class _$_RawNotification implements _RawNotification {
                 other.priority == priority) &&
             (identical(other.relatedProjectId, relatedProjectId) ||
                 other.relatedProjectId == relatedProjectId) &&
-            (identical(other.url, url) || other.url == url));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.urlTitle, urlTitle) ||
+                other.urlTitle == urlTitle));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, body, sentTime, priority, relatedProjectId, url);
+  int get hashCode => Object.hash(runtimeType, id, title, body, sentTime,
+      priority, relatedProjectId, url, urlTitle);
 
   @JsonKey(ignore: true)
   @override
@@ -253,7 +271,8 @@ abstract class _RawNotification implements RawNotification {
       required final DateTime sentTime,
       required final String priority,
       required final String relatedProjectId,
-      required final String url}) = _$_RawNotification;
+      required final String url,
+      final String? urlTitle}) = _$_RawNotification;
 
   factory _RawNotification.fromJson(Map<String, dynamic> json) =
       _$_RawNotification.fromJson;
@@ -272,6 +291,8 @@ abstract class _RawNotification implements RawNotification {
   String get relatedProjectId;
   @override
   String get url;
+  @override
+  String? get urlTitle;
   @override
   @JsonKey(ignore: true)
   _$$_RawNotificationCopyWith<_$_RawNotification> get copyWith =>

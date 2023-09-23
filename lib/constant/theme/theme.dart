@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:yagamy/constant/theme/notification_theme.dart';
 import 'package:yagamy/constant/theme/projects_body_theme.dart';
-
 import 'package:yagamy/constant/theme/search_button_theme.dart';
-import 'package:yagamy/constant/theme/execute_button_theme.dart';
 import 'package:yagamy/constant/theme/project_card_theme.dart';
 import 'package:yagamy/constant/theme/shimmer_theme.dart';
-import 'package:yagamy/constant/theme/slide_button_theme.dart';
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 
 class AppTheme {
   static final ThemeData defalutAppTheme = ThemeData(
+    splashFactory: NoSplash.splashFactory,
     colorScheme: const ColorScheme.light(
       primary: Color.fromRGBO(255, 139, 68, 1.0),
       secondary: Color.fromRGBO(255, 205, 66, 1.0),
@@ -42,6 +41,9 @@ class AppTheme {
       unselectedLabelStyle:
           TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
     ),
+    outlinedButtonTheme: const OutlinedButtonThemeData(
+      style: ButtonStyle(splashFactory: NoSplash.splashFactory),
+    ),
     extensions: const <ThemeExtension<dynamic>>[
       SearchButtonTheme(
         unSelectedColor: Color.fromRGBO(238, 238, 238, 1.0),
@@ -53,28 +55,6 @@ class AppTheme {
         color: Colors.white,
         textColor: Colors.black,
         groupDisplayColor: Color.fromRGBO(97, 97, 97, 1.0),
-      ),
-      SlideButtonTheme(
-        backgroundColor: Color.fromRGBO(230, 230, 230, 1.0),
-        sliderColor: Colors.white,
-        textColor: Colors.black,
-      ),
-      ExecuteButtonTheme(
-        backgroundGradient: <Color>[
-          Color(0xff47d5e6),
-          Color(0xff01d0f1),
-          Color(0xff00cafc),
-          Color(0xff00c3ff),
-          Color(0xff00bbff),
-          Color(0xff00b2ff),
-          Color(0xff3aa7ff),
-          Color(0xff6b9aff),
-          Color(0xff918bff),
-          Color(0xffb279ff),
-          Color(0xffce63ee),
-          Color(0xffe647d6),
-        ],
-        textColor: Colors.white,
       ),
       ProjectInfoTheme(
         titleColor: Colors.black,

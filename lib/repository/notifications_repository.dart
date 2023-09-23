@@ -24,6 +24,7 @@ class NotificationsRepository {
           'priority': notification['priority'],
           'relatedProjectId': notification['relatedProjectId'],
           'url': notification['url'],
+          'urlTitle': notification['urlTitle']
         })));
       }
     } else {

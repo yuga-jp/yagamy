@@ -64,6 +64,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       selectedLabelStyle: const TextStyle(overflow: TextOverflow.visible),
       unselectedLabelStyle: const TextStyle(overflow: TextOverflow.visible),
       showUnselectedLabels: true,
+      enableFeedback: false,
     );
   }
 }

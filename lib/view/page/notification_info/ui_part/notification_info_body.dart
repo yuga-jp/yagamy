@@ -82,19 +82,32 @@ class NotificationInfoBody extends ConsumerWidget {
                       TextStyle(color: currentTheme.titleColor, fontSize: 15),
                 ),
               ),
-              notification.url.isNotEmpty
-                  ? Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: IconButton(
-                        icon: const Icon(Icons.web),
-                        onPressed: () {
-                          launchUrl(Uri.parse(notification.url));
-                        },
-                        iconSize: 28,
-                      ),
-                    )
-                  : const SizedBox.shrink(),
-              const SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  notification.urlTitle != null
+                      ? Text(
+                          '${notification.urlTitle!} :',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )
+                      : const SizedBox(),
+                  notification.url.isNotEmpty
+                      ? Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
+                          child: IconButton(
+                            icon: const Icon(Icons.open_in_browser_outlined),
+                            onPressed: () {
+                              launchUrl(Uri.parse(notification.url));
+                            },
+                            iconSize: 28,
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                ],
+              ),
+              const SizedBox(height: 35),
               project.when(
                 loading: () {
                   return Container(
