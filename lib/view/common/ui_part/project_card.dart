@@ -130,7 +130,7 @@ class _ProjectInfo extends ConsumerWidget {
       case SaleSituationType.onSale:
         return Colors.green;
       case SaleSituationType.limited:
-        return Colors.yellow;
+        return Colors.red;
       case SaleSituationType.unavailable:
         return Colors.grey;
     }

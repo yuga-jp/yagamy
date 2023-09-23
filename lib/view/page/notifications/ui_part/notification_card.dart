@@ -72,7 +72,10 @@ class NotificationCard extends ConsumerWidget {
                     child: Text(
                       notification.body,
                       style: TextStyle(
-                          color: currentTheme.bodyColor, fontSize: 14),
+                        color: currentTheme.bodyColor,
+                        fontSize: 14,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
