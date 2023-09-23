@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -95,6 +96,7 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                             ref.watch(isSelectedFirstDayMainStage)
                           },
                           onSelectionChanged: (Set<bool> newSelection) {
+                            HapticFeedback.mediumImpact();
                             ref
                                 .read(isSelectedFirstDayMainStage.notifier)
                                 .state = newSelection.first;
@@ -171,6 +173,7 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                             ref.watch(isSelectedSecondDayMainStage)
                           },
                           onSelectionChanged: (Set<bool> newSelection) {
+                            HapticFeedback.mediumImpact();
                             ref
                                 .read(isSelectedSecondDayMainStage.notifier)
                                 .state = newSelection.first;

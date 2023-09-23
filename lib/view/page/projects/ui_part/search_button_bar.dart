@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/model/searcher_type.dart';
@@ -75,6 +77,7 @@ class _SingleSearchBarState extends ConsumerState<_SingleSearchButtonBar> {
               SearchButton(
                 searcherProp: widget.list[index],
                 onTap: () {
+                  HapticFeedback.selectionClick();
                   setState(() {
                     if (ref.watch(selectedSearcherProvider) ==
                         widget.list[index]) {

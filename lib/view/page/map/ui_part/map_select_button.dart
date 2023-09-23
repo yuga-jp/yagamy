@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -32,6 +33,7 @@ class _MapSelectButtonState extends ConsumerState<MapSelectButton> {
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: GestureDetector(
         onTap: () {
+          HapticFeedback.mediumImpact();
           ref.read(selectedFloorTypeProvider.notifier).state =
               FloorType.firstFloor;
           ref.read(selectedMapTypeProvider.notifier).state = widget.mapType;
