@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:yagamy/constant/theme/projects_body_theme.dart';
-import 'package:yagamy/model/project/project_for_card.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/repository/area_image_repository.dart';
 import 'package:yagamy/view/page/projects/ui_part/project_list.dart';
@@ -16,7 +16,7 @@ class ProjectsBody extends StatelessWidget {
   });
 
   final SearcherProp searcherProp;
-  final List<ProjectForCard> projects;
+  final List<Project> projects;
 
   @override
   Widget build(BuildContext context) {

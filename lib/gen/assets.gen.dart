@@ -11,6 +11,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsArticleGen {
+  const $AssetsArticleGen();
+
+  /// File path: assets/article/article_1.png
+  AssetGenImage get article1 =>
+      const AssetGenImage('assets/article/article_1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [article1];
+}
+
 class $AssetsIconGen {
   const $AssetsIconGen();
 
@@ -47,9 +58,72 @@ class $AssetsLogoGen {
 class $AssetsMapGen {
   const $AssetsMapGen();
 
+  $AssetsMapAreaImageGen get areaImage => const $AssetsMapAreaImageGen();
   $AssetsMapIconGen get icon => const $AssetsMapIconGen();
   $AssetsMapMapGen get map => const $AssetsMapMapGen();
   $AssetsMapPinDataGen get pinData => const $AssetsMapPinDataGen();
+}
+
+class $AssetsProjectGen {
+  const $AssetsProjectGen();
+
+  $AssetsProjectMainImageGen get mainImage =>
+      const $AssetsProjectMainImageGen();
+  $AssetsProjectThumbnailGen get thumbnail =>
+      const $AssetsProjectThumbnailGen();
+}
+
+class $AssetsMapAreaImageGen {
+  const $AssetsMapAreaImageGen();
+
+  /// File path: assets/map/area_image/booth.jpg
+  AssetGenImage get booth =>
+      const AssetGenImage('assets/map/area_image/booth.jpg');
+
+  /// File path: assets/map/area_image/east_area.jpg
+  AssetGenImage get eastArea =>
+      const AssetGenImage('assets/map/area_image/east_area.jpg');
+
+  /// File path: assets/map/area_image/eleven.jpg
+  AssetGenImage get eleven =>
+      const AssetGenImage('assets/map/area_image/eleven.jpg');
+
+  /// File path: assets/map/area_image/fourteen.jpg
+  AssetGenImage get fourteen =>
+      const AssetGenImage('assets/map/area_image/fourteen.jpg');
+
+  /// File path: assets/map/area_image/ground.jpg
+  AssetGenImage get ground =>
+      const AssetGenImage('assets/map/area_image/ground.jpg');
+
+  /// File path: assets/map/area_image/main_stage.jpg
+  AssetGenImage get mainStage =>
+      const AssetGenImage('assets/map/area_image/main_stage.jpg');
+
+  /// File path: assets/map/area_image/twelve_first.jpg
+  AssetGenImage get twelveFirst =>
+      const AssetGenImage('assets/map/area_image/twelve_first.jpg');
+
+  /// File path: assets/map/area_image/twelve_second.jpg
+  AssetGenImage get twelveSecond =>
+      const AssetGenImage('assets/map/area_image/twelve_second.jpg');
+
+  /// File path: assets/map/area_image/whole_area.jpg
+  AssetGenImage get wholeArea =>
+      const AssetGenImage('assets/map/area_image/whole_area.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        booth,
+        eastArea,
+        eleven,
+        fourteen,
+        ground,
+        mainStage,
+        twelveFirst,
+        twelveSecond,
+        wholeArea
+      ];
 }
 
 class $AssetsMapIconGen {
@@ -215,12 +289,660 @@ class $AssetsMapPinDataGen {
       ];
 }
 
+class $AssetsProjectMainImageGen {
+  const $AssetsProjectMainImageGen();
+
+  /// File path: assets/project/main_image/main_image_1.jpeg
+  AssetGenImage get mainImage1 =>
+      const AssetGenImage('assets/project/main_image/main_image_1.jpeg');
+
+  /// File path: assets/project/main_image/main_image_11.jpg
+  AssetGenImage get mainImage11 =>
+      const AssetGenImage('assets/project/main_image/main_image_11.jpg');
+
+  /// File path: assets/project/main_image/main_image_12.png
+  AssetGenImage get mainImage12 =>
+      const AssetGenImage('assets/project/main_image/main_image_12.png');
+
+  /// File path: assets/project/main_image/main_image_13.png
+  AssetGenImage get mainImage13 =>
+      const AssetGenImage('assets/project/main_image/main_image_13.png');
+
+  /// File path: assets/project/main_image/main_image_14.jpg
+  AssetGenImage get mainImage14 =>
+      const AssetGenImage('assets/project/main_image/main_image_14.jpg');
+
+  /// File path: assets/project/main_image/main_image_15.jpg
+  AssetGenImage get mainImage15 =>
+      const AssetGenImage('assets/project/main_image/main_image_15.jpg');
+
+  /// File path: assets/project/main_image/main_image_16.jpg
+  AssetGenImage get mainImage16 =>
+      const AssetGenImage('assets/project/main_image/main_image_16.jpg');
+
+  /// File path: assets/project/main_image/main_image_17.jpg
+  AssetGenImage get mainImage17 =>
+      const AssetGenImage('assets/project/main_image/main_image_17.jpg');
+
+  /// File path: assets/project/main_image/main_image_18.jpg
+  AssetGenImage get mainImage18 =>
+      const AssetGenImage('assets/project/main_image/main_image_18.jpg');
+
+  /// File path: assets/project/main_image/main_image_19.jpg
+  AssetGenImage get mainImage19 =>
+      const AssetGenImage('assets/project/main_image/main_image_19.jpg');
+
+  /// File path: assets/project/main_image/main_image_2.jpeg
+  AssetGenImage get mainImage2 =>
+      const AssetGenImage('assets/project/main_image/main_image_2.jpeg');
+
+  /// File path: assets/project/main_image/main_image_20.jpg
+  AssetGenImage get mainImage20 =>
+      const AssetGenImage('assets/project/main_image/main_image_20.jpg');
+
+  /// File path: assets/project/main_image/main_image_21.jpg
+  AssetGenImage get mainImage21 =>
+      const AssetGenImage('assets/project/main_image/main_image_21.jpg');
+
+  /// File path: assets/project/main_image/main_image_22.png
+  AssetGenImage get mainImage22 =>
+      const AssetGenImage('assets/project/main_image/main_image_22.png');
+
+  /// File path: assets/project/main_image/main_image_23.jpg
+  AssetGenImage get mainImage23 =>
+      const AssetGenImage('assets/project/main_image/main_image_23.jpg');
+
+  /// File path: assets/project/main_image/main_image_24.jpg
+  AssetGenImage get mainImage24 =>
+      const AssetGenImage('assets/project/main_image/main_image_24.jpg');
+
+  /// File path: assets/project/main_image/main_image_25.jpeg
+  AssetGenImage get mainImage25 =>
+      const AssetGenImage('assets/project/main_image/main_image_25.jpeg');
+
+  /// File path: assets/project/main_image/main_image_26.jpg
+  AssetGenImage get mainImage26 =>
+      const AssetGenImage('assets/project/main_image/main_image_26.jpg');
+
+  /// File path: assets/project/main_image/main_image_27.jpg
+  AssetGenImage get mainImage27 =>
+      const AssetGenImage('assets/project/main_image/main_image_27.jpg');
+
+  /// File path: assets/project/main_image/main_image_28.jpeg
+  AssetGenImage get mainImage28 =>
+      const AssetGenImage('assets/project/main_image/main_image_28.jpeg');
+
+  /// File path: assets/project/main_image/main_image_29.jpeg
+  AssetGenImage get mainImage29 =>
+      const AssetGenImage('assets/project/main_image/main_image_29.jpeg');
+
+  /// File path: assets/project/main_image/main_image_3.jpeg
+  AssetGenImage get mainImage3 =>
+      const AssetGenImage('assets/project/main_image/main_image_3.jpeg');
+
+  /// File path: assets/project/main_image/main_image_30.jpeg
+  AssetGenImage get mainImage30 =>
+      const AssetGenImage('assets/project/main_image/main_image_30.jpeg');
+
+  /// File path: assets/project/main_image/main_image_31.png
+  AssetGenImage get mainImage31 =>
+      const AssetGenImage('assets/project/main_image/main_image_31.png');
+
+  /// File path: assets/project/main_image/main_image_32.jpg
+  AssetGenImage get mainImage32 =>
+      const AssetGenImage('assets/project/main_image/main_image_32.jpg');
+
+  /// File path: assets/project/main_image/main_image_33.png
+  AssetGenImage get mainImage33 =>
+      const AssetGenImage('assets/project/main_image/main_image_33.png');
+
+  /// File path: assets/project/main_image/main_image_34.jpeg
+  AssetGenImage get mainImage34 =>
+      const AssetGenImage('assets/project/main_image/main_image_34.jpeg');
+
+  /// File path: assets/project/main_image/main_image_35.jpeg
+  AssetGenImage get mainImage35Jpeg =>
+      const AssetGenImage('assets/project/main_image/main_image_35.jpeg');
+
+  /// File path: assets/project/main_image/main_image_35.png
+  AssetGenImage get mainImage35Png =>
+      const AssetGenImage('assets/project/main_image/main_image_35.png');
+
+  /// File path: assets/project/main_image/main_image_36.jpg
+  AssetGenImage get mainImage36 =>
+      const AssetGenImage('assets/project/main_image/main_image_36.jpg');
+
+  /// File path: assets/project/main_image/main_image_37.jpeg
+  AssetGenImage get mainImage37 =>
+      const AssetGenImage('assets/project/main_image/main_image_37.jpeg');
+
+  /// File path: assets/project/main_image/main_image_38.jpeg
+  AssetGenImage get mainImage38 =>
+      const AssetGenImage('assets/project/main_image/main_image_38.jpeg');
+
+  /// File path: assets/project/main_image/main_image_39.jpeg
+  AssetGenImage get mainImage39 =>
+      const AssetGenImage('assets/project/main_image/main_image_39.jpeg');
+
+  /// File path: assets/project/main_image/main_image_4.jpg
+  AssetGenImage get mainImage4 =>
+      const AssetGenImage('assets/project/main_image/main_image_4.jpg');
+
+  /// File path: assets/project/main_image/main_image_40.jpg
+  AssetGenImage get mainImage40 =>
+      const AssetGenImage('assets/project/main_image/main_image_40.jpg');
+
+  /// File path: assets/project/main_image/main_image_41.jpeg
+  AssetGenImage get mainImage41 =>
+      const AssetGenImage('assets/project/main_image/main_image_41.jpeg');
+
+  /// File path: assets/project/main_image/main_image_42.png
+  AssetGenImage get mainImage42 =>
+      const AssetGenImage('assets/project/main_image/main_image_42.png');
+
+  /// File path: assets/project/main_image/main_image_43.jpg
+  AssetGenImage get mainImage43 =>
+      const AssetGenImage('assets/project/main_image/main_image_43.jpg');
+
+  /// File path: assets/project/main_image/main_image_44.png
+  AssetGenImage get mainImage44 =>
+      const AssetGenImage('assets/project/main_image/main_image_44.png');
+
+  /// File path: assets/project/main_image/main_image_45.jpg
+  AssetGenImage get mainImage45 =>
+      const AssetGenImage('assets/project/main_image/main_image_45.jpg');
+
+  /// File path: assets/project/main_image/main_image_46.jpg
+  AssetGenImage get mainImage46 =>
+      const AssetGenImage('assets/project/main_image/main_image_46.jpg');
+
+  /// File path: assets/project/main_image/main_image_47.jpeg
+  AssetGenImage get mainImage47 =>
+      const AssetGenImage('assets/project/main_image/main_image_47.jpeg');
+
+  /// File path: assets/project/main_image/main_image_48.png
+  AssetGenImage get mainImage48 =>
+      const AssetGenImage('assets/project/main_image/main_image_48.png');
+
+  /// File path: assets/project/main_image/main_image_49.jpeg
+  AssetGenImage get mainImage49 =>
+      const AssetGenImage('assets/project/main_image/main_image_49.jpeg');
+
+  /// File path: assets/project/main_image/main_image_5.jpg
+  AssetGenImage get mainImage5 =>
+      const AssetGenImage('assets/project/main_image/main_image_5.jpg');
+
+  /// File path: assets/project/main_image/main_image_52.jpeg
+  AssetGenImage get mainImage52 =>
+      const AssetGenImage('assets/project/main_image/main_image_52.jpeg');
+
+  /// File path: assets/project/main_image/main_image_54.png
+  AssetGenImage get mainImage54 =>
+      const AssetGenImage('assets/project/main_image/main_image_54.png');
+
+  /// File path: assets/project/main_image/main_image_57.jpg
+  AssetGenImage get mainImage57 =>
+      const AssetGenImage('assets/project/main_image/main_image_57.jpg');
+
+  /// File path: assets/project/main_image/main_image_58.jpeg
+  AssetGenImage get mainImage58 =>
+      const AssetGenImage('assets/project/main_image/main_image_58.jpeg');
+
+  /// File path: assets/project/main_image/main_image_6.jpeg
+  AssetGenImage get mainImage6 =>
+      const AssetGenImage('assets/project/main_image/main_image_6.jpeg');
+
+  /// File path: assets/project/main_image/main_image_60.jpg
+  AssetGenImage get mainImage60 =>
+      const AssetGenImage('assets/project/main_image/main_image_60.jpg');
+
+  /// File path: assets/project/main_image/main_image_63.jpg
+  AssetGenImage get mainImage63 =>
+      const AssetGenImage('assets/project/main_image/main_image_63.jpg');
+
+  /// File path: assets/project/main_image/main_image_64.jpg
+  AssetGenImage get mainImage64 =>
+      const AssetGenImage('assets/project/main_image/main_image_64.jpg');
+
+  /// File path: assets/project/main_image/main_image_65.png
+  AssetGenImage get mainImage65 =>
+      const AssetGenImage('assets/project/main_image/main_image_65.png');
+
+  /// File path: assets/project/main_image/main_image_66.png
+  AssetGenImage get mainImage66 =>
+      const AssetGenImage('assets/project/main_image/main_image_66.png');
+
+  /// File path: assets/project/main_image/main_image_7.jpeg
+  AssetGenImage get mainImage7 =>
+      const AssetGenImage('assets/project/main_image/main_image_7.jpeg');
+
+  /// File path: assets/project/main_image/main_image_8.png
+  AssetGenImage get mainImage8 =>
+      const AssetGenImage('assets/project/main_image/main_image_8.png');
+
+  /// File path: assets/project/main_image/main_image_9.jpg
+  AssetGenImage get mainImage9 =>
+      const AssetGenImage('assets/project/main_image/main_image_9.jpg');
+
+  /// File path: assets/project/main_image/main_image_placeholder.png
+  AssetGenImage get mainImagePlaceholder => const AssetGenImage(
+      'assets/project/main_image/main_image_placeholder.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        mainImage1,
+        mainImage11,
+        mainImage12,
+        mainImage13,
+        mainImage14,
+        mainImage15,
+        mainImage16,
+        mainImage17,
+        mainImage18,
+        mainImage19,
+        mainImage2,
+        mainImage20,
+        mainImage21,
+        mainImage22,
+        mainImage23,
+        mainImage24,
+        mainImage25,
+        mainImage26,
+        mainImage27,
+        mainImage28,
+        mainImage29,
+        mainImage3,
+        mainImage30,
+        mainImage31,
+        mainImage32,
+        mainImage33,
+        mainImage34,
+        mainImage35Jpeg,
+        mainImage35Png,
+        mainImage36,
+        mainImage37,
+        mainImage38,
+        mainImage39,
+        mainImage4,
+        mainImage40,
+        mainImage41,
+        mainImage42,
+        mainImage43,
+        mainImage44,
+        mainImage45,
+        mainImage46,
+        mainImage47,
+        mainImage48,
+        mainImage49,
+        mainImage5,
+        mainImage52,
+        mainImage54,
+        mainImage57,
+        mainImage58,
+        mainImage6,
+        mainImage60,
+        mainImage63,
+        mainImage64,
+        mainImage65,
+        mainImage66,
+        mainImage7,
+        mainImage8,
+        mainImage9,
+        mainImagePlaceholder
+      ];
+}
+
+class $AssetsProjectThumbnailGen {
+  const $AssetsProjectThumbnailGen();
+
+  /// File path: assets/project/thumbnail/thumbnail_1.jpeg
+  AssetGenImage get thumbnail1 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_1.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_11.jpg
+  AssetGenImage get thumbnail11 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_11.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_12.png
+  AssetGenImage get thumbnail12 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_12.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_13.png
+  AssetGenImage get thumbnail13 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_13.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_14.jpg
+  AssetGenImage get thumbnail14 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_14.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_15.jpg
+  AssetGenImage get thumbnail15 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_15.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_16.jpg
+  AssetGenImage get thumbnail16 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_16.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_17.png
+  AssetGenImage get thumbnail17 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_17.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_18.jpg
+  AssetGenImage get thumbnail18 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_18.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_19.png
+  AssetGenImage get thumbnail19 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_19.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_2.jpeg
+  AssetGenImage get thumbnail2 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_2.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_20.png
+  AssetGenImage get thumbnail20 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_20.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_21.jpg
+  AssetGenImage get thumbnail21 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_21.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_22.png
+  AssetGenImage get thumbnail22 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_22.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_23.jpg
+  AssetGenImage get thumbnail23 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_23.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_24.jpg
+  AssetGenImage get thumbnail24 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_24.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_25.jpeg
+  AssetGenImage get thumbnail25Jpeg =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_25.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_25.png
+  AssetGenImage get thumbnail25Png =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_25.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_26.jpg
+  AssetGenImage get thumbnail26 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_26.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_27.jpg
+  AssetGenImage get thumbnail27 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_27.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_28.png
+  AssetGenImage get thumbnail28 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_28.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_29.jpeg
+  AssetGenImage get thumbnail29 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_29.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_3.jpeg
+  AssetGenImage get thumbnail3 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_3.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_30.jpeg
+  AssetGenImage get thumbnail30 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_30.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_31.png
+  AssetGenImage get thumbnail31 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_31.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_32.jpg
+  AssetGenImage get thumbnail32 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_32.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_33.png
+  AssetGenImage get thumbnail33 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_33.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_34.jpeg
+  AssetGenImage get thumbnail34 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_34.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_35.jpeg
+  AssetGenImage get thumbnail35Jpeg =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_35.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_35.png
+  AssetGenImage get thumbnail35Png =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_35.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_36.jpg
+  AssetGenImage get thumbnail36 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_36.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_37.jpeg
+  AssetGenImage get thumbnail37 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_37.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_38.jpeg
+  AssetGenImage get thumbnail38 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_38.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_39.png
+  AssetGenImage get thumbnail39 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_39.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_4.jpg
+  AssetGenImage get thumbnail4 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_4.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_40.jpg
+  AssetGenImage get thumbnail40 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_40.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_41.jpeg
+  AssetGenImage get thumbnail41 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_41.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_42.png
+  AssetGenImage get thumbnail42 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_42.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_43.jpg
+  AssetGenImage get thumbnail43 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_43.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_44.png
+  AssetGenImage get thumbnail44 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_44.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_45.jpg
+  AssetGenImage get thumbnail45 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_45.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_46.jpg
+  AssetGenImage get thumbnail46 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_46.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_47.jpeg
+  AssetGenImage get thumbnail47 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_47.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_48.png
+  AssetGenImage get thumbnail48 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_48.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_49.jpeg
+  AssetGenImage get thumbnail49 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_49.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_5.png
+  AssetGenImage get thumbnail5 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_5.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_52.jpeg
+  AssetGenImage get thumbnail52 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_52.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_54.png
+  AssetGenImage get thumbnail54 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_54.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_55.png
+  AssetGenImage get thumbnail55 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_55.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_56.png
+  AssetGenImage get thumbnail56 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_56.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_57.jpg
+  AssetGenImage get thumbnail57 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_57.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_58.png
+  AssetGenImage get thumbnail58 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_58.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_59.png
+  AssetGenImage get thumbnail59 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_59.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_6.jpeg
+  AssetGenImage get thumbnail6 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_6.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_60.jpg
+  AssetGenImage get thumbnail60Jpg =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_60.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_60.png
+  AssetGenImage get thumbnail60Png =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_60.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_61.png
+  AssetGenImage get thumbnail61 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_61.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_62.png
+  AssetGenImage get thumbnail62 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_62.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_63.jpeg
+  AssetGenImage get thumbnail63Jpeg =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_63.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_63.png
+  AssetGenImage get thumbnail63Png =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_63.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_64.jpg
+  AssetGenImage get thumbnail64 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_64.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_65.png
+  AssetGenImage get thumbnail65 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_65.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_66.png
+  AssetGenImage get thumbnail66 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_66.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_7.jpeg
+  AssetGenImage get thumbnail7 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_7.jpeg');
+
+  /// File path: assets/project/thumbnail/thumbnail_8.jpg
+  AssetGenImage get thumbnail8 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_8.jpg');
+
+  /// File path: assets/project/thumbnail/thumbnail_9.png
+  AssetGenImage get thumbnail9 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_9.png');
+
+  /// File path: assets/project/thumbnail/thumbnail_placeholder.png
+  AssetGenImage get thumbnailPlaceholder =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_placeholder.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        thumbnail1,
+        thumbnail11,
+        thumbnail12,
+        thumbnail13,
+        thumbnail14,
+        thumbnail15,
+        thumbnail16,
+        thumbnail17,
+        thumbnail18,
+        thumbnail19,
+        thumbnail2,
+        thumbnail20,
+        thumbnail21,
+        thumbnail22,
+        thumbnail23,
+        thumbnail24,
+        thumbnail25Jpeg,
+        thumbnail25Png,
+        thumbnail26,
+        thumbnail27,
+        thumbnail28,
+        thumbnail29,
+        thumbnail3,
+        thumbnail30,
+        thumbnail31,
+        thumbnail32,
+        thumbnail33,
+        thumbnail34,
+        thumbnail35Jpeg,
+        thumbnail35Png,
+        thumbnail36,
+        thumbnail37,
+        thumbnail38,
+        thumbnail39,
+        thumbnail4,
+        thumbnail40,
+        thumbnail41,
+        thumbnail42,
+        thumbnail43,
+        thumbnail44,
+        thumbnail45,
+        thumbnail46,
+        thumbnail47,
+        thumbnail48,
+        thumbnail49,
+        thumbnail5,
+        thumbnail52,
+        thumbnail54,
+        thumbnail55,
+        thumbnail56,
+        thumbnail57,
+        thumbnail58,
+        thumbnail59,
+        thumbnail6,
+        thumbnail60Jpg,
+        thumbnail60Png,
+        thumbnail61,
+        thumbnail62,
+        thumbnail63Jpeg,
+        thumbnail63Png,
+        thumbnail64,
+        thumbnail65,
+        thumbnail66,
+        thumbnail7,
+        thumbnail8,
+        thumbnail9,
+        thumbnailPlaceholder
+      ];
+}
+
 class Assets {
   Assets._();
 
+  static const $AssetsArticleGen article = $AssetsArticleGen();
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
   static const $AssetsMapGen map = $AssetsMapGen();
+  static const $AssetsProjectGen project = $AssetsProjectGen();
 }
 
 class AssetGenImage {

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/constant/theme/project_card_theme.dart';
 import 'package:yagamy/extension/sale_situation_type_extension.dart';
 import 'package:yagamy/extension/string_extension.dart';
-import 'package:yagamy/model/project/project_for_card.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/sale_siituation_type.dart';
 import 'package:yagamy/model/sale_situation/sale_situation.dart';
 import 'package:yagamy/provider/sale_situation_provider.dart';
+import 'package:yagamy/utility/get_hours_displaying.dart';
+import 'package:yagamy/utility/get_place_displaying.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -18,7 +19,7 @@ class ProjectCard extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
-  final ProjectForCard project;
+  final Project project;
   final void Function()? onTap;
 
   @override
@@ -40,13 +41,18 @@ class ProjectCard extends StatelessWidget {
             height: 110,
             child: Row(
               children: <Widget>[
-                _ProjectImage(project.thumbnailUrl),
+                _ProjectImage(project.thumbnailPath),
                 Flexible(
                   child: _ProjectInfo(
                     project.title,
                     project.groupName,
-                    project.placeString,
-                    project.hoursString,
+                    getPlaceDisplaying(
+                        project.area, project.floor, project.placeDetail),
+                    getHoursDisplayingForCard(
+                        project.hoursStartFirstDay,
+                        project.hoursEndFirstDay,
+                        project.hoursStartSecondDay,
+                        project.hoursEndSecondDay),
                     project.id,
                   ),
                 ),
@@ -60,16 +66,16 @@ class ProjectCard extends StatelessWidget {
 }
 
 class _ProjectImage extends StatelessWidget {
-  const _ProjectImage(this.imageUrl);
+  const _ProjectImage(this.imagePath);
 
-  final String imageUrl;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: CachedNetworkImageProvider(imageUrl),
+            image: AssetImage(imagePath),
             fit: BoxFit.contain,
           ),
           border: Border.all(

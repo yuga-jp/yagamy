@@ -12,7 +12,7 @@ part of 'raw_project_for_card.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RawProjectForCard _$RawProjectForCardFromJson(Map<String, dynamic> json) {
   return _RawProjectForCard.fromJson(json);
@@ -154,11 +154,11 @@ class _$RawProjectForCardCopyWithImpl<$Res, $Val extends RawProjectForCard>
 }
 
 /// @nodoc
-abstract class _$$_RawProjectForCardCopyWith<$Res>
+abstract class _$$RawProjectForCardImplCopyWith<$Res>
     implements $RawProjectForCardCopyWith<$Res> {
-  factory _$$_RawProjectForCardCopyWith(_$_RawProjectForCard value,
-          $Res Function(_$_RawProjectForCard) then) =
-      __$$_RawProjectForCardCopyWithImpl<$Res>;
+  factory _$$RawProjectForCardImplCopyWith(_$RawProjectForCardImpl value,
+          $Res Function(_$RawProjectForCardImpl) then) =
+      __$$RawProjectForCardImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -179,11 +179,11 @@ abstract class _$$_RawProjectForCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RawProjectForCardCopyWithImpl<$Res>
-    extends _$RawProjectForCardCopyWithImpl<$Res, _$_RawProjectForCard>
-    implements _$$_RawProjectForCardCopyWith<$Res> {
-  __$$_RawProjectForCardCopyWithImpl(
-      _$_RawProjectForCard _value, $Res Function(_$_RawProjectForCard) _then)
+class __$$RawProjectForCardImplCopyWithImpl<$Res>
+    extends _$RawProjectForCardCopyWithImpl<$Res, _$RawProjectForCardImpl>
+    implements _$$RawProjectForCardImplCopyWith<$Res> {
+  __$$RawProjectForCardImplCopyWithImpl(_$RawProjectForCardImpl _value,
+      $Res Function(_$RawProjectForCardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -204,7 +204,7 @@ class __$$_RawProjectForCardCopyWithImpl<$Res>
     Object? categorySub = null,
     Object? stampRally = null,
   }) {
-    return _then(_$_RawProjectForCard(
+    return _then(_$RawProjectForCardImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -267,8 +267,8 @@ class __$$_RawProjectForCardCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RawProjectForCard implements _RawProjectForCard {
-  const _$_RawProjectForCard(
+class _$RawProjectForCardImpl implements _RawProjectForCard {
+  const _$RawProjectForCardImpl(
       {required this.id,
       required this.title,
       required this.area,
@@ -284,8 +284,8 @@ class _$_RawProjectForCard implements _RawProjectForCard {
       required this.categorySub,
       required this.stampRally});
 
-  factory _$_RawProjectForCard.fromJson(Map<String, dynamic> json) =>
-      _$$_RawProjectForCardFromJson(json);
+  factory _$RawProjectForCardImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RawProjectForCardImplFromJson(json);
 
   @override
   final String id;
@@ -322,10 +322,10 @@ class _$_RawProjectForCard implements _RawProjectForCard {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RawProjectForCard &&
+            other is _$RawProjectForCardImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.area, area) || other.area == area) &&
@@ -374,13 +374,13 @@ class _$_RawProjectForCard implements _RawProjectForCard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RawProjectForCardCopyWith<_$_RawProjectForCard> get copyWith =>
-      __$$_RawProjectForCardCopyWithImpl<_$_RawProjectForCard>(
+  _$$RawProjectForCardImplCopyWith<_$RawProjectForCardImpl> get copyWith =>
+      __$$RawProjectForCardImplCopyWithImpl<_$RawProjectForCardImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RawProjectForCardToJson(
+    return _$$RawProjectForCardImplToJson(
       this,
     );
   }
@@ -401,10 +401,10 @@ abstract class _RawProjectForCard implements RawProjectForCard {
       required final String thumbnailUrl,
       required final String categoryMain,
       required final String categorySub,
-      required final bool stampRally}) = _$_RawProjectForCard;
+      required final bool stampRally}) = _$RawProjectForCardImpl;
 
   factory _RawProjectForCard.fromJson(Map<String, dynamic> json) =
-      _$_RawProjectForCard.fromJson;
+      _$RawProjectForCardImpl.fromJson;
 
   @override
   String get id;
@@ -436,6 +436,6 @@ abstract class _RawProjectForCard implements RawProjectForCard {
   bool get stampRally;
   @override
   @JsonKey(ignore: true)
-  _$$_RawProjectForCardCopyWith<_$_RawProjectForCard> get copyWith =>
+  _$$RawProjectForCardImplCopyWith<_$RawProjectForCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

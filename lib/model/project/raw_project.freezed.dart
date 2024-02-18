@@ -12,7 +12,7 @@ part of 'raw_project.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RawProject _$RawProjectFromJson(Map<String, dynamic> json) {
   return _RawProject.fromJson(json);
@@ -34,8 +34,8 @@ mixin _$RawProject {
   String get intro => throw _privateConstructorUsedError;
   String get introExtension => throw _privateConstructorUsedError;
   String get groupIntro => throw _privateConstructorUsedError;
-  String get thumbnailUrl => throw _privateConstructorUsedError;
-  String get mainImageUrl => throw _privateConstructorUsedError;
+  bool get hasThumbnail => throw _privateConstructorUsedError;
+  bool get hasMainImage => throw _privateConstructorUsedError;
   String get twitterId => throw _privateConstructorUsedError;
   String get instagramId => throw _privateConstructorUsedError;
   String get homepageUrl => throw _privateConstructorUsedError;
@@ -70,8 +70,8 @@ abstract class $RawProjectCopyWith<$Res> {
       String intro,
       String introExtension,
       String groupIntro,
-      String thumbnailUrl,
-      String mainImageUrl,
+      bool hasThumbnail,
+      bool hasMainImage,
       String twitterId,
       String instagramId,
       String homepageUrl,
@@ -107,8 +107,8 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
     Object? intro = null,
     Object? introExtension = null,
     Object? groupIntro = null,
-    Object? thumbnailUrl = null,
-    Object? mainImageUrl = null,
+    Object? hasThumbnail = null,
+    Object? hasMainImage = null,
     Object? twitterId = null,
     Object? instagramId = null,
     Object? homepageUrl = null,
@@ -173,14 +173,14 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
           ? _value.groupIntro
           : groupIntro // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      mainImageUrl: null == mainImageUrl
-          ? _value.mainImageUrl
-          : mainImageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+      hasThumbnail: null == hasThumbnail
+          ? _value.hasThumbnail
+          : hasThumbnail // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasMainImage: null == hasMainImage
+          ? _value.hasMainImage
+          : hasMainImage // ignore: cast_nullable_to_non_nullable
+              as bool,
       twitterId: null == twitterId
           ? _value.twitterId
           : twitterId // ignore: cast_nullable_to_non_nullable
@@ -210,11 +210,11 @@ class _$RawProjectCopyWithImpl<$Res, $Val extends RawProject>
 }
 
 /// @nodoc
-abstract class _$$_RawProjectCopyWith<$Res>
+abstract class _$$RawProjectImplCopyWith<$Res>
     implements $RawProjectCopyWith<$Res> {
-  factory _$$_RawProjectCopyWith(
-          _$_RawProject value, $Res Function(_$_RawProject) then) =
-      __$$_RawProjectCopyWithImpl<$Res>;
+  factory _$$RawProjectImplCopyWith(
+          _$RawProjectImpl value, $Res Function(_$RawProjectImpl) then) =
+      __$$RawProjectImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -232,8 +232,8 @@ abstract class _$$_RawProjectCopyWith<$Res>
       String intro,
       String introExtension,
       String groupIntro,
-      String thumbnailUrl,
-      String mainImageUrl,
+      bool hasThumbnail,
+      bool hasMainImage,
       String twitterId,
       String instagramId,
       String homepageUrl,
@@ -243,11 +243,11 @@ abstract class _$$_RawProjectCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RawProjectCopyWithImpl<$Res>
-    extends _$RawProjectCopyWithImpl<$Res, _$_RawProject>
-    implements _$$_RawProjectCopyWith<$Res> {
-  __$$_RawProjectCopyWithImpl(
-      _$_RawProject _value, $Res Function(_$_RawProject) _then)
+class __$$RawProjectImplCopyWithImpl<$Res>
+    extends _$RawProjectCopyWithImpl<$Res, _$RawProjectImpl>
+    implements _$$RawProjectImplCopyWith<$Res> {
+  __$$RawProjectImplCopyWithImpl(
+      _$RawProjectImpl _value, $Res Function(_$RawProjectImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -267,8 +267,8 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? intro = null,
     Object? introExtension = null,
     Object? groupIntro = null,
-    Object? thumbnailUrl = null,
-    Object? mainImageUrl = null,
+    Object? hasThumbnail = null,
+    Object? hasMainImage = null,
     Object? twitterId = null,
     Object? instagramId = null,
     Object? homepageUrl = null,
@@ -276,7 +276,7 @@ class __$$_RawProjectCopyWithImpl<$Res>
     Object? categorySub = null,
     Object? stampRally = null,
   }) {
-    return _then(_$_RawProject(
+    return _then(_$RawProjectImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -333,14 +333,14 @@ class __$$_RawProjectCopyWithImpl<$Res>
           ? _value.groupIntro
           : groupIntro // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      mainImageUrl: null == mainImageUrl
-          ? _value.mainImageUrl
-          : mainImageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+      hasThumbnail: null == hasThumbnail
+          ? _value.hasThumbnail
+          : hasThumbnail // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasMainImage: null == hasMainImage
+          ? _value.hasMainImage
+          : hasMainImage // ignore: cast_nullable_to_non_nullable
+              as bool,
       twitterId: null == twitterId
           ? _value.twitterId
           : twitterId // ignore: cast_nullable_to_non_nullable
@@ -371,8 +371,8 @@ class __$$_RawProjectCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
-  const _$_RawProject(
+class _$RawProjectImpl with DiagnosticableTreeMixin implements _RawProject {
+  const _$RawProjectImpl(
       {required this.id,
       required this.title,
       required this.area,
@@ -387,8 +387,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.intro,
       required this.introExtension,
       required this.groupIntro,
-      required this.thumbnailUrl,
-      required this.mainImageUrl,
+      required this.hasThumbnail,
+      required this.hasMainImage,
       required this.twitterId,
       required this.instagramId,
       required this.homepageUrl,
@@ -396,8 +396,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       required this.categorySub,
       required this.stampRally});
 
-  factory _$_RawProject.fromJson(Map<String, dynamic> json) =>
-      _$$_RawProjectFromJson(json);
+  factory _$RawProjectImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RawProjectImplFromJson(json);
 
   @override
   final String id;
@@ -428,9 +428,9 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @override
   final String groupIntro;
   @override
-  final String thumbnailUrl;
+  final bool hasThumbnail;
   @override
-  final String mainImageUrl;
+  final bool hasMainImage;
   @override
   final String twitterId;
   @override
@@ -446,7 +446,7 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstDay: $hoursEndFirstDay, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, thumbnailUrl: $thumbnailUrl, mainImageUrl: $mainImageUrl, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
+    return 'RawProject(id: $id, title: $title, area: $area, floor: $floor, placeDetail: $placeDetail, hoursStartFirstDay: $hoursStartFirstDay, hoursEndFirstDay: $hoursEndFirstDay, hoursStartSecondDay: $hoursStartSecondDay, hoursEndSecondDay: $hoursEndSecondDay, groupName: $groupName, shortIntro: $shortIntro, intro: $intro, introExtension: $introExtension, groupIntro: $groupIntro, hasThumbnail: $hasThumbnail, hasMainImage: $hasMainImage, twitterId: $twitterId, instagramId: $instagramId, homepageUrl: $homepageUrl, categoryMain: $categoryMain, categorySub: $categorySub, stampRally: $stampRally)';
   }
 
   @override
@@ -468,8 +468,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
       ..add(DiagnosticsProperty('intro', intro))
       ..add(DiagnosticsProperty('introExtension', introExtension))
       ..add(DiagnosticsProperty('groupIntro', groupIntro))
-      ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
-      ..add(DiagnosticsProperty('mainImageUrl', mainImageUrl))
+      ..add(DiagnosticsProperty('hasThumbnail', hasThumbnail))
+      ..add(DiagnosticsProperty('hasMainImage', hasMainImage))
       ..add(DiagnosticsProperty('twitterId', twitterId))
       ..add(DiagnosticsProperty('instagramId', instagramId))
       ..add(DiagnosticsProperty('homepageUrl', homepageUrl))
@@ -479,10 +479,10 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RawProject &&
+            other is _$RawProjectImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.area, area) || other.area == area) &&
@@ -506,10 +506,10 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
                 other.introExtension == introExtension) &&
             (identical(other.groupIntro, groupIntro) ||
                 other.groupIntro == groupIntro) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
-            (identical(other.mainImageUrl, mainImageUrl) ||
-                other.mainImageUrl == mainImageUrl) &&
+            (identical(other.hasThumbnail, hasThumbnail) ||
+                other.hasThumbnail == hasThumbnail) &&
+            (identical(other.hasMainImage, hasMainImage) ||
+                other.hasMainImage == hasMainImage) &&
             (identical(other.twitterId, twitterId) ||
                 other.twitterId == twitterId) &&
             (identical(other.instagramId, instagramId) ||
@@ -542,8 +542,8 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
         intro,
         introExtension,
         groupIntro,
-        thumbnailUrl,
-        mainImageUrl,
+        hasThumbnail,
+        hasMainImage,
         twitterId,
         instagramId,
         homepageUrl,
@@ -555,12 +555,12 @@ class _$_RawProject with DiagnosticableTreeMixin implements _RawProject {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>
-      __$$_RawProjectCopyWithImpl<_$_RawProject>(this, _$identity);
+  _$$RawProjectImplCopyWith<_$RawProjectImpl> get copyWith =>
+      __$$RawProjectImplCopyWithImpl<_$RawProjectImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RawProjectToJson(
+    return _$$RawProjectImplToJson(
       this,
     );
   }
@@ -582,17 +582,17 @@ abstract class _RawProject implements RawProject {
       required final String intro,
       required final String introExtension,
       required final String groupIntro,
-      required final String thumbnailUrl,
-      required final String mainImageUrl,
+      required final bool hasThumbnail,
+      required final bool hasMainImage,
       required final String twitterId,
       required final String instagramId,
       required final String homepageUrl,
       required final String categoryMain,
       required final String categorySub,
-      required final bool stampRally}) = _$_RawProject;
+      required final bool stampRally}) = _$RawProjectImpl;
 
   factory _RawProject.fromJson(Map<String, dynamic> json) =
-      _$_RawProject.fromJson;
+      _$RawProjectImpl.fromJson;
 
   @override
   String get id;
@@ -623,9 +623,9 @@ abstract class _RawProject implements RawProject {
   @override
   String get groupIntro;
   @override
-  String get thumbnailUrl;
+  bool get hasThumbnail;
   @override
-  String get mainImageUrl;
+  bool get hasMainImage;
   @override
   String get twitterId;
   @override
@@ -640,6 +640,6 @@ abstract class _RawProject implements RawProject {
   bool get stampRally;
   @override
   @JsonKey(ignore: true)
-  _$$_RawProjectCopyWith<_$_RawProject> get copyWith =>
+  _$$RawProjectImplCopyWith<_$RawProjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

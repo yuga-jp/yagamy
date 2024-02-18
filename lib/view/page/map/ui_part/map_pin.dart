@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
-import 'package:yagamy/model/project/project_for_card.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/view/page/map/ui_part/project_pin.dart';
 import 'package:yagamy/view/page/map/ui_part/square_pin.dart';
 import 'package:yagamy/view/page/map/ui_part/text_pin.dart';
@@ -25,7 +25,7 @@ class MapPin extends StatelessWidget {
   final double width;
   final double height;
   final double scale;
-  final ProjectForCard? project;
+  final Project? project;
   final String? text;
   final double? textAspectRatio;
   final MapType locatedMapType;

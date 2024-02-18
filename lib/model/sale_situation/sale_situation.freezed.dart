@@ -12,7 +12,7 @@ part of 'sale_situation.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SaleSituation _$SaleSituationFromJson(Map<String, dynamic> json) {
   return _SaleSituation.fromJson(json);
@@ -74,22 +74,22 @@ class _$SaleSituationCopyWithImpl<$Res, $Val extends SaleSituation>
 }
 
 /// @nodoc
-abstract class _$$_SaleSituationCopyWith<$Res>
+abstract class _$$SaleSituationImplCopyWith<$Res>
     implements $SaleSituationCopyWith<$Res> {
-  factory _$$_SaleSituationCopyWith(
-          _$_SaleSituation value, $Res Function(_$_SaleSituation) then) =
-      __$$_SaleSituationCopyWithImpl<$Res>;
+  factory _$$SaleSituationImplCopyWith(
+          _$SaleSituationImpl value, $Res Function(_$SaleSituationImpl) then) =
+      __$$SaleSituationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String saleSituation, DateTime updatedAt});
 }
 
 /// @nodoc
-class __$$_SaleSituationCopyWithImpl<$Res>
-    extends _$SaleSituationCopyWithImpl<$Res, _$_SaleSituation>
-    implements _$$_SaleSituationCopyWith<$Res> {
-  __$$_SaleSituationCopyWithImpl(
-      _$_SaleSituation _value, $Res Function(_$_SaleSituation) _then)
+class __$$SaleSituationImplCopyWithImpl<$Res>
+    extends _$SaleSituationCopyWithImpl<$Res, _$SaleSituationImpl>
+    implements _$$SaleSituationImplCopyWith<$Res> {
+  __$$SaleSituationImplCopyWithImpl(
+      _$SaleSituationImpl _value, $Res Function(_$SaleSituationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_SaleSituationCopyWithImpl<$Res>
     Object? saleSituation = null,
     Object? updatedAt = null,
   }) {
-    return _then(_$_SaleSituation(
+    return _then(_$SaleSituationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -118,12 +118,12 @@ class __$$_SaleSituationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SaleSituation implements _SaleSituation {
-  const _$_SaleSituation(
+class _$SaleSituationImpl implements _SaleSituation {
+  const _$SaleSituationImpl(
       {required this.id, required this.saleSituation, required this.updatedAt});
 
-  factory _$_SaleSituation.fromJson(Map<String, dynamic> json) =>
-      _$$_SaleSituationFromJson(json);
+  factory _$SaleSituationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SaleSituationImplFromJson(json);
 
   @override
   final String id;
@@ -138,10 +138,10 @@ class _$_SaleSituation implements _SaleSituation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SaleSituation &&
+            other is _$SaleSituationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.saleSituation, saleSituation) ||
                 other.saleSituation == saleSituation) &&
@@ -156,12 +156,12 @@ class _$_SaleSituation implements _SaleSituation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SaleSituationCopyWith<_$_SaleSituation> get copyWith =>
-      __$$_SaleSituationCopyWithImpl<_$_SaleSituation>(this, _$identity);
+  _$$SaleSituationImplCopyWith<_$SaleSituationImpl> get copyWith =>
+      __$$SaleSituationImplCopyWithImpl<_$SaleSituationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SaleSituationToJson(
+    return _$$SaleSituationImplToJson(
       this,
     );
   }
@@ -171,10 +171,10 @@ abstract class _SaleSituation implements SaleSituation {
   const factory _SaleSituation(
       {required final String id,
       required final String saleSituation,
-      required final DateTime updatedAt}) = _$_SaleSituation;
+      required final DateTime updatedAt}) = _$SaleSituationImpl;
 
   factory _SaleSituation.fromJson(Map<String, dynamic> json) =
-      _$_SaleSituation.fromJson;
+      _$SaleSituationImpl.fromJson;
 
   @override
   String get id;
@@ -184,6 +184,6 @@ abstract class _SaleSituation implements SaleSituation {
   DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_SaleSituationCopyWith<_$_SaleSituation> get copyWith =>
+  _$$SaleSituationImplCopyWith<_$SaleSituationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

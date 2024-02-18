@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:yagamy/model/project/timetable_project.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
 import 'package:yagamy/view/page/timetable/ui_part/timetable_card.dart';
 
 class TimetableList extends StatefulWidget {
   const TimetableList({required this.project, required this.day, super.key});
 
-  final List<TimetableProject> project;
+  final List<Project> project;
   final TimetableSearcherTypeDay day;
 
   @override

@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yagamy/model/map_data.dart';
 import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/model/pin_data/pin_data.dart';
-import 'package:yagamy/model/project/project_for_card.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/provider/map_provider.dart';
 import 'package:yagamy/provider/projects_provider.dart';
 import 'package:yagamy/provider/selected_floor_type_provider.dart';
@@ -34,7 +34,7 @@ class _MapViewState extends ConsumerState<MapViewer> {
 
     final AsyncValue<List<MapData>> mapData =
         ref.watch(mapProvider(ref.watch(selectedMapTypeProvider)));
-    final AsyncValue<List<ProjectForCard>> projects =
+    final AsyncValue<List<Project>> projects =
         ref.watch(projectsProvider);
 
     if (mapData.isLoading || projects.isLoading) {

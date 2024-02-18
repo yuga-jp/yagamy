@@ -1,42 +1,30 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart';
 
-import 'package:yagamy/model/project/project_for_card.dart';
-import 'package:yagamy/model/project/raw_project_for_card.dart';
-import 'package:yagamy/model/project/timetable_project.dart';
+import 'package:yagamy/model/project/project.dart';
+import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
-import 'package:yagamy/repository/base_url.dart';
 
 class ProjectsRepository {
-  static Future<List<ProjectForCard>> fetchProjects() async {
-    final response = await http.get(Uri.parse('${BaseUrl.baseUrl}/projects/'));
-    final projects = <ProjectForCard>[];
+  static Future<List<Project>> fetchProjects() async {
+    final response = await rootBundle.loadString('assets/project/project.json');
+    final projects = <Project>[];
 
-    if (response.statusCode == 200) {
-      for (var project in json.decode(response.body)) {
-        projects.add(ProjectForCard.fromRawProjectForCard(
-            RawProjectForCard.fromJson(project)));
-      }
-    } else {
-      throw Exception('Failed to load projects.');
+    for (var project in json.decode(response)) {
+      projects.add(Project.fromRawProject(RawProject.fromJson(project)));
     }
 
     return projects;
   }
 
-  static Future<List<TimetableProject>> fetchTimetableProjects(
+  static Future<List<Project>> fetchTimetableProjects(
       TimetableSearcherTypeDay timetableSearcherTypeDay) async {
-    final response = await http.get(Uri.parse('${BaseUrl.baseUrl}/projects/'));
-    final projects = <TimetableProject>[];
+    final response = await rootBundle.loadString('assets/project/project.json');
+    final projects = <Project>[];
 
-    if (response.statusCode == 200) {
-      for (var project in json.decode(response.body)) {
-        projects.add(TimetableProject.fromRawProjectForCard(
-            RawProjectForCard.fromJson(project)));
-      }
-    } else {
-      throw Exception('Failed to load projects.');
+    for (var project in json.decode(response)) {
+      projects.add(Project.fromRawProject(RawProject.fromJson(project)));
     }
 
     switch (timetableSearcherTypeDay) {

@@ -6,7 +6,8 @@ part of 'article.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
+_$ArticleImpl _$$ArticleImplFromJson(Map<String, dynamic> json) =>
+    _$ArticleImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
@@ -15,7 +16,7 @@ _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
       urlTitle: json['urlTitle'] as String?,
     );
 
-Map<String, dynamic> _$$_ArticleToJson(_$_Article instance) =>
+Map<String, dynamic> _$$ArticleImplToJson(_$ArticleImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

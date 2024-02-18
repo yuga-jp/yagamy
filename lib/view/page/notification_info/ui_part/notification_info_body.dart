@@ -8,7 +8,6 @@ import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/extension/datetime_extension.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
 import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/model/project/project_for_card.dart';
 import 'package:yagamy/provider/project_provider.dart';
 import 'package:yagamy/view/common/ui_part/project_card.dart';
 
@@ -122,7 +121,7 @@ class NotificationInfoBody extends ConsumerWidget {
                 },
                 data: (project) {
                   return ProjectCard(
-                    project: ProjectForCard.fromProject(project),
+                    project: project,
                     onTap: () {
                       GoRouter.of(context)
                           .go('/notifications/project/${project.id}');

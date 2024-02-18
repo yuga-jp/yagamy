@@ -12,7 +12,7 @@ part of 'advertisement.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Advertisement _$AdvertisementFromJson(Map<String, dynamic> json) {
   return _Advertisement.fromJson(json);
@@ -80,22 +80,22 @@ class _$AdvertisementCopyWithImpl<$Res, $Val extends Advertisement>
 }
 
 /// @nodoc
-abstract class _$$_AdvertisementCopyWith<$Res>
+abstract class _$$AdvertisementImplCopyWith<$Res>
     implements $AdvertisementCopyWith<$Res> {
-  factory _$$_AdvertisementCopyWith(
-          _$_Advertisement value, $Res Function(_$_Advertisement) then) =
-      __$$_AdvertisementCopyWithImpl<$Res>;
+  factory _$$AdvertisementImplCopyWith(
+          _$AdvertisementImpl value, $Res Function(_$AdvertisementImpl) then) =
+      __$$AdvertisementImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String title, String text, String url});
 }
 
 /// @nodoc
-class __$$_AdvertisementCopyWithImpl<$Res>
-    extends _$AdvertisementCopyWithImpl<$Res, _$_Advertisement>
-    implements _$$_AdvertisementCopyWith<$Res> {
-  __$$_AdvertisementCopyWithImpl(
-      _$_Advertisement _value, $Res Function(_$_Advertisement) _then)
+class __$$AdvertisementImplCopyWithImpl<$Res>
+    extends _$AdvertisementCopyWithImpl<$Res, _$AdvertisementImpl>
+    implements _$$AdvertisementImplCopyWith<$Res> {
+  __$$AdvertisementImplCopyWithImpl(
+      _$AdvertisementImpl _value, $Res Function(_$AdvertisementImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +106,7 @@ class __$$_AdvertisementCopyWithImpl<$Res>
     Object? text = null,
     Object? url = null,
   }) {
-    return _then(_$_Advertisement(
+    return _then(_$AdvertisementImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -129,15 +129,15 @@ class __$$_AdvertisementCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Advertisement implements _Advertisement {
-  const _$_Advertisement(
+class _$AdvertisementImpl implements _Advertisement {
+  const _$AdvertisementImpl(
       {required this.id,
       required this.title,
       required this.text,
       required this.url});
 
-  factory _$_Advertisement.fromJson(Map<String, dynamic> json) =>
-      _$$_AdvertisementFromJson(json);
+  factory _$AdvertisementImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AdvertisementImplFromJson(json);
 
   @override
   final String id;
@@ -154,10 +154,10 @@ class _$_Advertisement implements _Advertisement {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Advertisement &&
+            other is _$AdvertisementImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.text, text) || other.text == text) &&
@@ -171,12 +171,12 @@ class _$_Advertisement implements _Advertisement {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AdvertisementCopyWith<_$_Advertisement> get copyWith =>
-      __$$_AdvertisementCopyWithImpl<_$_Advertisement>(this, _$identity);
+  _$$AdvertisementImplCopyWith<_$AdvertisementImpl> get copyWith =>
+      __$$AdvertisementImplCopyWithImpl<_$AdvertisementImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AdvertisementToJson(
+    return _$$AdvertisementImplToJson(
       this,
     );
   }
@@ -187,10 +187,10 @@ abstract class _Advertisement implements Advertisement {
       {required final String id,
       required final String title,
       required final String text,
-      required final String url}) = _$_Advertisement;
+      required final String url}) = _$AdvertisementImpl;
 
   factory _Advertisement.fromJson(Map<String, dynamic> json) =
-      _$_Advertisement.fromJson;
+      _$AdvertisementImpl.fromJson;
 
   @override
   String get id;
@@ -202,6 +202,6 @@ abstract class _Advertisement implements Advertisement {
   String get url;
   @override
   @JsonKey(ignore: true)
-  _$$_AdvertisementCopyWith<_$_Advertisement> get copyWith =>
+  _$$AdvertisementImplCopyWith<_$AdvertisementImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

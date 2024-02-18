@@ -6,8 +6,9 @@ part of 'raw_notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
-    _$_RawNotification(
+_$RawNotificationImpl _$$RawNotificationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RawNotificationImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
@@ -18,7 +19,8 @@ _$_RawNotification _$$_RawNotificationFromJson(Map<String, dynamic> json) =>
       urlTitle: json['urlTitle'] as String?,
     );
 
-Map<String, dynamic> _$$_RawNotificationToJson(_$_RawNotification instance) =>
+Map<String, dynamic> _$$RawNotificationImplToJson(
+        _$RawNotificationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

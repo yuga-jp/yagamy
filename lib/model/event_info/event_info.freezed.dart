@@ -12,7 +12,7 @@ part of 'event_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 EventInfo _$EventInfoFromJson(Map<String, dynamic> json) {
   return _EventInfo.fromJson(json);
@@ -73,21 +73,22 @@ class _$EventInfoCopyWithImpl<$Res, $Val extends EventInfo>
 }
 
 /// @nodoc
-abstract class _$$_EventInfoCopyWith<$Res> implements $EventInfoCopyWith<$Res> {
-  factory _$$_EventInfoCopyWith(
-          _$_EventInfo value, $Res Function(_$_EventInfo) then) =
-      __$$_EventInfoCopyWithImpl<$Res>;
+abstract class _$$EventInfoImplCopyWith<$Res>
+    implements $EventInfoCopyWith<$Res> {
+  factory _$$EventInfoImplCopyWith(
+          _$EventInfoImpl value, $Res Function(_$EventInfoImpl) then) =
+      __$$EventInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, DateTime updatedAt, String eventType});
 }
 
 /// @nodoc
-class __$$_EventInfoCopyWithImpl<$Res>
-    extends _$EventInfoCopyWithImpl<$Res, _$_EventInfo>
-    implements _$$_EventInfoCopyWith<$Res> {
-  __$$_EventInfoCopyWithImpl(
-      _$_EventInfo _value, $Res Function(_$_EventInfo) _then)
+class __$$EventInfoImplCopyWithImpl<$Res>
+    extends _$EventInfoCopyWithImpl<$Res, _$EventInfoImpl>
+    implements _$$EventInfoImplCopyWith<$Res> {
+  __$$EventInfoImplCopyWithImpl(
+      _$EventInfoImpl _value, $Res Function(_$EventInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +98,7 @@ class __$$_EventInfoCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? eventType = null,
   }) {
-    return _then(_$_EventInfo(
+    return _then(_$EventInfoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -116,12 +117,12 @@ class __$$_EventInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EventInfo implements _EventInfo {
-  const _$_EventInfo(
+class _$EventInfoImpl implements _EventInfo {
+  const _$EventInfoImpl(
       {required this.id, required this.updatedAt, required this.eventType});
 
-  factory _$_EventInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_EventInfoFromJson(json);
+  factory _$EventInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EventInfoImplFromJson(json);
 
   @override
   final String id;
@@ -136,10 +137,10 @@ class _$_EventInfo implements _EventInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EventInfo &&
+            other is _$EventInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
@@ -154,12 +155,12 @@ class _$_EventInfo implements _EventInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EventInfoCopyWith<_$_EventInfo> get copyWith =>
-      __$$_EventInfoCopyWithImpl<_$_EventInfo>(this, _$identity);
+  _$$EventInfoImplCopyWith<_$EventInfoImpl> get copyWith =>
+      __$$EventInfoImplCopyWithImpl<_$EventInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EventInfoToJson(
+    return _$$EventInfoImplToJson(
       this,
     );
   }
@@ -169,10 +170,10 @@ abstract class _EventInfo implements EventInfo {
   const factory _EventInfo(
       {required final String id,
       required final DateTime updatedAt,
-      required final String eventType}) = _$_EventInfo;
+      required final String eventType}) = _$EventInfoImpl;
 
   factory _EventInfo.fromJson(Map<String, dynamic> json) =
-      _$_EventInfo.fromJson;
+      _$EventInfoImpl.fromJson;
 
   @override
   String get id;
@@ -182,6 +183,6 @@ abstract class _EventInfo implements EventInfo {
   String get eventType;
   @override
   @JsonKey(ignore: true)
-  _$$_EventInfoCopyWith<_$_EventInfo> get copyWith =>
+  _$$EventInfoImplCopyWith<_$EventInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

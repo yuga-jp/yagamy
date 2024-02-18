@@ -1,51 +1,48 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:yagamy/model/project/project_for_card.dart';
-import 'package:yagamy/model/project/timetable_project.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
 import 'package:yagamy/repository/projects_repository.dart';
 
-final projectsProvider = FutureProvider<List<ProjectForCard>>((ref) async {
+final projectsProvider = FutureProvider<List<Project>>((ref) async {
   return ProjectsRepository.fetchProjects();
 });
 
-final timetableFirstDayProvider = FutureProvider<List<TimetableProject>>((ref) {
+final timetableFirstDayProvider = FutureProvider<List<Project>>((ref) {
   return ProjectsRepository.fetchTimetableProjects(
       TimetableSearcherTypeDay.firstDay);
 });
 
-final timetableSecondDayProvider =
-    FutureProvider<List<TimetableProject>>((ref) {
+final timetableSecondDayProvider = FutureProvider<List<Project>>((ref) {
   return ProjectsRepository.fetchTimetableProjects(
       TimetableSearcherTypeDay.secondDay);
 });
 
-final filteredProjectsProvider = NotifierProvider.family<ProjectsNotifier,
-    List<ProjectForCard>, SearcherProp>(() {
+final filteredProjectsProvider =
+    NotifierProvider.family<ProjectsNotifier, List<Project>, SearcherProp>(() {
   return ProjectsNotifier();
 });
 
-final filterdTimetableFirstDayProvider = NotifierProvider.family<
-    TimetableProjectsNotifier, List<TimetableProject>, bool>(
+final filterdTimetableFirstDayProvider =
+    NotifierProvider.family<TimetableProjectsNotifier, List<Project>, bool>(
   () {
     return TimetableProjectsNotifier(timetableFirstDayProvider);
   },
 );
 
-final filteredTimetableSecondDayProvider = NotifierProvider.family<
-    TimetableProjectsNotifier, List<TimetableProject>, bool>(
+final filteredTimetableSecondDayProvider =
+    NotifierProvider.family<TimetableProjectsNotifier, List<Project>, bool>(
   () {
     return TimetableProjectsNotifier(timetableSecondDayProvider);
   },
 );
 
-class ProjectsNotifier
-    extends FamilyNotifier<List<ProjectForCard>, SearcherProp> {
+class ProjectsNotifier extends FamilyNotifier<List<Project>, SearcherProp> {
   ProjectsNotifier() : super();
 
   @override
-  List<ProjectForCard> build(SearcherProp arg) {
+  List<Project> build(SearcherProp arg) {
     return ref.watch(projectsProvider).value!.where((project) {
       return project.searcherProps
           .where((element) => element == arg)
@@ -54,18 +51,17 @@ class ProjectsNotifier
   }
 }
 
-class TimetableProjectsNotifier
-    extends FamilyNotifier<List<TimetableProject>, bool> {
+class TimetableProjectsNotifier extends FamilyNotifier<List<Project>, bool> {
   TimetableProjectsNotifier(this.projectsProvider) : super();
 
-  final FutureProvider<List<TimetableProject>> projectsProvider;
+  final FutureProvider<List<Project>> projectsProvider;
 
   @override
-  List<TimetableProject> build(bool arg) {
+  List<Project> build(bool arg) {
     return ref.watch(projectsProvider).value!.where((project) {
       return arg
-          ? project.searcherProp == SearcherProp.mainStage
-          : project.searcherProp != SearcherProp.mainStage;
+          ? project.searcherProps.contains(SearcherProp.mainStage)
+          : !project.searcherProps.contains(SearcherProp.mainStage);
     }).toList()
       ..sort(((a, b) {
         if (a.hoursStartFirstDay != null && b.hoursStartFirstDay != null) {

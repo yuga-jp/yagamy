@@ -6,8 +6,9 @@ part of 'raw_project_for_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RawProjectForCard _$$_RawProjectForCardFromJson(Map<String, dynamic> json) =>
-    _$_RawProjectForCard(
+_$RawProjectForCardImpl _$$RawProjectForCardImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RawProjectForCardImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       area: json['area'] as String,
@@ -32,8 +33,8 @@ _$_RawProjectForCard _$$_RawProjectForCardFromJson(Map<String, dynamic> json) =>
       stampRally: json['stampRally'] as bool,
     );
 
-Map<String, dynamic> _$$_RawProjectForCardToJson(
-        _$_RawProjectForCard instance) =>
+Map<String, dynamic> _$$RawProjectForCardImplToJson(
+        _$RawProjectForCardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

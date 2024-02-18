@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:yagamy/gen/assets.gen.dart';
-import 'package:yagamy/model/project/timetable_project.dart';
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
 import 'package:yagamy/provider/projects_provider.dart';
 import 'package:yagamy/provider/selected_main_stage.dart';
@@ -36,9 +36,9 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
 
   @override
   Widget build(BuildContext context) {
-    AsyncValue<List<TimetableProject>> projectsFirstDay =
+    AsyncValue<List<Project>> projectsFirstDay =
         ref.watch(timetableFirstDayProvider);
-    AsyncValue<List<TimetableProject>> projectsSecondDay =
+    AsyncValue<List<Project>> projectsSecondDay =
         ref.watch(timetableSecondDayProvider);
 
     return Center(
@@ -137,8 +137,8 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                         );
                       },
                       data: (projects) {
-                        List<TimetableProject> filteredTimetableFirstDay =
-                            ref.watch(filterdTimetableFirstDayProvider(
+                        List<Project> filteredTimetableFirstDay = ref.watch(
+                            filterdTimetableFirstDayProvider(
                                 ref.watch(isSelectedFirstDayMainStage)));
                         return TimetableList(
                           project: filteredTimetableFirstDay,
@@ -209,8 +209,8 @@ class _TimetablePageState extends ConsumerState<TimetablePage>
                         );
                       },
                       data: (projects) {
-                        List<TimetableProject> filteredTimetableSecondDay =
-                            ref.watch(filteredTimetableSecondDayProvider(
+                        List<Project> filteredTimetableSecondDay = ref.watch(
+                            filteredTimetableSecondDayProvider(
                                 ref.watch(isSelectedSecondDayMainStage)));
                         return TimetableList(
                           project: filteredTimetableSecondDay,

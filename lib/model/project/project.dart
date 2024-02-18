@@ -1,15 +1,16 @@
 import 'package:yagamy/model/project/raw_project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
-import 'package:yagamy/utility/empty_to_main_image_placeholder_url.dart';
-import 'package:yagamy/utility/empty_to_thumbnail_placeholder_url.dart';
-import 'package:yagamy/utility/to_place_string.dart';
-import 'package:yagamy/utility/to_searcher_prop.dart';
+import 'package:yagamy/utility/get_main_image_path.dart';
+import 'package:yagamy/utility/get_thumbnail_path.dart';
+import 'package:yagamy/utility/get_searcher_prop.dart';
 
 class Project {
   Project({
     required this.id,
     required this.title,
-    required this.placeString,
+    required this.area,
+    required this.floor,
+    required this.placeDetail,
     this.hoursStartFirstDay,
     this.hoursEndFirstDay,
     this.hoursStartSecondDay,
@@ -19,8 +20,8 @@ class Project {
     required this.intro,
     required this.introExtension,
     required this.groupIntro,
-    required this.thumbnailUrl,
-    required this.mainImageUrl,
+    required this.thumbnailPath,
+    required this.mainImagePath,
     required this.twitterId,
     required this.instagramId,
     required this.homepageUrl,
@@ -31,55 +32,55 @@ class Project {
   Project.fromRawProject(RawProject rawProject)
       : id = rawProject.id,
         title = rawProject.title,
-        placeString = toPlaceString(
-            rawProject.area, rawProject.floor, rawProject.placeDetail),
-        hoursStartFirstDay =
-            rawProject.hoursStartFirstDay?.add(const Duration(hours: 9)),
-        hoursEndFirstDay =
-            rawProject.hoursEndFirstDay?.add(const Duration(hours: 9)),
-        hoursStartSecondDay =
-            rawProject.hoursStartSecondDay?.add(const Duration(hours: 9)),
-        hoursEndSecondDay =
-            rawProject.hoursEndSecondDay?.add(const Duration(hours: 9)),
+        area = rawProject.area,
+        floor = rawProject.floor,
+        placeDetail = rawProject.placeDetail,
+        hoursStartFirstDay = rawProject.hoursStartFirstDay?.toLocal(),
+        hoursEndFirstDay = rawProject.hoursEndFirstDay?.toLocal(),
+        hoursStartSecondDay = rawProject.hoursStartSecondDay?.toLocal(),
+        hoursEndSecondDay = rawProject.hoursEndSecondDay?.toLocal(),
         groupName = rawProject.groupName,
         shortIntro = rawProject.shortIntro,
         intro = rawProject.intro,
         introExtension = rawProject.introExtension,
         groupIntro = rawProject.groupIntro,
-        thumbnailUrl = emptyToThumbnailPlaceholderUrl(rawProject.thumbnailUrl),
-        mainImageUrl = emptyToMainImagePlaceholderUrl(rawProject.mainImageUrl),
+        thumbnailPath = getTumbnailPath(rawProject.id, rawProject.hasThumbnail),
+        mainImagePath =
+            getMainImagePath(rawProject.id, rawProject.hasMainImage),
         twitterId = rawProject.twitterId,
         instagramId = rawProject.instagramId,
         homepageUrl = rawProject.homepageUrl,
-        searcherProps = toSearcherPropList(rawProject.categoryMain,
+        searcherProps = getSearcherPropList(rawProject.categoryMain,
             rawProject.categorySub, rawProject.area, rawProject.floor),
         stampRally = rawProject.stampRally;
 
-  Project.empty({
-    this.id = '0',
-    this.title = '',
-    this.placeString = '',
-    this.hoursStartFirstDay,
-    this.hoursEndFirstDay,
-    this.hoursStartSecondDay,
-    this.hoursEndSecondDay,
-    this.groupName = '',
-    this.shortIntro = '',
-    this.intro = '',
-    this.introExtension = '',
-    this.groupIntro = '',
-    this.thumbnailUrl = '',
-    this.mainImageUrl = '',
-    this.twitterId = '',
-    this.instagramId = '',
-    this.homepageUrl = '',
-    this.searcherProps = const [],
-    this.stampRally = false,
-  });
+  // Project.empty({
+  //   this.id = '0',
+  //   this.title = '',
+  //   this.place = '',
+  //   this.hoursStartFirstDay,
+  //   this.hoursEndFirstDay,
+  //   this.hoursStartSecondDay,
+  //   this.hoursEndSecondDay,
+  //   this.groupName = '',
+  //   this.shortIntro = '',
+  //   this.intro = '',
+  //   this.introExtension = '',
+  //   this.groupIntro = '',
+  //   this.thumbnailUrl = '',
+  //   this.mainImageUrl = '',
+  //   this.twitterId = '',
+  //   this.instagramId = '',
+  //   this.homepageUrl = '',
+  //   this.searcherProps = const [],
+  //   this.stampRally = false,
+  // });
 
   final String id;
   final String title;
-  final String placeString;
+  final String area;
+  final String floor;
+  final String placeDetail;
   final DateTime? hoursStartFirstDay;
   final DateTime? hoursEndFirstDay;
   final DateTime? hoursStartSecondDay;
@@ -89,8 +90,8 @@ class Project {
   final String intro;
   final String introExtension;
   final String groupIntro;
-  final String thumbnailUrl;
-  final String mainImageUrl;
+  final String thumbnailPath;
+  final String mainImagePath;
   final String twitterId;
   final String instagramId;
   final String homepageUrl;

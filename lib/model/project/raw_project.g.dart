@@ -6,8 +6,8 @@ part of 'raw_project.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
-    _$_RawProject(
+_$RawProjectImpl _$$RawProjectImplFromJson(Map<String, dynamic> json) =>
+    _$RawProjectImpl(
       id: json['id'] as String,
       title: json['title'] as String,
       area: json['area'] as String,
@@ -30,8 +30,8 @@ _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
       intro: json['intro'] as String,
       introExtension: json['introExtension'] as String,
       groupIntro: json['groupIntro'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String,
-      mainImageUrl: json['mainImageUrl'] as String,
+      hasThumbnail: json['hasThumbnail'] as bool,
+      hasMainImage: json['hasMainImage'] as bool,
       twitterId: json['twitterId'] as String,
       instagramId: json['instagramId'] as String,
       homepageUrl: json['homepageUrl'] as String,
@@ -40,7 +40,7 @@ _$_RawProject _$$_RawProjectFromJson(Map<String, dynamic> json) =>
       stampRally: json['stampRally'] as bool,
     );
 
-Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
+Map<String, dynamic> _$$RawProjectImplToJson(_$RawProjectImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -56,8 +56,8 @@ Map<String, dynamic> _$$_RawProjectToJson(_$_RawProject instance) =>
       'intro': instance.intro,
       'introExtension': instance.introExtension,
       'groupIntro': instance.groupIntro,
-      'thumbnailUrl': instance.thumbnailUrl,
-      'mainImageUrl': instance.mainImageUrl,
+      'hasThumbnail': instance.hasThumbnail,
+      'hasMainImage': instance.hasMainImage,
       'twitterId': instance.twitterId,
       'instagramId': instance.instagramId,
       'homepageUrl': instance.homepageUrl,

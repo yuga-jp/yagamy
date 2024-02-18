@@ -1,10 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yagamy/model/project/timetable_project.dart';
+
+import 'package:yagamy/model/project/project.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 import 'package:yagamy/model/timetable_searcher_type.dart';
-import 'package:yagamy/utility/to_hours_string.dart';
+import 'package:yagamy/utility/get_hours_displaying.dart';
+import 'package:yagamy/utility/get_place_displaying.dart';
 
 class TimetableCard extends StatelessWidget {
   const TimetableCard({
@@ -13,7 +14,7 @@ class TimetableCard extends StatelessWidget {
     required this.day,
     super.key,
   });
-  final TimetableProject project;
+  final Project project;
   final Color bottomBorderColor;
   final TimetableSearcherTypeDay day;
 
@@ -29,7 +30,7 @@ class TimetableCard extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: CachedNetworkImageProvider(project.thumbnailUrl),
+            image: AssetImage(project.thumbnailPath),
             fit: BoxFit.cover,
           ),
           border:
@@ -79,10 +80,11 @@ class TimetableCard extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          project.searcherProp == SearcherProp.mainStage
+                          project.searcherProps.contains(SearcherProp.mainStage)
                               ? const SizedBox.shrink()
                               : Text(
-                                  project.placeString,
+                                  getPlaceDisplaying(project.area,
+                                      project.floor, project.placeDetail),
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 15,

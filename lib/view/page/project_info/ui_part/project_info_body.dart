@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,7 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/gen/assets.gen.dart';
 import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/utility/to_hours_string.dart';
+import 'package:yagamy/utility/get_hours_displaying.dart';
+import 'package:yagamy/utility/get_place_displaying.dart';
 import 'package:yagamy/utility/url_launcher_helper.dart';
 
 class ProjectInfoBody extends StatelessWidget {
@@ -67,6 +67,10 @@ class ProjectInfoBody extends StatelessWidget {
             case 2:
               return Container(
                 decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(project.mainImagePath),
+                    fit: BoxFit.fitHeight,
+                  ),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 width: MediaQuery.of(context).size.width,
@@ -78,10 +82,6 @@ class ProjectInfoBody extends StatelessWidget {
                   bottom: 12,
                 ),
                 clipBehavior: Clip.antiAlias,
-                child: CachedNetworkImage(
-                  imageUrl: project.mainImageUrl,
-                  fit: BoxFit.fitHeight,
-                ),
               );
 
             // groupName
@@ -135,7 +135,8 @@ class ProjectInfoBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      project.placeString,
+                      getPlaceDisplaying(
+                          project.area, project.floor, project.placeDetail),
                       style: TextStyle(
                         color: currentTheme.timePlaceColor,
                         fontSize: 17,

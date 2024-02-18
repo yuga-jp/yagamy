@@ -12,7 +12,7 @@ part of 'raw_notification.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RawNotification _$RawNotificationFromJson(Map<String, dynamic> json) {
   return _RawNotification.fromJson(json);
@@ -112,11 +112,11 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
 }
 
 /// @nodoc
-abstract class _$$_RawNotificationCopyWith<$Res>
+abstract class _$$RawNotificationImplCopyWith<$Res>
     implements $RawNotificationCopyWith<$Res> {
-  factory _$$_RawNotificationCopyWith(
-          _$_RawNotification value, $Res Function(_$_RawNotification) then) =
-      __$$_RawNotificationCopyWithImpl<$Res>;
+  factory _$$RawNotificationImplCopyWith(_$RawNotificationImpl value,
+          $Res Function(_$RawNotificationImpl) then) =
+      __$$RawNotificationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_RawNotificationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RawNotificationCopyWithImpl<$Res>
-    extends _$RawNotificationCopyWithImpl<$Res, _$_RawNotification>
-    implements _$$_RawNotificationCopyWith<$Res> {
-  __$$_RawNotificationCopyWithImpl(
-      _$_RawNotification _value, $Res Function(_$_RawNotification) _then)
+class __$$RawNotificationImplCopyWithImpl<$Res>
+    extends _$RawNotificationCopyWithImpl<$Res, _$RawNotificationImpl>
+    implements _$$RawNotificationImplCopyWith<$Res> {
+  __$$RawNotificationImplCopyWithImpl(
+      _$RawNotificationImpl _value, $Res Function(_$RawNotificationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_RawNotificationCopyWithImpl<$Res>
     Object? url = null,
     Object? urlTitle = freezed,
   }) {
-    return _then(_$_RawNotification(
+    return _then(_$RawNotificationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ class __$$_RawNotificationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RawNotification implements _RawNotification {
-  const _$_RawNotification(
+class _$RawNotificationImpl implements _RawNotification {
+  const _$RawNotificationImpl(
       {required this.id,
       required this.title,
       required this.body,
@@ -200,8 +200,8 @@ class _$_RawNotification implements _RawNotification {
       required this.url,
       this.urlTitle});
 
-  factory _$_RawNotification.fromJson(Map<String, dynamic> json) =>
-      _$$_RawNotificationFromJson(json);
+  factory _$RawNotificationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RawNotificationImplFromJson(json);
 
   @override
   final String id;
@@ -226,10 +226,10 @@ class _$_RawNotification implements _RawNotification {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RawNotification &&
+            other is _$RawNotificationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.body, body) || other.body == body) &&
@@ -252,12 +252,13 @@ class _$_RawNotification implements _RawNotification {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RawNotificationCopyWith<_$_RawNotification> get copyWith =>
-      __$$_RawNotificationCopyWithImpl<_$_RawNotification>(this, _$identity);
+  _$$RawNotificationImplCopyWith<_$RawNotificationImpl> get copyWith =>
+      __$$RawNotificationImplCopyWithImpl<_$RawNotificationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RawNotificationToJson(
+    return _$$RawNotificationImplToJson(
       this,
     );
   }
@@ -272,10 +273,10 @@ abstract class _RawNotification implements RawNotification {
       required final String priority,
       required final String relatedProjectId,
       required final String url,
-      final String? urlTitle}) = _$_RawNotification;
+      final String? urlTitle}) = _$RawNotificationImpl;
 
   factory _RawNotification.fromJson(Map<String, dynamic> json) =
-      _$_RawNotification.fromJson;
+      _$RawNotificationImpl.fromJson;
 
   @override
   String get id;
@@ -295,6 +296,6 @@ abstract class _RawNotification implements RawNotification {
   String? get urlTitle;
   @override
   @JsonKey(ignore: true)
-  _$$_RawNotificationCopyWith<_$_RawNotification> get copyWith =>
+  _$$RawNotificationImplCopyWith<_$RawNotificationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
