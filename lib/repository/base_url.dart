@@ -7,11 +7,11 @@ class BaseUrl {
 class ImagePathEnd {
   static const String wholeArea = 'whole_area.jpg';
   static const String eleven = 'eleven.jpg';
-  static const String twelveFirst = 'twelve_first.JPG';
-  static const String twelveSecond = 'twelve_second.JPG';
-  static const String booth = 'booth.JPG';
-  static const String fourteen = 'fourteen.JPG';
-  static const String mainStage = 'main_stage.JPG';
-  static const String eastArea = 'east_area.JPG';
-  static const String ground = 'ground.JPG';
+  static const String twelveFirst = 'twelve_first.jpg';
+  static const String twelveSecond = 'twelve_second.jpg';
+  static const String booth = 'booth.jpg';
+  static const String fourteen = 'fourteen.jpg';
+  static const String mainStage = 'main_stage.jpg';
+  static const String eastArea = 'east_area.jpg';
+  static const String ground = 'ground.';
 }

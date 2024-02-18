@@ -43,9 +43,8 @@ class ProjectsBody extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AreaImageRepository.fetchAreaImageProvider(
-                          searcherProp: searcherProp,
-                        ),
+                        image: AssetImage(
+                            AreaImageRepository.getAreaImagePath(searcherProp)),
                         fit: BoxFit.fitHeight),
                   ),
                   width: MediaQuery.of(context).size.width,
