@@ -1,6 +1,6 @@
 import 'package:yagamy/model/notification_priority.dart';
 
-NotificationPriority toNotificationPriority(String priority) {
+NotificationPriority getNotificationPriority(String priority) {
   switch (priority) {
     case '3':
       return NotificationPriority.high;

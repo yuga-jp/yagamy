@@ -27,7 +27,7 @@ mixin _$RawNotification {
   String get priority => throw _privateConstructorUsedError;
   String get relatedProjectId => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String? get urlTitle => throw _privateConstructorUsedError;
+  String get urlTitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +49,7 @@ abstract class $RawNotificationCopyWith<$Res> {
       String priority,
       String relatedProjectId,
       String url,
-      String? urlTitle});
+      String urlTitle});
 }
 
 /// @nodoc
@@ -72,7 +72,7 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
     Object? priority = null,
     Object? relatedProjectId = null,
     Object? url = null,
-    Object? urlTitle = freezed,
+    Object? urlTitle = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -103,10 +103,10 @@ class _$RawNotificationCopyWithImpl<$Res, $Val extends RawNotification>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlTitle: freezed == urlTitle
+      urlTitle: null == urlTitle
           ? _value.urlTitle
           : urlTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -127,7 +127,7 @@ abstract class _$$RawNotificationImplCopyWith<$Res>
       String priority,
       String relatedProjectId,
       String url,
-      String? urlTitle});
+      String urlTitle});
 }
 
 /// @nodoc
@@ -148,7 +148,7 @@ class __$$RawNotificationImplCopyWithImpl<$Res>
     Object? priority = null,
     Object? relatedProjectId = null,
     Object? url = null,
-    Object? urlTitle = freezed,
+    Object? urlTitle = null,
   }) {
     return _then(_$RawNotificationImpl(
       id: null == id
@@ -179,10 +179,10 @@ class __$$RawNotificationImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlTitle: freezed == urlTitle
+      urlTitle: null == urlTitle
           ? _value.urlTitle
           : urlTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -198,7 +198,7 @@ class _$RawNotificationImpl implements _RawNotification {
       required this.priority,
       required this.relatedProjectId,
       required this.url,
-      this.urlTitle});
+      required this.urlTitle});
 
   factory _$RawNotificationImpl.fromJson(Map<String, dynamic> json) =>
       _$$RawNotificationImplFromJson(json);
@@ -218,7 +218,7 @@ class _$RawNotificationImpl implements _RawNotification {
   @override
   final String url;
   @override
-  final String? urlTitle;
+  final String urlTitle;
 
   @override
   String toString() {
@@ -273,7 +273,7 @@ abstract class _RawNotification implements RawNotification {
       required final String priority,
       required final String relatedProjectId,
       required final String url,
-      final String? urlTitle}) = _$RawNotificationImpl;
+      required final String urlTitle}) = _$RawNotificationImpl;
 
   factory _RawNotification.fromJson(Map<String, dynamic> json) =
       _$RawNotificationImpl.fromJson;
@@ -293,7 +293,7 @@ abstract class _RawNotification implements RawNotification {
   @override
   String get url;
   @override
-  String? get urlTitle;
+  String get urlTitle;
   @override
   @JsonKey(ignore: true)
   _$$RawNotificationImplCopyWith<_$RawNotificationImpl> get copyWith =>

@@ -7,9 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:yagamy/constant/theme/project_info_theme.dart';
 import 'package:yagamy/extension/datetime_extension.dart';
 import 'package:yagamy/model/notification/parsed_notification.dart';
-import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/provider/project_provider.dart';
-import 'package:yagamy/view/common/ui_part/project_card.dart';
 
 class NotificationInfoBody extends ConsumerWidget {
   const NotificationInfoBody({
@@ -25,9 +22,6 @@ class NotificationInfoBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final ProjectInfoTheme currentTheme =
         Theme.of(context).extension<ProjectInfoTheme>()!;
-
-    final AsyncValue<Project> project =
-        ref.watch(projectProvider(notification.relatedProjectId));
 
     return CustomScrollView(
       physics: const ScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -84,14 +78,14 @@ class NotificationInfoBody extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  notification.urlTitle != null
+                  notification.urlTitle.isNotEmpty
                       ? Text(
-                          '${notification.urlTitle!} :',
+                          '${notification.urlTitle} :',
                           style: const TextStyle(
                             fontWeight: FontWeight.w500,
                           ),
                         )
-                      : const SizedBox(),
+                      : const SizedBox.shrink(),
                   notification.url.isNotEmpty
                       ? Padding(
                           padding: const EdgeInsets.only(left: 8, right: 8),
@@ -105,29 +99,6 @@ class NotificationInfoBody extends ConsumerWidget {
                         )
                       : const SizedBox.shrink(),
                 ],
-              ),
-              const SizedBox(height: 35),
-              project.when(
-                loading: () {
-                  return Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    margin: const EdgeInsets.only(top: 40),
-                    child: const CircularProgressIndicator.adaptive(),
-                  );
-                },
-                error: (error, stackTrace) {
-                  return const SizedBox.shrink();
-                },
-                data: (project) {
-                  return ProjectCard(
-                    project: project,
-                    onTap: () {
-                      GoRouter.of(context)
-                          .go('/notifications/project/${project.id}');
-                    },
-                  );
-                },
               ),
             ],
           ),

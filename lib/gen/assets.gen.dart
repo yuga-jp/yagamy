@@ -14,9 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsArticleGen {
   const $AssetsArticleGen();
 
-  /// File path: assets/article/article_1.png
+  /// File path: assets/article/article_1.jpg
   AssetGenImage get article1 =>
-      const AssetGenImage('assets/article/article_1.png');
+      const AssetGenImage('assets/article/article_1.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [article1];

@@ -46,6 +46,7 @@ flutter:
    - assets/map/icon/
    - assets/map/map/
    - assets/map/pin_data/
+   - assets/notification/
    - assets/project/
    - assets/project/area_image/
    - assets/project/main_image/

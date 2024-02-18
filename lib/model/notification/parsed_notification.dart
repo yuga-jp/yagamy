@@ -1,6 +1,6 @@
 import 'package:yagamy/model/notification/raw_notification.dart';
 import 'package:yagamy/model/notification_priority.dart';
-import 'package:yagamy/utility/to_notification_priority.dart';
+import 'package:yagamy/utility/get_notification_priority.dart';
 
 class ParsedNotification {
   ParsedNotification({
@@ -11,28 +11,18 @@ class ParsedNotification {
     required this.priority,
     required this.relatedProjectId,
     required this.url,
-    this.urlTitle
+    required this.urlTitle,
   });
 
   ParsedNotification.fromRawNotification(RawNotification rawNotification)
       : id = rawNotification.id,
         title = rawNotification.title,
         body = rawNotification.body,
-        sentTime = rawNotification.sentTime.add(const Duration(hours: 9)),
-        priority = toNotificationPriority(rawNotification.priority),
+        sentTime = rawNotification.sentTime.toLocal(),
+        priority = getNotificationPriority(rawNotification.priority),
         relatedProjectId = rawNotification.relatedProjectId,
         url = rawNotification.url,
         urlTitle = rawNotification.urlTitle;
-
-  ParsedNotification.empty({
-    this.id = '0',
-    this.title = '',
-    this.body = '',
-    this.priority = NotificationPriority.low,
-    this.relatedProjectId = '0',
-    this.url = '',
-    this.urlTitle = '',
-  }) : sentTime = DateTime.now();
 
   final String id;
   final String title;
@@ -41,5 +31,5 @@ class ParsedNotification {
   final NotificationPriority priority;
   final String relatedProjectId;
   final String url;
-  final String? urlTitle;
+  final String urlTitle;
 }

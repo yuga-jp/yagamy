@@ -16,7 +16,7 @@ _$RawNotificationImpl _$$RawNotificationImplFromJson(
       priority: json['priority'] as String,
       relatedProjectId: json['relatedProjectId'] as String,
       url: json['url'] as String,
-      urlTitle: json['urlTitle'] as String?,
+      urlTitle: json['urlTitle'] as String,
     );
 
 Map<String, dynamic> _$$RawNotificationImplToJson(
