@@ -11,9 +11,9 @@ _$ArticleImpl _$$ArticleImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String,
+      thumbnailPath: json['thumbnailPath'] as String,
       url: json['url'] as String,
-      urlTitle: json['urlTitle'] as String?,
+      urlTitle: json['urlTitle'] as String,
     );
 
 Map<String, dynamic> _$$ArticleImplToJson(_$ArticleImpl instance) =>
@@ -21,7 +21,7 @@ Map<String, dynamic> _$$ArticleImplToJson(_$ArticleImpl instance) =>
       'id': instance.id,
       'title': instance.title,
       'body': instance.body,
-      'thumbnailUrl': instance.thumbnailUrl,
+      'thumbnailPath': instance.thumbnailPath,
       'url': instance.url,
       'urlTitle': instance.urlTitle,
     };

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,7 +32,7 @@ class ArticleDetailPage extends ConsumerWidget {
                 return const SizedBox();
               },
               data: (article) {
-                return CachedNetworkImage(imageUrl: article.thumbnailUrl);
+                return Image.asset(article.thumbnailPath);
               },
             ),
           ),
@@ -89,9 +88,9 @@ class ArticleDetailPage extends ConsumerWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          article.urlTitle != null
+                          article.urlTitle.isNotEmpty
                               ? Text(
-                                  '${article.urlTitle!} :',
+                                  '${article.urlTitle} :',
                                   style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                   ),

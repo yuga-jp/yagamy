@@ -23,9 +23,9 @@ mixin _$Article {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
-  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String get thumbnailPath => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String? get urlTitle => throw _privateConstructorUsedError;
+  String get urlTitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,9 +41,9 @@ abstract class $ArticleCopyWith<$Res> {
       {String id,
       String title,
       String body,
-      String thumbnailUrl,
+      String thumbnailPath,
       String url,
-      String? urlTitle});
+      String urlTitle});
 }
 
 /// @nodoc
@@ -62,9 +62,9 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
     Object? id = null,
     Object? title = null,
     Object? body = null,
-    Object? thumbnailUrl = null,
+    Object? thumbnailPath = null,
     Object? url = null,
-    Object? urlTitle = freezed,
+    Object? urlTitle = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -79,18 +79,18 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+      thumbnailPath: null == thumbnailPath
+          ? _value.thumbnailPath
+          : thumbnailPath // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlTitle: freezed == urlTitle
+      urlTitle: null == urlTitle
           ? _value.urlTitle
           : urlTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -106,9 +106,9 @@ abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       {String id,
       String title,
       String body,
-      String thumbnailUrl,
+      String thumbnailPath,
       String url,
-      String? urlTitle});
+      String urlTitle});
 }
 
 /// @nodoc
@@ -125,9 +125,9 @@ class __$$ArticleImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? body = null,
-    Object? thumbnailUrl = null,
+    Object? thumbnailPath = null,
     Object? url = null,
-    Object? urlTitle = freezed,
+    Object? urlTitle = null,
   }) {
     return _then(_$ArticleImpl(
       id: null == id
@@ -142,18 +142,18 @@ class __$$ArticleImplCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+      thumbnailPath: null == thumbnailPath
+          ? _value.thumbnailPath
+          : thumbnailPath // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlTitle: freezed == urlTitle
+      urlTitle: null == urlTitle
           ? _value.urlTitle
           : urlTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -165,9 +165,9 @@ class _$ArticleImpl implements _Article {
       {required this.id,
       required this.title,
       required this.body,
-      required this.thumbnailUrl,
+      required this.thumbnailPath,
       required this.url,
-      this.urlTitle});
+      required this.urlTitle});
 
   factory _$ArticleImpl.fromJson(Map<String, dynamic> json) =>
       _$$ArticleImplFromJson(json);
@@ -179,15 +179,15 @@ class _$ArticleImpl implements _Article {
   @override
   final String body;
   @override
-  final String thumbnailUrl;
+  final String thumbnailPath;
   @override
   final String url;
   @override
-  final String? urlTitle;
+  final String urlTitle;
 
   @override
   String toString() {
-    return 'Article(id: $id, title: $title, body: $body, thumbnailUrl: $thumbnailUrl, url: $url, urlTitle: $urlTitle)';
+    return 'Article(id: $id, title: $title, body: $body, thumbnailPath: $thumbnailPath, url: $url, urlTitle: $urlTitle)';
   }
 
   @override
@@ -198,8 +198,8 @@ class _$ArticleImpl implements _Article {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.body, body) || other.body == body) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
+            (identical(other.thumbnailPath, thumbnailPath) ||
+                other.thumbnailPath == thumbnailPath) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.urlTitle, urlTitle) ||
                 other.urlTitle == urlTitle));
@@ -208,7 +208,7 @@ class _$ArticleImpl implements _Article {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, title, body, thumbnailUrl, url, urlTitle);
+      Object.hash(runtimeType, id, title, body, thumbnailPath, url, urlTitle);
 
   @JsonKey(ignore: true)
   @override
@@ -229,9 +229,9 @@ abstract class _Article implements Article {
       {required final String id,
       required final String title,
       required final String body,
-      required final String thumbnailUrl,
+      required final String thumbnailPath,
       required final String url,
-      final String? urlTitle}) = _$ArticleImpl;
+      required final String urlTitle}) = _$ArticleImpl;
 
   factory _Article.fromJson(Map<String, dynamic> json) = _$ArticleImpl.fromJson;
 
@@ -242,11 +242,11 @@ abstract class _Article implements Article {
   @override
   String get body;
   @override
-  String get thumbnailUrl;
+  String get thumbnailPath;
   @override
   String get url;
   @override
-  String? get urlTitle;
+  String get urlTitle;
   @override
   @JsonKey(ignore: true)
   _$$ArticleImplCopyWith<_$ArticleImpl> get copyWith =>

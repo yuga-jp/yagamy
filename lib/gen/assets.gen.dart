@@ -14,12 +14,15 @@ import 'package:flutter/services.dart';
 class $AssetsArticleGen {
   const $AssetsArticleGen();
 
+  /// File path: assets/article/article.json
+  String get article => 'assets/article/article.json';
+
   /// File path: assets/article/article_1.jpg
   AssetGenImage get article1 =>
       const AssetGenImage('assets/article/article_1.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [article1];
+  List<dynamic> get values => [article, article1];
 }
 
 class $AssetsIconGen {
@@ -62,6 +65,16 @@ class $AssetsMapGen {
   $AssetsMapIconGen get icon => const $AssetsMapIconGen();
   $AssetsMapMapGen get map => const $AssetsMapMapGen();
   $AssetsMapPinDataGen get pinData => const $AssetsMapPinDataGen();
+}
+
+class $AssetsNotificationGen {
+  const $AssetsNotificationGen();
+
+  /// File path: assets/notification/notification.json
+  String get notification => 'assets/notification/notification.json';
+
+  /// List of all assets
+  List<String> get values => [notification];
 }
 
 class $AssetsProjectGen {
@@ -979,6 +992,7 @@ class Assets {
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
   static const $AssetsMapGen map = $AssetsMapGen();
+  static const $AssetsNotificationGen notification = $AssetsNotificationGen();
   static const $AssetsProjectGen project = $AssetsProjectGen();
 }
 

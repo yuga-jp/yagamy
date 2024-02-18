@@ -9,9 +9,9 @@ class Article with _$Article {
     required String id,
     required String title,
     required String body,
-    required String thumbnailUrl,
+    required String thumbnailPath,
     required String url,
-    String? urlTitle,
+    required String urlTitle,
   }) = _Article;
 
   factory Article.fromJson(Map<String, dynamic> json) =>
