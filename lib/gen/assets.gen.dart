@@ -67,10 +67,19 @@ class $AssetsMapGen {
 class $AssetsProjectGen {
   const $AssetsProjectGen();
 
+  $AssetsProjectAreaImageGen get areaImage =>
+      const $AssetsProjectAreaImageGen();
   $AssetsProjectMainImageGen get mainImage =>
       const $AssetsProjectMainImageGen();
+
+  /// File path: assets/project/project.json
+  String get project => 'assets/project/project.json';
+
   $AssetsProjectThumbnailGen get thumbnail =>
       const $AssetsProjectThumbnailGen();
+
+  /// List of all assets
+  List<String> get values => [project];
 }
 
 class $AssetsMapAreaImageGen {
@@ -289,24 +298,77 @@ class $AssetsMapPinDataGen {
       ];
 }
 
+class $AssetsProjectAreaImageGen {
+  const $AssetsProjectAreaImageGen();
+
+  /// File path: assets/project/area_image/booth.jpg
+  AssetGenImage get booth =>
+      const AssetGenImage('assets/project/area_image/booth.jpg');
+
+  /// File path: assets/project/area_image/east_area.jpg
+  AssetGenImage get eastArea =>
+      const AssetGenImage('assets/project/area_image/east_area.jpg');
+
+  /// File path: assets/project/area_image/eleven.jpg
+  AssetGenImage get eleven =>
+      const AssetGenImage('assets/project/area_image/eleven.jpg');
+
+  /// File path: assets/project/area_image/fourteen.jpg
+  AssetGenImage get fourteen =>
+      const AssetGenImage('assets/project/area_image/fourteen.jpg');
+
+  /// File path: assets/project/area_image/ground.jpg
+  AssetGenImage get ground =>
+      const AssetGenImage('assets/project/area_image/ground.jpg');
+
+  /// File path: assets/project/area_image/main_stage.jpg
+  AssetGenImage get mainStage =>
+      const AssetGenImage('assets/project/area_image/main_stage.jpg');
+
+  /// File path: assets/project/area_image/twelve_first.jpg
+  AssetGenImage get twelveFirst =>
+      const AssetGenImage('assets/project/area_image/twelve_first.jpg');
+
+  /// File path: assets/project/area_image/twelve_second.jpg
+  AssetGenImage get twelveSecond =>
+      const AssetGenImage('assets/project/area_image/twelve_second.jpg');
+
+  /// File path: assets/project/area_image/whole_area.jpg
+  AssetGenImage get wholeArea =>
+      const AssetGenImage('assets/project/area_image/whole_area.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        booth,
+        eastArea,
+        eleven,
+        fourteen,
+        ground,
+        mainStage,
+        twelveFirst,
+        twelveSecond,
+        wholeArea
+      ];
+}
+
 class $AssetsProjectMainImageGen {
   const $AssetsProjectMainImageGen();
 
-  /// File path: assets/project/main_image/main_image_1.jpeg
+  /// File path: assets/project/main_image/main_image_1.jpg
   AssetGenImage get mainImage1 =>
-      const AssetGenImage('assets/project/main_image/main_image_1.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_1.jpg');
 
   /// File path: assets/project/main_image/main_image_11.jpg
   AssetGenImage get mainImage11 =>
       const AssetGenImage('assets/project/main_image/main_image_11.jpg');
 
-  /// File path: assets/project/main_image/main_image_12.png
+  /// File path: assets/project/main_image/main_image_12.jpg
   AssetGenImage get mainImage12 =>
-      const AssetGenImage('assets/project/main_image/main_image_12.png');
+      const AssetGenImage('assets/project/main_image/main_image_12.jpg');
 
-  /// File path: assets/project/main_image/main_image_13.png
+  /// File path: assets/project/main_image/main_image_13.jpg
   AssetGenImage get mainImage13 =>
-      const AssetGenImage('assets/project/main_image/main_image_13.png');
+      const AssetGenImage('assets/project/main_image/main_image_13.jpg');
 
   /// File path: assets/project/main_image/main_image_14.jpg
   AssetGenImage get mainImage14 =>
@@ -332,9 +394,9 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage19 =>
       const AssetGenImage('assets/project/main_image/main_image_19.jpg');
 
-  /// File path: assets/project/main_image/main_image_2.jpeg
+  /// File path: assets/project/main_image/main_image_2.jpg
   AssetGenImage get mainImage2 =>
-      const AssetGenImage('assets/project/main_image/main_image_2.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_2.jpg');
 
   /// File path: assets/project/main_image/main_image_20.jpg
   AssetGenImage get mainImage20 =>
@@ -344,9 +406,9 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage21 =>
       const AssetGenImage('assets/project/main_image/main_image_21.jpg');
 
-  /// File path: assets/project/main_image/main_image_22.png
+  /// File path: assets/project/main_image/main_image_22.jpg
   AssetGenImage get mainImage22 =>
-      const AssetGenImage('assets/project/main_image/main_image_22.png');
+      const AssetGenImage('assets/project/main_image/main_image_22.jpg');
 
   /// File path: assets/project/main_image/main_image_23.jpg
   AssetGenImage get mainImage23 =>
@@ -356,9 +418,9 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage24 =>
       const AssetGenImage('assets/project/main_image/main_image_24.jpg');
 
-  /// File path: assets/project/main_image/main_image_25.jpeg
+  /// File path: assets/project/main_image/main_image_25.jpg
   AssetGenImage get mainImage25 =>
-      const AssetGenImage('assets/project/main_image/main_image_25.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_25.jpg');
 
   /// File path: assets/project/main_image/main_image_26.jpg
   AssetGenImage get mainImage26 =>
@@ -368,61 +430,57 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage27 =>
       const AssetGenImage('assets/project/main_image/main_image_27.jpg');
 
-  /// File path: assets/project/main_image/main_image_28.jpeg
+  /// File path: assets/project/main_image/main_image_28.jpg
   AssetGenImage get mainImage28 =>
-      const AssetGenImage('assets/project/main_image/main_image_28.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_28.jpg');
 
-  /// File path: assets/project/main_image/main_image_29.jpeg
+  /// File path: assets/project/main_image/main_image_29.jpg
   AssetGenImage get mainImage29 =>
-      const AssetGenImage('assets/project/main_image/main_image_29.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_29.jpg');
 
-  /// File path: assets/project/main_image/main_image_3.jpeg
+  /// File path: assets/project/main_image/main_image_3.jpg
   AssetGenImage get mainImage3 =>
-      const AssetGenImage('assets/project/main_image/main_image_3.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_3.jpg');
 
-  /// File path: assets/project/main_image/main_image_30.jpeg
+  /// File path: assets/project/main_image/main_image_30.jpg
   AssetGenImage get mainImage30 =>
-      const AssetGenImage('assets/project/main_image/main_image_30.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_30.jpg');
 
-  /// File path: assets/project/main_image/main_image_31.png
+  /// File path: assets/project/main_image/main_image_31.jpg
   AssetGenImage get mainImage31 =>
-      const AssetGenImage('assets/project/main_image/main_image_31.png');
+      const AssetGenImage('assets/project/main_image/main_image_31.jpg');
 
   /// File path: assets/project/main_image/main_image_32.jpg
   AssetGenImage get mainImage32 =>
       const AssetGenImage('assets/project/main_image/main_image_32.jpg');
 
-  /// File path: assets/project/main_image/main_image_33.png
+  /// File path: assets/project/main_image/main_image_33.jpg
   AssetGenImage get mainImage33 =>
-      const AssetGenImage('assets/project/main_image/main_image_33.png');
+      const AssetGenImage('assets/project/main_image/main_image_33.jpg');
 
-  /// File path: assets/project/main_image/main_image_34.jpeg
+  /// File path: assets/project/main_image/main_image_34.jpg
   AssetGenImage get mainImage34 =>
-      const AssetGenImage('assets/project/main_image/main_image_34.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_34.jpg');
 
-  /// File path: assets/project/main_image/main_image_35.jpeg
-  AssetGenImage get mainImage35Jpeg =>
-      const AssetGenImage('assets/project/main_image/main_image_35.jpeg');
-
-  /// File path: assets/project/main_image/main_image_35.png
-  AssetGenImage get mainImage35Png =>
-      const AssetGenImage('assets/project/main_image/main_image_35.png');
+  /// File path: assets/project/main_image/main_image_35.jpg
+  AssetGenImage get mainImage35 =>
+      const AssetGenImage('assets/project/main_image/main_image_35.jpg');
 
   /// File path: assets/project/main_image/main_image_36.jpg
   AssetGenImage get mainImage36 =>
       const AssetGenImage('assets/project/main_image/main_image_36.jpg');
 
-  /// File path: assets/project/main_image/main_image_37.jpeg
+  /// File path: assets/project/main_image/main_image_37.jpg
   AssetGenImage get mainImage37 =>
-      const AssetGenImage('assets/project/main_image/main_image_37.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_37.jpg');
 
-  /// File path: assets/project/main_image/main_image_38.jpeg
+  /// File path: assets/project/main_image/main_image_38.jpg
   AssetGenImage get mainImage38 =>
-      const AssetGenImage('assets/project/main_image/main_image_38.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_38.jpg');
 
-  /// File path: assets/project/main_image/main_image_39.jpeg
+  /// File path: assets/project/main_image/main_image_39.jpg
   AssetGenImage get mainImage39 =>
-      const AssetGenImage('assets/project/main_image/main_image_39.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_39.jpg');
 
   /// File path: assets/project/main_image/main_image_4.jpg
   AssetGenImage get mainImage4 =>
@@ -432,21 +490,21 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage40 =>
       const AssetGenImage('assets/project/main_image/main_image_40.jpg');
 
-  /// File path: assets/project/main_image/main_image_41.jpeg
+  /// File path: assets/project/main_image/main_image_41.jpg
   AssetGenImage get mainImage41 =>
-      const AssetGenImage('assets/project/main_image/main_image_41.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_41.jpg');
 
-  /// File path: assets/project/main_image/main_image_42.png
+  /// File path: assets/project/main_image/main_image_42.jpg
   AssetGenImage get mainImage42 =>
-      const AssetGenImage('assets/project/main_image/main_image_42.png');
+      const AssetGenImage('assets/project/main_image/main_image_42.jpg');
 
   /// File path: assets/project/main_image/main_image_43.jpg
   AssetGenImage get mainImage43 =>
       const AssetGenImage('assets/project/main_image/main_image_43.jpg');
 
-  /// File path: assets/project/main_image/main_image_44.png
+  /// File path: assets/project/main_image/main_image_44.jpg
   AssetGenImage get mainImage44 =>
-      const AssetGenImage('assets/project/main_image/main_image_44.png');
+      const AssetGenImage('assets/project/main_image/main_image_44.jpg');
 
   /// File path: assets/project/main_image/main_image_45.jpg
   AssetGenImage get mainImage45 =>
@@ -456,41 +514,41 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage46 =>
       const AssetGenImage('assets/project/main_image/main_image_46.jpg');
 
-  /// File path: assets/project/main_image/main_image_47.jpeg
+  /// File path: assets/project/main_image/main_image_47.jpg
   AssetGenImage get mainImage47 =>
-      const AssetGenImage('assets/project/main_image/main_image_47.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_47.jpg');
 
-  /// File path: assets/project/main_image/main_image_48.png
+  /// File path: assets/project/main_image/main_image_48.jpg
   AssetGenImage get mainImage48 =>
-      const AssetGenImage('assets/project/main_image/main_image_48.png');
+      const AssetGenImage('assets/project/main_image/main_image_48.jpg');
 
-  /// File path: assets/project/main_image/main_image_49.jpeg
+  /// File path: assets/project/main_image/main_image_49.jpg
   AssetGenImage get mainImage49 =>
-      const AssetGenImage('assets/project/main_image/main_image_49.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_49.jpg');
 
   /// File path: assets/project/main_image/main_image_5.jpg
   AssetGenImage get mainImage5 =>
       const AssetGenImage('assets/project/main_image/main_image_5.jpg');
 
-  /// File path: assets/project/main_image/main_image_52.jpeg
+  /// File path: assets/project/main_image/main_image_52.jpg
   AssetGenImage get mainImage52 =>
-      const AssetGenImage('assets/project/main_image/main_image_52.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_52.jpg');
 
-  /// File path: assets/project/main_image/main_image_54.png
+  /// File path: assets/project/main_image/main_image_54.jpg
   AssetGenImage get mainImage54 =>
-      const AssetGenImage('assets/project/main_image/main_image_54.png');
+      const AssetGenImage('assets/project/main_image/main_image_54.jpg');
 
   /// File path: assets/project/main_image/main_image_57.jpg
   AssetGenImage get mainImage57 =>
       const AssetGenImage('assets/project/main_image/main_image_57.jpg');
 
-  /// File path: assets/project/main_image/main_image_58.jpeg
+  /// File path: assets/project/main_image/main_image_58.jpg
   AssetGenImage get mainImage58 =>
-      const AssetGenImage('assets/project/main_image/main_image_58.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_58.jpg');
 
-  /// File path: assets/project/main_image/main_image_6.jpeg
+  /// File path: assets/project/main_image/main_image_6.jpg
   AssetGenImage get mainImage6 =>
-      const AssetGenImage('assets/project/main_image/main_image_6.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_6.jpg');
 
   /// File path: assets/project/main_image/main_image_60.jpg
   AssetGenImage get mainImage60 =>
@@ -504,29 +562,29 @@ class $AssetsProjectMainImageGen {
   AssetGenImage get mainImage64 =>
       const AssetGenImage('assets/project/main_image/main_image_64.jpg');
 
-  /// File path: assets/project/main_image/main_image_65.png
+  /// File path: assets/project/main_image/main_image_65.jpg
   AssetGenImage get mainImage65 =>
-      const AssetGenImage('assets/project/main_image/main_image_65.png');
+      const AssetGenImage('assets/project/main_image/main_image_65.jpg');
 
-  /// File path: assets/project/main_image/main_image_66.png
+  /// File path: assets/project/main_image/main_image_66.jpg
   AssetGenImage get mainImage66 =>
-      const AssetGenImage('assets/project/main_image/main_image_66.png');
+      const AssetGenImage('assets/project/main_image/main_image_66.jpg');
 
-  /// File path: assets/project/main_image/main_image_7.jpeg
+  /// File path: assets/project/main_image/main_image_7.jpg
   AssetGenImage get mainImage7 =>
-      const AssetGenImage('assets/project/main_image/main_image_7.jpeg');
+      const AssetGenImage('assets/project/main_image/main_image_7.jpg');
 
-  /// File path: assets/project/main_image/main_image_8.png
+  /// File path: assets/project/main_image/main_image_8.jpg
   AssetGenImage get mainImage8 =>
-      const AssetGenImage('assets/project/main_image/main_image_8.png');
+      const AssetGenImage('assets/project/main_image/main_image_8.jpg');
 
   /// File path: assets/project/main_image/main_image_9.jpg
   AssetGenImage get mainImage9 =>
       const AssetGenImage('assets/project/main_image/main_image_9.jpg');
 
-  /// File path: assets/project/main_image/main_image_placeholder.png
+  /// File path: assets/project/main_image/main_image_placeholder.jpg
   AssetGenImage get mainImagePlaceholder => const AssetGenImage(
-      'assets/project/main_image/main_image_placeholder.png');
+      'assets/project/main_image/main_image_placeholder.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -557,8 +615,7 @@ class $AssetsProjectMainImageGen {
         mainImage32,
         mainImage33,
         mainImage34,
-        mainImage35Jpeg,
-        mainImage35Png,
+        mainImage35,
         mainImage36,
         mainImage37,
         mainImage38,
@@ -595,21 +652,21 @@ class $AssetsProjectMainImageGen {
 class $AssetsProjectThumbnailGen {
   const $AssetsProjectThumbnailGen();
 
-  /// File path: assets/project/thumbnail/thumbnail_1.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_1.jpg
   AssetGenImage get thumbnail1 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_1.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_1.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_11.jpg
   AssetGenImage get thumbnail11 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_11.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_12.png
+  /// File path: assets/project/thumbnail/thumbnail_12.jpg
   AssetGenImage get thumbnail12 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_12.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_12.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_13.png
+  /// File path: assets/project/thumbnail/thumbnail_13.jpg
   AssetGenImage get thumbnail13 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_13.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_13.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_14.jpg
   AssetGenImage get thumbnail14 =>
@@ -623,33 +680,33 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail16 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_16.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_17.png
+  /// File path: assets/project/thumbnail/thumbnail_17.jpg
   AssetGenImage get thumbnail17 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_17.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_17.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_18.jpg
   AssetGenImage get thumbnail18 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_18.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_19.png
+  /// File path: assets/project/thumbnail/thumbnail_19.jpg
   AssetGenImage get thumbnail19 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_19.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_19.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_2.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_2.jpg
   AssetGenImage get thumbnail2 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_2.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_2.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_20.png
+  /// File path: assets/project/thumbnail/thumbnail_20.jpg
   AssetGenImage get thumbnail20 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_20.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_20.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_21.jpg
   AssetGenImage get thumbnail21 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_21.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_22.png
+  /// File path: assets/project/thumbnail/thumbnail_22.jpg
   AssetGenImage get thumbnail22 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_22.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_22.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_23.jpg
   AssetGenImage get thumbnail23 =>
@@ -659,13 +716,9 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail24 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_24.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_25.jpeg
-  AssetGenImage get thumbnail25Jpeg =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_25.jpeg');
-
-  /// File path: assets/project/thumbnail/thumbnail_25.png
-  AssetGenImage get thumbnail25Png =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_25.png');
+  /// File path: assets/project/thumbnail/thumbnail_25.jpg
+  AssetGenImage get thumbnail25 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_25.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_26.jpg
   AssetGenImage get thumbnail26 =>
@@ -675,61 +728,57 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail27 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_27.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_28.png
+  /// File path: assets/project/thumbnail/thumbnail_28.jpg
   AssetGenImage get thumbnail28 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_28.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_28.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_29.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_29.jpg
   AssetGenImage get thumbnail29 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_29.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_29.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_3.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_3.jpg
   AssetGenImage get thumbnail3 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_3.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_3.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_30.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_30.jpg
   AssetGenImage get thumbnail30 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_30.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_30.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_31.png
+  /// File path: assets/project/thumbnail/thumbnail_31.jpg
   AssetGenImage get thumbnail31 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_31.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_31.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_32.jpg
   AssetGenImage get thumbnail32 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_32.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_33.png
+  /// File path: assets/project/thumbnail/thumbnail_33.jpg
   AssetGenImage get thumbnail33 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_33.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_33.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_34.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_34.jpg
   AssetGenImage get thumbnail34 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_34.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_34.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_35.jpeg
-  AssetGenImage get thumbnail35Jpeg =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_35.jpeg');
-
-  /// File path: assets/project/thumbnail/thumbnail_35.png
-  AssetGenImage get thumbnail35Png =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_35.png');
+  /// File path: assets/project/thumbnail/thumbnail_35.jpg
+  AssetGenImage get thumbnail35 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_35.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_36.jpg
   AssetGenImage get thumbnail36 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_36.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_37.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_37.jpg
   AssetGenImage get thumbnail37 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_37.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_37.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_38.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_38.jpg
   AssetGenImage get thumbnail38 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_38.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_38.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_39.png
+  /// File path: assets/project/thumbnail/thumbnail_39.jpg
   AssetGenImage get thumbnail39 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_39.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_39.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_4.jpg
   AssetGenImage get thumbnail4 =>
@@ -739,21 +788,21 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail40 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_40.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_41.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_41.jpg
   AssetGenImage get thumbnail41 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_41.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_41.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_42.png
+  /// File path: assets/project/thumbnail/thumbnail_42.jpg
   AssetGenImage get thumbnail42 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_42.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_42.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_43.jpg
   AssetGenImage get thumbnail43 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_43.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_44.png
+  /// File path: assets/project/thumbnail/thumbnail_44.jpg
   AssetGenImage get thumbnail44 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_44.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_44.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_45.jpg
   AssetGenImage get thumbnail45 =>
@@ -763,105 +812,97 @@ class $AssetsProjectThumbnailGen {
   AssetGenImage get thumbnail46 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_46.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_47.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_47.jpg
   AssetGenImage get thumbnail47 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_47.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_47.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_48.png
+  /// File path: assets/project/thumbnail/thumbnail_48.jpg
   AssetGenImage get thumbnail48 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_48.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_48.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_49.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_49.jpg
   AssetGenImage get thumbnail49 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_49.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_49.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_5.png
+  /// File path: assets/project/thumbnail/thumbnail_5.jpg
   AssetGenImage get thumbnail5 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_5.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_5.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_52.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_52.jpg
   AssetGenImage get thumbnail52 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_52.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_52.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_54.png
+  /// File path: assets/project/thumbnail/thumbnail_54.jpg
   AssetGenImage get thumbnail54 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_54.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_54.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_55.png
+  /// File path: assets/project/thumbnail/thumbnail_55.jpg
   AssetGenImage get thumbnail55 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_55.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_55.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_56.png
+  /// File path: assets/project/thumbnail/thumbnail_56.jpg
   AssetGenImage get thumbnail56 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_56.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_56.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_57.jpg
   AssetGenImage get thumbnail57 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_57.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_58.png
+  /// File path: assets/project/thumbnail/thumbnail_58.jpg
   AssetGenImage get thumbnail58 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_58.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_58.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_59.png
+  /// File path: assets/project/thumbnail/thumbnail_59.jpg
   AssetGenImage get thumbnail59 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_59.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_59.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_6.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_6.jpg
   AssetGenImage get thumbnail6 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_6.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_6.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_60.jpg
-  AssetGenImage get thumbnail60Jpg =>
+  AssetGenImage get thumbnail60 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_60.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_60.png
-  AssetGenImage get thumbnail60Png =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_60.png');
-
-  /// File path: assets/project/thumbnail/thumbnail_61.png
+  /// File path: assets/project/thumbnail/thumbnail_61.jpg
   AssetGenImage get thumbnail61 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_61.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_61.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_62.png
+  /// File path: assets/project/thumbnail/thumbnail_62.jpg
   AssetGenImage get thumbnail62 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_62.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_62.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_63.jpeg
-  AssetGenImage get thumbnail63Jpeg =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_63.jpeg');
-
-  /// File path: assets/project/thumbnail/thumbnail_63.png
-  AssetGenImage get thumbnail63Png =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_63.png');
+  /// File path: assets/project/thumbnail/thumbnail_63.jpg
+  AssetGenImage get thumbnail63 =>
+      const AssetGenImage('assets/project/thumbnail/thumbnail_63.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_64.jpg
   AssetGenImage get thumbnail64 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_64.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_65.png
+  /// File path: assets/project/thumbnail/thumbnail_65.jpg
   AssetGenImage get thumbnail65 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_65.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_65.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_66.png
+  /// File path: assets/project/thumbnail/thumbnail_66.jpg
   AssetGenImage get thumbnail66 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_66.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_66.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_7.jpeg
+  /// File path: assets/project/thumbnail/thumbnail_7.jpg
   AssetGenImage get thumbnail7 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_7.jpeg');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_7.jpg');
 
   /// File path: assets/project/thumbnail/thumbnail_8.jpg
   AssetGenImage get thumbnail8 =>
       const AssetGenImage('assets/project/thumbnail/thumbnail_8.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_9.png
+  /// File path: assets/project/thumbnail/thumbnail_9.jpg
   AssetGenImage get thumbnail9 =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_9.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_9.jpg');
 
-  /// File path: assets/project/thumbnail/thumbnail_placeholder.png
+  /// File path: assets/project/thumbnail/thumbnail_placeholder.jpg
   AssetGenImage get thumbnailPlaceholder =>
-      const AssetGenImage('assets/project/thumbnail/thumbnail_placeholder.png');
+      const AssetGenImage('assets/project/thumbnail/thumbnail_placeholder.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -881,8 +922,7 @@ class $AssetsProjectThumbnailGen {
         thumbnail22,
         thumbnail23,
         thumbnail24,
-        thumbnail25Jpeg,
-        thumbnail25Png,
+        thumbnail25,
         thumbnail26,
         thumbnail27,
         thumbnail28,
@@ -893,8 +933,7 @@ class $AssetsProjectThumbnailGen {
         thumbnail32,
         thumbnail33,
         thumbnail34,
-        thumbnail35Jpeg,
-        thumbnail35Png,
+        thumbnail35,
         thumbnail36,
         thumbnail37,
         thumbnail38,
@@ -919,12 +958,10 @@ class $AssetsProjectThumbnailGen {
         thumbnail58,
         thumbnail59,
         thumbnail6,
-        thumbnail60Jpg,
-        thumbnail60Png,
+        thumbnail60,
         thumbnail61,
         thumbnail62,
-        thumbnail63Jpeg,
-        thumbnail63Png,
+        thumbnail63,
         thumbnail64,
         thumbnail65,
         thumbnail66,

@@ -40,6 +40,7 @@ class AppTheme {
       labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       unselectedLabelStyle:
           TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+      tabAlignment: TabAlignment.center,
     ),
     outlinedButtonTheme: const OutlinedButtonThemeData(
       style: ButtonStyle(splashFactory: NoSplash.splashFactory),
