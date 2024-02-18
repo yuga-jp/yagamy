@@ -61,9 +61,8 @@ class _MapSelectButtonState extends ConsumerState<MapSelectButton> {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AreaImageRepository.fetchAreaImageProvider(
-                        mapType: widget.mapType,
-                      ),
+                      image: AssetImage(AreaImageRepository.getAreaImagePath(
+                          mapType: widget.mapType)),
                       fit: BoxFit.cover,
                     ),
                   ),

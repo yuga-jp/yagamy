@@ -54,28 +54,6 @@ class Project {
             rawProject.categorySub, rawProject.area, rawProject.floor),
         stampRally = rawProject.stampRally;
 
-  // Project.empty({
-  //   this.id = '0',
-  //   this.title = '',
-  //   this.place = '',
-  //   this.hoursStartFirstDay,
-  //   this.hoursEndFirstDay,
-  //   this.hoursStartSecondDay,
-  //   this.hoursEndSecondDay,
-  //   this.groupName = '',
-  //   this.shortIntro = '',
-  //   this.intro = '',
-  //   this.introExtension = '',
-  //   this.groupIntro = '',
-  //   this.thumbnailUrl = '',
-  //   this.mainImageUrl = '',
-  //   this.twitterId = '',
-  //   this.instagramId = '',
-  //   this.homepageUrl = '',
-  //   this.searcherProps = const [],
-  //   this.stampRally = false,
-  // });
-
   final String id;
   final String title;
   final String area;

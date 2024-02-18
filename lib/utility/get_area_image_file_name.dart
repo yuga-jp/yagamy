@@ -1,6 +1,7 @@
+import 'package:yagamy/model/map_type.dart';
 import 'package:yagamy/model/searcher_prop.dart';
 
-String getAreaImageFileName(SearcherProp searcherProp) {
+String getAreaImageFileNameBySearcherProp(SearcherProp searcherProp) {
   switch (searcherProp) {
     case SearcherProp.building11th:
       return 'eleven.jpg';
@@ -20,5 +21,20 @@ String getAreaImageFileName(SearcherProp searcherProp) {
       return 'ground.jpg';
     default:
       return '';
+  }
+}
+
+String getAreaImageFileNameByMapType(MapType mapType) {
+  switch (mapType) {
+    case MapType.wholeArea:
+      return 'whole_area.jpg';
+    case MapType.eleven:
+      return 'eleven.jpg';
+    case MapType.twelve:
+      return 'twelve_first.jpg';
+    case MapType.fourteen:
+      return 'fourteen.jpg';
+    case MapType.eastAreaGround:
+      return 'east_area.jpg';
   }
 }
