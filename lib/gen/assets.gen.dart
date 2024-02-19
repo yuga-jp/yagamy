@@ -25,6 +25,16 @@ class $AssetsArticleGen {
   List<dynamic> get values => [article, article1];
 }
 
+class $AssetsEventInfoGen {
+  const $AssetsEventInfoGen();
+
+  /// File path: assets/event_info/event_info.json
+  String get eventInfo => 'assets/event_info/event_info.json';
+
+  /// List of all assets
+  List<String> get values => [eventInfo];
+}
+
 class $AssetsIconGen {
   const $AssetsIconGen();
 
@@ -989,6 +999,7 @@ class Assets {
   Assets._();
 
   static const $AssetsArticleGen article = $AssetsArticleGen();
+  static const $AssetsEventInfoGen eventInfo = $AssetsEventInfoGen();
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
   static const $AssetsMapGen map = $AssetsMapGen();

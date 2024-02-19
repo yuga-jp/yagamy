@@ -1,6 +1,5 @@
 import 'package:yagamy/model/event_type.dart';
 import 'package:yagamy/model/pin_data/pin_type.dart';
-import 'package:yagamy/model/sale_siituation_type.dart';
 
 extension StringExtension on String {
   PinType toPinType() {
@@ -50,19 +49,6 @@ extension StringExtension on String {
         return EventType.rain;
       case 'suspension':
         return EventType.suspension;
-      default:
-        return null;
-    }
-  }
-
-  SaleSituationType? toSaleSituationType() {
-    switch (this) {
-      case 'onSale':
-        return SaleSituationType.onSale;
-      case 'limited':
-        return SaleSituationType.limited;
-      case 'unavailable':
-        return SaleSituationType.unavailable;
       default:
         return null;
     }

@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:yagamy/constant/theme/project_card_theme.dart';
-import 'package:yagamy/extension/sale_situation_type_extension.dart';
-import 'package:yagamy/extension/string_extension.dart';
 import 'package:yagamy/model/project/project.dart';
-import 'package:yagamy/model/sale_siituation_type.dart';
-import 'package:yagamy/model/sale_situation/sale_situation.dart';
-import 'package:yagamy/provider/sale_situation_provider.dart';
 import 'package:yagamy/utility/get_hours_displaying.dart';
 import 'package:yagamy/utility/get_place_displaying.dart';
 
@@ -131,24 +126,10 @@ class _ProjectInfo extends ConsumerWidget {
     );
   }
 
-  Color saleSituationColor(SaleSituationType saleSituationType) {
-    switch (saleSituationType) {
-      case SaleSituationType.onSale:
-        return Colors.green;
-      case SaleSituationType.limited:
-        return Colors.red;
-      case SaleSituationType.unavailable:
-        return Colors.grey;
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ProjectCardTheme currentTheme =
         Theme.of(context).extension<ProjectCardTheme>()!;
-
-    final AsyncValue<SaleSituation> saleSituation =
-        ref.watch(saleSituationProvider(id));
 
     return Container(
       padding: const EdgeInsets.only(left: 7, top: 7, right: 7, bottom: 5),
@@ -180,25 +161,6 @@ class _ProjectInfo extends ConsumerWidget {
                 ),
               ),
             ],
-          ),
-          const Expanded(child: SizedBox()),
-          saleSituation.when(
-            loading: () {
-              return const SizedBox.shrink();
-            },
-            error: (error, stackTrace) {
-              return const SizedBox.shrink();
-            },
-            data: (saleSituation) {
-              return Text(
-                saleSituation.saleSituation.toSaleSituationType()!.toJpString(),
-                style: TextStyle(
-                  color: saleSituationColor(
-                      saleSituation.saleSituation.toSaleSituationType()!),
-                  fontSize: 14,
-                ),
-              );
-            },
           ),
           const Expanded(child: SizedBox()),
           Row(
