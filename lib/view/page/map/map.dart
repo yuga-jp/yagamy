@@ -45,9 +45,9 @@ class _MapPageState extends ConsumerState<MapPage> {
             child: DraggableScrollableSheet(
               initialChildSize: 0.22,
               minChildSize: 0.22,
-              maxChildSize: 0.22,
+              maxChildSize: 0.32,
               snap: true,
-              snapSizes: const <double>[0.22 /*, 0.5, 0.8*/],
+              snapSizes: const <double>[0.22, 0.32],
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Material(
@@ -59,12 +59,43 @@ class _MapPageState extends ConsumerState<MapPage> {
                     ),
                   ),
                   clipBehavior: Clip.hardEdge,
-                  child: ListView(
-                    controller: scrollController,
-                    physics:
-                        const ScrollPhysics(parent: ClampingScrollPhysics()),
-                    padding: const EdgeInsets.only(top: 7),
-                    children: <Widget>[
+                  child: Stack(
+                    children: [
+                      ListView(
+                        controller: scrollController,
+                        physics: const ScrollPhysics(
+                            parent: ClampingScrollPhysics()),
+                        padding: const EdgeInsets.only(top: 7),
+                        children: <Widget>[
+                          const SizedBox(height: 15),
+                          SizedBox(
+                            height: 135,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              itemBuilder: (BuildContext context, int index) {
+                                return MapSelectButton(
+                                  mapType: MapType.values
+                                      .where((mapType) =>
+                                          mapType.displayName.isNotEmpty)
+                                      .toList()[index],
+                                  text: MapType.values
+                                      .where((mapType) =>
+                                          mapType.displayName.isNotEmpty)
+                                      .toList()[index]
+                                      .displayName,
+                                );
+                              },
+                              itemCount: MapType.values
+                                  .where((mapType) =>
+                                      mapType.displayName.isNotEmpty)
+                                  .length,
+                            ),
+                          ),
+                          const SizedBox(height: 30),
+                        ],
+                      ),
                       Container(
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(200, 200, 200, 1.0),
@@ -72,35 +103,10 @@ class _MapPageState extends ConsumerState<MapPage> {
                         ),
                         height: 6,
                         margin: EdgeInsets.symmetric(
+                          vertical: 7.5,
                           horizontal: mediaQuerySize.width * 0.44,
                         ),
                       ),
-                      const SizedBox(height: 15),
-                      SizedBox(
-                        height: 135,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          itemBuilder: (BuildContext context, int index) {
-                            return MapSelectButton(
-                              mapType: MapType.values
-                                  .where((mapType) =>
-                                      mapType.displayName.isNotEmpty)
-                                  .toList()[index],
-                              text: MapType.values
-                                  .where((mapType) =>
-                                      mapType.displayName.isNotEmpty)
-                                  .toList()[index]
-                                  .displayName,
-                            );
-                          },
-                          itemCount: MapType.values
-                              .where(
-                                  (mapType) => mapType.displayName.isNotEmpty)
-                              .length,
-                        ),
-                      ),
-                      const SizedBox(height: 30),
                     ],
                   ),
                 );
