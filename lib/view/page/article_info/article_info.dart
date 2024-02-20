@@ -57,7 +57,7 @@ class ArticleInfoPage extends ConsumerWidget {
           Positioned(
             top: MediaQuery.of(context).size.width * 0.9,
             child: Container(
-              padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -66,6 +66,9 @@ class ArticleInfoPage extends ConsumerWidget {
                 ),
               ),
               width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height -
+                  (kBottomNavigationBarHeight +
+                      MediaQuery.of(context).size.width * 0.9),
               child: article.when(
                 loading: () {
                   return const SizedBox();
@@ -74,16 +77,18 @@ class ArticleInfoPage extends ConsumerWidget {
                   return const SizedBox();
                 },
                 data: (article) {
-                  return Column(
+                  return ListView(
                     children: [
-                      Text(
-                        article.title,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                      Center(
+                        child: Text(
+                          article.title,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Text(article.body),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +100,7 @@ class ArticleInfoPage extends ConsumerWidget {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 )
-                              : const SizedBox(),
+                              : const SizedBox.shrink(),
                           article.url.isNotEmpty
                               ? Padding(
                                   padding:
@@ -112,7 +117,6 @@ class ArticleInfoPage extends ConsumerWidget {
                               : const SizedBox.shrink(),
                         ],
                       ),
-                      const SizedBox(height: 30),
                     ],
                   );
                 },

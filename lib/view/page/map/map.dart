@@ -38,10 +38,7 @@ class _MapPageState extends ConsumerState<MapPage> {
           bottom: 0,
           child: SizedBox(
             width: mediaQuerySize.width,
-            height: mediaQuerySize.height -
-                (MediaQuery.of(context).viewPadding.top +
-                    MediaQuery.of(context).viewPadding.bottom +
-                    kBottomNavigationBarHeight),
+            height: mediaQuerySize.height - (kBottomNavigationBarHeight),
             child: DraggableScrollableSheet(
               initialChildSize: 0.22,
               minChildSize: 0.22,
