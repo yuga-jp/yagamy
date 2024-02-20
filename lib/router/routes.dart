@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:yagamy/model/map_type.dart';
 
 import 'package:yagamy/view/navigation_pages.dart';
-import 'package:yagamy/view/page/article_detail/article_detail.dart';
+import 'package:yagamy/view/page/article_info/article_info.dart';
 import 'package:yagamy/view/page/home/home.dart';
 import 'package:yagamy/view/page/map/map.dart';
 import 'package:yagamy/view/page/map/ui_part/map_viewer.dart';
@@ -48,7 +48,7 @@ final GoRouter router = GoRouter(
                 GoRoute(
                     path: 'article/:id',
                     builder: (BuildContext context, GoRouterState state) {
-                      return ArticleDetailPage(state.pathParameters['id']!);
+                      return ArticleInfoPage(state.pathParameters['id']!);
                     }),
               ],
             ),

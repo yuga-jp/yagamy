@@ -7,8 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:yagamy/model/article/article.dart';
 import 'package:yagamy/provider/article_provider.dart';
 
-class ArticleDetailPage extends ConsumerWidget {
-  const ArticleDetailPage(this.id, {super.key});
+class ArticleInfoPage extends ConsumerWidget {
+  const ArticleInfoPage(this.id, {super.key});
 
   final String id;
 
