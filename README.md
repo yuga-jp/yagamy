@@ -1,16 +1,14 @@
-# yagamy
+# Yagamy
+慶應義塾大学の矢上祭で2023年に用いたナビゲーションアプリ。
+App StoreとGoogle Play Storeにて、2023年の9月にリリースを行った。
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## コンテンツ
+- 企画一覧
+  - 矢上祭の企画の一覧のそれら企画の詳細
+- タイムテーブル
+  - ステージの演目のプログラム
+- マップ
+  - 企画の場所が分かる矢上キャンパスの地図
+- 通知
+  - 矢上祭本部よりリアルタイムで届く通知の一覧
+  
