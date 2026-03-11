@@ -4,6 +4,7 @@ Yagamy is a mobile app that was released in 2023. This app was used at Yagami Fe
 The data for each project was fetched from MongoDB and Amazon S3. Users were able to receive notifications in real time (using Firebase).
 
 # Features
+
 - Projects
   - The details of all projects in the festival.
 - Timetable
